@@ -1,0 +1,728 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>乐果百科</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="欢迎来到「乐果百科」，乐果一家的知识笔记！">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">乐果百科</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="乐果百科"><a class="header" href="#乐果百科">乐果百科</a></h1>
+<p>欢迎来到「乐果百科」，乐果一家的知识笔记！</p>
+<h2 id="基础知识"><a class="header" href="#基础知识">基础知识</a></h2>
+<ol>
+<li><a href="00%E8%AF%AD%E6%96%87/index.html">语文</a></li>
+<li><a href="01%E6%95%B0%E5%AD%A6/index.html">数学</a></li>
+<li><a href="02%E5%A4%96%E8%AF%AD/index.html">外语</a></li>
+<li><a href="03%E7%89%A9%E7%90%86/index.html">物理</a></li>
+<li><a href="04%E5%8C%96%E5%AD%A6/index.html">化学</a></li>
+<li><a href="05%E7%94%9F%E7%89%A9/index.html">生物</a></li>
+<li><a href="06%E6%94%BF%E6%B2%BB/index.html">政治</a></li>
+<li><a href="07%E5%8E%86%E5%8F%B2/index.html">历史</a></li>
+<li><a href="08%E5%9C%B0%E7%90%86/index.html">地理</a></li>
+</ol>
+<h2 id="专业技能"><a class="header" href="#专业技能">专业技能</a></h2>
+<ol>
+<li><a href="10%E8%AE%A1%E7%AE%97%E6%9C%BA/index.html">计算机</a></li>
+<li><a href="11%E7%BB%8F%E6%B5%8E/index.html">经济</a></li>
+<li><a href="12%E9%87%91%E8%9E%8D/index.html">金融</a></li>
+<li><a href="13%E6%B3%95%E5%BE%8B/index.html">法律</a></li>
+<li><a href="14%E5%93%B2%E5%AD%A6/index.html">哲学</a></li>
+<li><a href="15%E5%8C%BB%E5%AD%A6/index.html">医学</a></li>
+</ol>
+<h2 id="人文艺术"><a class="header" href="#人文艺术">人文艺术</a></h2>
+<ol>
+<li><a href="20%E7%BE%8E%E6%9C%AF/index.html">美术</a></li>
+<li><a href="21%E9%9F%B3%E4%B9%90/index.html">音乐</a></li>
+<li><a href="22%E4%BD%93%E8%82%B2/index.html">体育</a></li>
+</ol>
+<div style="display: none">
+<pre><code class="language-{toctree}">:hidden:
+:numbered:
+:caption: 基础知识
+
+语文 &lt;00语文/index.md&gt;
+数学 &lt;01数学/index.md&gt;
+外语 &lt;02外语/index.md&gt;
+物理 &lt;03物理/index.md&gt;
+化学 &lt;04化学/index.md&gt;
+生物 &lt;05生物/index.md&gt;
+政治 &lt;06政治/index.md&gt;
+历史 &lt;07历史/index.md&gt;
+地理 &lt;08地理/index.md&gt;
+</code></pre>
+<pre><code class="language-{toctree}">:hidden:
+:numbered:
+:caption: 专业技能
+
+计算机 &lt;10计算机/index.md&gt;
+经济 &lt;11经济/index.md&gt;
+金融 &lt;12金融/index.md&gt;
+法律 &lt;13法律/index.md&gt;
+哲学 &lt;14哲学/index.md&gt;
+医学 &lt;15医学/index.md&gt;
+</code></pre>
+<pre><code class="language-{toctree}">:hidden:
+:numbered:
+:caption: 人文艺术
+
+美术 &lt;20美术/index.md&gt;
+音乐 &lt;21音乐/index.md&gt;
+体育 &lt;22体育/index.md&gt;
+</code></pre>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录"><a class="header" href="#目录">目录</a></h1>
+<ol>
+<li><a href="00%E8%AF%AD%E6%96%87/%E5%90%8D%E5%AE%B6%E5%90%8D%E8%91%97.html">名家名著</a></li>
+<li><a href="00%E8%AF%AD%E6%96%87/%E9%9F%B3%E9%9F%B5%E5%AD%A6.html">音韵学</a></li>
+</ol>
+<div style="display: none">
+<pre><code class="language-{toctree}">:hidden:
+
+名家名著.md
+音韵学.md
+</code></pre>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="名家名著"><a class="header" href="#名家名著">名家名著</a></h1>
+<p>始于汉代，成熟于唐代，沿用到清朝的书籍分类：</p>
+<ul>
+<li><strong>经</strong>：儒家经典，包括《易》（《周易》）、《书》（《尚书》）、《诗》（《诗经》）、《礼》（如《周礼》、《仪礼》、《礼记》）、《春秋》（《春秋左传》、《春秋公羊传》、《春秋穀梁传》）以及《论语》、《孟子》等；</li>
+<li><strong>史</strong>：历史文献，包括司马迁的《史记》、班固的《汉书》、范晔的《后汉书》、陈寿的《三国志》等正史，还有《资治通鉴》等编年体通史；</li>
+<li><strong>子</strong>：除儒家经典之外的各种学术著作，如道家的老子《道德经》、庄子《庄子》，墨家的《墨子》，法家的《韩非子》，兵家的《孙子兵法》，医家的《黄帝内经》等</li>
+<li><strong>集</strong>：文学作品的汇编，包括诗歌、散文、辞赋、小说等，如屈原的《楚辞》，陶渊明的《陶渊明集》，李白的《李太白全集》，杜甫的《杜工部集》，以及《全唐诗》、《全宋词》等大型总集；</li>
+</ul>
+<h2 id="周西周东周春秋战国"><a class="header" href="#周西周东周春秋战国">周：西周、东周、春秋、战国</a></h2>
+<p>四书：</p>
+<ol>
+<li>《论语》，春秋，孔子及其弟子；</li>
+<li>《孟子》，战国，孟子及其弟子；</li>
+<li>《大学》，战国，曾子，《礼记》中的一篇，在宋代独立成书；</li>
+<li>《中庸》，战国，相传孔子的孙子子思所作，在宋代独立成书；</li>
+</ol>
+<p>五经：</p>
+<ol>
+<li>《诗经》：西周至春秋中期，周代官方收集整理的民间歌谣和贵族诗歌；</li>
+<li>《尚书》：或称《书经》，上古至春秋，从尧舜到秦穆公时期的帝王诏令、训诫和史事；</li>
+<li>《礼记》：西汉，秦汉以前的各种礼仪制度和儒家论述；</li>
+<li>《周易》：或称《易经》，上古至春秋，相传由伏羲画八卦，周文王演为六十四卦，并作卦辞，周公旦作爻辞；</li>
+<li>《春秋》：春秋，据说是孔子根据鲁国史官所记的历史资料编写而成，是一部简明扼要的编年体史书；</li>
+</ol>
+<h2 id="秦"><a class="header" href="#秦">秦</a></h2>
+<ol>
+<li>《谏逐客书》，李斯</li>
+<li>《吕氏春秋》，又称《吕览》，吕不韦</li>
+</ol>
+<h2 id="汉西汉新东汉"><a class="header" href="#汉西汉新东汉">汉：西汉、新、东汉</a></h2>
+<ol>
+<li>《史记》，司马迁</li>
+<li>《汉书》，班固</li>
+<li>《战国策》，刘向</li>
+<li>《二京赋》，张衡</li>
+<li>《子虚赋》、《上林赋》，司马相如</li>
+<li>《孔雀东南飞》</li>
+<li>《古诗十九首》</li>
+<li>《神农百草经》</li>
+<li>《九章算术》</li>
+</ol>
+<h2 id="三国魏蜀汉吴"><a class="header" href="#三国魏蜀汉吴">三国：魏、蜀汉、吴</a></h2>
+<ol>
+<li>《短歌行》，《龟虽寿》，《观沧海》，曹操</li>
+<li>《燕歌行二首》，曹丕</li>
+<li>《白马篇》、《美女篇》、《名都篇》、《赠白马王彪》、《洛神赋》，曹植</li>
+<li>《隆中对》、《出师表》，诸葛亮</li>
+</ol>
+<h2 id="晋西晋东晋五胡十六国"><a class="header" href="#晋西晋东晋五胡十六国">晋：西晋、东晋、五胡十六国</a></h2>
+<ol>
+<li>《三国志》，陈寿，西晋</li>
+<li>《三都赋》，左思，西晋，引发「洛阳纸贵」</li>
+<li>《归园田居》、《桃花源记》，陶渊明，东晋</li>
+<li>《搜神记》，干宝，东晋</li>
+<li>《兰亭集序》，王羲之，东晋</li>
+</ol>
+<h2 id="南北朝"><a class="header" href="#南北朝">南北朝</a></h2>
+<ol>
+<li>《文心雕龙》，刘勰，南朝</li>
+<li>《后汉书》，范晔，南朝</li>
+<li>《颜氏家训》，颜之推，南朝</li>
+<li>《世说新语》，刘义庆，南朝</li>
+<li>《木兰诗》</li>
+</ol>
+<h2 id="隋唐"><a class="header" href="#隋唐">隋、唐</a></h2>
+<ol>
+<li>《将进酒》、《静夜思》、《庐山谣寄卢侍御虚舟》，李白</li>
+<li>《春望》、《登高》、《茅屋为秋风所破歌》，杜甫</li>
+<li>《琵琶行》、《长恨歌》、《赋得古原草送别》，白居易</li>
+<li>《山居秋暝》、《鸟鸣涧》，《使至塞上》，王维</li>
+<li>《师说》、《杂说》，韩愈</li>
+<li>《捕蛇者说》、《黔之驴》、《小石潭记》，柳宗元</li>
+<li>《陋室铭》、《竹枝词》、《杨柳枝词》、《乌衣巷》，刘禹锡</li>
+<li>《春江花月夜》，张若虚</li>
+<li>《白雪歌送武判官归京》，岑参</li>
+<li>《锦瑟》、《夜雨寄北》、《无题》，李商隐</li>
+<li>《泊秦淮》、《赤壁》、《江南春》、《阿房宫赋》，杜牧</li>
+<li>《咏柳》、《回乡偶书》，贺知章</li>
+<li>《春晓》，孟浩然</li>
+<li>《登鹳雀楼》，王之涣</li>
+<li>《从军行》、《出塞》、《芙蓉楼送辛渐二首》，王昌龄</li>
+<li>《别董大二首》，高适</li>
+<li>《雁门太守行》、《马诗二十三首》，李贺</li>
+<li>《秦妇吟》，韦庄</li>
+</ol>
+<h2 id="五代十国"><a class="header" href="#五代十国">五代十国</a></h2>
+<ol>
+<li>《虞美人・春花秋月何时了》，李煜</li>
+<li>《花间集》，赵崇祚</li>
+</ol>
+<h2 id="宋"><a class="header" href="#宋">宋</a></h2>
+<ol>
+<li>《赤壁赋》、《念奴娇・赤壁怀古》、《水调歌头・明月几时有》、《江城子・乙卯正月二十日夜记梦》，苏轼</li>
+<li>《醉翁亭记》，《新五代史》，欧阳修</li>
+<li>《岳阳楼记》，范仲淹</li>
+<li>《爱莲说》，周敦颐</li>
+<li>《声声慢・寻寻觅觅》、《如梦令・常记溪亭日暮》，李清照</li>
+<li>《卜算子・咏梅》、《示儿》，陆游</li>
+<li>《青玉案・元夕》、《破阵子·为陈同甫赋壮词以寄之》、《永遇乐·京口北固亭怀古》，辛弃疾</li>
+<li>《雨霖铃・寒蝉凄切》，柳永</li>
+<li>《游褒禅山记》、《桂枝香・金陵怀古》，王安石</li>
+<li>《梦溪笔谈》，沈括</li>
+<li>《四书章句集注》，朱熹</li>
+<li>《资治通鉴》，司马光</li>
+</ol>
+<h2 id="元"><a class="header" href="#元">元</a></h2>
+<ol>
+<li>《窦娥冤》、《拜月亭》，关汉卿</li>
+<li>《西厢记》，王实甫</li>
+<li>《倩女离魂》，郑光祖</li>
+<li>《裴少俊墙头马上》，白朴</li>
+<li>《天净沙・秋思》，马致远</li>
+<li>《中山集》，元好问</li>
+<li>赵孟頫</li>
+</ol>
+<h2 id="明"><a class="header" href="#明">明</a></h2>
+<ol>
+<li>《三国演义》，罗贯中</li>
+<li>《水浒传》，施耐庵</li>
+<li>《西游记》，吴承恩</li>
+<li>《金瓶梅》，兰陵笑笑生</li>
+<li>《喻世明言》、《警世通言》、《醒世恒言》，冯梦龙</li>
+<li>《初刻拍案惊奇》、《二刻拍案惊奇》，凌濛初</li>
+<li>《牡丹亭》，汤显祖</li>
+<li>《封神演义》，许仲琳</li>
+<li>《本草纲目》，李时珍</li>
+<li>《天工开物》，宋应星</li>
+<li>《徐霞客游记》，徐霞客</li>
+<li>《传习录》，王阳明</li>
+<li>《张太岳集》，张居正</li>
+<li>宋濂</li>
+</ol>
+<h2 id="清"><a class="header" href="#清">清</a></h2>
+<ol>
+<li>《红楼梦》，曹雪芹、高鹗</li>
+<li>《儒林外史》，吴敬梓</li>
+<li>《聊斋志异》，蒲松龄</li>
+<li>《三侠五义》，石玉昆</li>
+<li>《浮生六记》，沈复</li>
+<li>《桃花扇》，孔尚任</li>
+<li>《长生殿》，洪升</li>
+<li>《阅微草堂笔记》，纪昀（纪晓岚）</li>
+<li>《官场现形记》，李宝嘉</li>
+<li>《二十年目睹之怪现状》，吴沃尧（吴趼人）</li>
+<li>《老残游记》，刘鹗</li>
+<li>《孽海花》，曾朴</li>
+<li>《镜花缘》，李汝珍</li>
+<li>《随园诗话》，袁枚</li>
+<li>《定庵文集》，龚自珍</li>
+<li>《大同书》，康有为</li>
+<li>《狱中题壁》，谭嗣同</li>
+<li>梁启超</li>
+</ol>
+<h2 id="中华民国"><a class="header" href="#中华民国">中华民国</a></h2>
+<ol>
+<li>鲁迅</li>
+<li>胡适</li>
+<li>沈从文</li>
+<li>老舍</li>
+<li>林语堂</li>
+<li>茅盾</li>
+<li>巴金</li>
+<li>郭沫若</li>
+<li>钱锺书</li>
+<li>张爱玲</li>
+<li>徐志摩</li>
+<li>曹禺</li>
+<li>郁达夫</li>
+</ol>
+<hr />
+<h2 id="参考"><a class="header" href="#参考">参考</a></h2>
+<ol>
+<li>识古典籍： <a href="https://www.shidianguji.com">https://www.shidianguji.com</a></li>
+<li>中国哲学书电子化计划： <a href="https://ctext.org/zhs">https://ctext.org/zhs</a></li>
+<li>古书网导航： <a href="http://d.gushu.net.cn">http://d.gushu.net.cn</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="音韵学"><a class="header" href="#音韵学">音韵学</a></h1>
+<h2 id="韵书"><a class="header" href="#韵书">韵书</a></h2>
+<p>韵书是中国古代按调和韵编排的字典，记录了每个字的意义之外，还用反切记录了它的读音。</p>
+<ol>
+<li>《声类》，李登， 魏，已失传；</li>
+<li>《韵集》，吕静，晋，已失传；</li>
+<li>《切韵》，陆法言，公元 601，隋，分 193 韵部；</li>
+<li>《唐韵》，孙愐，公元 732，唐，分 195 韵部，修订《切韵》，已失传；</li>
+<li>《广韵》，陈彭年、邱雍，公元 1007-1008，北宋，分 206 韵部，全称《大宋重修广韵》，修订《唐韵》；</li>
+<li>《集韵》，丁度，公元 1037，北宋，分 206 韵部，修订《广韵》；</li>
+</ol>
+<p>《切韵》到了 1947 年才被发现全本，而《集韵》传世的抄本错误很多，也受宋代语音变化影响，因此音韵学研究以《广韵》为主。</p>
+<p>Unihan 数据中 <code>Unihan_DictionaryIndices.txt</code> 的 <code>kSBGY</code> 属性记录了汉字在《宋本广韵》的页码位置，<code>Unihan_Readings.txt</code> 中的 <code>kFanqie</code> 属性记录了汉字的反切读音。</p>
+<h2 id="平水韵"><a class="header" href="#平水韵">平水韵</a></h2>
+<p>简化自《广韵》，用于诗歌和散文的押韵，分 106 韵部，编纂于金朝。</p>
+<ol>
+<li>《新刊韵略》，王文郁，公元 1223，金，分 106 韵部，已失传；</li>
+<li>《壬子新刊礼部韵略》，刘渊，原籍江北平水（今山西临汾），公元 1252，南宋，分 107 韵部，基本跟《新刊韵略》一样，已失传；</li>
+<li>《韵府群玉》，阴时夫，元，分 106 韵部，命名为「平水韵」；</li>
+<li>《中原音韵》，周德清，元，分 19 韵部，适合戏曲和散曲创作；</li>
+<li>《佩文诗韵》、《佩文韵府》、《诗韵合璧》，清；</li>
+<li>《词林正韵》，戈载，清，简化平水韵为 19 韵部，适合词牌创作；</li>
+<li>十三辙，用于北方说唱艺术如京剧，分 13 韵部；</li>
+<li>《中华新韵》，中华诗词学会，2004，分 14 韵部；</li>
+<li>《中华通韵》，中华诗词学会，2019，分 15 韵部；</li>
+</ol>
+<h2 id="参考-1"><a class="header" href="#参考-1">参考</a></h2>
+<ol>
+<li>音韵学教程（第三版），唐作藩 著</li>
+<li><a href="https://en.wikipedia.org/wiki/Rhyme_dictionary">https://en.wikipedia.org/wiki/Rhyme_dictionary</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Qieyun">https://en.wikipedia.org/wiki/Qieyun</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Guangyun">https://en.wikipedia.org/wiki/Guangyun</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Jiyun">https://en.wikipedia.org/wiki/Jiyun</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Pingshui_Yun">https://en.wikipedia.org/wiki/Pingshui_Yun</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-1"><a class="header" href="#目录-1">目录</a></h1>
+<ol>
+<li><a href="01%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%AD%A6%E5%88%86%E7%B1%BB.html">数学分类</a></li>
+</ol>
+<div style="display: none">
+<pre><code class="language-{toctree}">:hidden:
+
+数学分类.md
+</code></pre>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="数学分类"><a class="header" href="#数学分类">数学分类</a></h1>
+<h2 id="数学基础foundation"><a class="header" href="#数学基础foundation">数学基础：Foundation</a></h2>
+<p>研究数学基础和逻辑。</p>
+<ol>
+<li>Model theory</li>
+<li>Computability theory</li>
+<li>Set theory</li>
+<li>Proof theory</li>
+<li>Algebraic logic</li>
+<li>Type theory</li>
+</ol>
+<h2 id="代数algebra"><a class="header" href="#代数algebra">代数：Algebra</a></h2>
+<p>研究公式、方程、数学抽象的结构。</p>
+<ol>
+<li>Number theory</li>
+<li>Combinatorics</li>
+<li>Field theory</li>
+<li>Linear algebras</li>
+<li>Category theory</li>
+<li>K-theory</li>
+<li>Group theory</li>
+<li>Lie groups</li>
+</ol>
+<p>也有分类把 Number Theory 单分出来，研究整数。Number theory 早期被叫作 arithmetic，如今叫 numerical analysis。</p>
+<h2 id="几何geometry"><a class="header" href="#几何geometry">几何：Geometry</a></h2>
+<p>研究空间。</p>
+<ol>
+<li>Geometry</li>
+<li>Convex geometry</li>
+<li>Discrete geometry</li>
+<li>Differential geometry</li>
+<li>General topology</li>
+<li>Algebraic topology</li>
+<li>Manifolds</li>
+</ol>
+<h2 id="分析analysis"><a class="header" href="#分析analysis">分析：Analysis</a></h2>
+<p>研究数量和变化。</p>
+<ol>
+<li>Real functions(derivatives, integrals)</li>
+<li>Complex functions</li>
+<li>Special functions</li>
+<li>Ordinary differential equations</li>
+<li>Partial differential equations</li>
+<li>Series</li>
+<li>Harmonic analysis(Fourier analysis, Fourier transforms)</li>
+<li>Integral transforms</li>
+<li>Integral equations</li>
+<li>Functional analysis</li>
+</ol>
+<p>Infinitesimal Calculus(微积分)简称 Calculus, 指「分析」中的初等部分。</p>
+<h2 id="应用数学applied-mathematics"><a class="header" href="#应用数学applied-mathematics">应用数学：Applied mathematics</a></h2>
+<p>研究数学抽象在生活中的实际应用。</p>
+<ol>
+<li>Probability theory</li>
+<li>Stochastic processes</li>
+<li>Statistics,</li>
+<li>Numerical analysis</li>
+<li>Computer science</li>
+<li>Mechanics</li>
+<li>Fluid mechanics</li>
+<li>Optics</li>
+<li>Classical thermodynamics</li>
+<li>Quantum theory</li>
+<li>Statistical mechanics</li>
+<li>Relativity and gravitational theory</li>
+<li>Astronomy and astrophysics</li>
+<li>Geophysics</li>
+<li>Game theory</li>
+<li>Biology</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-2"><a class="header" href="#目录-2">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-3"><a class="header" href="#目录-3">目录</a></h1>
+<ol>
+<li><a href="03%E7%89%A9%E7%90%86/%E5%9C%B0%E7%90%83%E5%9C%A8%E5%AE%87%E5%AE%99%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE.html">地球在宇宙中的位置</a></li>
+</ol>
+<div style="display: none">
+<pre><code class="language-{toctree}">:hidden:
+
+地球在宇宙中的位置.md
+</code></pre>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="地球在宇宙中的位置"><a class="header" href="#地球在宇宙中的位置">地球在宇宙中的位置</a></h1>
+<h2 id="位置"><a class="header" href="#位置">位置</a></h2>
+<ul>
+<li>Observable universe：可观测宇宙，直径达 930 亿光年；</li>
+<li><strong>Pisces-Cetus Supercluster Complex</strong>：双鱼-鲸鱼超星系团复合体，直径达 10 亿光年；
+<ul>
+<li><strong>Laniakea Supercluster</strong>：拉尼亚凯亚超星系团，夏威夷语意思是“无尽的天堂”（open skies, immense heaven)，2014 年九月被定义，直径达 5.2 亿光年，质量是银河系的 10 万倍；
+<ol>
+<li><strong>Virgo Supercluster</strong>：室女超星系团，也称「本超星系团」(Local Supercluster)，直径 1.1 亿光年，包含银河系；
+<ul>
+<li><strong>Local Group</strong>: 本星系群，直径达 1000 万光年；
+<ul>
+<li><strong>Milky Way Galaxy</strong>：银河系，也称 the Galaxy，直径 10 万光年；
+<ul>
+<li><strong>Orion Arm</strong>：猎户臂，长度 1 万光年；
+<ul>
+<li><strong>Gould Belt</strong>：古尔德带，太阳所处的幼年恒星环，直径 3000 光年；
+<ul>
+<li><strong>Solar System</strong>: 太阳系，直径 4 光年；
+<ul>
+<li><strong>Earth</strong>：地球，直径 12700 公里；</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Hydra-Centaurus Supercluster：长蛇-半人马超星系团，包含了拉尼亚凯亚超星系团的重力中心「巨引源」（Great Attractor)；</li>
+<li>Pavo-Indus Supercluster：孔雀-印地安超星系团</li>
+<li>Southern Supercluster</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="参考-2"><a class="header" href="#参考-2">参考</a></h2>
+<ol>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E5%9C%B0%E7%90%83%E5%9C%A8%E5%AE%87%E5%AE%99%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE">https://zh.wikipedia.org/zh-cn/地球在宇宙中的位置</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-4"><a class="header" href="#目录-4">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-5"><a class="header" href="#目录-5">目录</a></h1>
+<ol>
+<li><a href="05%E7%94%9F%E7%89%A9/%E7%94%9F%E7%89%A9%E5%88%86%E7%B1%BB.html">生物分类</a></li>
+</ol>
+<div style="display: none">
+<pre><code class="language-{toctree}">:hidden:
+
+生物分类.md
+</code></pre>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="生物分类"><a class="header" href="#生物分类">生物分类</a></h1>
+<h2 id="基本分类层级"><a class="header" href="#基本分类层级">基本分类层级</a></h2>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">中文</th><th style="text-align: center">英文</th><th style="text-align: center">示例：人</th></tr></thead><tbody>
+<tr><td style="text-align: center">域</td><td style="text-align: center">domain</td><td style="text-align: center">真核生物(Eukaryota)</td></tr>
+<tr><td style="text-align: center">界</td><td style="text-align: center">kingdom</td><td style="text-align: center">动物界(Animalia)</td></tr>
+<tr><td style="text-align: center">门</td><td style="text-align: center">phylum<sup>(动物学)</sup>  division<sup>(植物学)</sup></td><td style="text-align: center">脊索动物(Chordata)</td></tr>
+<tr><td style="text-align: center">纲</td><td style="text-align: center">class</td><td style="text-align: center">哺乳纲(Mammalia)</td></tr>
+<tr><td style="text-align: center">目</td><td style="text-align: center">order</td><td style="text-align: center">灵长目(Primates)</td></tr>
+<tr><td style="text-align: center">科</td><td style="text-align: center">family</td><td style="text-align: center">人科(Hominidae)</td></tr>
+<tr><td style="text-align: center">属</td><td style="text-align: center">genus</td><td style="text-align: center">人属(Homo)</td></tr>
+<tr><td style="text-align: center">种</td><td style="text-align: center">species</td><td style="text-align: center">智人(Homo sapiens)</td></tr>
+</tbody></table>
+</div>
+<h2 id="域界"><a class="header" href="#域界">域、界</a></h2>
+<ul>
+<li>细胞生物
+<ul>
+<li>细菌域(Bacteria)
+<ul>
+<li>细菌界</li>
+</ul>
+</li>
+<li>古菌域(Archaea)
+<ul>
+<li>古细菌界</li>
+</ul>
+</li>
+<li>真核域(Eukaryota)
+<ul>
+<li>囊泡藻界(Chromalveolata)</li>
+<li>古虫界(Excavata)</li>
+<li>有孔虫界(Rhizaria)</li>
+<li>真菌界(Fungi)</li>
+<li>植物界(Plantae)</li>
+<li>动物界(Animalia, Metazoa)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>非细胞生物
+<ul>
+<li>病毒(Virus)</li>
+<li>亚病毒因子</li>
+</ul>
+</li>
+</ul>
+<h2 id="参考-3"><a class="header" href="#参考-3">参考</a></h2>
+<ol>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E5%88%86%E7%B1%BB%E9%98%B6%E5%85%83">https://zh.wikipedia.org/zh-cn/分类阶元</a></li>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E7%94%9F%E7%89%A9%E5%88%86%E7%B1%BB%E5%AD%A6">https://zh.wikipedia.org/zh-cn/生物分类学</a></li>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E7%94%9F%E7%89%A9%E5%88%86%E9%A1%9E%E6%B3%95">https://zh.wikipedia.org/zh-cn/生物分類法</a></li>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E7%94%9F%E7%89%A9%E5%88%86%E9%A1%9E%E7%B8%BD%E8%A1%A8">https://zh.wikipedia.org/zh-cn/生物分類總表</a></li>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E5%9F%9F_(%E7%94%9F%E7%89%A9)">https://zh.wikipedia.org/zh-cn/域_(生物)</a></li>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E7%95%8C_(%E7%94%9F%E7%89%A9)">https://zh.wikipedia.org/zh-cn/界_(生物)</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-6"><a class="header" href="#目录-6">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-7"><a class="header" href="#目录-7">目录</a></h1>
+<ol>
+<li><a href="07%E5%8E%86%E5%8F%B2/%E4%B8%AD%E5%9B%BD%E6%9C%9D%E4%BB%A3.html">中国朝代</a></li>
+</ol>
+<div style="display: none">
+<pre><code class="language-{toctree}">:hidden:
+
+中国朝代.md
+</code></pre>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="中国朝代"><a class="header" href="#中国朝代">中国朝代</a></h1>
+<h2 id="历史年表"><a class="header" href="#历史年表">历史年表</a></h2>
+<p><img src="07%E5%8E%86%E5%8F%B2/images/China_Dynasties.avif" alt="中国朝代" /></p>
+<h2 id="朝代和疆域"><a class="header" href="#朝代和疆域">朝代和疆域</a></h2>
+<p><a href="07%E5%8E%86%E5%8F%B2/images/Chronicle_of_China_Dynasties.xlsx">源文件</a></p>
+<p><img src="07%E5%8E%86%E5%8F%B2/images/China_Dynasties_and_Territories.avif" alt="中国朝代和疆域" /></p>
+<h2 id="疆域演变"><a class="header" href="#疆域演变">疆域演变</a></h2>
+<p><img src="07%E5%8E%86%E5%8F%B2/images/Territories_of_Dynasties_in_China.gif" alt="Territories_of_Dynasties_in_China" /></p>
+<h2 id="参考-4"><a class="header" href="#参考-4">参考</a></h2>
+<ol>
+<li><a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E6%9C%9D%E4%BB%A3">https://zh.wikipedia.org/wiki/中国朝代</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%8E%86%E5%8F%B2%E5%B9%B4%E8%A1%A8">https://zh.wikipedia.org/wiki/中国历史年表</a></li>
+<li><a href="https://baike.baidu.com/item/%E6%9C%9D%E4%BB%A3/7716136">https://baike.baidu.com/item/朝代/7716136</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-8"><a class="header" href="#目录-8">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-9"><a class="header" href="#目录-9">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-10"><a class="header" href="#目录-10">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-11"><a class="header" href="#目录-11">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-12"><a class="header" href="#目录-12">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-13"><a class="header" href="#目录-13">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-14"><a class="header" href="#目录-14">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-15"><a class="header" href="#目录-15">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-16"><a class="header" href="#目录-16">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-17"><a class="header" href="#目录-17">目录</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

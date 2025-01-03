@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scala on 随记</title><link>/tags/scala/</link><description>Recent content in Scala on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 01 Sep 2024 20:00:00 +0800</lastBuildDate><atom:link href="/tags/scala/index.xml" rel="self" type="application/rss+xml"/><item><title>Scala Cookie Book</title><link>/posts/scala-cookie-book/</link><pubDate>Sun, 01 Sep 2024 20:00:00 +0800</pubDate><guid>/posts/scala-cookie-book/</guid><description>&lt;pre tabindex="0">&lt;code># https://docs.racket-lang.org/scribble/getting-started.html
+
+#lang scribble/base
+
+@title{On the Cookie-Eating Habits of Mice}
+
+If you give a mouse a cookie, he&amp;#39;s going to ask for a glass of milk.
+&lt;/code>&lt;/pre>&lt;h2 id="scala-书籍">Scala 书籍&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Tour of Scala: &lt;a href="https://docs.scala-lang.org/tour/tour-of-scala.html">https://docs.scala-lang.org/tour/tour-of-scala.html&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Scala 3 Book: &lt;a href="https://docs.scala-lang.org/scala3/book/introduction.html">https://docs.scala-lang.org/scala3/book/introduction.html&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="安装-scala">安装 Scala&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="https://scala-lang.org/download/">https://scala-lang.org/download/&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>配置镜像源：&lt;/p>
+&lt;p>. Coursier: &lt;a href="https://github.com/lqhuang/dotfiles/tree/master/coursier">https://github.com/lqhuang/dotfiles/tree/master/coursier&lt;/a>&lt;/p>
+&lt;p>. Maven: &lt;a href="https://github.com/lqhuang/dotfiles/tree/master/mvn">https://github.com/lqhuang/dotfiles/tree/master/mvn&lt;/a>&lt;/p>
+&lt;p>. SBT: &lt;a href="https://github.com/lqhuang/dotfiles/tree/master/sbt">https://github.com/lqhuang/dotfiles/tree/master/sbt&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="scala-生态">Scala 生态&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Typesafe&lt;/strong>: &lt;a href="https://akka.io">https://akka.io&lt;/a> / &lt;a href="https://pekko.apache.org">https://pekko.apache.org&lt;/a> , akka / pekko, play&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Typelevel&lt;/strong>: &lt;a href="https://typelevel.org/">https://typelevel.org/&lt;/a> , cats, cats-effect, circe, http4s, blaze, doobie, &lt;a href="https://atnos-org.github.io/eff/">eff&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>ZIO&lt;/strong>: &lt;a href="https://zio.dev">https://zio.dev&lt;/a> , zio&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Lihaoyi: &lt;a href="https://github.com/com-lihaoyi">https://github.com/com-lihaoyi&lt;/a> , os-lib, upickle, cask, mainargs&lt;/p></description></item><item><title>Scala 学习笔记</title><link>/posts/learning-scala/</link><pubDate>Fri, 18 Nov 2022 23:39:38 +0800</pubDate><guid>/posts/learning-scala/</guid><description>&lt;p>&lt;a href="https://docs.scala-lang.org">https://docs.scala-lang.org&lt;/a> 网站上文档的学习笔记。&lt;/p>
+&lt;h2 id="getting-started">Getting Started&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>使用 &lt;a href="https://get-coursier.io/docs/cli-overview">Coursier&lt;/a>安装 amm, sbt, sbtn, scala, scala-cli, scalac, scalafmt。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>创建项目：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sbt new scala/scala3.g8 &lt;span style="color:#60a0b0;font-style:italic"># Scala 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sbt new scala/hello-world.g8 &lt;span style="color:#60a0b0;font-style:italic"># Scala 2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>Scala 3 例子：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-scala" data-lang="scala">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#555;font-weight:bold">@main&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">HelloWorld&lt;/span>&lt;span style="color:#666">(&lt;/span>args&lt;span style="color:#007020;font-weight:bold">:&lt;/span> &lt;span style="color:#902000">String*&lt;/span>&lt;span style="color:#666">)&lt;/span>&lt;span style="color:#007020;font-weight:bold">:&lt;/span> &lt;span style="color:#902000">Unit&lt;/span> &lt;span style="color:#666">=&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> println&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#4070a0">&amp;#34;Hello world!&amp;#34;&lt;/span>&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Scala 2 例子：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-scala" data-lang="scala">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">object&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Main&lt;/span> &lt;span style="color:#666">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> main&lt;span style="color:#666">(&lt;/span>args&lt;span style="color:#007020;font-weight:bold">:&lt;/span> &lt;span style="color:#902000">Array&lt;/span>&lt;span style="color:#666">[&lt;/span>&lt;span style="color:#902000">String&lt;/span>&lt;span style="color:#666">])&lt;/span>&lt;span style="color:#007020;font-weight:bold">:&lt;/span> &lt;span style="color:#902000">Unit&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> println&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#4070a0">&amp;#34;Hello world!&amp;#34;&lt;/span>&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-scala" data-lang="scala">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// 在 Scala 3 里不再推荐这种写法
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// https://www.scala-lang.org/api/current/scala/App.html
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">object&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Main&lt;/span> &lt;span style="color:#007020;font-weight:bold">extends&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">App&lt;/span> &lt;span style="color:#666">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> println&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#4070a0">&amp;#34;Hello, World!&amp;#34;&lt;/span>&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>
+&lt;p>输入 &lt;code>sbt&lt;/code> 命令进入 SBT console，输入 &lt;code>~run&lt;/code> 以在文件发生变动时重新运行 main。按回车键中断 &lt;code>run&lt;/code> 命令，输入 &lt;code>exit&lt;/code> 或者 &lt;kbd>Ctrl-D&lt;/kbd> 退出 sbt。&lt;/p></description></item></channel></rss>
