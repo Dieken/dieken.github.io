@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Compiler on 随记</title><link>/tags/compiler/</link><description>Recent content in Compiler on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 31 Dec 2024 22:00:00 +0800</lastBuildDate><atom:link href="/tags/compiler/index.xml" rel="self" type="application/rss+xml"/><item><title>小型 C 编译器</title><link>/posts/small-c-compilers/</link><pubDate>Tue, 31 Dec 2024 22:00:00 +0800</pubDate><guid>/posts/small-c-compilers/</guid><description>&lt;p>统计截止 2024-12-31。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>tcc&lt;/strong>：极品黑客 Fabrice Bellard 打造的极品编译器；&lt;/li>
+&lt;li>&lt;strong>pcc&lt;/strong>：Bell Labs 出品，Dennis Ritchie 背书，名门闺秀，差点成为 BSD 系标配，被 Clang 顶翻了；&lt;/li>
+&lt;li>&lt;strong>cparser&lt;/strong>：德国 Karlsruhe 大学出品，基于图表示的优化框架；&lt;/li>
+&lt;li>nwcc：个人作品，已停止开发；&lt;/li>
+&lt;li>ack：Amsterdam Compiler Kit，Andrew Tanenbaum 出品，Minix 1 &amp;amp; 2 御用，不支持 64bit，在 Minix 3 中被 Clang 代替；&lt;/li>
+&lt;li>watcom：Open Watcom C/C++，当年与 Borland、Microsoft 竞争的编译器和 IDE，64bit 支持开发中；&lt;/li>
+&lt;li>vbcc：支持很多 32bit CPU 架构，有一定优化能力；&lt;/li>
+&lt;li>scc &amp;amp; cproc：基于 QBE 编译器后端，QBE 定位于用 10% 代码实现工业级 C 编译器 70% 的性能；&lt;/li>
+&lt;li>&lt;strong>kefir&lt;/strong> &amp;amp; lacc：个人练手作品；&lt;/li>
+&lt;li>lcc &amp;amp; &lt;strong>chibicc&lt;/strong>: C 编译器编写教学；&lt;/li>
+&lt;/ul>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">编译器&lt;/th>
+ &lt;th style="text-align: center">tcc&lt;/th>
+ &lt;th style="text-align: center">pcc&lt;/th>
+ &lt;th style="text-align: center">cparser&lt;/th>
+ &lt;th style="text-align: center">nwcc&lt;/th>
+ &lt;th style="text-align: center">ack&lt;/th>
+ &lt;th style="text-align: center">watcom&lt;/th>
+ &lt;th style="text-align: center">vbcc&lt;/th>
+ &lt;th style="text-align: center">scc&lt;/th>
+ &lt;th style="text-align: center">cproc&lt;/th>
+ &lt;th style="text-align: center">kefir&lt;/th>
+ &lt;th style="text-align: center">lacc&lt;/th>
+ &lt;th style="text-align: center">lcc&lt;/th>
+ &lt;th style="text-align: center">chibicc&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">源码库&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://repo.or.cz/w/tinycc.git">TinyCC&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://packages.debian.org/sid/libpcc-dev">pcc-libs&lt;/a>, &lt;a href="https://packages.debian.org/sid/pcc">pcc&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://pp.ipd.kit.edu/firm/Download.html">cparser&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://nwcc.sourceforge.net">nwcc&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://tack.sourceforge.net">ack&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/open-watcom/open-watcom-v2">open-watcom-v2&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="http://www.compilers.de/vbcc.html">vbcc&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="http://www.simple-cc.org">simple-cc&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://sr.ht/%7Emcf/cproc/">cproc&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://git.sr.ht/~jprotopopov/kefir">kefir&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/larmel/lacc">lacc&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/drh/lcc">lcc&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/rui314/chibicc">chibicc&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">许可证&lt;/td>
+ &lt;td style="text-align: center">LGPL / MIT-like&lt;/td>
+ &lt;td style="text-align: center">BSD&lt;/td>
+ &lt;td style="text-align: center">GPLv2 + LGPLv2.1&lt;/td>
+ &lt;td style="text-align: center">BSD&lt;/td>
+ &lt;td style="text-align: center">BSD-like&lt;/td>
+ &lt;td style="text-align: center">GPL-like&lt;/td>
+ &lt;td style="text-align: center">BSD&lt;/td>
+ &lt;td style="text-align: center">Caldera / ISC&lt;/td>
+ &lt;td style="text-align: center">MIT-like&lt;/td>
+ &lt;td style="text-align: center">GPLv3&lt;/td>
+ &lt;td style="text-align: center">MIT&lt;/td>
+ &lt;td style="text-align: center">LCC&lt;/td>
+ &lt;td style="text-align: center">MIT&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">最新版本&lt;/td>
+ &lt;td style="text-align: center">0.9.27&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">1.1.0&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">1.22.0&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">0.8.3&lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">6.0-pre5&lt;sup id="fnref:5">&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref">5&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">1.9&lt;sup id="fnref:6">&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref">6&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">N/A&lt;/td>
+ &lt;td style="text-align: center">N/A&lt;/td>
+ &lt;td style="text-align: center">N/A&lt;/td>
+ &lt;td style="text-align: center">0.4.0&lt;/td>
+ &lt;td style="text-align: center">N/A&lt;/td>
+ &lt;td style="text-align: center">4.2&lt;sup id="fnref:7">&lt;a href="#fn:7" class="footnote-ref" role="doc-noteref">7&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">N/A&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">发布时间&lt;/td>
+ &lt;td style="text-align: center">2017-12-13&lt;/td>
+ &lt;td style="text-align: center">2014-12-10&lt;/td>
+ &lt;td style="text-align: center">2016-01-01&lt;/td>
+ &lt;td style="text-align: center">2014-08-17&lt;/td>
+ &lt;td style="text-align: center">2016-06-02&lt;/td>
+ &lt;td style="text-align: center">2010-06-02&lt;/td>
+ &lt;td style="text-align: center">2022-04-29&lt;/td>
+ &lt;td style="text-align: center">2024-12-31&lt;/td>
+ &lt;td style="text-align: center">2024-04-28&lt;/td>
+ &lt;td style="text-align: center">2024-09-11&lt;/td>
+ &lt;td style="text-align: center">2022-05-22&lt;/td>
+ &lt;td style="text-align: center">2007-02-19&lt;/td>
+ &lt;td style="text-align: center">2020-12-07&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">C 标准&lt;/td>
+ &lt;td style="text-align: center">C99&lt;/td>
+ &lt;td style="text-align: center">C99&lt;/td>
+ &lt;td style="text-align: center">C11&lt;/td>
+ &lt;td style="text-align: center">C99&lt;/td>
+ &lt;td style="text-align: center">C89&lt;/td>
+ &lt;td style="text-align: center">C99, C++98&lt;/td>
+ &lt;td style="text-align: center">C99&lt;/td>
+ &lt;td style="text-align: center">C99&lt;/td>
+ &lt;td style="text-align: center">C11&lt;/td>
+ &lt;td style="text-align: center">C17&lt;/td>
+ &lt;td style="text-align: center">C89&lt;/td>
+ &lt;td style="text-align: center">C89&lt;/td>
+ &lt;td style="text-align: center">C11&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">预处理器(cpp)&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅ &lt;sup id="fnref:8">&lt;a href="#fn:8" class="footnote-ref" role="doc-noteref">8&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">汇编器(as)&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">链接器(ld)&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">位置无关代码(PIC)&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">线程局部存储(TLS)&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">易失变量(volatile)&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">变长数组(VLA)&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">复数&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">内联汇编&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">GCC 兼容&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">CPU 架构&lt;/td>
+ &lt;td style="text-align: center">i386/x86_64, arm/aarch64, riscv64&lt;/td>
+ &lt;td style="text-align: center">i386/amd64, arm/aarch64, mips, &amp;hellip;&lt;/td>
+ &lt;td style="text-align: center">i386/amd64, arm, riscv32, mips, &amp;hellip;&lt;/td>
+ &lt;td style="text-align: center">x86/amd64, mips, &amp;hellip;&lt;/td>
+ &lt;td style="text-align: center">i386, arm, mips, &amp;hellip;&lt;/td>
+ &lt;td style="text-align: center">i386/x64, arm, ppc, &amp;hellip;&lt;/td>
+ &lt;td style="text-align: center">i386, arm, ppc, &amp;hellip;&lt;/td>
+ &lt;td style="text-align: center">i386/amd64, ppc/ppc64&lt;/td>
+ &lt;td style="text-align: center">amd64, arm64, riscv64&lt;/td>
+ &lt;td style="text-align: center">amd64&lt;/td>
+ &lt;td style="text-align: center">amd64&lt;/td>
+ &lt;td style="text-align: center">x86, mips, sparc&lt;/td>
+ &lt;td style="text-align: center">amd64&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">操作系统&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD, macOS, Win32&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD, macOS, Win32&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD, macOS, Win32&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD, macOS&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD, macOS, Win32&lt;/td>
+ &lt;td style="text-align: center">Linux, macOS, DOS, Win32&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD, Win32&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD&lt;/td>
+ &lt;td style="text-align: center">Linux, Win32&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">优化能力&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">well&lt;/td>
+ &lt;td style="text-align: center">well&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">调试符号&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">性能剖析&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">代码行数&lt;/td>
+ &lt;td style="text-align: center">10w&lt;/td>
+ &lt;td style="text-align: center">12w&lt;/td>
+ &lt;td style="text-align: center">16w&lt;sup id="fnref:9">&lt;a href="#fn:9" class="footnote-ref" role="doc-noteref">9&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">9w&lt;/td>
+ &lt;td style="text-align: center">34w&lt;/td>
+ &lt;td style="text-align: center">170w&lt;sup id="fnref:10">&lt;a href="#fn:10" class="footnote-ref" role="doc-noteref">10&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">10w&lt;/td>
+ &lt;td style="text-align: center">3w&lt;sup id="fnref:11">&lt;a href="#fn:11" class="footnote-ref" role="doc-noteref">11&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">2w&lt;sup id="fnref:12">&lt;a href="#fn:12" class="footnote-ref" role="doc-noteref">12&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">11w&lt;/td>
+ &lt;td style="text-align: center">1.9w&lt;/td>
+ &lt;td style="text-align: center">2w&lt;/td>
+ &lt;td style="text-align: center">7k&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>其它值得一提的 C 编译器：&lt;/p></description></item></channel></rss>

@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reading on 随记</title><link>/categories/reading/</link><description>Recent content in Reading on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 02 Jan 2025 22:00:00 +0800</lastBuildDate><atom:link href="/categories/reading/index.xml" rel="self" type="application/rss+xml"/><item><title>关于软件设计和系统架构的书籍</title><link>/posts/books-about-software-design-and-architecture/</link><pubDate>Thu, 02 Jan 2025 22:00:00 +0800</pubDate><guid>/posts/books-about-software-design-and-architecture/</guid><description>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">&lt;/th>
+ &lt;th>书名&lt;/th>
+ &lt;th>作者&lt;/th>
+ &lt;th>年份&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">1&lt;/td>
+ &lt;td>The Mythical Man-Month&lt;/td>
+ &lt;td>Frederick P. Brooks&lt;/td>
+ &lt;td>1974&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2&lt;/td>
+ &lt;td>Algorithms + Data Structures = Programs&lt;/td>
+ &lt;td>Niklaus Wirth&lt;/td>
+ &lt;td>1976&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">3&lt;/td>
+ &lt;td>Programmers at Work&lt;/td>
+ &lt;td>Susan M. Lammers&lt;/td>
+ &lt;td>1986&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">4&lt;/td>
+ &lt;td>The Tao of Programming&lt;/td>
+ &lt;td>Geoffrey James&lt;/td>
+ &lt;td>1986&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">5&lt;/td>
+ &lt;td>Peopleware&lt;/td>
+ &lt;td>Tom DeMacro, Tim Lister&lt;/td>
+ &lt;td>1987&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">6&lt;/td>
+ &lt;td>The Zen of Programming&lt;/td>
+ &lt;td>Geoffrey James&lt;/td>
+ &lt;td>1988&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">7&lt;/td>
+ &lt;td>Code Complete&lt;/td>
+ &lt;td>Steve McConnell&lt;/td>
+ &lt;td>1993&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">8&lt;/td>
+ &lt;td>Design Patterns&lt;/td>
+ &lt;td>Erich Gamma, Richard Helm, et al.&lt;/td>
+ &lt;td>1994&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">9&lt;/td>
+ &lt;td>The Practice of Programming&lt;/td>
+ &lt;td>Brian W. Kernighan, Rob Pike&lt;/td>
+ &lt;td>1999&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">10&lt;/td>
+ &lt;td>The Pragmatic Programmer&lt;/td>
+ &lt;td>Andrew Hunt, David Thomas&lt;/td>
+ &lt;td>1999&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">11&lt;/td>
+ &lt;td>Agile Software Development&lt;/td>
+ &lt;td>Robert C. Martin&lt;/td>
+ &lt;td>2002&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">12&lt;/td>
+ &lt;td>Patterns of Enterprise Application Architecture&lt;/td>
+ &lt;td>Martin Fowler&lt;/td>
+ &lt;td>2002&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">13&lt;/td>
+ &lt;td>The Art of UNIX Programming&lt;/td>
+ &lt;td>Eric Steven Raymond&lt;/td>
+ &lt;td>2003&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">14&lt;/td>
+ &lt;td>&lt;a href="https://www.enterpriseintegrationpatterns.com/patterns/messaging/toc.html">Enterprise Integration Patterns&lt;/a>&lt;/td>
+ &lt;td>Gregor Hohpe, Bobby Woolf&lt;/td>
+ &lt;td>2003&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">15&lt;/td>
+ &lt;td>Code Readings&lt;/td>
+ &lt;td>Diomidis Spinellis&lt;/td>
+ &lt;td>2003&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">16&lt;/td>
+ &lt;td>Domain Driven Design&lt;/td>
+ &lt;td>Eric Evans&lt;/td>
+ &lt;td>2003&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">17&lt;/td>
+ &lt;td>Working Effectively with Legacy Code&lt;/td>
+ &lt;td>Michael C. Feathers&lt;/td>
+ &lt;td>2004&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">18&lt;/td>
+ &lt;td>Joel on Software&lt;/td>
+ &lt;td>Joel Spolsky&lt;/td>
+ &lt;td>2004&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">19&lt;/td>
+ &lt;td>Code Craft&lt;/td>
+ &lt;td>Pete Goodliffe&lt;/td>
+ &lt;td>2006&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">20&lt;/td>
+ &lt;td>Beautiful Code&lt;/td>
+ &lt;td>Andy Oram, Greg Wilson&lt;/td>
+ &lt;td>2007&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">21&lt;/td>
+ &lt;td>More Joel on Software&lt;/td>
+ &lt;td>Joel Spolsky&lt;/td>
+ &lt;td>2008&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">22&lt;/td>
+ &lt;td>Clean code&lt;/td>
+ &lt;td>Robert C. Martin&lt;/td>
+ &lt;td>2008&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">23&lt;/td>
+ &lt;td>Coders at Work&lt;/td>
+ &lt;td>Peter Siebel&lt;/td>
+ &lt;td>2009&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">24&lt;/td>
+ &lt;td>Beautiful Architecture&lt;/td>
+ &lt;td>Diomidis Spinellis, Georgios Gousios&lt;/td>
+ &lt;td>2009&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">25&lt;/td>
+ &lt;td>Hackers &amp;amp; Painters&lt;/td>
+ &lt;td>Paul Graham&lt;/td>
+ &lt;td>2010&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">26&lt;/td>
+ &lt;td>The Clean Coder&lt;/td>
+ &lt;td>Robert Martin&lt;/td>
+ &lt;td>2011&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">27&lt;/td>
+ &lt;td>Designing Data-Intensive Applications&lt;/td>
+ &lt;td>Martin Kleppmann&lt;/td>
+ &lt;td>2017&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">28&lt;/td>
+ &lt;td>Clean Architecture&lt;/td>
+ &lt;td>Robert C. Martin&lt;/td>
+ &lt;td>2017&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">29&lt;/td>
+ &lt;td>Refactoring&lt;/td>
+ &lt;td>Martin Fowler, Kent Beck&lt;/td>
+ &lt;td>2018&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">30&lt;/td>
+ &lt;td>&lt;a href="https://yingang.github.io/aposd2e-zh/">A Philosophy of Software Design&lt;/a>&lt;/td>
+ &lt;td>John Ousterhout&lt;/td>
+ &lt;td>2018&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">31&lt;/td>
+ &lt;td>Large Scale C++&lt;/td>
+ &lt;td>John Debbie Lafferty, John Lakos&lt;/td>
+ &lt;td>2019&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">32&lt;/td>
+ &lt;td>Fundamentals of Software Architecture&lt;/td>
+ &lt;td>Mark Richards, Neal Ford&lt;/td>
+ &lt;td>2020&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">33&lt;/td>
+ &lt;td>Software Architecture: The Hard Parts&lt;/td>
+ &lt;td>Neal Ford, Mark Richards, Pramod Sadalage, Zhamak Dehghani&lt;/td>
+ &lt;td>2021&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">34&lt;/td>
+ &lt;td>&lt;a href="https://aosabook.org/en/index.html">The Architecture of Open Source Applications&lt;/a>&lt;/td>
+ &lt;td>Amy Brown, Greg Wilson&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">35&lt;/td>
+ &lt;td>&lt;a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/">Cloud Design Patterns&lt;/a>&lt;/td>
+ &lt;td>Microsoft&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>参考： &lt;a href="https://www.shortform.com/best-books/genre/best-software-architecture-books-of-all-time">https://www.shortform.com/best-books/genre/best-software-architecture-books-of-all-time&lt;/a>&lt;/p></description></item><item><title>J 语言学习笔记</title><link>/posts/learning-j-language/</link><pubDate>Tue, 25 Apr 2023 22:00:00 +0800</pubDate><guid>/posts/learning-j-language/</guid><description>&lt;h2 id="apl-家族">APL 家族&lt;/h2>
+&lt;p>&lt;a href="https://aplwiki.com/wiki/Overview#Dialects">APL dialects&lt;/a>:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Dyalog APL, GNU APL, KAP&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>J, K, Q, BQN&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="j-primer">J Primer&lt;/h2>
+&lt;p>&lt;a href="https://www.jsoftware.com/help/primer/contents.htm">Primer Contents&lt;/a>&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>七种词性(parts of speech): noun, verb, modifier(adverb, conjunction), copula, punctuation, control word&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ambivalence: monadic, dyadic&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.jsoftware.com/help/primer/checkpoint_e.htm">rank&lt;/a>: atom, list, table, array, axis, shape, rank, frame, cell, item, k-cell, agreement&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://aplwiki.com/wiki/Train">function train&lt;/a>:&lt;/p>
+&lt;ul>
+&lt;li>2-train, hook(Dyalog 里定义为 atop，J 使用 @ 表示 atop)&lt;/li>
+&lt;li>3-train, fork&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://aplwiki.com/wiki/Function_styles">Function styles&lt;/a>&lt;/p></description></item><item><title>走出焦油坑</title><link>/posts/out-of-tar-pit/</link><pubDate>Wed, 25 Jan 2023 21:00:00 +0800</pubDate><guid>/posts/out-of-tar-pit/</guid><description>&lt;p>Nubank 收购 Clojure 语言背后的公司 Cognitect 时发表的&lt;a href="https://building.nubank.com.br/welcoming-cognitect-nubank/">一篇文章&lt;/a>引用了《&lt;a href="https://github.com/papers-we-love/papers-we-love/blob/master/design/out-of-the-tar-pit.pdf">走出焦油坑&lt;/a>》这篇论文，看完还是有点收获的，记录点笔记。&lt;/p>
+&lt;p>程序的复杂度在于 state 和 control，control指命令式的分支、循环，一步步执行代码。OOP 在这两方面都很差，封装和修改导致状态难以跟踪，Functional Programming 因强调 immutability 减少了 state 方面的复杂度，Logical Programming 因强调做什么(logic)而非怎么做(control)减少了 control 方面的复杂度，由此受启发，应对复杂度有两条路：&lt;/p></description></item><item><title>Scala 学习笔记</title><link>/posts/learning-scala/</link><pubDate>Fri, 18 Nov 2022 23:39:38 +0800</pubDate><guid>/posts/learning-scala/</guid><description>&lt;p>&lt;a href="https://docs.scala-lang.org">https://docs.scala-lang.org&lt;/a> 网站上文档的学习笔记。&lt;/p>
+&lt;h2 id="getting-started">Getting Started&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>使用 &lt;a href="https://get-coursier.io/docs/cli-overview">Coursier&lt;/a>安装 amm, sbt, sbtn, scala, scala-cli, scalac, scalafmt。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>创建项目：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sbt new scala/scala3.g8 &lt;span style="color:#60a0b0;font-style:italic"># Scala 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sbt new scala/hello-world.g8 &lt;span style="color:#60a0b0;font-style:italic"># Scala 2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>Scala 3 例子：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-scala" data-lang="scala">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#555;font-weight:bold">@main&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">HelloWorld&lt;/span>&lt;span style="color:#666">(&lt;/span>args&lt;span style="color:#007020;font-weight:bold">:&lt;/span> &lt;span style="color:#902000">String*&lt;/span>&lt;span style="color:#666">)&lt;/span>&lt;span style="color:#007020;font-weight:bold">:&lt;/span> &lt;span style="color:#902000">Unit&lt;/span> &lt;span style="color:#666">=&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> println&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#4070a0">&amp;#34;Hello world!&amp;#34;&lt;/span>&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Scala 2 例子：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-scala" data-lang="scala">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">object&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Main&lt;/span> &lt;span style="color:#666">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> main&lt;span style="color:#666">(&lt;/span>args&lt;span style="color:#007020;font-weight:bold">:&lt;/span> &lt;span style="color:#902000">Array&lt;/span>&lt;span style="color:#666">[&lt;/span>&lt;span style="color:#902000">String&lt;/span>&lt;span style="color:#666">])&lt;/span>&lt;span style="color:#007020;font-weight:bold">:&lt;/span> &lt;span style="color:#902000">Unit&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> println&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#4070a0">&amp;#34;Hello world!&amp;#34;&lt;/span>&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-scala" data-lang="scala">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// 在 Scala 3 里不再推荐这种写法
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// https://www.scala-lang.org/api/current/scala/App.html
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">object&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Main&lt;/span> &lt;span style="color:#007020;font-weight:bold">extends&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">App&lt;/span> &lt;span style="color:#666">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> println&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#4070a0">&amp;#34;Hello, World!&amp;#34;&lt;/span>&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>
+&lt;p>输入 &lt;code>sbt&lt;/code> 命令进入 SBT console，输入 &lt;code>~run&lt;/code> 以在文件发生变动时重新运行 main。按回车键中断 &lt;code>run&lt;/code> 命令，输入 &lt;code>exit&lt;/code> 或者 &lt;kbd>Ctrl-D&lt;/kbd> 退出 sbt。&lt;/p></description></item><item><title>《BeyondCorp: A New Approach to Enterprise Security》总结</title><link>/posts/beyond-corp-and-zero-trust/</link><pubDate>Mon, 20 Sep 2021 20:45:21 +0800</pubDate><guid>/posts/beyond-corp-and-zero-trust/</guid><description>&lt;p>零信任网络架构的研究由来已久，Google 的这篇 BeyondCorp 论文让这个概念广为认知，毕竟 Google 名气太大。这篇工程实践论文可读性很好，对企业办公网络的安全设计实操非常有帮助，总结一下关键点：&lt;/p></description></item><item><title>给孩子的书法</title><link>/posts/calligraphy-for-children/</link><pubDate>Sat, 13 Jun 2020 10:00:00 +0800</pubDate><guid>/posts/calligraphy-for-children/</guid><description>&lt;p>《给孩子的书法》，刘涛，中信出版集团，2018-05&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>书法演变小史&lt;/p>
+&lt;ol>
+&lt;li>篆书 (甲骨文，金文，石鼓文，简书，帛书，只是书写材质不同)&lt;/li>
+&lt;li>隶书 (篆书的俗体)&lt;/li>
+&lt;li>草书，行书，楷书(都是隶书的俗体)，晋朝成熟&lt;/li>
+&lt;li>东汉 张芝 草圣&lt;/li>
+&lt;li>魏国 钟繇 隶，行，楷，只有楷书流传下来真迹&lt;/li>
+&lt;li>东晋 王羲之 书圣&lt;/li>
+&lt;li>欧阳询 九成宫醴泉铭&lt;/li>
+&lt;li>虞世南&lt;/li>
+&lt;li>褚遂良&lt;/li>
+&lt;li>颜真卿 多宝塔碑，麻姑仙坛记，颜家庙碑&lt;/li>
+&lt;li>柳公权 玄秘塔碑&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>篆书&lt;/p></description></item><item><title>乌合之众：大众心理研究</title><link>/posts/the-crowd-a-study-of-the-popular-mind/</link><pubDate>Sun, 17 May 2020 22:17:36 +0800</pubDate><guid>/posts/the-crowd-a-study-of-the-popular-mind/</guid><description>&lt;p>《乌合之众：大众心理研究》，古斯塔夫・勒庞 著，陈剑 译，译林出版社，2016-01&lt;/p></description></item><item><title>Help Your Kids With Maths</title><link>/posts/help-your-kids-with-maths/</link><pubDate>Sun, 03 May 2020 18:55:51 +0800</pubDate><guid>/posts/help-your-kids-with-maths/</guid><description>&lt;p>《Help Your Kids With Maths》，by Carol Voderman&lt;/p>
+&lt;h2 id="1-numbers">1. Numbers&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>各种数字符号：现代印度-阿拉伯数字，玛雅数字，中文数字，罗马数字，埃及数字，巴比伦数字&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>addition, subtraction, multiplication, division: 加减乘除&lt;/p></description></item><item><title>《The Rust Programming Language》笔记</title><link>/posts/the-rust-programming-language/</link><pubDate>Thu, 23 Jan 2020 23:43:30 +0800</pubDate><guid>/posts/the-rust-programming-language/</guid><description>&lt;h2 id="1-getting-started">1. Getting Started&lt;/h2>
+&lt;ol>
+&lt;li>使用 &lt;code>rustup&lt;/code> 安装，默认安装在 &lt;code>$HOME/.cargo&lt;/code> 和 &lt;code>$HOME/.rustup&lt;/code> 下&lt;/li>
+&lt;li>&lt;code>rustup update&lt;/code>&lt;/li>
+&lt;li>&lt;code>rustup self uninstall&lt;/code>&lt;/li>
+&lt;li>cargo 常用命令
+&lt;ol>
+&lt;li>&lt;code>cargo new PROJECT&lt;/code>&lt;/li>
+&lt;li>&lt;code>cargo build [--release]&lt;/code>&lt;/li>
+&lt;li>&lt;code>cargo run&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="2-programming-a-guessing-game">2. Programming a Guessing Game&lt;/h2>
+&lt;ol>
+&lt;li>&lt;code>Cargo.toml&lt;/code> 里依赖部分的版本号 &amp;ldquo;MAJOR.MINOR.PATCH&amp;rdquo; 实际是 &amp;ldquo;^MAJOR.MINOR.PATCH&amp;rdquo; 的简写，表示允许语义版本的升级&lt;/li>
+&lt;li>&lt;code>cargo update&lt;/code> 默认只升级 PATCH 部分&lt;/li>
+&lt;li>&lt;code>cargo doc --open&lt;/code> 查看文档&lt;/li>
+&lt;/ol>
+&lt;h2 id="3-common-programming-concepts">3. Common Programming Concepts&lt;/h2>
+&lt;ol>
+&lt;li>不可变变量：&lt;code>let VAR: TYPE = VALUE;&lt;/code>&lt;/li>
+&lt;li>可变变量：&lt;code>let mut VAR: TYPE = VALUE;&lt;/code>&lt;/li>
+&lt;li>常量：&lt;code>const FOO_BAR: TYPE = VALUE;&lt;/code>&lt;/li>
+&lt;li>Shadowing: 同一作用域里，同名变量可以重复声明，之前声明的变量被遮蔽。&lt;/li>
+&lt;li>Scalar types:
+&lt;ol>
+&lt;li>Integer types: i8, u8, i16, u16, i32, u32, i64, u64, i128, u128, isize, usize，后两者长度跟机器相关，一般用于集合、数组的索引和长度。Debug 模式下溢出回绕会panic，Release模式下溢出回绕不报错。使用标准库里类型 Wrapping 显示表明期望溢出回绕行为。&lt;/li>
+&lt;li>Integer literals: 98_222, 0xff, 0o77, 0b1111_0000, b&amp;rsquo;A&amp;rsquo;，除了 byte literal，其它字面量都支持类型后缀，比如 57u8 表示一个 u8 类型的值 57。&lt;strong>整型字面量默认类型为 i32&lt;/strong>。&lt;/li>
+&lt;li>Floating-point types: f32, f64，&lt;strong>默认为 f64&lt;/strong>。&lt;/li>
+&lt;li>Boolean type: bool, true, false。布尔类型长度为一字节。&lt;/li>
+&lt;li>Character type: char，四个字节，表示一个 Unicode Scalar Value, 范围为 [U+0000, U+D7FF] 和 [U+E000, U+10FFFF]。&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Compound Types
+&lt;ol>
+&lt;li>Tuple: (x, y, z)，类型声明 (t1, t2, t3)&lt;/li>
+&lt;li>Array: [x, y, z]，类型声明 [t; size]。 使用语法 [x; n] 创建 n 个 x 值的数组。数据访问会检查是否越界。&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Functions: &lt;code>fn foo(x:t1, y:t2) -&amp;gt; t3 { ... }&lt;/code>&lt;/li>
+&lt;li>Control flow:
+&lt;ol>
+&lt;li>&lt;code>if condition { ... } else if condition { ... } else { ... }&lt;/code>&lt;/li>
+&lt;li>&lt;code>loop { .... break VALUE; ... }&lt;/code>&lt;/li>
+&lt;li>&lt;code>while condition { ... }&lt;/code>&lt;/li>
+&lt;li>&lt;code>for VAR in ITER { ... }&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="4-understanding-ownership">4. Understanding Ownership&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Ownership rules：没有实现 Copy trait 的类型，变量赋值时是 move 语义，owner 超出作用域时自动调用 drop()&lt;/p></description></item><item><title>Wolfram 语言：快速编程入门</title><link>/posts/wolfram-language-fast-introduction-for-programmers/</link><pubDate>Tue, 27 Aug 2019 23:37:29 +0800</pubDate><guid>/posts/wolfram-language-fast-introduction-for-programmers/</guid><description>&lt;p>&lt;a href="http://www.wolfram.com/language/fast-introduction-for-programmers/zh/">http://www.wolfram.com/language/fast-introduction-for-programmers/zh/&lt;/a>&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>Shift + Enter&lt;/code> 开始计算&lt;/li>
+&lt;li>&lt;code>Quit&lt;/code> 退出当前 Math Kernel 会话，再次计算会自动启动新的 Math Kernel 会话&lt;/li>
+&lt;li>&lt;code>In[n]&lt;/code>, &lt;code>Out[n]&lt;/code>, &lt;code>%&lt;/code> 表示上一次输出, &lt;code>%%&lt;/code>表示上上次输出，依次类推；&lt;code>%n&lt;/code> 表示 &lt;code>Out[n]&lt;/code>&lt;/li>
+&lt;li>&lt;kbd>CMD&lt;/kbd>+&lt;kbd>L&lt;/kbd> 复制并粘贴上一次输入&lt;/li>
+&lt;li>所有符号表达式都具有相同的基本结构：&lt;code>head[arguments]&lt;/code>
+&lt;ol>
+&lt;li>&lt;code>FullForm[expr]&lt;/code>: 显示底层结构&lt;/li>
+&lt;li>&lt;code>Head[expr]&lt;/code>: 给出表达式的头部&lt;/li>
+&lt;li>&lt;code>Length[expr]&lt;/code>: 给出表达式中参数的个素&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>List
+&lt;ol>
+&lt;li>字面语法：&lt;code>{a, b, c}&lt;/code>&lt;/li>
+&lt;li>索引：&lt;code>list[[i]]&lt;/code>, &lt;code>i&lt;/code> 从 1 开始，负数表示从末尾开始计数&lt;/li>
+&lt;li>许多运算符都是向量化运算，比如 &lt;code>{1, 2, 3} + 2&lt;/code>&lt;/li>
+&lt;li>列表切片：&lt;code>list[[i ;; j]]&lt;/code>，闭区间&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Iterator
+&lt;ol>
+&lt;li>&lt;code>Table[x^2, {x, MAX}]&lt;/code>&lt;/li>
+&lt;li>&lt;code>Table[x^2, {x, MIN, MAX}]&lt;/code>&lt;/li>
+&lt;li>&lt;code>Table[x^2, {x, MIN, MAX, STEP}]&lt;/code>&lt;/li>
+&lt;li>&lt;code>Table[x * y, {x, ...}, {y, ...}]&lt;/code>&lt;/li>
+&lt;li>&lt;code>Array[f, n]&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Assignment
+&lt;ol>
+&lt;li>&lt;code>=&lt;/code> 表示立即赋值&lt;/li>
+&lt;li>&lt;code>:=&lt;/code> 表示延迟复制，被用到时重新计算&lt;/li>
+&lt;li>&lt;code>var = .&lt;/code> 清除赋值&lt;/li>
+&lt;li>局部变量：&lt;code>Module[{a = 1}, a + 8]&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Pattern
+&lt;ol>
+&lt;li>&lt;code>_&lt;/code> （读做 blank）表示任意表达式: &lt;code>Replace[f[100]， f[x_] -&amp;gt; x + 5]&lt;/code>，这里 &lt;code>x_&lt;/code> 是 &lt;code>x: _&lt;/code> 的简写&lt;/li>
+&lt;li>&lt;code>__&lt;/code> (double blank) 表示任意表达式序列：&lt;code>Cases[{f[1, 2], f[1], g[3]}, f[__]]&lt;/code>&lt;/li>
+&lt;li>&lt;code>a | b | c&lt;/code> 表示或者：
+&lt;ol>
+&lt;li>&lt;code>Cases[{f[1], g[2], f[2], f[5]}, f[1 | 5]]&lt;/code>&lt;/li>
+&lt;li>&lt;code>Cases[{f[1], g[2], f[2], f[5]}, (f | g)[2]]&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>&lt;code>_head&lt;/code> 匹配包含头部 &lt;code>head&lt;/code> 的表达式：&lt;code>Cases[{1, 2.5, 3.5, 4}, _Real]&lt;/code>&lt;/li>
+&lt;li>&lt;code>-&amp;gt;&lt;/code> 使用模式来定义规则，规则右边的表达式在定义时即计算: &lt;code>f[x_] -&amp;gt; x + RandomReal[]&lt;/code>&lt;/li>
+&lt;li>&lt;code>:&amp;gt;&lt;/code> 与 &lt;code>-&amp;gt;&lt;/code> 的区别是在规则使用时才计算右边表达式： &lt;code>f[x_] :&amp;gt; x + RandomReal[]&lt;/code>&lt;/li>
+&lt;li>&lt;code>/.&lt;/code> 表示&amp;quot;替换所有”（应用重写规则)： &lt;code>{f[1], g[2], f[5], g[3]} /. f[x_] -&amp;gt; x + 5&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Function&lt;/li>
+&lt;li>&lt;code>f[x_, y_] := x - y&lt;/code>&lt;/li>
+&lt;li>&lt;code>f[x_, y_] := x - y /; x &amp;gt; y&lt;/code>, &lt;code>/; x &amp;gt; y&lt;/code> 表示当 x &amp;gt; y 时才应用这个函数&lt;/li>
+&lt;li>&lt;code>f[1] = 2&lt;/code>, &lt;code>f[2] = 3&lt;/code>， 定义过的 case 会计算，没定义的 case 保留原样: &lt;code>{f[1], f[2], f[3], f[4]}&lt;/code>&lt;/li>
+&lt;li>&lt;code>Clear[f]&lt;/code> 清除函数定义&lt;/li>
+&lt;li>Pure function(匿名函数，lambda 表达式)
+&lt;ol>
+&lt;li>&lt;code>expr &amp;amp;&lt;/code>， 表达式中的 # 或者 #1 表示第一个参数，#2 表示第二个参数&lt;/li>
+&lt;li>&lt;code>Function[{x, y}, expr]&lt;/code>，命名参数的匿名函数&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Apply function&lt;/li>
+&lt;li>&lt;code>Map[f, {a, b, c, d}]&lt;/code>, 简写 &lt;code>f /@ {a, b, c, d}&lt;/code>&lt;/li>
+&lt;li>&lt;code>Map[f, expr, levelspec]&lt;/code>，默认在 level 1 操作&lt;/li>
+&lt;li>&lt;code>Apply[f, {a, b, c, d}]]&lt;/code> 等价于 &lt;code>f[a, b, c, d]&lt;/code>&lt;/li>
+&lt;li>&lt;code>Apply[f, expr, levelspec]&lt;/code>，默认在 level 0 操作，将 expr 的对应 level 的 head 替换成 f&lt;/li>
+&lt;li>&lt;code>@&lt;/code> 是普通函数调用：&lt;code>f @ {{a, b}, {c, d}}&lt;/code> 等价于 &lt;code>f[{{a, b}, {c, d}}]&lt;/code>&lt;/li>
+&lt;li>&lt;code>@@&lt;/code> 等价于 &lt;code>Apply&lt;/code>(apply at level 0): &lt;code>f @@ {{a, b}, {c, d}}&lt;/code> 等价于 &lt;code>f[{a, b}, {c, d}]&lt;/code>&lt;/li>
+&lt;li>&lt;code>@@@&lt;/code> 等价于 &amp;ldquo;apply at level 1&amp;rdquo;: &lt;code>f @@@ {{a, b}, {c, d}}&lt;/code> 等价于 &lt;code>{f[a, b], f[c, d]}&lt;/code>&lt;/li>
+&lt;li>&lt;code>expr // f&lt;/code> 等价于 &lt;code>f[expr]&lt;/code>&lt;/li>
+&lt;li>&lt;code>NestList[f, x, n]&lt;/code> 相当于 &lt;code>{x, f[x], f[f[x]], ...}&lt;/code>&lt;/li>
+&lt;li>&lt;code>Nest[f, x, n]&lt;/code> 相当于 &lt;code>f[f[f[....f[x]]]]&lt;/code>&lt;/li>
+&lt;li>&lt;code>NestGraph[f, x, n]&lt;/code> 嵌套的应用 f，形成一个图&lt;/li>
+&lt;li>&lt;code>FoldList[f, x, list]&lt;/code>&lt;/li>
+&lt;li>函数选项(Options)&lt;/li>
+&lt;li>&lt;code>Func[arguments, nameA -&amp;gt; valueA, ...]&lt;/code>， 使用 &lt;code>:&amp;gt;&lt;/code> 替换 &lt;code>-&amp;gt;&lt;/code> 表示每次用到这个 option 时都重新计算（跟 rule 的定义方式一致)&lt;/li>
+&lt;li>&lt;code>Options[Func]&lt;/code> 查看函数的所有选项&lt;/li>
+&lt;li>Graphics&lt;/li>
+&lt;li>&lt;code>ListLinePlot[{5, 6, 1, 5, 7, 8, 1, 3}]&lt;/code>&lt;/li>
+&lt;li>&lt;code>Graph[{1 -&amp;gt; 3, 1 -&amp;gt; 2, 2 -&amp;gt; 4, 4 -&amp;gt; 5, 5 -&amp;gt; 1}]&lt;/code>&lt;/li>
+&lt;li>&lt;code>Graphics[{Orange, Disk[{0, 0}], Opacity[.7], Pink, Disk[{1, 0}]}]&lt;/code>&lt;/li>
+&lt;li>Interactive Interaces&lt;/li>
+&lt;li>&lt;code>Manipulate[Plot[Sin[a x], {x, 0, 10}], {a, 1, 5}]&lt;/code>&lt;/li>
+&lt;li>过程式编程&lt;/li>
+&lt;li>&lt;code>Print[a]; Print[b]; Print[c]&lt;/code> 分号分隔表达式&lt;/li>
+&lt;li>&lt;code>Module[]&lt;/code> 词法作用域，变量存放在后端（Math Kernel） 中&lt;/li>
+&lt;li>&lt;code>Block[]&lt;/code> 动态作用域&lt;/li>
+&lt;li>&lt;code>DynamicModule[]&lt;/code> 词法作用域，变量存放在前端（Notebook） 中&lt;/li>
+&lt;li>&lt;code>Sow/Reap&lt;/code> vs. &lt;code>Throw/Catch&lt;/code>&lt;/li>
+&lt;li>&lt;code>True&lt;/code>, &lt;code>False&lt;/code>, &lt;code>If&lt;/code>&lt;/li>
+&lt;li>数字: &lt;code>N[expr, precision]&lt;/code> 和 &lt;code>expr`precision&lt;/code>&lt;/li>
+&lt;li>字符串:&lt;/li>
+&lt;li>&lt;code>&amp;lt;&amp;gt;&lt;/code> 连接字符串&lt;/li>
+&lt;li>&lt;code>~~&lt;/code> 连接正则表达式和字符串&lt;/li>
+&lt;li>输入 Unicode 字符：&lt;code>\[Alpha]&lt;/code>, &lt;kbd>ESC&lt;/kbd>&lt;kbd>A&lt;/kbd>&lt;kbd>ESC&lt;/kbd>, &lt;code>\:03b1&lt;/code> 都是输入 &lt;code>α&lt;/code>&lt;/li>
+&lt;li>字符串模版：&lt;code>TemplateApply[&amp;quot;number `` date: &amp;lt;* Now *&amp;gt;&amp;quot;, {56}]&lt;/code>, `` 表示占位符，&lt;code>&amp;lt;* expr *&amp;gt;&lt;/code> 表示插值&lt;/li>
+&lt;li>关联 (Associations)&lt;/li>
+&lt;li>&lt;code>&amp;lt;|&amp;quot;a&amp;quot; -&amp;gt; x, &amp;quot;b&amp;quot; -&amp;gt; y|&amp;gt;&lt;/code> 定义关联，&lt;code>expr[key]&lt;/code> 获取值&lt;/li>
+&lt;li>匿名函数中可以用 &lt;code>#key&lt;/code> 得到关联中的值：&lt;code>{#b, 1 + #b}&amp;amp;[&amp;lt;|&amp;quot;a&amp;quot;-&amp;gt;x, &amp;quot;b&amp;quot;-&amp;gt;y|&amp;gt;]&lt;/code>&lt;/li>
+&lt;li>关联和列表同时使用：&lt;code>&amp;lt;|&amp;quot;a&amp;quot; -&amp;gt; x, &amp;quot;b&amp;quot; -&amp;gt; {5, 6}|&amp;gt;[[&amp;quot;b&amp;quot;, 1]]&lt;/code>&lt;/li>
+&lt;li>字符串模版：&lt;code>TemplateApply[&amp;quot;first `a`; second `b`; first `a`&amp;quot;, &amp;lt;|&amp;quot;a&amp;quot; -&amp;gt; x, &amp;quot;b&amp;quot; -&amp;gt; y|&amp;gt;]&lt;/code>&lt;/li>
+&lt;/ol></description></item><item><title>《人工智能简史》，尼克 著</title><link>/posts/a-brief-history-of-artificial-intelligence/</link><pubDate>Thu, 25 Jul 2019 22:00:00 +0800</pubDate><guid>/posts/a-brief-history-of-artificial-intelligence/</guid><description>&lt;h2 id="目录">目录&lt;/h2>
+&lt;pre tabindex="0">&lt;code>第1章　达特茅斯会议：人工智能的缘起
+第2章　自动定理证明兴衰纪
+第3章　从专家系统到知识图谱
+第4章　第五代计算机的教训
+第5章　神经网络简史
+第6章　计算机下棋简史：机定胜人，人定胜天
+第7章　自然语言处理
+第8章　向自然学习：从遗传算法到强化学习
+第9章　哲学家和人工智能
+第10章　人是机器吗？——人工智能的计算理论基础
+第11章　智能的进化
+第12章　当我们谈论生死时，我们在谈论什么？
+&lt;/code>&lt;/pre>&lt;h2 id="人工智能的计算理论基础">人工智能的计算理论基础&lt;/h2>
+&lt;ul>
+&lt;li>丘奇-图灵论题（Church-Turing Thesis）：所有功能足够强的计算装置的计算能力都等价于图灵机。这是一个观察，而不是定理。 （可计算性)&lt;/li>
+&lt;li>理论计算机科学家洪加威在20世纪80年代提出了相似性原则：计算装置之间互相模拟的成本是多项式的，也就是说靠谱的计算装置之间并不存在原则上的差异。相似性原则，类似于丘奇-图灵论题，是观察而不是数学定理。(计算复杂性)&lt;/li>
+&lt;/ul>
+&lt;h2 id="人工智能三大流派">人工智能三大流派&lt;/h2>
+&lt;p>&lt;img src="images/%E9%80%BB%E8%BE%91%E4%B8%BB%E4%B9%89.jpg" alt="逻辑主义">
+&lt;img src="images/%E8%81%94%E6%8E%A5%E4%B8%BB%E4%B9%89.jpg" alt="联接主义">
+&lt;img src="images/%E8%87%AA%E7%84%B6%E4%B8%BB%E4%B9%89.jpg" alt="自然主义">&lt;/p></description></item><item><title>Unicode 11.0 其它规范一瞥</title><link>/posts/unicode-more-specs/</link><pubDate>Mon, 07 Jan 2019 15:27:02 +0800</pubDate><guid>/posts/unicode-more-specs/</guid><description>&lt;p>下面的内容不属于 Core Spec，但也很重要。&lt;/p>
+&lt;h2 id="unicode-standard-annexes">Unicode Standard Annexes&lt;/h2>
+&lt;h3 id="uax-9-the-unicode-bidirectional-algorithm">UAX #9, The Unicode Bidirectional Algorithm&lt;/h3>
+&lt;h3 id="uax-11-east-asian-width">UAX #11, East Asian Width&lt;/h3>
+&lt;h3 id="uax-14-unicode-line-breaking-algorithm">UAX #14, Unicode Line Breaking Algorithm&lt;/h3>
+&lt;h3 id="uax-15-unicode-normalization-forms">UAX #15, Unicode Normalization Forms&lt;/h3>
+&lt;h3 id="uax-24-unicode-script-property">UAX #24, Unicode Script Property&lt;/h3>
+&lt;h3 id="uax-29-unicode-text-segmentation">UAX #29, Unicode Text Segmentation&lt;/h3>
+&lt;h3 id="uax-31-unicode-identifier-and-pattern-syntax">UAX #31, Unicode Identifier and Pattern Syntax&lt;/h3>
+&lt;h3 id="uax-34-unicode-named-character-sequences">UAX #34, Unicode Named Character Sequences&lt;/h3>
+&lt;h3 id="uax-38-unicode-han-database-unihan">UAX #38, Unicode Han Database (Unihan)&lt;/h3>
+&lt;h3 id="uax-41-common-references-for-unicode-standard-annexes">UAX #41, Common References for Unicode Standard Annexes&lt;/h3>
+&lt;h3 id="uax-42-unicode-character-database-in-xml">UAX #42, Unicode Character Database in XML&lt;/h3>
+&lt;h3 id="uax-44-unicode-character-database">UAX #44, Unicode Character Database&lt;/h3>
+&lt;h3 id="uax-45-u-source-ideographs">UAX #45, U-Source Ideographs&lt;/h3>
+&lt;h3 id="uax-50-unicode-vertical-text-layout">UAX #50, Unicode Vertical Text Layout&lt;/h3>
+&lt;h2 id="unicode-technical-standards-and-reports">Unicode Technical Standards and Reports&lt;/h2>
+&lt;h3 id="uts-10-unicode-collation-algorithm">UTS #10, Unicode Collation Algorithm&lt;/h3>
+&lt;h3 id="uts-39-unicode-security-mechanism">UTS #39, Unicode Security Mechanism&lt;/h3>
+&lt;h3 id="uts-46-unicode-idna-compatibility-processing">UTS #46, Unicode IDNA Compatibility Processing&lt;/h3>
+&lt;h3 id="uts-51-unicode-emoji">UTS #51, Unicode Emoji&lt;/h3></description></item><item><title>Unicode 11.0 核心规范笔记</title><link>/posts/unicode-core-spec/</link><pubDate>Thu, 03 Jan 2019 23:27:02 +0800</pubDate><guid>/posts/unicode-core-spec/</guid><description>&lt;h2 id="导言">导言&lt;/h2>
+&lt;p>前几天以戏谑的语气写了些 &lt;a href="../you-dont-understand-unicode/">Unicode 规范的坑点&lt;/a>，了解有限，很不严谨，Unicode 技术委员会成员&lt;a href="https://www.zhihu.com/people/lianghai/activities">梁海&lt;/a>同学指出概念不清，建议读一下 &lt;a href="http://www.unicode.org/versions/Unicode11.0.0/">Unicode Core Spec&lt;/a>，本文是对 Core Spec 的一点笔记。&lt;/p>
+&lt;hr>
+&lt;p>由于 Core Spec 很长，这份笔记也会比较长，所以先总结一点个人猜度的编程语言中 char 和 string 的设计考虑。&lt;/p></description></item></channel></rss>

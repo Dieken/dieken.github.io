@@ -1,0 +1,1004 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Development on 随记</title><link>/categories/development/</link><description>Recent content in Development on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 31 Dec 2024 22:00:00 +0800</lastBuildDate><atom:link href="/categories/development/index.xml" rel="self" type="application/rss+xml"/><item><title>小型 C 编译器</title><link>/posts/small-c-compilers/</link><pubDate>Tue, 31 Dec 2024 22:00:00 +0800</pubDate><guid>/posts/small-c-compilers/</guid><description>&lt;p>统计截止 2024-12-31。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>tcc&lt;/strong>：极品黑客 Fabrice Bellard 打造的极品编译器；&lt;/li>
+&lt;li>&lt;strong>pcc&lt;/strong>：Bell Labs 出品，Dennis Ritchie 背书，名门闺秀，差点成为 BSD 系标配，被 Clang 顶翻了；&lt;/li>
+&lt;li>&lt;strong>cparser&lt;/strong>：德国 Karlsruhe 大学出品，基于图表示的优化框架；&lt;/li>
+&lt;li>nwcc：个人作品，已停止开发；&lt;/li>
+&lt;li>ack：Amsterdam Compiler Kit，Andrew Tanenbaum 出品，Minix 1 &amp;amp; 2 御用，不支持 64bit，在 Minix 3 中被 Clang 代替；&lt;/li>
+&lt;li>watcom：Open Watcom C/C++，当年与 Borland、Microsoft 竞争的编译器和 IDE，64bit 支持开发中；&lt;/li>
+&lt;li>vbcc：支持很多 32bit CPU 架构，有一定优化能力；&lt;/li>
+&lt;li>scc &amp;amp; cproc：基于 QBE 编译器后端，QBE 定位于用 10% 代码实现工业级 C 编译器 70% 的性能；&lt;/li>
+&lt;li>&lt;strong>kefir&lt;/strong> &amp;amp; lacc：个人练手作品；&lt;/li>
+&lt;li>lcc &amp;amp; &lt;strong>chibicc&lt;/strong>: C 编译器编写教学；&lt;/li>
+&lt;/ul>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">编译器&lt;/th>
+ &lt;th style="text-align: center">tcc&lt;/th>
+ &lt;th style="text-align: center">pcc&lt;/th>
+ &lt;th style="text-align: center">cparser&lt;/th>
+ &lt;th style="text-align: center">nwcc&lt;/th>
+ &lt;th style="text-align: center">ack&lt;/th>
+ &lt;th style="text-align: center">watcom&lt;/th>
+ &lt;th style="text-align: center">vbcc&lt;/th>
+ &lt;th style="text-align: center">scc&lt;/th>
+ &lt;th style="text-align: center">cproc&lt;/th>
+ &lt;th style="text-align: center">kefir&lt;/th>
+ &lt;th style="text-align: center">lacc&lt;/th>
+ &lt;th style="text-align: center">lcc&lt;/th>
+ &lt;th style="text-align: center">chibicc&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">源码库&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://repo.or.cz/w/tinycc.git">TinyCC&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://packages.debian.org/sid/libpcc-dev">pcc-libs&lt;/a>, &lt;a href="https://packages.debian.org/sid/pcc">pcc&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://pp.ipd.kit.edu/firm/Download.html">cparser&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://nwcc.sourceforge.net">nwcc&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://tack.sourceforge.net">ack&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/open-watcom/open-watcom-v2">open-watcom-v2&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="http://www.compilers.de/vbcc.html">vbcc&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="http://www.simple-cc.org">simple-cc&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://sr.ht/%7Emcf/cproc/">cproc&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://git.sr.ht/~jprotopopov/kefir">kefir&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/larmel/lacc">lacc&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/drh/lcc">lcc&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/rui314/chibicc">chibicc&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">许可证&lt;/td>
+ &lt;td style="text-align: center">LGPL / MIT-like&lt;/td>
+ &lt;td style="text-align: center">BSD&lt;/td>
+ &lt;td style="text-align: center">GPLv2 + LGPLv2.1&lt;/td>
+ &lt;td style="text-align: center">BSD&lt;/td>
+ &lt;td style="text-align: center">BSD-like&lt;/td>
+ &lt;td style="text-align: center">GPL-like&lt;/td>
+ &lt;td style="text-align: center">BSD&lt;/td>
+ &lt;td style="text-align: center">Caldera / ISC&lt;/td>
+ &lt;td style="text-align: center">MIT-like&lt;/td>
+ &lt;td style="text-align: center">GPLv3&lt;/td>
+ &lt;td style="text-align: center">MIT&lt;/td>
+ &lt;td style="text-align: center">LCC&lt;/td>
+ &lt;td style="text-align: center">MIT&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">最新版本&lt;/td>
+ &lt;td style="text-align: center">0.9.27&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">1.1.0&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">1.22.0&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">0.8.3&lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">6.0-pre5&lt;sup id="fnref:5">&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref">5&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">1.9&lt;sup id="fnref:6">&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref">6&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">N/A&lt;/td>
+ &lt;td style="text-align: center">N/A&lt;/td>
+ &lt;td style="text-align: center">N/A&lt;/td>
+ &lt;td style="text-align: center">0.4.0&lt;/td>
+ &lt;td style="text-align: center">N/A&lt;/td>
+ &lt;td style="text-align: center">4.2&lt;sup id="fnref:7">&lt;a href="#fn:7" class="footnote-ref" role="doc-noteref">7&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">N/A&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">发布时间&lt;/td>
+ &lt;td style="text-align: center">2017-12-13&lt;/td>
+ &lt;td style="text-align: center">2014-12-10&lt;/td>
+ &lt;td style="text-align: center">2016-01-01&lt;/td>
+ &lt;td style="text-align: center">2014-08-17&lt;/td>
+ &lt;td style="text-align: center">2016-06-02&lt;/td>
+ &lt;td style="text-align: center">2010-06-02&lt;/td>
+ &lt;td style="text-align: center">2022-04-29&lt;/td>
+ &lt;td style="text-align: center">2024-12-31&lt;/td>
+ &lt;td style="text-align: center">2024-04-28&lt;/td>
+ &lt;td style="text-align: center">2024-09-11&lt;/td>
+ &lt;td style="text-align: center">2022-05-22&lt;/td>
+ &lt;td style="text-align: center">2007-02-19&lt;/td>
+ &lt;td style="text-align: center">2020-12-07&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">C 标准&lt;/td>
+ &lt;td style="text-align: center">C99&lt;/td>
+ &lt;td style="text-align: center">C99&lt;/td>
+ &lt;td style="text-align: center">C11&lt;/td>
+ &lt;td style="text-align: center">C99&lt;/td>
+ &lt;td style="text-align: center">C89&lt;/td>
+ &lt;td style="text-align: center">C99, C++98&lt;/td>
+ &lt;td style="text-align: center">C99&lt;/td>
+ &lt;td style="text-align: center">C99&lt;/td>
+ &lt;td style="text-align: center">C11&lt;/td>
+ &lt;td style="text-align: center">C17&lt;/td>
+ &lt;td style="text-align: center">C89&lt;/td>
+ &lt;td style="text-align: center">C89&lt;/td>
+ &lt;td style="text-align: center">C11&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">预处理器(cpp)&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅ &lt;sup id="fnref:8">&lt;a href="#fn:8" class="footnote-ref" role="doc-noteref">8&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">汇编器(as)&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">链接器(ld)&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">位置无关代码(PIC)&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">线程局部存储(TLS)&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">易失变量(volatile)&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">变长数组(VLA)&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">复数&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">内联汇编&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">GCC 兼容&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">CPU 架构&lt;/td>
+ &lt;td style="text-align: center">i386/x86_64, arm/aarch64, riscv64&lt;/td>
+ &lt;td style="text-align: center">i386/amd64, arm/aarch64, mips, &amp;hellip;&lt;/td>
+ &lt;td style="text-align: center">i386/amd64, arm, riscv32, mips, &amp;hellip;&lt;/td>
+ &lt;td style="text-align: center">x86/amd64, mips, &amp;hellip;&lt;/td>
+ &lt;td style="text-align: center">i386, arm, mips, &amp;hellip;&lt;/td>
+ &lt;td style="text-align: center">i386/x64, arm, ppc, &amp;hellip;&lt;/td>
+ &lt;td style="text-align: center">i386, arm, ppc, &amp;hellip;&lt;/td>
+ &lt;td style="text-align: center">i386/amd64, ppc/ppc64&lt;/td>
+ &lt;td style="text-align: center">amd64, arm64, riscv64&lt;/td>
+ &lt;td style="text-align: center">amd64&lt;/td>
+ &lt;td style="text-align: center">amd64&lt;/td>
+ &lt;td style="text-align: center">x86, mips, sparc&lt;/td>
+ &lt;td style="text-align: center">amd64&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">操作系统&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD, macOS, Win32&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD, macOS, Win32&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD, macOS, Win32&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD, macOS&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD, macOS, Win32&lt;/td>
+ &lt;td style="text-align: center">Linux, macOS, DOS, Win32&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD, Win32&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD&lt;/td>
+ &lt;td style="text-align: center">Linux, Win32&lt;/td>
+ &lt;td style="text-align: center">Linux, BSD&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">优化能力&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">well&lt;/td>
+ &lt;td style="text-align: center">well&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">partial&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">调试符号&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">性能剖析&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;td style="text-align: center">✅&lt;/td>
+ &lt;td style="text-align: center">❌&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">代码行数&lt;/td>
+ &lt;td style="text-align: center">10w&lt;/td>
+ &lt;td style="text-align: center">12w&lt;/td>
+ &lt;td style="text-align: center">16w&lt;sup id="fnref:9">&lt;a href="#fn:9" class="footnote-ref" role="doc-noteref">9&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">9w&lt;/td>
+ &lt;td style="text-align: center">34w&lt;/td>
+ &lt;td style="text-align: center">170w&lt;sup id="fnref:10">&lt;a href="#fn:10" class="footnote-ref" role="doc-noteref">10&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">10w&lt;/td>
+ &lt;td style="text-align: center">3w&lt;sup id="fnref:11">&lt;a href="#fn:11" class="footnote-ref" role="doc-noteref">11&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">2w&lt;sup id="fnref:12">&lt;a href="#fn:12" class="footnote-ref" role="doc-noteref">12&lt;/a>&lt;/sup>&lt;/td>
+ &lt;td style="text-align: center">11w&lt;/td>
+ &lt;td style="text-align: center">1.9w&lt;/td>
+ &lt;td style="text-align: center">2w&lt;/td>
+ &lt;td style="text-align: center">7k&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>其它值得一提的 C 编译器：&lt;/p></description></item><item><title>Windows GUI 应用框架</title><link>/posts/windows-gui-frameworks/</link><pubDate>Tue, 15 Oct 2024 22:00:00 +0800</pubDate><guid>/posts/windows-gui-frameworks/</guid><description>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">年份&lt;/th>
+ &lt;th style="text-align: center">仅支持 Windows&lt;/th>
+ &lt;th style="text-align: center">跨平台&lt;/th>
+ &lt;th style="text-align: center">支持 XAML？&lt;/th>
+ &lt;th style="text-align: center">已废弃？&lt;/th>
+ &lt;th>备注&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">1991&lt;/td>
+ &lt;td style="text-align: center">&lt;del>OWL&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">1992&lt;/td>
+ &lt;td style="text-align: center">MFC&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">1995&lt;/td>
+ &lt;td style="text-align: center">VCL&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2001&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://sourceforge.net/projects/owlnext/">OWLNext&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2001&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;del>CLX&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2001&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;strong>&lt;a href="https://sourceforge.net/projects/owlnext/">LCL&lt;/a>&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>Lazarus Component Library&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2002&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/dotnet/winforms">WinForms&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>.Net Framework 1.0&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2005&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://sourceforge.net/projects/wtl/">WTL&lt;/a> 7.5&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>MFC 的轻量替代&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2006&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/dotnet/wpf">WPF&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>.Net Framework 3.0，引入 XAML，使用 C# 实现&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2007&lt;/td>
+ &lt;td style="text-align: center">&lt;del>Silverlight&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>使用 C++ 实现，与 Flash、Java Applet 竞争&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2009&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td>&lt;mark>Windows 7&lt;/mark>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2011&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;strong>&lt;a href="https://docwiki.embarcadero.com/Libraries/Sydney/en/FMX">FMX&lt;/a>&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>Embarcadero FireMonkey&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2012&lt;/td>
+ &lt;td style="text-align: center">&lt;del>WinRT + WinUI 1(WinRT XAML)&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>Windows 8&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2013&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;strong>&lt;a href="https://avaloniaui.net">Avalonia&lt;/a>&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>受 WPF 启发&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2014&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;del>Xamarin.Forms&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2015&lt;/td>
+ &lt;td style="text-align: center">&lt;del>UWP + WinUI 1(UWP XAML)&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>Windows 10，扩展 WinRT&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2016&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td>.Net Core 1.0&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2018&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td>WinForms 和 WPF 开源&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2018&lt;/td>
+ &lt;td style="text-align: center">&lt;del>UWP + WinUI 2&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2018&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;strong>&lt;a href="https://platform.uno">Uno Platform&lt;/a>&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>UWP 的跨平台版本&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2020&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td>&lt;mark>.Net 5&lt;/mark>，合并 .Net Framework 和 .Net Core&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2021&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td>Windows 11&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2021&lt;/td>
+ &lt;td style="text-align: center">WinUI 3&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>独立库，支持 WinForms/WPF/UWP/MAUI&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2021&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;strong>&lt;a href="https://dotnet.microsoft.com/en-us/apps/maui">MAUI&lt;/a>&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>.Net 6，继承 Xamarin.Forms&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>总结：&lt;/p></description></item><item><title>Scala Cookie Book</title><link>/posts/scala-cookie-book/</link><pubDate>Sun, 01 Sep 2024 20:00:00 +0800</pubDate><guid>/posts/scala-cookie-book/</guid><description>&lt;pre tabindex="0">&lt;code># https://docs.racket-lang.org/scribble/getting-started.html
+
+#lang scribble/base
+
+@title{On the Cookie-Eating Habits of Mice}
+
+If you give a mouse a cookie, he&amp;#39;s going to ask for a glass of milk.
+&lt;/code>&lt;/pre>&lt;h2 id="scala-书籍">Scala 书籍&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Tour of Scala: &lt;a href="https://docs.scala-lang.org/tour/tour-of-scala.html">https://docs.scala-lang.org/tour/tour-of-scala.html&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Scala 3 Book: &lt;a href="https://docs.scala-lang.org/scala3/book/introduction.html">https://docs.scala-lang.org/scala3/book/introduction.html&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="安装-scala">安装 Scala&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="https://scala-lang.org/download/">https://scala-lang.org/download/&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>配置镜像源：&lt;/p>
+&lt;p>. Coursier: &lt;a href="https://github.com/lqhuang/dotfiles/tree/master/coursier">https://github.com/lqhuang/dotfiles/tree/master/coursier&lt;/a>&lt;/p>
+&lt;p>. Maven: &lt;a href="https://github.com/lqhuang/dotfiles/tree/master/mvn">https://github.com/lqhuang/dotfiles/tree/master/mvn&lt;/a>&lt;/p>
+&lt;p>. SBT: &lt;a href="https://github.com/lqhuang/dotfiles/tree/master/sbt">https://github.com/lqhuang/dotfiles/tree/master/sbt&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="scala-生态">Scala 生态&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Typesafe&lt;/strong>: &lt;a href="https://akka.io">https://akka.io&lt;/a> / &lt;a href="https://pekko.apache.org">https://pekko.apache.org&lt;/a> , akka / pekko, play&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Typelevel&lt;/strong>: &lt;a href="https://typelevel.org/">https://typelevel.org/&lt;/a> , cats, cats-effect, circe, http4s, blaze, doobie, &lt;a href="https://atnos-org.github.io/eff/">eff&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>ZIO&lt;/strong>: &lt;a href="https://zio.dev">https://zio.dev&lt;/a> , zio&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Lihaoyi: &lt;a href="https://github.com/com-lihaoyi">https://github.com/com-lihaoyi&lt;/a> , os-lib, upickle, cask, mainargs&lt;/p></description></item><item><title>Perl Unicode 脚本模版</title><link>/posts/perl-unicode-script-template/</link><pubDate>Sat, 30 Mar 2024 12:26:39 +0800</pubDate><guid>/posts/perl-unicode-script-template/</guid><description>&lt;p>参考 &lt;a href="https://perldoc.perl.org/perl#Reference-Manual">perldoc perl&lt;/a> 里的以 perluni 开头的文档，至少用 Perl v5.36。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-perl" data-lang="perl">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#!/usr/bin/env perl&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># https://perldoc.perl.org/perluniintro#Perl&amp;#39;s-Unicode-Support v5.28&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># https://perldoc.perl.org/feature#The-&amp;#39;signatures&amp;#39;-feature v5.36&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># https://perldoc.perl.org/perlunicook#℞-0:-Standard-preamble v5.36&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">use&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">v5&lt;/span>&lt;span style="color:#40a070">.36&lt;/span>; &lt;span style="color:#60a0b0;font-style:italic"># or later to get &amp;#34;unicode_strings&amp;#34; feature, plus strict and warnings&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">use&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">utf8&lt;/span>; &lt;span style="color:#60a0b0;font-style:italic"># so literals and identifiers can be in UTF-8&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">use&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">warnings&lt;/span> &lt;span style="color:#c65d09">qw(FATAL utf8)&lt;/span>; &lt;span style="color:#60a0b0;font-style:italic"># fatalize encoding glitches&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">use&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">open&lt;/span> &lt;span style="color:#c65d09">qw(:std :encoding(UTF-8))&lt;/span>; &lt;span style="color:#60a0b0;font-style:italic"># undeclared streams in UTF-8&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">use&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Encode&lt;/span> &lt;span style="color:#c65d09">qw(decode)&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">@ARGV&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">map&lt;/span> { decode(&lt;span style="color:#4070a0">&amp;#39;UTF-8&amp;#39;&lt;/span>, &lt;span style="color:#bb60d5">$_&lt;/span>, &lt;span style="color:#0e84b5;font-weight:bold">Encode::&lt;/span>FB_CROAK) } &lt;span style="color:#bb60d5">@ARGV&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#use autodie qw(:all);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#use Unicode::Normalize; # for NFC(), NFD()&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>say &lt;span style="color:#4070a0">&amp;#34;😊 3 加 4 等于 &amp;#34;&lt;/span>, add(&lt;span style="color:#40a070">3&lt;/span>, &lt;span style="color:#40a070">4&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">sub&lt;/span> &lt;span style="color:#06287e">add&lt;/span>($a, $b) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#bb60d5">$a&lt;/span> &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#bb60d5">$b&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果是命令行执行 one-liner 脚本，最好使用如下命令：&lt;/p></description></item><item><title>LLM: 大语言模型</title><link>/posts/large-language-models/</link><pubDate>Sun, 21 Jan 2024 15:00:00 +0800</pubDate><guid>/posts/large-language-models/</guid><description>&lt;h2 id="国内大语言模型">国内大语言模型&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>序号&lt;/th>
+ &lt;th>名字&lt;/th>
+ &lt;th>网址&lt;/th>
+ &lt;th>访问方式&lt;/th>
+ &lt;th>备注&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>1&lt;/td>
+ &lt;td>Kimi Chat&lt;/td>
+ &lt;td>&lt;a href="https://www.moonshot.cn">https://www.moonshot.cn&lt;/a>&lt;/td>
+ &lt;td>web + app&lt;/td>
+ &lt;td>月之暗面 Moonshot&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>2&lt;/td>
+ &lt;td>智谱清言&lt;/td>
+ &lt;td>&lt;a href="https://chatglm.cn">https://chatglm.cn&lt;/a>&lt;/td>
+ &lt;td>web + app&lt;/td>
+ &lt;td>智谱&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>3&lt;/td>
+ &lt;td>通义千问&lt;/td>
+ &lt;td>&lt;a href="https://tongyi.aliyun.com">https://tongyi.aliyun.com&lt;/a>&lt;/td>
+ &lt;td>web + app&lt;/td>
+ &lt;td>阿里&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>4&lt;/td>
+ &lt;td>文心一言&lt;/td>
+ &lt;td>&lt;a href="https://yiyan.baidu.com">https://yiyan.baidu.com&lt;/a>&lt;/td>
+ &lt;td>web + app&lt;/td>
+ &lt;td>百度&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>5&lt;/td>
+ &lt;td>海螺问问&lt;/td>
+ &lt;td>&lt;a href="https://yingshi-ai.com">https://yingshi-ai.com&lt;/a> （原名「应事AI助手」）&lt;/td>
+ &lt;td>web + app&lt;/td>
+ &lt;td>Minimax&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>6&lt;/td>
+ &lt;td>讯飞星火&lt;/td>
+ &lt;td>&lt;a href="https://xinghuo.xfyun.cn">https://xinghuo.xfyun.cn&lt;/a>&lt;/td>
+ &lt;td>web + app&lt;/td>
+ &lt;td>讯飞&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>7&lt;/td>
+ &lt;td>抖音豆包&lt;/td>
+ &lt;td>&lt;a href="https://www.doubao.com">https://www.doubao.com&lt;/a>&lt;/td>
+ &lt;td>web + app&lt;/td>
+ &lt;td>抖音&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>8&lt;/td>
+ &lt;td>360智脑&lt;/td>
+ &lt;td>&lt;a href="https://ai.360.cn">https://ai.360.cn&lt;/a>&lt;/td>
+ &lt;td>web + app&lt;/td>
+ &lt;td>360&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>9&lt;/td>
+ &lt;td>混元助手&lt;/td>
+ &lt;td>&lt;a href="https://hunyuan.tencent.com/bot/chat">https://hunyuan.tencent.com/bot/chat&lt;/a>&lt;/td>
+ &lt;td>web + mini app&lt;/td>
+ &lt;td>腾讯&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>10&lt;/td>
+ &lt;td>百川智能&lt;/td>
+ &lt;td>&lt;a href="https://www.baichuan-ai.com">https://www.baichuan-ai.com&lt;/a>&lt;/td>
+ &lt;td>web&lt;/td>
+ &lt;td>搜狗&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>11&lt;/td>
+ &lt;td>商汤商量&lt;/td>
+ &lt;td>&lt;a href="https://chat.sensetime.com">https://chat.sensetime.com&lt;/a>&lt;/td>
+ &lt;td>web&lt;/td>
+ &lt;td>商汤&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>12&lt;/td>
+ &lt;td>紫东太初&lt;/td>
+ &lt;td>&lt;a href="https://taichu-web.ia.ac.cn">https://taichu-web.ia.ac.cn&lt;/a>&lt;/td>
+ &lt;td>web&lt;/td>
+ &lt;td>中科院&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>13&lt;/td>
+ &lt;td>DeepSeek&lt;/td>
+ &lt;td>&lt;a href="https://chat.deepseek.com">https://chat.deepseek.com&lt;/a>&lt;/td>
+ &lt;td>web&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>14&lt;/td>
+ &lt;td>零一万物&lt;/td>
+ &lt;td>&lt;a href="https://01.ai">https://01.ai&lt;/a>&lt;/td>
+ &lt;td>模型&lt;/td>
+ &lt;td>开&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>15&lt;/td>
+ &lt;td>书生・浦语&lt;/td>
+ &lt;td>&lt;a href="https://intern-ai.org.cn">https://intern-ai.org.cn&lt;/a>&lt;/td>
+ &lt;td>模型&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>16&lt;/td>
+ &lt;td>华为盘古&lt;/td>
+ &lt;td>&lt;a href="https://pangu.huaweicloud.com">https://pangu.huaweicloud.com&lt;/a>&lt;/td>
+ &lt;td>无&lt;/td>
+ &lt;td>开放给企业申请&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="生产环境运行-llm">生产环境运行 LLM&lt;/h2>
+&lt;ol>
+&lt;li>vLLM： &lt;a href="https://docs.vllm.ai/en/latest/">https://docs.vllm.ai/en/latest/&lt;/a>&lt;/li>
+&lt;li>Triton TensorRT-LLM： &lt;a href="https://github.com/NVIDIA/TensorRT-LLM">https://github.com/NVIDIA/TensorRT-LLM&lt;/a>&lt;/li>
+&lt;li>BentoML： &lt;a href="https://github.com/bentoml/BentoML">https://github.com/bentoml/BentoML&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h2 id="消费级-pc-运行-llm">消费级 PC 运行 LLM&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a href="https://github.com/ggerganov/llama.cpp">https://github.com/ggerganov/llama.cpp&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/SJTU-IPADS/PowerInfer">https://github.com/SJTU-IPADS/PowerInfer&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ollama.ai">https://ollama.ai&lt;/a> ， &lt;a href="https://github.com/ollama-webui/ollama-webui">https://github.com/ollama-webui/ollama-webui&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://gpt4all.io/index.html">https://gpt4all.io/index.html&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/oobabooga/text-generation-webui">https://github.com/oobabooga/text-generation-webui&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/imartinez/privateGPT">https://github.com/imartinez/privateGPT&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/xorbitsai/inference">https://github.com/xorbitsai/inference&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/withcatai/catai">https://github.com/withcatai/catai&lt;/a> 基于 &lt;a href="https://github.com/withcatai/node-llama-cpp">node-llama-cpp&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://lmstudio.ai">https://lmstudio.ai&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/langchain-ai/langchain">https://github.com/langchain-ai/langchain&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/mudler/LocalAI">https://github.com/mudler/LocalAI&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>工作流引擎</title><link>/posts/workflow-engines/</link><pubDate>Mon, 18 Dec 2023 08:00:00 +0800</pubDate><guid>/posts/workflow-engines/</guid><description>&lt;h2 id="业务流程管理-business-process-management">业务流程管理: Business Process Management&lt;/h2>
+&lt;p>主流的业务流程建模符号标准有 &lt;strong>BPMN&lt;/strong>(Business Process Model and Notation) 、&lt;strong>CMMN&lt;/strong>(Case Management Model and Notation) 和 &lt;strong>DMN&lt;/strong>(Decision Model and Notation) 三种，DMN 搭配前两者使用。BPMN 定位于业务人员和技术人员都能看懂，BPMN 2.0 加入了可执行语义。&lt;/p></description></item><item><title>应用层数据加密的两个技巧</title><link>/posts/applicatiion-layer-data-encryption/</link><pubDate>Mon, 24 Oct 2022 09:41:04 +0800</pubDate><guid>/posts/applicatiion-layer-data-encryption/</guid><description>&lt;p>近几年我朝对隐私保护、数据安全越来越重视，一些业务不得不开始搞数据加密了，商业数据库有比较好的数据库内加密支持，尤其以 SQL Server 支持最完善，但开源数据库就没这么高级了，于是需要折腾应用层加密，这就是个非常头大的事情了，有两个难点：&lt;/p></description></item><item><title>国内镜像</title><link>/posts/mirror-sites-in-china/</link><pubDate>Thu, 28 Jan 2021 21:00:00 +0800</pubDate><guid>/posts/mirror-sites-in-china/</guid><description>&lt;h2 id="github-镜像">Github 镜像&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="https://github.com.cnpmjs.org/">https://github.com.cnpmjs.org/&lt;/a> 将 github.com 替换成 github.com.cnpmjs.org&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://gitclone.com/">https://gitclone.com/&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Method 1 (replace url)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://gitclone.com/github.com/tendermint/tendermint.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Method 2 (set git parameters)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git config --global url.&lt;span style="color:#4070a0">&amp;#34;https://gitclone.com/&amp;#34;&lt;/span>.insteadOf https://
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://github.com/tendermint/tendermint.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Method 3 (use cgit client)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cgit clone https://github.com/tendermint/tendermint.git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://hub.fastgit.org/">https://hub.fastgit.org/&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="http://toolwa.com/github/">http://toolwa.com/github/&lt;/a> 加速下载 release 文件&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>使用 &lt;a href="https://www.ipaddress.com/">https://www.ipaddress.com/&lt;/a> 查询 IP 后修改 /etc/hosts&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com.ipaddress.com/">https://github.com.ipaddress.com/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.global.ssl.fastly.net.ipaddress.com">https://github.global.ssl.fastly.net.ipaddress.com&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="开源软件镜像">开源软件镜像&lt;/h2>
+&lt;p>&lt;a href="https://mirrorz.org/list">https://mirrorz.org/list&lt;/a> 国内镜像汇总&lt;/p></description></item><item><title>Doom Emacs 按键绑定</title><link>/posts/doom-emacs-key-bindings/</link><pubDate>Wed, 06 Jan 2021 22:25:00 +0800</pubDate><guid>/posts/doom-emacs-key-bindings/</guid><description>&lt;h2 id="核心快捷键前缀">核心快捷键前缀&lt;/h2>
+&lt;p>在 Doom Emacs 中按快捷键前缀时会提示接下来可能的按键说明，非常方便。快捷键修饰符如下：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>SPC&lt;/code> 表示 &lt;code>Space&lt;/code>&lt;/li>
+&lt;li>&lt;code>C-&lt;/code> 表示 &lt;code>Ctrl&lt;/code>&lt;/li>
+&lt;li>&lt;code>M-&lt;/code> 表示 &lt;code>Meta&lt;/code> or &lt;code>Alt&lt;/code> or &lt;code>Option&lt;/code>&lt;/li>
+&lt;li>&lt;code>S-&lt;/code> 表示 &lt;code>Shift&lt;/code>&lt;/li>
+&lt;li>&lt;code>s-&lt;/code> 表示 &lt;code>Super&lt;/code> or &lt;code>Command&lt;/code> or &lt;code>Win&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>跟 Spacemacs 一样，Doom Emacs 也默认开启了 evil 模式来模拟 VI 的编辑体验，需要在插入等状态下按 &lt;code>ESC&lt;/code> 回到 normal state，所有 &lt;code>SPC&lt;/code> 开头的快捷键都要退出 emacs-state 和 insert-state 才能使用，在这两个状态里可以用 &lt;code>M-SPC&lt;/code> 前缀避免模式切换。&lt;/p></description></item><item><title>OAuth 和 OpenID Connect</title><link>/posts/oauth-and-openid-connect/</link><pubDate>Tue, 15 Dec 2020 23:00:00 +0800</pubDate><guid>/posts/oauth-and-openid-connect/</guid><description>&lt;h2 id="1-参考">1. 参考&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://oauth.net/2/">https://oauth.net/2/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://openid.net/developers/specs/">https://openid.net/developers/specs/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.keycloak.org/documentation.html">https://www.keycloak.org/documentation.html&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="2-选型">2. 选型&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>API Gateway: &lt;a href="https://landscape.cncf.io/category=api-gateway&amp;amp;format=card-mode&amp;amp;grouping=category">https://landscape.cncf.io/category=api-gateway&amp;amp;format=card-mode&amp;amp;grouping=category&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>OpenID Provider Server&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/keycloak/keycloak">Keycloak&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/ory/hydra">Hydra&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>OpenID Provider Library&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>NodeJS&lt;/strong>: &lt;a href="https://www.npmjs.com/package/oidc-provider">https://www.npmjs.com/package/oidc-provider&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Relying Party Server&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Nginx + zmartzone/&lt;a href="https://luarocks.org/modules/hanszandbelt/lua-resty-openidc">lua-resty-openidc&lt;/a>(OpenID &lt;a href="https://openid.net/developers/certified/">官方认证&lt;/a>)&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>APISIX&lt;/strong>: &lt;a href="https://github.com/apache/apisix/blob/master/doc/plugins/openid-connect.md">https://github.com/apache/apisix/blob/master/doc/plugins/openid-connect.md&lt;/a> (还有个 &lt;a href="https://github.com/apache/apisix/blob/master/doc/plugins/authz-keycloak.md">authz-keycloak&lt;/a>)&lt;/li>
+&lt;li>&lt;strong>Kong&lt;/strong> + nokia/kong-oidc: &lt;a href="https://github.com/nokia/kong-oidc">https://github.com/nokia/kong-oidc&lt;/a> ， 有两个值得关注的 fork: &lt;a href="https://luarocks.org/modules/larsw/kong-enhanced-oidc">kong-enhanced-oidc&lt;/a>, &lt;a href="https://luarocks.org/modules/JoshTheGoldfish/kong-oidc">JoshTheGoldfish/kong-oidc&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Nginx + 自行实现 Lua 插件&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Kong&lt;/strong> + openid-connect(商业版): &lt;a href="https://docs.konghq.com/hub/kong-inc/openid-connect/">https://docs.konghq.com/hub/kong-inc/openid-connect/&lt;/a> (开源版里的 &lt;a href="https://docs.konghq.com/hub/kong-inc/oauth2/">oauth2&lt;/a> 不支持 OIDC)&lt;/li>
+&lt;li>Gluu gateway: &lt;a href="https://github.com/GluuFederation/gluu-gateway/tree/version_4.2.1/lib/kong/plugins/gluu-openid-connect">https://github.com/GluuFederation/gluu-gateway/tree/version_4.2.1/lib/kong/plugins/gluu-openid-connect&lt;/a>&lt;/li>
+&lt;li>3scale APIcast: &lt;a href="https://github.com/3scale/APIcast/blob/master/gateway/src/apicast/oauth/oidc.lua">https://github.com/3scale/APIcast/blob/master/gateway/src/apicast/oauth/oidc.lua&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Envoy&lt;/p></description></item><item><title>Learn Apache Beam</title><link>/posts/learn-apache-beam/</link><pubDate>Wed, 22 Apr 2020 22:36:22 +0800</pubDate><guid>/posts/learn-apache-beam/</guid><description>&lt;h2 id="1-pipeline-框架">1. Pipeline 框架&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>PipelineOptions&lt;span style="color:#bbb"> &lt;/span>options&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>PipelineOptionsFactory.&lt;span style="color:#4070a0">fromArgs&lt;/span>(args).&lt;span style="color:#4070a0">withValidation&lt;/span>().&lt;span style="color:#4070a0">create&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#60a0b0;font-style:italic">// or&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#007020;font-weight:bold">public&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">interface&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">MyOptions&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">extends&lt;/span>&lt;span style="color:#bbb"> &lt;/span>PipelineOptions&lt;span style="color:#bbb"> &lt;/span>{&lt;span style="color:#bbb"> &lt;/span>...&lt;span style="color:#bbb"> &lt;/span>}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>PipelineOptionsFactory.&lt;span style="color:#4070a0">register&lt;/span>(MyOptions.&lt;span style="color:#4070a0">class&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>MyOptions&lt;span style="color:#bbb"> &lt;/span>options&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>PipelineOptionsFactory.&lt;span style="color:#4070a0">fromArgs&lt;/span>(args)&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>.&lt;span style="color:#4070a0">withValidation&lt;/span>()&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>.&lt;span style="color:#4070a0">as&lt;/span>(MyOptions.&lt;span style="color:#4070a0">class&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>Pipeline&lt;span style="color:#bbb"> &lt;/span>pipeline&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Pipeline.&lt;span style="color:#4070a0">create&lt;/span>(options);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>PCollection&lt;span style="color:#666">&amp;lt;&lt;/span>...&lt;span style="color:#666">&amp;gt;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>pipeline.&lt;span style="color:#4070a0">apply&lt;/span>(...&lt;span style="color:#4070a0">PTransform&lt;/span>...);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>pipeline.&lt;span style="color:#4070a0">run&lt;/span>().&lt;span style="color:#4070a0">waitUntilFinish&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="2-transform">2. Transform&lt;/h2>
+&lt;ol>
+&lt;li>data source -&amp;gt; Read transform -&amp;gt; Transform -&amp;gt; Write transform -&amp;gt; data sink&lt;/li>
+&lt;li>Core Beam transforms
+&lt;ul>
+&lt;li>ParDo: 类似于 map，可以产生零个、一个、多个元素&lt;/li>
+&lt;li>GroupByKey: 类似于 shuffle，在同一个 PCollection 里做 group by&lt;/li>
+&lt;li>CoGroupByKey: 类似于 join，作用于多个有相同 Key 类型的 PCollection&lt;/li>
+&lt;li>Combine: 类似于 reduce&lt;/li>
+&lt;li>Flatten: 类似于 merge，合并多个同类型的 PCollection&lt;/li>
+&lt;li>Partition: 类似于 split，将一个 PCollection 切分成多个同类型的 PCollection&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="3-schema">3. Schema&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#555;font-weight:bold">@DefaultSchema&lt;/span>(JavaBeanSchema.&lt;span style="color:#4070a0">class&lt;/span>)&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#007020;font-weight:bold">public&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">A&lt;/span>&lt;span style="color:#bbb"> &lt;/span>{&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">public&lt;/span>&lt;span style="color:#bbb"> &lt;/span>String&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#06287e">getUserId&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555;font-weight:bold">@Nullable&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">public&lt;/span>&lt;span style="color:#bbb"> &lt;/span>String&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#06287e">getUserName&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> 
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555;font-weight:bold">@SchemaCreate&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">public&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#06287e">A&lt;/span>(String&lt;span style="color:#bbb"> &lt;/span>userId,&lt;span style="color:#bbb"> &lt;/span>String&lt;span style="color:#bbb"> &lt;/span>userName)&lt;span style="color:#bbb"> &lt;/span>{&lt;span style="color:#bbb"> &lt;/span>...&lt;span style="color:#bbb"> &lt;/span>}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#555;font-weight:bold">@DefaultSchema&lt;/span>(JavaFieldSchema.&lt;span style="color:#4070a0">class&lt;/span>)&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#007020;font-weight:bold">public&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">A&lt;/span>&lt;span style="color:#bbb"> &lt;/span>{&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">public&lt;/span>&lt;span style="color:#bbb"> &lt;/span>String&lt;span style="color:#bbb"> &lt;/span>userId;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#555;font-weight:bold">@Nullable&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">public&lt;/span>&lt;span style="color:#bbb"> &lt;/span>String&lt;span style="color:#bbb"> &lt;/span>userName;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>@SchemaCreate&lt;/code>, &lt;code>@SchemaIgnore&lt;/code>, &lt;code>@SchemaFieldName&lt;/code>可选。&lt;/p></description></item><item><title>使用 Debezium 复制 MySQL binlog 到 Kafka</title><link>/posts/use-debezium-to-replicate-mysql-binlog/</link><pubDate>Fri, 03 Apr 2020 22:04:14 +0800</pubDate><guid>/posts/use-debezium-to-replicate-mysql-binlog/</guid><description>&lt;p>&lt;a href="https://debezium.io/">Debezium&lt;/a> 是一个支持 Kafka Connect 框架的数据库变更捕获(Change Data Capture)服务，它可以消费 MySQL、PostgreSQL、SQL Server、MongoDB 的 binlog 写入到 Apache Kafka 里，下文是针对 MySQL 的简单配置步骤。&lt;/p></description></item><item><title>Vcpkg and Dlib Face Recognition</title><link>/posts/vcpkg-and-dlib-face-recognition/</link><pubDate>Sun, 02 Feb 2020 22:00:25 +0800</pubDate><guid>/posts/vcpkg-and-dlib-face-recognition/</guid><description>&lt;h2 id="安装-vcpkg">安装 vcpkg&lt;/h2>
+&lt;p>安装 Vcpkg 源码的 &lt;a href="https://github.com/microsoft/vcpkg">README&lt;/a> 来：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone https://github.com/Microsoft/vcpkg.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">cd&lt;/span> vcpkg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./bootstrap-vcpkg.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="安装-dlib">安装 Dlib&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./vcpkg install dlib
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="使用-dlib-做人脸识别">使用 Dlib 做人脸识别&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>编译实例代码&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mkdir &lt;span style="color:#007020">test&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">cd&lt;/span> &lt;span style="color:#007020">test&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...下载 http://dlib.net/dnn_face_recognition_ex.cpp.html *内容*
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>... 保存为 dnn_face_recognition_ex.cpp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cat &amp;gt; CMakeLists.txt &lt;span style="color:#4070a0">&amp;lt;&amp;lt;EOF
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">cmake_minimum_required(VERSION 3.0)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">project(test)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">find_package(dlib CONFIG REQUIRED)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">find_package(jpeg REQUIRED)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">add_executable(dnn_face_recognition_ex dnn_face_recognition_ex.cpp)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">target_link_libraries(dnn_face_recognition_ex PRIVATE dlib::dlib JPEG::JPEG)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">EOF&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir build
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">cd&lt;/span> build
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cmake .. -DCMAKE_TOOLCHAIN_FILE&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#bb60d5">$VCPKG_ROOT&lt;/span>/scripts/buildsystems/vcpkg.cmake
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>下载模型文件&lt;/p></description></item><item><title>Java Memory Optimization</title><link>/posts/java-memory-optimization/</link><pubDate>Sat, 11 Jan 2020 17:17:06 +0800</pubDate><guid>/posts/java-memory-optimization/</guid><description>&lt;h2 id="progress-on-jdk">Progress on JDK&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>JDK 10: &lt;a href="http://openjdk.java.net/projects/jdk/10/">http://openjdk.java.net/projects/jdk/10/&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="http://openjdk.java.net/jeps/310">http://openjdk.java.net/jeps/310&lt;/a> Application Class-Data Sharing
+&lt;pre tabindex="0">&lt;code># Determining the classes to archive
+java -Xshare:off -XX:+UseAppCDS -XX:DumpLoadedClassList=hello.lst \
+ -cp hello.jar HelloWorld
+
+# Creating the AppCDS archive
+java -Xshare:dump -XX:+UseAppCDS -XX:SharedClassListFile=hello.lst \
+ -XX:SharedArchiveFile=hello.jsa -cp hello.jar
+
+# Verify classpath mistach and mmap
+java -Xshare:on -XX:+UseAppCDS -XX:SharedArchiveFile=hello.jsa \
+ -cp hello.jar -Xlog:class+load=info HelloWorld
+
+# Production deployment
+java -Xshare:auto -XX:+UseAppCDS -XX:SharedArchiveFile=hello.jsa \
+ -cp hello.jar HelloWorld
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>JDK 11: &lt;a href="http://openjdk.java.net/projects/jdk/11/">http://openjdk.java.net/projects/jdk/11/&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="http://openjdk.java.net/jeps/318">http://openjdk.java.net/jeps/318&lt;/a> Epsilon: A No-Op Garbage Collector&lt;/p></description></item><item><title>给阿里云容器镜像服务器架设反向代理</title><link>/posts/docker-registry-reverse-proxy/</link><pubDate>Mon, 30 Dec 2019 22:00:00 +0800</pubDate><guid>/posts/docker-registry-reverse-proxy/</guid><description>&lt;p>早期我司使用 &lt;a href="https://github.com/goharbor/harbor">Harbor&lt;/a> 自建 Docker Registry，后来阿里云推出了容器镜像服务，服务还处于公测阶段，使用免费，看起来不错，但是两者的 URI 是不一样的：&lt;/p>
+&lt;ul>
+&lt;li>我司：registry.example.com/NAMESPACE/REPOSITORY&lt;/li>
+&lt;li>阿里云：registry.cn-shenzhen.aliyuncs.com/PREFIX_NAMESPACE/REPOSITORY&lt;/li>
+&lt;/ul>
+&lt;p>除了域名不一样，两者的 namespace 也不一样，阿里云比较矬，它的 RDS、Redis 服务提供的域名是每个用户不一样的，而 docker registry 却选择了一个固定域名，于是不同租户的 namespace 名字会冲突，非常不幸的是我司用的 namespace 名字已经被人占用了，阿里云推荐的解决办法是加一个公司名字前缀。 由于这个原因，我们不能把 registry.example.com以 DNS CNAME 的方式直接映射到 registry.cn-shenzhen.aliyuncs.com，而是要借助一层 Nginx 代理：&lt;/p></description></item><item><title>TiDB 笔记</title><link>/posts/learn-tidb/</link><pubDate>Tue, 24 Sep 2019 20:00:00 +0800</pubDate><guid>/posts/learn-tidb/</guid><description>&lt;h2 id="启动单节点的-tidb">启动单节点的 TiDB&lt;/h2>
+&lt;p>完整的 PD + TiKV + TiDB:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker run -dt --restart&lt;span style="color:#666">=&lt;/span>always --name tipd -p 2379:2379 -p 4000:4000 -p 10080:10080 pingcap/pd:v2.1.15 --data-dir&lt;span style="color:#666">=&lt;/span>/data/tipd
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker run -dt --restart&lt;span style="color:#666">=&lt;/span>always --name tikv --net&lt;span style="color:#666">=&lt;/span>container:tipd pingcap/tikv:v2.1.15 --data-dir&lt;span style="color:#666">=&lt;/span>/data/tikv --pd-endpoints&lt;span style="color:#666">=&lt;/span>127.0.0.1:2379
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker run -dt --restart&lt;span style="color:#666">=&lt;/span>always --name tidb --net&lt;span style="color:#666">=&lt;/span>container:tipd pingcap/tidb:v2.1.15 --store&lt;span style="color:#666">=&lt;/span>tikv --path&lt;span style="color:#666">=&lt;/span>127.0.0.1:2379
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>只有 TiDB：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># 默认 path 为 /tmp/tidb&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker run -dt --restart&lt;span style="color:#666">=&lt;/span>always --name tidb -p 4000:4000 -p 10080:10080 pingcap/tidb:v2.1.15 --path&lt;span style="color:#666">=&lt;/span>/data/tidb
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Java 的 X.509 证书吊销检查</title><link>/posts/check-x509-certification-revocation-in-java/</link><pubDate>Thu, 15 Aug 2019 22:47:12 +0800</pubDate><guid>/posts/check-x509-certification-revocation-in-java/</guid><description>&lt;p>在使用 TLS 协议加密通讯时，CA 证书文件、服务端和客户端的证书文件和私钥文件如何配置是最基本的，但对证书吊销检查的配置则文档甚少，甚至许多程序并不支持，下面总结下在 Java 中如何做 X.509 证书的吊销检查。&lt;/p></description></item><item><title>魔改了下 MariaDB 支持 JSON binary</title><link>/posts/support-json-binary-in-mariadb/</link><pubDate>Sat, 27 Jul 2019 17:48:55 +0800</pubDate><guid>/posts/support-json-binary-in-mariadb/</guid><description>&lt;p>Oracle MySQL 的 JSON 数据类型在存储时用的紧凑的二进制格式，MariaDB 则傲娇的直接存原始的 JSON 文本串，从 &lt;a href="https://link.zhihu.com/?target=https%3A//mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/">MariaDB 10.2 开始兼容 MySQL 5.7&lt;/a>，如今 MariaDB 10.4 稳定版都发布了，依然还是&lt;a href="https://mariadb.com/kb/en/library/json-data-type/">不支持 Oracle MySQL 的 JSON 类型&lt;/a>：&lt;/p></description></item><item><title>Regular Expression Matching Can Be Simple and Fast</title><link>/posts/regular-expression-matching-can-be-simple-and-fast/</link><pubDate>Fri, 19 Apr 2019 22:07:40 +0800</pubDate><guid>/posts/regular-expression-matching-can-be-simple-and-fast/</guid><description>&lt;p>&lt;a href="http://swtch.com/~rsc/regexp/regexp1.html">http://swtch.com/~rsc/regexp/regexp1.html&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://swtch.com/~rsc/regexp/regexp2.html">https://swtch.com/~rsc/regexp/regexp2.html&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://swtch.com/~rsc/regexp/regexp3.html">https://swtch.com/~rsc/regexp/regexp3.html&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://swtch.com/~rsc/regexp/regexp4.html">https://swtch.com/~rsc/regexp/regexp4.html&lt;/a>&lt;/p>
+&lt;p>作者 Russ Cox 为 Google Code Search 编写了 RE2。&lt;/p>
+&lt;p>正则表达式运算符的优先级从高到低：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-txt" data-lang="txt">&lt;span style="display:flex;">&lt;span>repetition operators: *+?
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>concatenation operator: Thompson 用“ .” 表示，现在则直接连写。
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>alternation operator: |
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>理论上讲，带有向后引用的正则表达式不是正则表达式。&lt;/p></description></item><item><title>ProxySQL 整数溢出</title><link>/posts/proxysql-integer-overflow/</link><pubDate>Sun, 24 Mar 2019 18:03:37 +0800</pubDate><guid>/posts/proxysql-integer-overflow/</guid><description>&lt;p>最近学习了下 &lt;a href="https://proxysql.com/">ProxySQL&lt;/a>，在非生产环境大致体验了下，感觉不错，于是小流量上了生产环境，然而居然发现有个奇怪的现象，客户端大概率连不上 MySQL 服务器，报告如下错误：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-txt" data-lang="txt">&lt;span style="display:flex;">&lt;span>Max connect timeout reached while reaching hostgroup 3034 after 10000ms
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>非常郁闷，网上搜索了下，跟我遇到的情况都不符合，我确认了 &lt;code>runtime_mysql_servers&lt;/code> 表中所有 server 都是 ONLINE 状态，在 &lt;code>monitor.mysql_server_connect_log&lt;/code>, &lt;code>monitor.mysql_server_ping_log&lt;/code> 和 &lt;code>monitor.mysql_server_replication_lag_log&lt;/code> 几个表中的检查都非常正常，直连 MySQL 也非常快。&lt;/p></description></item><item><title>减少 InfluxDB 内存占用</title><link>/posts/reduce-influxdb-memory-usage/</link><pubDate>Thu, 14 Mar 2019 00:00:00 +0800</pubDate><guid>/posts/reduce-influxdb-memory-usage/</guid><description>&lt;p>Kubernetes 1.12 &lt;a href="https://github.com/kubernetes-retired/heapster/blob/master/docs/deprecation.md">以前&lt;/a>使用 Heapster 做集群监控，以提供数据给 &lt;code>kubectl top&lt;/code> 命令以及 kubernetes-dashboard 的 Web UI 查看。Heapster 默认使用 InfluxDB，而 InfluxDB 默认设置的 retention policy 是七天一个 shard，无限保留，使用内存索引，所以时间久了后 InfluxDB 会消耗接近 10GB 内存。&lt;/p></description></item><item><title>其实你并不懂 Unicode</title><link>/posts/you-dont-understand-unicode/</link><pubDate>Mon, 31 Dec 2018 17:30:00 +0800</pubDate><guid>/posts/you-dont-understand-unicode/</guid><description>&lt;h2 id="导言">导言&lt;/h2>
+&lt;p>古有 Babel 通天塔，今有 Unicode 字符集，很多编程语言支持 Unicode，甚至在语法层面直接支持，绝大部分程序员可能会因此觉得自己懂 Unicode 了，自己的代码不需要特别注意就能处理世界上所有语言的字符了，觉得 Unicode 高大上真善美，其实并非如此，下面讲述下作为一个程序员，你需要了解的几个关键概念，里面颇有几个大坑，看看各位知道几个😄&lt;/p></description></item></channel></rss>
