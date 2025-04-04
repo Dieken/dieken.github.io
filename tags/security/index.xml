@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Security on 随记</title><link>/tags/security/</link><description>Recent content in Security on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 20 Sep 2021 20:45:21 +0800</lastBuildDate><atom:link href="/tags/security/index.xml" rel="self" type="application/rss+xml"/><item><title>《BeyondCorp: A New Approach to Enterprise Security》总结</title><link>/posts/beyond-corp-and-zero-trust/</link><pubDate>Mon, 20 Sep 2021 20:45:21 +0800</pubDate><guid>/posts/beyond-corp-and-zero-trust/</guid><description>&lt;p>零信任网络架构的研究由来已久，Google 的这篇 BeyondCorp 论文让这个概念广为认知，毕竟 Google 名气太大。这篇工程实践论文可读性很好，对企业办公网络的安全设计实操非常有帮助，总结一下关键点：&lt;/p></description></item><item><title>OAuth 和 OpenID Connect</title><link>/posts/oauth-and-openid-connect/</link><pubDate>Tue, 15 Dec 2020 23:00:00 +0800</pubDate><guid>/posts/oauth-and-openid-connect/</guid><description>&lt;h2 id="1-参考">1. 参考&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://oauth.net/2/">https://oauth.net/2/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://openid.net/developers/specs/">https://openid.net/developers/specs/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.keycloak.org/documentation.html">https://www.keycloak.org/documentation.html&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="2-选型">2. 选型&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>API Gateway: &lt;a href="https://landscape.cncf.io/category=api-gateway&amp;amp;format=card-mode&amp;amp;grouping=category">https://landscape.cncf.io/category=api-gateway&amp;amp;format=card-mode&amp;amp;grouping=category&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>OpenID Provider Server&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/keycloak/keycloak">Keycloak&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/ory/hydra">Hydra&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>OpenID Provider Library&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>NodeJS&lt;/strong>: &lt;a href="https://www.npmjs.com/package/oidc-provider">https://www.npmjs.com/package/oidc-provider&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Relying Party Server&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Nginx + zmartzone/&lt;a href="https://luarocks.org/modules/hanszandbelt/lua-resty-openidc">lua-resty-openidc&lt;/a>(OpenID &lt;a href="https://openid.net/developers/certified/">官方认证&lt;/a>)&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>APISIX&lt;/strong>: &lt;a href="https://github.com/apache/apisix/blob/master/doc/plugins/openid-connect.md">https://github.com/apache/apisix/blob/master/doc/plugins/openid-connect.md&lt;/a> (还有个 &lt;a href="https://github.com/apache/apisix/blob/master/doc/plugins/authz-keycloak.md">authz-keycloak&lt;/a>)&lt;/li>
+&lt;li>&lt;strong>Kong&lt;/strong> + nokia/kong-oidc: &lt;a href="https://github.com/nokia/kong-oidc">https://github.com/nokia/kong-oidc&lt;/a> ， 有两个值得关注的 fork: &lt;a href="https://luarocks.org/modules/larsw/kong-enhanced-oidc">kong-enhanced-oidc&lt;/a>, &lt;a href="https://luarocks.org/modules/JoshTheGoldfish/kong-oidc">JoshTheGoldfish/kong-oidc&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Nginx + 自行实现 Lua 插件&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Kong&lt;/strong> + openid-connect(商业版): &lt;a href="https://docs.konghq.com/hub/kong-inc/openid-connect/">https://docs.konghq.com/hub/kong-inc/openid-connect/&lt;/a> (开源版里的 &lt;a href="https://docs.konghq.com/hub/kong-inc/oauth2/">oauth2&lt;/a> 不支持 OIDC)&lt;/li>
+&lt;li>Gluu gateway: &lt;a href="https://github.com/GluuFederation/gluu-gateway/tree/version_4.2.1/lib/kong/plugins/gluu-openid-connect">https://github.com/GluuFederation/gluu-gateway/tree/version_4.2.1/lib/kong/plugins/gluu-openid-connect&lt;/a>&lt;/li>
+&lt;li>3scale APIcast: &lt;a href="https://github.com/3scale/APIcast/blob/master/gateway/src/apicast/oauth/oidc.lua">https://github.com/3scale/APIcast/blob/master/gateway/src/apicast/oauth/oidc.lua&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Envoy&lt;/p></description></item><item><title>Java 的 X.509 证书吊销检查</title><link>/posts/check-x509-certification-revocation-in-java/</link><pubDate>Thu, 15 Aug 2019 22:47:12 +0800</pubDate><guid>/posts/check-x509-certification-revocation-in-java/</guid><description>&lt;p>在使用 TLS 协议加密通讯时，CA 证书文件、服务端和客户端的证书文件和私钥文件如何配置是最基本的，但对证书吊销检查的配置则文档甚少，甚至许多程序并不支持，下面总结下在 Java 中如何做 X.509 证书的吊销检查。&lt;/p></description></item></channel></rss>
