@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GUI on 随记</title><link>/tags/gui/</link><description>Recent content in GUI on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 14 Nov 2024 22:00:00 +0800</lastBuildDate><atom:link href="/tags/gui/index.xml" rel="self" type="application/rss+xml"/><item><title>那些古老又优美的 GUI</title><link>/posts/the-great-pretty-old-gui/</link><pubDate>Thu, 14 Nov 2024 22:00:00 +0800</pubDate><guid>/posts/the-great-pretty-old-gui/</guid><description>&lt;style>
+ figure { text-align: center; }
+&lt;/style>
+&lt;figure>
+ &lt;img src="https://pica.zhimg.com/v2-0c838971960e570702789a802c89495a_1440w.jpg" title="Smalltalk-76" alt="Smalltalk-76">
+ &lt;figcaption>Smalltalk-76&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://pic3.zhimg.com/v2-957fb68f1b626a84e5d61342a0006f86_1440w.jpg" title="Smalltalk-80" alt="Smalltalk-80">
+ &lt;figcaption>Smalltalk-80&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://pic3.zhimg.com/v2-bb2c4efdafe58fc3d792a2b88c80d6a6_1440w.jpg" title="对，这是 Lisp Machine。至于为什麼图中会有 Mac OS 的 status bar ，是因為當時 Macintosh 非常流行以至于 Symbolics 公司把 Lisp Machine 的 CPU 做成 Macintosh 的主板插片卖 -- @LdBeth" alt="对，这是 Lisp Machine。至于为什麼图中会有 Mac OS 的 status bar ，是因為當時 Macintosh 非常流行以至于 Symbolics 公司把 Lisp Machine 的 CPU 做成 Macintosh 的主板插片卖 -- @LdBeth">
+ &lt;figcaption>对，这是 Lisp Machine。至于为什麼图中会有 Mac OS 的 status bar ，是因為當時 Macintosh 非常流行以至于 Symbolics 公司把 Lisp Machine 的 CPU 做成 Macintosh 的主板插片卖 -- @LdBeth&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://pica.zhimg.com/v2-670f8d257f9918a3904adeb27b76ecaa_1440w.jpg" title="Macintosh System 1.0" alt="Macintosh System 1.0">
+ &lt;figcaption>Macintosh System 1.0&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://pic4.zhimg.com/v2-9c038c6a56606d14b2e5d5029d553499_1440w.jpg" title="Macintosh System 7.5" alt="Macintosh System 7.5">
+ &lt;figcaption>Macintosh System 7.5&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://pic1.zhimg.com/v2-428b9cf41d93745fd7d9eb74db9505bc_1440w.jpg" title="NeXTSTEP" alt="NeXTSTEP">
+ &lt;figcaption>NeXTSTEP&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://picx.zhimg.com/v2-9a3ff3c20795be46897fbfcd07e145e5_1440w.jpg" title="CDE 1.6 on Solaris 10" alt="CDE 1.6 on Solaris 10">
+ &lt;figcaption>CDE 1.6 on Solaris 10&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://pic1.zhimg.com/v2-8882e8c0ad8a3ce9b389f9c926803d1a_1440w.jpg" title="Plan 9 Rio" alt="Plan 9 Rio">
+ &lt;figcaption>Plan 9 Rio&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://pic3.zhimg.com/v2-21498ccfb0f675cc05752d0d81d8b700_1440w.jpg" title="Plan 9 Rio" alt="Plan 9 Rio">
+ &lt;figcaption>Plan 9 Rio&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://pic2.zhimg.com/v2-e899c9eb21f7b85c8a7bf0f4e3ff3817_1440w.jpg" title="Plan 9 Rio" alt="Plan 9 Rio">
+ &lt;figcaption>Plan 9 Rio&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://picx.zhimg.com/v2-fd70cf739cd4ef88b77e33f90b24169f_1440w.jpg" title="Turbo Pascal 7.0" alt="Turbo Pascal 7.0">
+ &lt;figcaption>Turbo Pascal 7.0&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://pic4.zhimg.com/v2-46dbf05e7afae8df093d32e5cc3eb995_1440w.jpg" title="Borland Pascal 7.0" alt="Borland Pascal 7.0">
+ &lt;figcaption>Borland Pascal 7.0&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://pica.zhimg.com/v2-78abd7ad5465f712e5d736d549eb1fdc_1440w.jpg" title="Mac OS X Developer Beta 3, Aqua" alt="Mac OS X Developer Beta 3, Aqua">
+ &lt;figcaption>Mac OS X Developer Beta 3, Aqua&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://picx.zhimg.com/v2-22134ffcbbcf910f7180ecabd2adfa45_1440w.jpg" title="SunOS SunView" alt="SunOS SunView">
+ &lt;figcaption>SunOS SunView&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://pic1.zhimg.com/v2-7c1ee3d996459943622874c5b5da1838_1440w.jpg" title="SunOS OPEN LOOK" alt="SunOS OPEN LOOK">
+ &lt;figcaption>SunOS OPEN LOOK&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://pic3.zhimg.com/v2-a3472a3bd521ccd5ddecae99f9460278_1440w.jpg" title="Typical early X display on a Sun workstation. (This is actually a screenshot of a faithful emulation running under Linux.)" alt="Typical early X display on a Sun workstation. (This is actually a screenshot of a faithful emulation running under Linux.)">
+ &lt;figcaption>Typical early X display on a Sun workstation. (This is actually a screenshot of a faithful emulation running under Linux.)&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://pica.zhimg.com/v2-1a4d49b0829db8265266a31de90fb7ee_1440w.jpg" title="KDE 1.0" alt="KDE 1.0">
+ &lt;figcaption>KDE 1.0&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://pic2.zhimg.com/v2-a7dcd41bacf597eb92ccf1573955db35_1440w.jpg" title="KDE 2.2.2" alt="KDE 2.2.2">
+ &lt;figcaption>KDE 2.2.2&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://picx.zhimg.com/v2-9d3ce916e9e62aa43a98aff23a2a4549_1440w.jpg" title="Bluecurve in use with Fedora Core 1 (Yarrow) on the GNOME 2.4 Desktop" alt="Bluecurve in use with Fedora Core 1 (Yarrow) on the GNOME 2.4 Desktop">
+ &lt;figcaption>Bluecurve in use with Fedora Core 1 (Yarrow) on the GNOME 2.4 Desktop&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://pic2.zhimg.com/v2-f14da33a0539a270f058769f9b379c45_1440w.jpg" title="Windows 2000" alt="Windows 2000">
+ &lt;figcaption>Windows 2000&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://pic1.zhimg.com/v2-77a6c790362639fbcfc572a4543c0930_1440w.jpg" title="Windows XP" alt="Windows XP">
+ &lt;figcaption>Windows XP&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+ &lt;img src="https://pic3.zhimg.com/v2-08db1496fdf13220d2927d5bdf54ad0e_1440w.jpg" title="XFCE 1.0" alt="XFCE 1.0">
+ &lt;figcaption>XFCE 1.0&lt;/figcaption>
+&lt;/figure>
+&lt;p>不要错过下面的链接，有更多漂亮截图 :-)&lt;/p></description></item><item><title>Windows GUI 应用框架</title><link>/posts/windows-gui-frameworks/</link><pubDate>Tue, 15 Oct 2024 22:00:00 +0800</pubDate><guid>/posts/windows-gui-frameworks/</guid><description>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">年份&lt;/th>
+ &lt;th style="text-align: center">仅支持 Windows&lt;/th>
+ &lt;th style="text-align: center">跨平台&lt;/th>
+ &lt;th style="text-align: center">支持 XAML？&lt;/th>
+ &lt;th style="text-align: center">已废弃？&lt;/th>
+ &lt;th>备注&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">1991&lt;/td>
+ &lt;td style="text-align: center">&lt;del>OWL&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">1992&lt;/td>
+ &lt;td style="text-align: center">MFC&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">1995&lt;/td>
+ &lt;td style="text-align: center">VCL&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2001&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://sourceforge.net/projects/owlnext/">OWLNext&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2001&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;del>CLX&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2001&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;strong>&lt;a href="https://sourceforge.net/projects/owlnext/">LCL&lt;/a>&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>Lazarus Component Library&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2002&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/dotnet/winforms">WinForms&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>.Net Framework 1.0&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2005&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://sourceforge.net/projects/wtl/">WTL&lt;/a> 7.5&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>MFC 的轻量替代&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2006&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/dotnet/wpf">WPF&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>.Net Framework 3.0，引入 XAML，使用 C# 实现&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2007&lt;/td>
+ &lt;td style="text-align: center">&lt;del>Silverlight&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>使用 C++ 实现，与 Flash、Java Applet 竞争&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2009&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td>&lt;mark>Windows 7&lt;/mark>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2011&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;strong>&lt;a href="https://docwiki.embarcadero.com/Libraries/Sydney/en/FMX">FMX&lt;/a>&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>Embarcadero FireMonkey&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2012&lt;/td>
+ &lt;td style="text-align: center">&lt;del>WinRT + WinUI 1(WinRT XAML)&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>Windows 8&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2013&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;strong>&lt;a href="https://avaloniaui.net">Avalonia&lt;/a>&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>受 WPF 启发&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2014&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;del>Xamarin.Forms&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2015&lt;/td>
+ &lt;td style="text-align: center">&lt;del>UWP + WinUI 1(UWP XAML)&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>Windows 10，扩展 WinRT&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2016&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td>.Net Core 1.0&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2018&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td>WinForms 和 WPF 开源&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2018&lt;/td>
+ &lt;td style="text-align: center">&lt;del>UWP + WinUI 2&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2018&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;strong>&lt;a href="https://platform.uno">Uno Platform&lt;/a>&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>UWP 的跨平台版本&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2020&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td>&lt;mark>.Net 5&lt;/mark>，合并 .Net Framework 和 .Net Core&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2021&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td>Windows 11&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2021&lt;/td>
+ &lt;td style="text-align: center">WinUI 3&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>独立库，支持 WinForms/WPF/UWP/MAUI&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2021&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;strong>&lt;a href="https://dotnet.microsoft.com/en-us/apps/maui">MAUI&lt;/a>&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>.Net 6，继承 Xamarin.Forms&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>总结：&lt;/p></description></item></channel></rss>
