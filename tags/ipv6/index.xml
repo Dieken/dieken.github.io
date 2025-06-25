@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IPv6 on 随记</title><link>/tags/ipv6/</link><description>Recent content in IPv6 on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 01 Oct 2019 09:16:46 +0800</lastBuildDate><atom:link href="/tags/ipv6/index.xml" rel="self" type="application/rss+xml"/><item><title>IPv6 过渡机制</title><link>/posts/ipv6-transition/</link><pubDate>Tue, 01 Oct 2019 09:16:46 +0800</pubDate><guid>/posts/ipv6-transition/</guid><description>&lt;h2 id="ipv6-过渡机制要解决什么问题">IPv6 过渡机制要解决什么问题？&lt;/h2>
+&lt;p>从最早的 IPv4-only 网络，到 IPv4/IPv6 双协议网络，到最终态的 IPv6-only 网络，这其中涉及到三方：&lt;/p>
+&lt;p>&lt;img src="network.svg" alt="network">&lt;/p>
+&lt;p>不考虑 WAN 里不同 ISP 之间互联，LAN 和 WAN 里的网络有如下可能：&lt;/p></description></item><item><title>IPv6 入门笔记</title><link>/posts/ipv6-intro/</link><pubDate>Fri, 08 Mar 2019 09:01:51 +0800</pubDate><guid>/posts/ipv6-intro/</guid><description>&lt;h2 id="ipv6-地址">IPv6 地址&lt;/h2>
+&lt;ul>
+&lt;li>Unicast地址：48bit routing prefix + 16bit or fewer subnet id + 64bit interface identifier&lt;/li>
+&lt;li>Link local 地址：10bit prefix + 54bit zeros + 64bit interface identifier (前面 64bit 固定为 FE80:0:0:0)&lt;/li>
+&lt;li>Multicast 地址：8bit prefix + 4bit flag + 4 bit scope + 112bit group ID&lt;/li>
+&lt;/ul>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>IPv4 address&lt;/th>
+ &lt;th>IPv6 address&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Multicast 224.0.0.0/4&lt;/td>
+ &lt;td>Multicast FF00::/8&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Unspecified address 0.0.0.0&lt;/td>
+ &lt;td>Unspecified address ::&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Loopback 127.0.0.1&lt;/td>
+ &lt;td>Loopback ::1&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Public IP address&lt;/td>
+ &lt;td>Global unicast address: 2000::/3 (2000::/16 ~ 3FFFF::/16 一共 8192 个前缀)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Private IP address 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 100.64.0.0/10&lt;/td>
+ &lt;td>Unique local address: FC00::/7 (FC00:/8 ~ FD00::/8)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Automatic Private IP Address(APIPA) 169.254.0.0/16&lt;/td>
+ &lt;td>Link local address: FE80::/10&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="ipv6-重要协议">IPv6 重要协议&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>链路层&lt;/p></description></item></channel></rss>

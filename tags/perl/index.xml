@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Perl on 随记</title><link>/tags/perl/</link><description>Recent content in Perl on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 30 Mar 2024 12:26:39 +0800</lastBuildDate><atom:link href="/tags/perl/index.xml" rel="self" type="application/rss+xml"/><item><title>Perl Unicode 脚本模版</title><link>/posts/perl-unicode-script-template/</link><pubDate>Sat, 30 Mar 2024 12:26:39 +0800</pubDate><guid>/posts/perl-unicode-script-template/</guid><description>&lt;p>参考 &lt;a href="https://perldoc.perl.org/perl#Reference-Manual">perldoc perl&lt;/a> 里的以 perluni 开头的文档，至少用 Perl v5.36。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-perl" data-lang="perl">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#!/usr/bin/env perl&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># https://perldoc.perl.org/perluniintro#Perl&amp;#39;s-Unicode-Support v5.28&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># https://perldoc.perl.org/feature#The-&amp;#39;signatures&amp;#39;-feature v5.36&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># https://perldoc.perl.org/perlunicook#℞-0:-Standard-preamble v5.36&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">use&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">v5&lt;/span>&lt;span style="color:#40a070">.36&lt;/span>; &lt;span style="color:#60a0b0;font-style:italic"># or later to get &amp;#34;unicode_strings&amp;#34; feature, plus strict and warnings&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">use&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">utf8&lt;/span>; &lt;span style="color:#60a0b0;font-style:italic"># so literals and identifiers can be in UTF-8&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">use&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">warnings&lt;/span> &lt;span style="color:#c65d09">qw(FATAL utf8)&lt;/span>; &lt;span style="color:#60a0b0;font-style:italic"># fatalize encoding glitches&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">use&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">open&lt;/span> &lt;span style="color:#c65d09">qw(:std :encoding(UTF-8))&lt;/span>; &lt;span style="color:#60a0b0;font-style:italic"># undeclared streams in UTF-8&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">use&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Encode&lt;/span> &lt;span style="color:#c65d09">qw(decode)&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">@ARGV&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">map&lt;/span> { decode(&lt;span style="color:#4070a0">&amp;#39;UTF-8&amp;#39;&lt;/span>, &lt;span style="color:#bb60d5">$_&lt;/span>, &lt;span style="color:#0e84b5;font-weight:bold">Encode::&lt;/span>FB_CROAK) } &lt;span style="color:#bb60d5">@ARGV&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#use autodie qw(:all);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#use Unicode::Normalize; # for NFC(), NFD()&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>say &lt;span style="color:#4070a0">&amp;#34;😊 3 加 4 等于 &amp;#34;&lt;/span>, add(&lt;span style="color:#40a070">3&lt;/span>, &lt;span style="color:#40a070">4&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">sub&lt;/span> &lt;span style="color:#06287e">add&lt;/span>($a, $b) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#bb60d5">$a&lt;/span> &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#bb60d5">$b&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果是命令行执行 one-liner 脚本，最好使用如下命令：&lt;/p></description></item><item><title>Regular Expression Matching Can Be Simple and Fast</title><link>/posts/regular-expression-matching-can-be-simple-and-fast/</link><pubDate>Fri, 19 Apr 2019 22:07:40 +0800</pubDate><guid>/posts/regular-expression-matching-can-be-simple-and-fast/</guid><description>&lt;p>&lt;a href="http://swtch.com/~rsc/regexp/regexp1.html">http://swtch.com/~rsc/regexp/regexp1.html&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://swtch.com/~rsc/regexp/regexp2.html">https://swtch.com/~rsc/regexp/regexp2.html&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://swtch.com/~rsc/regexp/regexp3.html">https://swtch.com/~rsc/regexp/regexp3.html&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://swtch.com/~rsc/regexp/regexp4.html">https://swtch.com/~rsc/regexp/regexp4.html&lt;/a>&lt;/p>
+&lt;p>作者 Russ Cox 为 Google Code Search 编写了 RE2。&lt;/p>
+&lt;p>正则表达式运算符的优先级从高到低：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-txt" data-lang="txt">&lt;span style="display:flex;">&lt;span>repetition operators: *+?
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>concatenation operator: Thompson 用“ .” 表示，现在则直接连写。
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>alternation operator: |
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>理论上讲，带有向后引用的正则表达式不是正则表达式。&lt;/p></description></item></channel></rss>
