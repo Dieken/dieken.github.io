@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Architecture on 随记</title><link>/tags/architecture/</link><description>Recent content in Architecture on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 02 Jan 2025 22:00:00 +0800</lastBuildDate><atom:link href="/tags/architecture/index.xml" rel="self" type="application/rss+xml"/><item><title>关于软件设计和系统架构的书籍</title><link>/posts/books-about-software-design-and-architecture/</link><pubDate>Thu, 02 Jan 2025 22:00:00 +0800</pubDate><guid>/posts/books-about-software-design-and-architecture/</guid><description>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">&lt;/th>
+ &lt;th>书名&lt;/th>
+ &lt;th>作者&lt;/th>
+ &lt;th>年份&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">1&lt;/td>
+ &lt;td>The Mythical Man-Month&lt;/td>
+ &lt;td>Frederick P. Brooks&lt;/td>
+ &lt;td>1974&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2&lt;/td>
+ &lt;td>Algorithms + Data Structures = Programs&lt;/td>
+ &lt;td>Niklaus Wirth&lt;/td>
+ &lt;td>1976&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">3&lt;/td>
+ &lt;td>Programmers at Work&lt;/td>
+ &lt;td>Susan M. Lammers&lt;/td>
+ &lt;td>1986&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">4&lt;/td>
+ &lt;td>The Tao of Programming&lt;/td>
+ &lt;td>Geoffrey James&lt;/td>
+ &lt;td>1986&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">5&lt;/td>
+ &lt;td>Peopleware&lt;/td>
+ &lt;td>Tom DeMacro, Tim Lister&lt;/td>
+ &lt;td>1987&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">6&lt;/td>
+ &lt;td>The Zen of Programming&lt;/td>
+ &lt;td>Geoffrey James&lt;/td>
+ &lt;td>1988&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">7&lt;/td>
+ &lt;td>Code Complete&lt;/td>
+ &lt;td>Steve McConnell&lt;/td>
+ &lt;td>1993&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">8&lt;/td>
+ &lt;td>Design Patterns&lt;/td>
+ &lt;td>Erich Gamma, Richard Helm, et al.&lt;/td>
+ &lt;td>1994&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">9&lt;/td>
+ &lt;td>The Practice of Programming&lt;/td>
+ &lt;td>Brian W. Kernighan, Rob Pike&lt;/td>
+ &lt;td>1999&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">10&lt;/td>
+ &lt;td>The Pragmatic Programmer&lt;/td>
+ &lt;td>Andrew Hunt, David Thomas&lt;/td>
+ &lt;td>1999&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">11&lt;/td>
+ &lt;td>Agile Software Development&lt;/td>
+ &lt;td>Robert C. Martin&lt;/td>
+ &lt;td>2002&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">12&lt;/td>
+ &lt;td>Patterns of Enterprise Application Architecture&lt;/td>
+ &lt;td>Martin Fowler&lt;/td>
+ &lt;td>2002&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">13&lt;/td>
+ &lt;td>The Art of UNIX Programming&lt;/td>
+ &lt;td>Eric Steven Raymond&lt;/td>
+ &lt;td>2003&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">14&lt;/td>
+ &lt;td>&lt;a href="https://www.enterpriseintegrationpatterns.com/patterns/messaging/toc.html">Enterprise Integration Patterns&lt;/a>&lt;/td>
+ &lt;td>Gregor Hohpe, Bobby Woolf&lt;/td>
+ &lt;td>2003&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">15&lt;/td>
+ &lt;td>Code Readings&lt;/td>
+ &lt;td>Diomidis Spinellis&lt;/td>
+ &lt;td>2003&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">16&lt;/td>
+ &lt;td>Domain Driven Design&lt;/td>
+ &lt;td>Eric Evans&lt;/td>
+ &lt;td>2003&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">17&lt;/td>
+ &lt;td>Working Effectively with Legacy Code&lt;/td>
+ &lt;td>Michael C. Feathers&lt;/td>
+ &lt;td>2004&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">18&lt;/td>
+ &lt;td>Joel on Software&lt;/td>
+ &lt;td>Joel Spolsky&lt;/td>
+ &lt;td>2004&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">19&lt;/td>
+ &lt;td>Code Craft&lt;/td>
+ &lt;td>Pete Goodliffe&lt;/td>
+ &lt;td>2006&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">20&lt;/td>
+ &lt;td>Beautiful Code&lt;/td>
+ &lt;td>Andy Oram, Greg Wilson&lt;/td>
+ &lt;td>2007&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">21&lt;/td>
+ &lt;td>More Joel on Software&lt;/td>
+ &lt;td>Joel Spolsky&lt;/td>
+ &lt;td>2008&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">22&lt;/td>
+ &lt;td>Clean code&lt;/td>
+ &lt;td>Robert C. Martin&lt;/td>
+ &lt;td>2008&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">23&lt;/td>
+ &lt;td>Coders at Work&lt;/td>
+ &lt;td>Peter Siebel&lt;/td>
+ &lt;td>2009&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">24&lt;/td>
+ &lt;td>Beautiful Architecture&lt;/td>
+ &lt;td>Diomidis Spinellis, Georgios Gousios&lt;/td>
+ &lt;td>2009&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">25&lt;/td>
+ &lt;td>Hackers &amp;amp; Painters&lt;/td>
+ &lt;td>Paul Graham&lt;/td>
+ &lt;td>2010&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">26&lt;/td>
+ &lt;td>The Clean Coder&lt;/td>
+ &lt;td>Robert Martin&lt;/td>
+ &lt;td>2011&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">27&lt;/td>
+ &lt;td>Designing Data-Intensive Applications&lt;/td>
+ &lt;td>Martin Kleppmann&lt;/td>
+ &lt;td>2017&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">28&lt;/td>
+ &lt;td>Clean Architecture&lt;/td>
+ &lt;td>Robert C. Martin&lt;/td>
+ &lt;td>2017&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">29&lt;/td>
+ &lt;td>Refactoring&lt;/td>
+ &lt;td>Martin Fowler, Kent Beck&lt;/td>
+ &lt;td>2018&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">30&lt;/td>
+ &lt;td>&lt;a href="https://yingang.github.io/aposd2e-zh/">A Philosophy of Software Design&lt;/a>&lt;/td>
+ &lt;td>John Ousterhout&lt;/td>
+ &lt;td>2018&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">31&lt;/td>
+ &lt;td>Large Scale C++&lt;/td>
+ &lt;td>John Debbie Lafferty, John Lakos&lt;/td>
+ &lt;td>2019&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">32&lt;/td>
+ &lt;td>Fundamentals of Software Architecture&lt;/td>
+ &lt;td>Mark Richards, Neal Ford&lt;/td>
+ &lt;td>2020&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">33&lt;/td>
+ &lt;td>Software Architecture: The Hard Parts&lt;/td>
+ &lt;td>Neal Ford, Mark Richards, Pramod Sadalage, Zhamak Dehghani&lt;/td>
+ &lt;td>2021&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">34&lt;/td>
+ &lt;td>&lt;a href="https://aosabook.org/en/index.html">The Architecture of Open Source Applications&lt;/a>&lt;/td>
+ &lt;td>Amy Brown, Greg Wilson&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">35&lt;/td>
+ &lt;td>&lt;a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/">Cloud Design Patterns&lt;/a>&lt;/td>
+ &lt;td>Microsoft&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>参考： &lt;a href="https://www.shortform.com/best-books/genre/best-software-architecture-books-of-all-time">https://www.shortform.com/best-books/genre/best-software-architecture-books-of-all-time&lt;/a>&lt;/p></description></item></channel></rss>
