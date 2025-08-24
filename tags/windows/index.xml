@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows on 随记</title><link>/tags/windows/</link><description>Recent content in Windows on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 15 Oct 2024 22:00:00 +0800</lastBuildDate><atom:link href="/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows GUI 应用框架</title><link>/posts/windows-gui-frameworks/</link><pubDate>Tue, 15 Oct 2024 22:00:00 +0800</pubDate><guid>/posts/windows-gui-frameworks/</guid><description>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">年份&lt;/th>
+ &lt;th style="text-align: center">仅支持 Windows&lt;/th>
+ &lt;th style="text-align: center">跨平台&lt;/th>
+ &lt;th style="text-align: center">支持 XAML？&lt;/th>
+ &lt;th style="text-align: center">已废弃？&lt;/th>
+ &lt;th>备注&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">1991&lt;/td>
+ &lt;td style="text-align: center">&lt;del>OWL&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">1992&lt;/td>
+ &lt;td style="text-align: center">MFC&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">1995&lt;/td>
+ &lt;td style="text-align: center">VCL&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2001&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://sourceforge.net/projects/owlnext/">OWLNext&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2001&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;del>CLX&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2001&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;strong>&lt;a href="https://sourceforge.net/projects/owlnext/">LCL&lt;/a>&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>Lazarus Component Library&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2002&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/dotnet/winforms">WinForms&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>.Net Framework 1.0&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2005&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://sourceforge.net/projects/wtl/">WTL&lt;/a> 7.5&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>MFC 的轻量替代&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2006&lt;/td>
+ &lt;td style="text-align: center">&lt;a href="https://github.com/dotnet/wpf">WPF&lt;/a>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>.Net Framework 3.0，引入 XAML，使用 C# 实现&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2007&lt;/td>
+ &lt;td style="text-align: center">&lt;del>Silverlight&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>使用 C++ 实现，与 Flash、Java Applet 竞争&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2009&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td>&lt;mark>Windows 7&lt;/mark>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2011&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;strong>&lt;a href="https://docwiki.embarcadero.com/Libraries/Sydney/en/FMX">FMX&lt;/a>&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>Embarcadero FireMonkey&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2012&lt;/td>
+ &lt;td style="text-align: center">&lt;del>WinRT + WinUI 1(WinRT XAML)&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>Windows 8&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2013&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;strong>&lt;a href="https://avaloniaui.net">Avalonia&lt;/a>&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>受 WPF 启发&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2014&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;del>Xamarin.Forms&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2015&lt;/td>
+ &lt;td style="text-align: center">&lt;del>UWP + WinUI 1(UWP XAML)&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>Windows 10，扩展 WinRT&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2016&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td>.Net Core 1.0&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2018&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td>WinForms 和 WPF 开源&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2018&lt;/td>
+ &lt;td style="text-align: center">&lt;del>UWP + WinUI 2&lt;/del>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2018&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;strong>&lt;a href="https://platform.uno">Uno Platform&lt;/a>&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>UWP 的跨平台版本&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2020&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td>&lt;mark>.Net 5&lt;/mark>，合并 .Net Framework 和 .Net Core&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2021&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td style="text-align: center">~~~~&lt;/td>
+ &lt;td>Windows 11&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2021&lt;/td>
+ &lt;td style="text-align: center">WinUI 3&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>独立库，支持 WinForms/WPF/UWP/MAUI&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">2021&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td style="text-align: center">&lt;strong>&lt;a href="https://dotnet.microsoft.com/en-us/apps/maui">MAUI&lt;/a>&lt;/strong>&lt;/td>
+ &lt;td style="text-align: center">YES&lt;/td>
+ &lt;td style="text-align: center">&lt;/td>
+ &lt;td>.Net 6，继承 Xamarin.Forms&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>总结：&lt;/p></description></item></channel></rss>

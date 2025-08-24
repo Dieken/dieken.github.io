@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Unicode on 随记</title><link>/tags/unicode/</link><description>Recent content in Unicode on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 15 Jul 2025 22:00:00 +0800</lastBuildDate><atom:link href="/tags/unicode/index.xml" rel="self" type="application/rss+xml"/><item><title>支持大字符集的中文字体</title><link>/posts/free-chinese-unicode-fonts/</link><pubDate>Tue, 15 Jul 2025 22:00:00 +0800</pubDate><guid>/posts/free-chinese-unicode-fonts/</guid><description>&lt;p>除了 Mi Sans，其它字体的覆盖汉字数量只是预估。 黑体推荐阿里巴巴普惠体 3.0、Mi Sans + Mi Sans L3、Vivo Sans 和遍黑(Plangothic)，可以商用；宋体有天珩全字库、超集宋体，开心宋体，楷体只有天珩，注意这些都不能商用（2025 更新：&lt;a href="https://github.com/takushun-wu/WenJinMincho/blob/main/INTRODUCE.md">文津宋体&lt;/a>覆盖 Unicode 16.0，可以商用）。&lt;/p></description></item><item><title>Unicode 中的点符号</title><link>/posts/dots-in-unicode/</link><pubDate>Sat, 15 Mar 2025 22:00:00 +0800</pubDate><guid>/posts/dots-in-unicode/</guid><description>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">字符&lt;/th>
+ &lt;th style="text-align: left">名字&lt;/th>
+ &lt;th style="text-align: center">编码&lt;/th>
+ &lt;th>区块&lt;/th>
+ &lt;th>解释&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;strong>.&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">DOT 或 FULL STOP&lt;/td>
+ &lt;td style="text-align: center">002E&lt;/td>
+ &lt;td>Basic Latin&lt;/td>
+ &lt;td>ASCII 的点，句号，键盘直接输入&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;strong>·&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">&lt;mark>MIDDLE DOT&lt;/mark>&lt;/td>
+ &lt;td style="text-align: center">00B7&lt;/td>
+ &lt;td>Latin-1 Supplement&lt;/td>
+ &lt;td>中国大陆《&lt;a href="http://www.sac.gov.cn/SACSearch/search?channelid=160591&amp;amp;templet=gjcxjg_detail.jsp&amp;amp;searchword=STANDARD_CODE=%27GB/T%2015834-2011%27&amp;amp;XZ=T">标点符号用法&lt;/a>》（GB/T 15834-2011）规定的中文间隔号，星陈输入法： &lt;br/>/bdjg&lt;br/>/bdjgh&lt;br/>/jg&lt;br/>/jgh&lt;br/>bdjg&lt;br/>kkjg&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;strong>•&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">BULLET&lt;/td>
+ &lt;td style="text-align: center">2022&lt;/td>
+ &lt;td>General Punctuation&lt;/td>
+ &lt;td>列表中的项目&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;strong>‧&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">&lt;u>HYPHENATION POINT&lt;/u>&lt;/td>
+ &lt;td style="text-align: center">2027&lt;/td>
+ &lt;td>General Punctuation&lt;/td>
+ &lt;td>在西文字典中，表示单词中音节的分隔位置，例如 dic‧tion‧ar‧ies。根据台湾“教育部”《重订标点符号手册》，历史上是把音界号做为间隔号使用。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;strong>⋅&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">DOT OPERATOR&lt;/td>
+ &lt;td style="text-align: center">22C5&lt;/td>
+ &lt;td>Mathematical Operators&lt;/td>
+ &lt;td>数学符号&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;strong>⸱&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">WORD SEPARATOR MIDDLE DOT&lt;/td>
+ &lt;td style="text-align: center">2E31&lt;/td>
+ &lt;td>Supplemental Punctuation&lt;/td>
+ &lt;td>用于 Avestan，Carian，Georgian，Old Hungarian，Kaithi，Lydian，Samaritan。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;strong>・&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">&lt;mark>KATAKANA MIDDLE DOT&lt;/mark>&lt;/td>
+ &lt;td style="text-align: center">30FB&lt;/td>
+ &lt;td>Katakana&lt;/td>
+ &lt;td>日语片假名的全角中点，星陈输入法：&lt;br/>/jmzd&lt;br/>/ryzd&lt;br/>/zd&lt;br/>jmzd&lt;br/>kkzd&lt;br/>ryzd&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;strong>ꞏ&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">SINOLOGICAL DOT, LATIN LETTER&lt;/td>
+ &lt;td style="text-align: center">A78F&lt;/td>
+ &lt;td>Latin Extended-D&lt;/td>
+ &lt;td>不常用，用于汉学研究的转写&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;strong>．&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">FULLWIDTH FULL STOP&lt;/td>
+ &lt;td style="text-align: center">FF0E&lt;/td>
+ &lt;td>Halfwidth and Fullwidth Forms&lt;/td>
+ &lt;td>中文全角句号，不推荐使用，星陈输入法：&lt;br/>/jh&lt;br/>kkjh&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;strong>･&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">HALFWIDTH KATAKANA MIDDLE DOT&lt;/td>
+ &lt;td style="text-align: center">FF65&lt;/td>
+ &lt;td>Halfwidth and Fullwidth Forms&lt;/td>
+ &lt;td>窄版的 U+30FB&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;strong>𐄁&lt;/strong>&lt;/td>
+ &lt;td style="text-align: left">AEGEAN WORD SEPARATOR DOT&lt;/td>
+ &lt;td style="text-align: center">10101&lt;/td>
+ &lt;td>Aegean Numbers&lt;/td>
+ &lt;td>爱琴海数字的分割点&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>参考：&lt;/p></description></item><item><title>Perl Unicode 脚本模版</title><link>/posts/perl-unicode-script-template/</link><pubDate>Sat, 30 Mar 2024 12:26:39 +0800</pubDate><guid>/posts/perl-unicode-script-template/</guid><description>&lt;p>参考 &lt;a href="https://perldoc.perl.org/perl#Reference-Manual">perldoc perl&lt;/a> 里的以 perluni 开头的文档，至少用 Perl v5.36。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-perl" data-lang="perl">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#!/usr/bin/env perl&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># https://perldoc.perl.org/perluniintro#Perl&amp;#39;s-Unicode-Support v5.28&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># https://perldoc.perl.org/feature#The-&amp;#39;signatures&amp;#39;-feature v5.36&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># https://perldoc.perl.org/perlunicook#℞-0:-Standard-preamble v5.36&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">use&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">v5&lt;/span>&lt;span style="color:#40a070">.36&lt;/span>; &lt;span style="color:#60a0b0;font-style:italic"># or later to get &amp;#34;unicode_strings&amp;#34; feature, plus strict and warnings&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">use&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">utf8&lt;/span>; &lt;span style="color:#60a0b0;font-style:italic"># so literals and identifiers can be in UTF-8&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">use&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">warnings&lt;/span> &lt;span style="color:#c65d09">qw(FATAL utf8)&lt;/span>; &lt;span style="color:#60a0b0;font-style:italic"># fatalize encoding glitches&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">use&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">open&lt;/span> &lt;span style="color:#c65d09">qw(:std :encoding(UTF-8))&lt;/span>; &lt;span style="color:#60a0b0;font-style:italic"># undeclared streams in UTF-8&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">use&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Encode&lt;/span> &lt;span style="color:#c65d09">qw(decode)&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">@ARGV&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">map&lt;/span> { decode(&lt;span style="color:#4070a0">&amp;#39;UTF-8&amp;#39;&lt;/span>, &lt;span style="color:#bb60d5">$_&lt;/span>, &lt;span style="color:#0e84b5;font-weight:bold">Encode::&lt;/span>FB_CROAK) } &lt;span style="color:#bb60d5">@ARGV&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#use autodie qw(:all);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#use Unicode::Normalize; # for NFC(), NFD()&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>say &lt;span style="color:#4070a0">&amp;#34;😊 3 加 4 等于 &amp;#34;&lt;/span>, add(&lt;span style="color:#40a070">3&lt;/span>, &lt;span style="color:#40a070">4&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">sub&lt;/span> &lt;span style="color:#06287e">add&lt;/span>($a, $b) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#bb60d5">$a&lt;/span> &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#bb60d5">$b&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果是命令行执行 one-liner 脚本，最好使用如下命令：&lt;/p></description></item><item><title>Free Unicode Fonts</title><link>/posts/free-unicode-fonts/</link><pubDate>Thu, 07 Feb 2019 20:18:46 +0800</pubDate><guid>/posts/free-unicode-fonts/</guid><description>&lt;h2 id="fonts">Fonts&lt;/h2>
+&lt;ul>
+&lt;li>DejaVu: &lt;a href="https://en.wikipedia.org/wiki/DejaVu_fonts">https://en.wikipedia.org/wiki/DejaVu_fonts&lt;/a>
+&lt;ul>
+&lt;li>Bitstream Vera: &lt;a href="https://en.wikipedia.org/wiki/Bitstream_Vera">https://en.wikipedia.org/wiki/Bitstream_Vera&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Noto fonts: &lt;a href="https://en.wikipedia.org/wiki/Noto_fonts">https://en.wikipedia.org/wiki/Noto_fonts&lt;/a>
+&lt;ul>
+&lt;li>Source Han: &lt;a href="https://github.com/adobe-fonts">https://github.com/adobe-fonts&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>AR PL UMing, AR PL UKai: &lt;a href="https://www.freedesktop.org/wiki/Software/CJKUnifonts/">https://www.freedesktop.org/wiki/Software/CJKUnifonts/&lt;/a>&lt;/li>
+&lt;li>GNU Unifont: &lt;a href="https://en.wikipedia.org/wiki/GNU_Unifont">https://en.wikipedia.org/wiki/GNU_Unifont&lt;/a>&lt;/li>
+&lt;li>Hanazono Mincho(花园明朝)，涵盖最全的 CJK 字符： &lt;a href="http://fonts.jp/hanazono/">http://fonts.jp/hanazono/&lt;/a>&lt;/li>
+&lt;li>天珩全字库，&lt;strong>非免费&lt;/strong>，涵盖最全的 CJK 字符： &lt;a href="http://yedict.com/download/">http://yedict.com/download/&lt;/a>&lt;/li>
+&lt;li>中华书局宋体字库，&lt;strong>非免费&lt;/strong>，涵盖最全的 CJK 字符： &lt;a href="http://www.ancientbooks.cn/helpcore?font">http://www.ancientbooks.cn/helpcore?font&lt;/a>&lt;/li>
+&lt;li>开心宋体，&lt;strong>非免费&lt;/strong>，涵盖最全的 CJK 字符： &lt;a href="http://pan.baidu.com/s/1qWoQZzY">http://pan.baidu.com/s/1qWoQZzY&lt;/a>&lt;/li>
+&lt;li>ZCool: &lt;a href="https://www.zcool.com.cn/special/zcoolfonts/">https://www.zcool.com.cn/special/zcoolfonts/&lt;/a>&lt;/li>
+&lt;li>王汉宗自由字体： &lt;a href="https://code.google.com/p/wangfonts/">https://code.google.com/p/wangfonts/&lt;/a>&lt;/li>
+&lt;li>WenQuanYi: &lt;a href="http://wenq.org">http://wenq.org&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="references">References&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a href="https://github.com/googlefonts">https://github.com/googlefonts&lt;/a>, &lt;a href="https://github.com/google/fonts">https://github.com/google/fonts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://fontlibrary.org/">https://fontlibrary.org/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/jagracey/Awesome-Unicode#unicode-fonts">https://github.com/jagracey/Awesome-Unicode#unicode-fonts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://www.unifont.org/fontguide/">http://www.unifont.org/fontguide/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://en.wikipedia.org/wiki/Unicode_font#List_of_Unicode_fonts">https://en.wikipedia.org/wiki/Unicode_font#List_of_Unicode_fonts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://en.wikipedia.org/wiki/List_of_CJK_fonts">https://en.wikipedia.org/wiki/List_of_CJK_fonts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://zenozeng.github.io/Free-Chinese-Fonts/">http://zenozeng.github.io/Free-Chinese-Fonts/&lt;/a>&lt;/li>
+&lt;li>汉字检索： &lt;a href="http://www.chise.org/ids-find">http://www.chise.org/ids-find&lt;/a>&lt;/li>
+&lt;li>字海： &lt;a href="http://zisea.com/">http://zisea.com/&lt;/a> ， &lt;a href="http://yedict.com/">http://yedict.com/&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>Unicode 11.0 其它规范一瞥</title><link>/posts/unicode-more-specs/</link><pubDate>Mon, 07 Jan 2019 15:27:02 +0800</pubDate><guid>/posts/unicode-more-specs/</guid><description>&lt;p>下面的内容不属于 Core Spec，但也很重要。&lt;/p>
+&lt;h2 id="unicode-standard-annexes">Unicode Standard Annexes&lt;/h2>
+&lt;h3 id="uax-9-the-unicode-bidirectional-algorithm">UAX #9, The Unicode Bidirectional Algorithm&lt;/h3>
+&lt;h3 id="uax-11-east-asian-width">UAX #11, East Asian Width&lt;/h3>
+&lt;h3 id="uax-14-unicode-line-breaking-algorithm">UAX #14, Unicode Line Breaking Algorithm&lt;/h3>
+&lt;h3 id="uax-15-unicode-normalization-forms">UAX #15, Unicode Normalization Forms&lt;/h3>
+&lt;h3 id="uax-24-unicode-script-property">UAX #24, Unicode Script Property&lt;/h3>
+&lt;h3 id="uax-29-unicode-text-segmentation">UAX #29, Unicode Text Segmentation&lt;/h3>
+&lt;h3 id="uax-31-unicode-identifier-and-pattern-syntax">UAX #31, Unicode Identifier and Pattern Syntax&lt;/h3>
+&lt;h3 id="uax-34-unicode-named-character-sequences">UAX #34, Unicode Named Character Sequences&lt;/h3>
+&lt;h3 id="uax-38-unicode-han-database-unihan">UAX #38, Unicode Han Database (Unihan)&lt;/h3>
+&lt;h3 id="uax-41-common-references-for-unicode-standard-annexes">UAX #41, Common References for Unicode Standard Annexes&lt;/h3>
+&lt;h3 id="uax-42-unicode-character-database-in-xml">UAX #42, Unicode Character Database in XML&lt;/h3>
+&lt;h3 id="uax-44-unicode-character-database">UAX #44, Unicode Character Database&lt;/h3>
+&lt;h3 id="uax-45-u-source-ideographs">UAX #45, U-Source Ideographs&lt;/h3>
+&lt;h3 id="uax-50-unicode-vertical-text-layout">UAX #50, Unicode Vertical Text Layout&lt;/h3>
+&lt;h2 id="unicode-technical-standards-and-reports">Unicode Technical Standards and Reports&lt;/h2>
+&lt;h3 id="uts-10-unicode-collation-algorithm">UTS #10, Unicode Collation Algorithm&lt;/h3>
+&lt;h3 id="uts-39-unicode-security-mechanism">UTS #39, Unicode Security Mechanism&lt;/h3>
+&lt;h3 id="uts-46-unicode-idna-compatibility-processing">UTS #46, Unicode IDNA Compatibility Processing&lt;/h3>
+&lt;h3 id="uts-51-unicode-emoji">UTS #51, Unicode Emoji&lt;/h3>
+&lt;h2 id="附汉字分类术语">附：汉字分类术语&lt;/h2>
+&lt;p>参考 &lt;a href="https://shurufa.app/docs/concepts.html#_2-8-%E4%BC%A0%E6%89%BF%E5%AD%97">https://shurufa.app/docs/concepts.html#_2-8-%E4%BC%A0%E6%89%BF%E5%AD%97&lt;/a>&lt;/p></description></item><item><title>Unicode 11.0 核心规范笔记</title><link>/posts/unicode-core-spec/</link><pubDate>Thu, 03 Jan 2019 23:27:02 +0800</pubDate><guid>/posts/unicode-core-spec/</guid><description>&lt;h2 id="导言">导言&lt;/h2>
+&lt;p>前几天以戏谑的语气写了些 &lt;a href="../you-dont-understand-unicode/">Unicode 规范的坑点&lt;/a>，了解有限，很不严谨，Unicode 技术委员会成员&lt;a href="https://www.zhihu.com/people/lianghai/activities">梁海&lt;/a>同学指出概念不清，建议读一下 &lt;a href="http://www.unicode.org/versions/Unicode11.0.0/">Unicode Core Spec&lt;/a>，本文是对 Core Spec 的一点笔记。&lt;/p>
+&lt;hr>
+&lt;p>由于 Core Spec 很长，这份笔记也会比较长，所以先总结一点个人猜度的编程语言中 char 和 string 的设计考虑。&lt;/p></description></item><item><title>其实你并不懂 Unicode</title><link>/posts/you-dont-understand-unicode/</link><pubDate>Mon, 31 Dec 2018 17:30:00 +0800</pubDate><guid>/posts/you-dont-understand-unicode/</guid><description>&lt;h2 id="导言">导言&lt;/h2>
+&lt;p>古有 Babel 通天塔，今有 Unicode 字符集，很多编程语言支持 Unicode，甚至在语法层面直接支持，绝大部分程序员可能会因此觉得自己懂 Unicode 了，自己的代码不需要特别注意就能处理世界上所有语言的字符了，觉得 Unicode 高大上真善美，其实并非如此，下面讲述下作为一个程序员，你需要了解的几个关键概念，里面颇有几个大坑，看看各位知道几个😄&lt;/p></description></item></channel></rss>
