@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on 随记</title><link>/tags/linux/</link><description>Recent content in Linux on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 25 Jul 2023 08:00:00 +0800</lastBuildDate><atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>主流 Linux 发行版的官方维护源码包数量</title><link>/posts/count-source-packages-of-linux-distributions/</link><pubDate>Tue, 25 Jul 2023 08:00:00 +0800</pubDate><guid>/posts/count-source-packages-of-linux-distributions/</guid><description>&lt;pre tabindex="0"&gt;&lt;code&gt;1007 Slackware
+1218 Ubuntu 23.04 main
+1549 Alpine main
+2065 CRUX
+2540 Arch core + extra
+2649 Rocky 9.2
+8794 Void Linux
+14509 openSUSE Leap 15.5
+18855 Gentoo
+20715 Debian Booksworm main
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意 Ubuntu 只有 main section 的软件才是 Canonical 官方维护的。Redhat 果然财力雄厚，一个公司之力维护了 2649 个源码包。&lt;/p&gt;</description></item><item><title>著名 Linux 发行版、BSD 分支首次发布时间线</title><link>/posts/timeline-for-first-releases-of-famous-linux-bsd-illumos/</link><pubDate>Sun, 23 Jul 2023 10:00:00 +0800</pubDate><guid>/posts/timeline-for-first-releases-of-famous-linux-bsd-illumos/</guid><description>&lt;pre tabindex="0"&gt;&lt;code&gt;1993.4.19 NetBSD
+1993.7.17 Slackware(still alive and well maintained!)
+1993.9.15 Debian(still alive and well maintained!)
+1993.11.1 FreeBSD
+1994.3.29 S.u.S.E. Linux(originally based on Slackware)
+1995.5.13 Redhat Linux
+1996.7 OpenBSD
+1998.7.23 Mandrake Linux(based on Redhat Linux 5.1)
+2000.2.22 RHEL
+2000.8.31 SUSE Linux Enterprise
+2002.3.11 Arch Linux(inspired by CRUX)
+2002.3.31 Gentoo Linux
+2002.12 CRUX
+2003.6.3 NixOS
+2004.10.20 Ubuntu
+2005.4 Mandrake renamed to Mandriva
+2005.8 Alpine Linux
+2005.10 openSUSE
+2008 Void Linux
+2011.6.1 Mageia
+2011.8.28 Last release of Mandriva
+2012.4.2 OmniOS
+2013.11.22 OpenMandriva
+2021.5.30 Chimera Linux(not famous yet but very interesting)
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>试玩 Slackware Linux</title><link>/posts/play-slackware-linux/</link><pubDate>Wed, 25 Jan 2023 22:00:00 +0800</pubDate><guid>/posts/play-slackware-linux/</guid><description>&lt;p&gt;忽然去看了下 Slackware 主页的 &lt;a href="http://www.slackware.com/releasenotes/15.0.php"&gt;15.0 Release note&lt;/a&gt;，有点感动于 Pat Volkerding 的坚持，于是又在虚拟机里安装了下 Slackware 试试——我为什么要说「又」呢？😄&lt;/p&gt;
+&lt;h2 id="安装"&gt;安装&lt;/h2&gt;
+&lt;p&gt;USTC 的 Slackware 镜像速度很快，下载 [ISO 文件](&lt;a href="https://mirrors.ustc.edu.cn/slackware/slackware-iso/slackware64-15.0-iso/"&gt;Index of /slackware/slackware-iso/slackware64-15.0-iso/&lt;/a&gt;)后放到 VMWare 虚拟机里启动，使用 UEFI 模式，安装开头会要求用 fdisk 或者 cfdisk 手动分区，做一个 300M EFI System 分区，剩下的做一个 Linux filesystem 分区即可，然后执行 setup 命令进入安装程序，整个安装过程基本一路回车，非常简单，由于 Slackware Linux 并不维护软件包粒度的依赖关系，所以为了简单，选择全部安装即可，占用大约 16GB 磁盘。&lt;/p&gt;</description></item><item><title>折腾 Linux 发行版 ArchLinux 和 Gentoo</title><link>/posts/play-arch-and-gentoo/</link><pubDate>Sat, 03 Apr 2021 10:00:00 +0800</pubDate><guid>/posts/play-arch-and-gentoo/</guid><description>&lt;p&gt;接触 Linux 二十多年了，一直是排斥 Gentoo Linux 和 Arch Linux 的，觉得前者编译太慢太浪费电力，后者连个官方安装程序都没有而且软件包质量太低。然而今天心血来潮，总算挑战两个发行版的安装成功，Gentoo Linux 的&lt;a href="https://wiki.gentoo.org/wiki/Handbook:AMD64"&gt;手册&lt;/a&gt;写的非常规范，安装过程除了编译慢，倒也没太大槽点，安装完基础系统后重启进入系统，占用内存 77MB，挺惊艳的。&lt;a href="https://mirrors.tuna.tsinghua.edu.cn/gentoo/"&gt;Gentoo&lt;/a&gt; 和 &lt;a href="https://mirrors.tuna.tsinghua.edu.cn/help/gentoo-portage/"&gt;Gentoo-Portage&lt;/a&gt; 有清华 TUNA 镜像源，下载很快。&lt;/p&gt;</description></item><item><title>动态扩容 ZFS pool</title><link>/posts/dynamically-expand-zfs-pool/</link><pubDate>Wed, 11 Mar 2020 21:09:15 +0800</pubDate><guid>/posts/dynamically-expand-zfs-pool/</guid><description>&lt;p&gt;往 ZFS Pool 里加新磁盘来扩容是很容易的，但是阿里云的云盘快照只有用于单块云盘时才是原子性的，而且阿里云云盘的 IOPS 指标是跟单盘容量成线性比例的，所以新加一块云盘不如扩容云盘划算。阿里云的云盘扩容现在支持&lt;a href="https://help.aliyun.com/document_detail/35095.html"&gt;在线扩容&lt;/a&gt;，于是就可以不干扰服务动态扩容 ZFS pool 里的磁盘了。&lt;/p&gt;</description></item></channel></rss>
