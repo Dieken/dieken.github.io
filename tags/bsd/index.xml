@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>BSD on 随记</title><link>/tags/bsd/</link><description>Recent content in BSD on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 23 Oct 2025 22:00:00 +0800</lastBuildDate><atom:link href="/tags/bsd/index.xml" rel="self" type="application/rss+xml"/><item><title>一些开源 OS 的支持周期</title><link>/posts/lifecycles-of-open-sources-os/</link><pubDate>Thu, 23 Oct 2025 22:00:00 +0800</pubDate><guid>/posts/lifecycles-of-open-sources-os/</guid><description>&lt;p&gt;数据来自 &lt;a href="https://endoflife.date/tags/os"&gt;https://endoflife.date/tags/os&lt;/a&gt; ， 总结：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Alpine 很厚道，半年发布一次，每个版本维护 2 年；&lt;/li&gt;
+&lt;li&gt;Debian 很稳，大版本两年发布一次，大版本维护 5 年，留了 3 年时间升级；&lt;/li&gt;
+&lt;li&gt;Fedora 一般，半年发布一次，每个版本维护 1 年，也就是留了半年升级；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NixOS 很黑，半年发布一次，只维护 0.5 年，仅留一个月时间升级！！！；&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ubuntu non-LTS 也不行，半年发布一次，只维护半年多一点，留了三个月时间升级；&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;FreeBSD 的 quarterly ports、NetBSD 的 quarterly pkgsrc 以及 OpenBSD 半年一次随 OS 一起发布的 OpenBSD ports 都只支持一年；&lt;/li&gt;
+&lt;li&gt;Slackware 是唯一一个基本以一人之力维护 10 年以上的发行版，不愧是&lt;a href="../timeline-for-first-releases-of-famous-linux-bsd-illumos"&gt;最老的 Linux 发行版&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;服务器操作系统请优先用 Debian stable、次之 Ubuntu LTS，再次之 Rocky Linux 或 Alma Linux&lt;/strong&gt;；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;OS&lt;/th&gt;
+ &lt;th&gt;Lifecycle(years)&lt;/th&gt;
+ &lt;th&gt;Version&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Alma Linux&lt;/td&gt;
+ &lt;td&gt;10&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Alpine Linux&lt;/td&gt;
+ &lt;td&gt;2&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;minor&lt;/strong&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Debian stable&lt;/td&gt;
+ &lt;td&gt;5&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Fedora&lt;/td&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;FreeBSD&lt;/td&gt;
+ &lt;td&gt;5&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Linux Mint&lt;/td&gt;
+ &lt;td&gt;5&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;MX Linux&lt;/td&gt;
+ &lt;td&gt;5&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;NetBSD&lt;/td&gt;
+ &lt;td&gt;5~6&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;NixOS&lt;/td&gt;
+ &lt;td&gt;0.5&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;minor&lt;/strong&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;OpenBSD&lt;/td&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;minor&lt;/strong&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;openSUSE Leap&lt;/td&gt;
+ &lt;td&gt;2&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;minor&lt;/strong&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;OpenWrt&lt;/td&gt;
+ &lt;td&gt;2&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;minor&lt;/strong&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Rocky Linux&lt;/td&gt;
+ &lt;td&gt;10&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Slackware&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;5~11&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Ubuntu LTS&lt;/td&gt;
+ &lt;td&gt;5~10&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Ubuntu non-LTS&lt;/td&gt;
+ &lt;td&gt;0.7&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;minor&lt;/strong&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;</description></item><item><title>著名 Linux 发行版、BSD 分支首次发布时间线</title><link>/posts/timeline-for-first-releases-of-famous-linux-bsd-illumos/</link><pubDate>Sun, 23 Jul 2023 10:00:00 +0800</pubDate><guid>/posts/timeline-for-first-releases-of-famous-linux-bsd-illumos/</guid><description>&lt;pre tabindex="0"&gt;&lt;code&gt;1993.4.19 NetBSD
+1993.7.17 Slackware(still alive and well maintained!)
+1993.9.15 Debian(still alive and well maintained!)
+1993.11.1 FreeBSD
+1994.3.29 S.u.S.E. Linux(originally based on Slackware)
+1995.5.13 Redhat Linux
+1996.7 OpenBSD
+1998.7.23 Mandrake Linux(based on Redhat Linux 5.1)
+2000.2.22 RHEL
+2000.8.31 SUSE Linux Enterprise
+2002.3.11 Arch Linux(inspired by CRUX)
+2002.3.31 Gentoo Linux
+2002.12 CRUX
+2003.6.3 NixOS
+2004.10.20 Ubuntu
+2005.4 Mandrake renamed to Mandriva
+2005.8 Alpine Linux
+2005.10 openSUSE
+2008 Void Linux
+2011.6.1 Mageia
+2011.8.28 Last release of Mandriva
+2012.4.2 OmniOS
+2013.11.22 OpenMandriva
+2021.5.30 Chimera Linux(not famous yet but very interesting)
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>BSD、Linux 软件库的一点分析</title><link>/posts/analyze-bsd-linux-software-repositories/</link><pubDate>Sun, 29 Jan 2023 22:00:00 +0800</pubDate><guid>/posts/analyze-bsd-linux-software-repositories/</guid><description>&lt;p&gt;参考：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://archiveprogram.github.com/assets/img/archive-repos.txt"&gt;https://archiveprogram.github.com/assets/img/archive-repos.txt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ghe.clickhouse.tech"&gt;https://ghe.clickhouse.tech&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://gitmostwanted.com"&gt;https://gitmostwanted.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/sindresorhus/awesome"&gt;https://github.com/sindresorhus/awesome&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://repology.org"&gt;https://repology.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://softwareheritage.org"&gt;https://softwareheritage.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.tuhs.org"&gt;https://www.tuhs.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mirrorz.org"&gt;https://mirrorz.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;LXR：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://lxr.linux.no"&gt;http://lxr.linux.no&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://elixir.bootlin.com/linux/latest/source"&gt;https://elixir.bootlin.com/linux/latest/source&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lxr.missinglinkelectronics.com"&gt;https://lxr.missinglinkelectronics.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://archiveos.org"&gt;https://archiveos.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;根据 &lt;a href="https://repology.org/repositories/graphs"&gt;https://repology.org/repositories/graphs&lt;/a&gt; 分析活跃的软件仓库有NixPkgs, AUR, Debian, FreeBSD Ports, DPorts, Fedora, Gentoo, Guix, pkgsrc, openSUSE, Alpine, LFS/BLFS。&lt;/p&gt;
+&lt;p&gt;先说结论，Slackware、Debian、Ubuntu、Redhat、SuSE 直接在软件仓库里附带了源码包，其中 Slackware、Debian、Ubuntu、Redhat 历史留存完好。Slackware 虽然很值得敬仰，但基本是个人作品不适合做服务器用途，Redhat 商业化味道很重，版本比较乱，历经多次变更，尤其现在 CentOS 不再让白嫖了，实在没必要再去贴冷屁股，SuSE 断代的她爹都不认识了， &lt;strong&gt;所以剩下的只有值得信赖的 Debian 和 Ubuntu 了&lt;/strong&gt;，2022 年依然可以使用 2005 年发布的Debian Sarge(3.1) 和 2004 年发布的 Ubuntu 4.04(Warty Warthog)。&lt;/p&gt;</description></item><item><title>几个使用类似 BSD ports 软件包管理的 Linux 发行版</title><link>/posts/linux-distributions-using-ports/</link><pubDate>Sun, 29 Jan 2023 21:00:00 +0800</pubDate><guid>/posts/linux-distributions-using-ports/</guid><description>&lt;p&gt;四大 BSD 不约而同的选择了 ports 这种形式管理第三方软件包：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在一个集中的版本控制系统里维护第三方源码包的构建脚本，包括下载源码、编译、打包、安装，这个目录树被称为 ports 或者 ports collection 或者 ports tree 或者 ports repository&lt;/li&gt;
+&lt;li&gt;用户直接从 ports 里构建软件包并安装，也可能操作系统维护者提供编译好的二进制软件包&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在 ports 系统里，源代码一般从各个软件包的官网下载，也可能操作系统维护者为了便利以及避免下载链接失效而自行缓存一份源码包。&lt;/p&gt;</description></item><item><title>FreeBSD ports vs NetBSD pkgsrc</title><link>/posts/freebsd-ports-vs-netbsd-pkgsrc/</link><pubDate>Thu, 07 Apr 2022 22:05:21 +0800</pubDate><guid>/posts/freebsd-ports-vs-netbsd-pkgsrc/</guid><description>&lt;p&gt;FreeBSD ports 分 latest，release 和 quarterly。latest 是 main 分支，持续开发，quarterly 分支在每个季度初创建，随后三个月只接受修正，而随着每个 FreeBSD release 创建的 ports release tag 比如 release/13.0.0 是冻结了不再修改。&lt;/p&gt;</description></item><item><title>使用 BSD 作为桌面系统</title><link>/posts/bsd-as-desktop-system/</link><pubDate>Mon, 18 Feb 2019 00:00:00 +0800</pubDate><guid>/posts/bsd-as-desktop-system/</guid><description>&lt;p&gt;macOS 和 Linux 用久了有点审美疲劳，尝试下用 BSD 作桌面系统，目标是能用 Firefox 或者 Chrome Web 浏览器成功播放 &lt;a href="https://douban.fm"&gt;https://douban.fm&lt;/a&gt; 的音乐，能正常显示中文，能正常输入中文，并使用 MacBook Pro 的高分辨率显示屏。&lt;/p&gt;</description></item></channel></rss>
