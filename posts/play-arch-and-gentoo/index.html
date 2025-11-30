@@ -1,0 +1,242 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>折腾 Linux 发行版 ArchLinux 和 Gentoo</title><meta name=description content="折腾 Linux 发行版 ArchLinux 和 Gentoo"><meta name=author content="Yubao Liu"><meta name=viewport content="width=device-width,initial-scale=1"><noscript><link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel=stylesheet type=text/css><link rel=stylesheet href=/css/fonts.css></noscript><style type=text/css media=screen>/*!Pure v3.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/pure-css/pure/blob/master/LICENSE*//*!normalize.css v | MIT License | https://necolas.github.io/normalize.css/
+Copyright (c) Nicolas Gallagher and Jonathan Neal*//*!normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css*/html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}html{font-family:sans-serif}.hidden,[hidden]{display:none !important}.pure-img{max-width:100%;height:auto;display:block}</style><style type=text/css media=screen>/*!Pure v3.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/pure-css/pure/blob/master/LICENSE*/.pure-menu{box-sizing:border-box}.pure-menu-fixed{position:fixed;left:0;top:0;z-index:3}.pure-menu-item,.pure-menu-list{position:relative}.pure-menu-list{list-style:none;margin:0;padding:0}.pure-menu-item{padding:0;margin:0;height:100%}.pure-menu-heading,.pure-menu-link{display:block;text-decoration:none;white-space:nowrap}.pure-menu-horizontal{width:100%;white-space:nowrap}.pure-menu-horizontal .pure-menu-list{display:inline-block}.pure-menu-horizontal .pure-menu-heading,.pure-menu-horizontal .pure-menu-item,.pure-menu-horizontal .pure-menu-separator{display:inline-block;vertical-align:middle}.pure-menu-item .pure-menu-item{display:block}.pure-menu-children{display:none;position:absolute;left:100%;top:0;margin:0;padding:0;z-index:3}.pure-menu-horizontal .pure-menu-children{left:0;top:auto;width:inherit}.pure-menu-active>.pure-menu-children,.pure-menu-allow-hover:hover>.pure-menu-children{display:block;position:absolute}.pure-menu-has-children>.pure-menu-link:after{padding-left:.5em;content:"\25B8";font-size:small}.pure-menu-horizontal .pure-menu-has-children>.pure-menu-link:after{content:"\25BE"}.pure-menu-scrollable{overflow-y:scroll;overflow-x:hidden}.pure-menu-scrollable .pure-menu-list{display:block}.pure-menu-horizontal.pure-menu-scrollable .pure-menu-list{display:inline-block}.pure-menu-horizontal.pure-menu-scrollable{white-space:nowrap;overflow-y:hidden;overflow-x:auto;padding:.5em 0}.pure-menu-horizontal .pure-menu-children .pure-menu-separator,.pure-menu-separator{background-color:#ccc;height:1px;margin:.3em 0}.pure-menu-horizontal .pure-menu-separator{width:1px;height:1.3em;margin:0 .3em}.pure-menu-horizontal .pure-menu-children .pure-menu-separator{display:block;width:auto}.pure-menu-heading{text-transform:uppercase;color:#565d64}.pure-menu-link{color:#777}.pure-menu-children{background-color:#fff}.pure-menu-heading,.pure-menu-link{padding:.5em 1em}.pure-menu-disabled{opacity:.5}.pure-menu-disabled .pure-menu-link:hover{background-color:transparent;cursor:default}.pure-menu-active>.pure-menu-link,.pure-menu-link:focus,.pure-menu-link:hover{background-color:#eee}.pure-menu-selected>.pure-menu-link,.pure-menu-selected>.pure-menu-link:visited{color:#000}</style><style type=text/css media=screen>/*!Pure v3.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/pure-css/pure/blob/master/LICENSE*/.pure-g{display:flex;flex-flow:row wrap;align-content:flex-start}.pure-u{display:inline-block;vertical-align:top}.pure-u-1,.pure-u-1-1,.pure-u-1-12,.pure-u-1-2,.pure-u-1-24,.pure-u-1-3,.pure-u-1-4,.pure-u-1-5,.pure-u-1-6,.pure-u-1-8,.pure-u-10-24,.pure-u-11-12,.pure-u-11-24,.pure-u-12-24,.pure-u-13-24,.pure-u-14-24,.pure-u-15-24,.pure-u-16-24,.pure-u-17-24,.pure-u-18-24,.pure-u-19-24,.pure-u-2-24,.pure-u-2-3,.pure-u-2-5,.pure-u-20-24,.pure-u-21-24,.pure-u-22-24,.pure-u-23-24,.pure-u-24-24,.pure-u-3-24,.pure-u-3-4,.pure-u-3-5,.pure-u-3-8,.pure-u-4-24,.pure-u-4-5,.pure-u-5-12,.pure-u-5-24,.pure-u-5-5,.pure-u-5-6,.pure-u-5-8,.pure-u-6-24,.pure-u-7-12,.pure-u-7-24,.pure-u-7-8,.pure-u-8-24,.pure-u-9-24{display:inline-block;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-1-24{width:4.1667%}.pure-u-1-12,.pure-u-2-24{width:8.3333%}.pure-u-1-8,.pure-u-3-24{width:12.5%}.pure-u-1-6,.pure-u-4-24{width:16.6667%}.pure-u-1-5{width:20%}.pure-u-5-24{width:20.8333%}.pure-u-1-4,.pure-u-6-24{width:25%}.pure-u-7-24{width:29.1667%}.pure-u-1-3,.pure-u-8-24{width:33.3333%}.pure-u-3-8,.pure-u-9-24{width:37.5%}.pure-u-2-5{width:40%}.pure-u-10-24,.pure-u-5-12{width:41.6667%}.pure-u-11-24{width:45.8333%}.pure-u-1-2,.pure-u-12-24{width:50%}.pure-u-13-24{width:54.1667%}.pure-u-14-24,.pure-u-7-12{width:58.3333%}.pure-u-3-5{width:60%}.pure-u-15-24,.pure-u-5-8{width:62.5%}.pure-u-16-24,.pure-u-2-3{width:66.6667%}.pure-u-17-24{width:70.8333%}.pure-u-18-24,.pure-u-3-4{width:75%}.pure-u-19-24{width:79.1667%}.pure-u-4-5{width:80%}.pure-u-20-24,.pure-u-5-6{width:83.3333%}.pure-u-21-24,.pure-u-7-8{width:87.5%}.pure-u-11-12,.pure-u-22-24{width:91.6667%}.pure-u-23-24{width:95.8333%}.pure-u-1,.pure-u-1-1,.pure-u-24-24,.pure-u-5-5{width:100%}</style><style type=text/css media=screen>/*!Pure v3.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/pure-css/pure/blob/master/LICENSE*/.pure-table{border-collapse:collapse;border-spacing:0;empty-cells:show;border:1px solid #cbcbcb}.pure-table caption{color:#000;font:italic 85%/1 arial,sans-serif;padding:1em 0;text-align:center}.pure-table td,.pure-table th{border-left:1px solid #cbcbcb;border-width:0 0 0 1px;font-size:inherit;margin:0;overflow:visible;padding:.5em 1em}.pure-table thead{background-color:#e0e0e0;color:#000;text-align:left;vertical-align:bottom}.pure-table td{background-color:transparent}.pure-table-odd td{background-color:#f2f2f2}.pure-table-striped tr:nth-child(2n-1) td{background-color:#f2f2f2}.pure-table-bordered td{border-bottom:1px solid #cbcbcb}.pure-table-bordered tbody>tr:last-child>td{border-bottom-width:0}.pure-table-horizontal td,.pure-table-horizontal th{border-width:0 0 1px;border-bottom:1px solid #cbcbcb}.pure-table-horizontal tbody>tr:last-child>td{border-bottom-width:0}</style><style type=text/css media=screen>/*!Pure v1.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md*/@media screen and (min-width:35.5em){.pure-u-sm-1,.pure-u-sm-1-1,.pure-u-sm-1-12,.pure-u-sm-1-2,.pure-u-sm-1-24,.pure-u-sm-1-3,.pure-u-sm-1-4,.pure-u-sm-1-5,.pure-u-sm-1-6,.pure-u-sm-1-8,.pure-u-sm-10-24,.pure-u-sm-11-12,.pure-u-sm-11-24,.pure-u-sm-12-24,.pure-u-sm-13-24,.pure-u-sm-14-24,.pure-u-sm-15-24,.pure-u-sm-16-24,.pure-u-sm-17-24,.pure-u-sm-18-24,.pure-u-sm-19-24,.pure-u-sm-2-24,.pure-u-sm-2-3,.pure-u-sm-2-5,.pure-u-sm-20-24,.pure-u-sm-21-24,.pure-u-sm-22-24,.pure-u-sm-23-24,.pure-u-sm-24-24,.pure-u-sm-3-24,.pure-u-sm-3-4,.pure-u-sm-3-5,.pure-u-sm-3-8,.pure-u-sm-4-24,.pure-u-sm-4-5,.pure-u-sm-5-12,.pure-u-sm-5-24,.pure-u-sm-5-5,.pure-u-sm-5-6,.pure-u-sm-5-8,.pure-u-sm-6-24,.pure-u-sm-7-12,.pure-u-sm-7-24,.pure-u-sm-7-8,.pure-u-sm-8-24,.pure-u-sm-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-sm-1-24{width:4.1667%}.pure-u-sm-1-12,.pure-u-sm-2-24{width:8.3333%}.pure-u-sm-1-8,.pure-u-sm-3-24{width:12.5%}.pure-u-sm-1-6,.pure-u-sm-4-24{width:16.6667%}.pure-u-sm-1-5{width:20%}.pure-u-sm-5-24{width:20.8333%}.pure-u-sm-1-4,.pure-u-sm-6-24{width:25%}.pure-u-sm-7-24{width:29.1667%}.pure-u-sm-1-3,.pure-u-sm-8-24{width:33.3333%}.pure-u-sm-3-8,.pure-u-sm-9-24{width:37.5%}.pure-u-sm-2-5{width:40%}.pure-u-sm-10-24,.pure-u-sm-5-12{width:41.6667%}.pure-u-sm-11-24{width:45.8333%}.pure-u-sm-1-2,.pure-u-sm-12-24{width:50%}.pure-u-sm-13-24{width:54.1667%}.pure-u-sm-14-24,.pure-u-sm-7-12{width:58.3333%}.pure-u-sm-3-5{width:60%}.pure-u-sm-15-24,.pure-u-sm-5-8{width:62.5%}.pure-u-sm-16-24,.pure-u-sm-2-3{width:66.6667%}.pure-u-sm-17-24{width:70.8333%}.pure-u-sm-18-24,.pure-u-sm-3-4{width:75%}.pure-u-sm-19-24{width:79.1667%}.pure-u-sm-4-5{width:80%}.pure-u-sm-20-24,.pure-u-sm-5-6{width:83.3333%}.pure-u-sm-21-24,.pure-u-sm-7-8{width:87.5%}.pure-u-sm-11-12,.pure-u-sm-22-24{width:91.6667%}.pure-u-sm-23-24{width:95.8333%}.pure-u-sm-1,.pure-u-sm-1-1,.pure-u-sm-24-24,.pure-u-sm-5-5{width:100%}}@media screen and (min-width:48em){.pure-u-md-1,.pure-u-md-1-1,.pure-u-md-1-12,.pure-u-md-1-2,.pure-u-md-1-24,.pure-u-md-1-3,.pure-u-md-1-4,.pure-u-md-1-5,.pure-u-md-1-6,.pure-u-md-1-8,.pure-u-md-10-24,.pure-u-md-11-12,.pure-u-md-11-24,.pure-u-md-12-24,.pure-u-md-13-24,.pure-u-md-14-24,.pure-u-md-15-24,.pure-u-md-16-24,.pure-u-md-17-24,.pure-u-md-18-24,.pure-u-md-19-24,.pure-u-md-2-24,.pure-u-md-2-3,.pure-u-md-2-5,.pure-u-md-20-24,.pure-u-md-21-24,.pure-u-md-22-24,.pure-u-md-23-24,.pure-u-md-24-24,.pure-u-md-3-24,.pure-u-md-3-4,.pure-u-md-3-5,.pure-u-md-3-8,.pure-u-md-4-24,.pure-u-md-4-5,.pure-u-md-5-12,.pure-u-md-5-24,.pure-u-md-5-5,.pure-u-md-5-6,.pure-u-md-5-8,.pure-u-md-6-24,.pure-u-md-7-12,.pure-u-md-7-24,.pure-u-md-7-8,.pure-u-md-8-24,.pure-u-md-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-md-1-24{width:4.1667%}.pure-u-md-1-12,.pure-u-md-2-24{width:8.3333%}.pure-u-md-1-8,.pure-u-md-3-24{width:12.5%}.pure-u-md-1-6,.pure-u-md-4-24{width:16.6667%}.pure-u-md-1-5{width:20%}.pure-u-md-5-24{width:20.8333%}.pure-u-md-1-4,.pure-u-md-6-24{width:25%}.pure-u-md-7-24{width:29.1667%}.pure-u-md-1-3,.pure-u-md-8-24{width:33.3333%}.pure-u-md-3-8,.pure-u-md-9-24{width:37.5%}.pure-u-md-2-5{width:40%}.pure-u-md-10-24,.pure-u-md-5-12{width:41.6667%}.pure-u-md-11-24{width:45.8333%}.pure-u-md-1-2,.pure-u-md-12-24{width:50%}.pure-u-md-13-24{width:54.1667%}.pure-u-md-14-24,.pure-u-md-7-12{width:58.3333%}.pure-u-md-3-5{width:60%}.pure-u-md-15-24,.pure-u-md-5-8{width:62.5%}.pure-u-md-16-24,.pure-u-md-2-3{width:66.6667%}.pure-u-md-17-24{width:70.8333%}.pure-u-md-18-24,.pure-u-md-3-4{width:75%}.pure-u-md-19-24{width:79.1667%}.pure-u-md-4-5{width:80%}.pure-u-md-20-24,.pure-u-md-5-6{width:83.3333%}.pure-u-md-21-24,.pure-u-md-7-8{width:87.5%}.pure-u-md-11-12,.pure-u-md-22-24{width:91.6667%}.pure-u-md-23-24{width:95.8333%}.pure-u-md-1,.pure-u-md-1-1,.pure-u-md-24-24,.pure-u-md-5-5{width:100%}}@media screen and (min-width:64em){.pure-u-lg-1,.pure-u-lg-1-1,.pure-u-lg-1-12,.pure-u-lg-1-2,.pure-u-lg-1-24,.pure-u-lg-1-3,.pure-u-lg-1-4,.pure-u-lg-1-5,.pure-u-lg-1-6,.pure-u-lg-1-8,.pure-u-lg-10-24,.pure-u-lg-11-12,.pure-u-lg-11-24,.pure-u-lg-12-24,.pure-u-lg-13-24,.pure-u-lg-14-24,.pure-u-lg-15-24,.pure-u-lg-16-24,.pure-u-lg-17-24,.pure-u-lg-18-24,.pure-u-lg-19-24,.pure-u-lg-2-24,.pure-u-lg-2-3,.pure-u-lg-2-5,.pure-u-lg-20-24,.pure-u-lg-21-24,.pure-u-lg-22-24,.pure-u-lg-23-24,.pure-u-lg-24-24,.pure-u-lg-3-24,.pure-u-lg-3-4,.pure-u-lg-3-5,.pure-u-lg-3-8,.pure-u-lg-4-24,.pure-u-lg-4-5,.pure-u-lg-5-12,.pure-u-lg-5-24,.pure-u-lg-5-5,.pure-u-lg-5-6,.pure-u-lg-5-8,.pure-u-lg-6-24,.pure-u-lg-7-12,.pure-u-lg-7-24,.pure-u-lg-7-8,.pure-u-lg-8-24,.pure-u-lg-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-lg-1-24{width:4.1667%}.pure-u-lg-1-12,.pure-u-lg-2-24{width:8.3333%}.pure-u-lg-1-8,.pure-u-lg-3-24{width:12.5%}.pure-u-lg-1-6,.pure-u-lg-4-24{width:16.6667%}.pure-u-lg-1-5{width:20%}.pure-u-lg-5-24{width:20.8333%}.pure-u-lg-1-4,.pure-u-lg-6-24{width:25%}.pure-u-lg-7-24{width:29.1667%}.pure-u-lg-1-3,.pure-u-lg-8-24{width:33.3333%}.pure-u-lg-3-8,.pure-u-lg-9-24{width:37.5%}.pure-u-lg-2-5{width:40%}.pure-u-lg-10-24,.pure-u-lg-5-12{width:41.6667%}.pure-u-lg-11-24{width:45.8333%}.pure-u-lg-1-2,.pure-u-lg-12-24{width:50%}.pure-u-lg-13-24{width:54.1667%}.pure-u-lg-14-24,.pure-u-lg-7-12{width:58.3333%}.pure-u-lg-3-5{width:60%}.pure-u-lg-15-24,.pure-u-lg-5-8{width:62.5%}.pure-u-lg-16-24,.pure-u-lg-2-3{width:66.6667%}.pure-u-lg-17-24{width:70.8333%}.pure-u-lg-18-24,.pure-u-lg-3-4{width:75%}.pure-u-lg-19-24{width:79.1667%}.pure-u-lg-4-5{width:80%}.pure-u-lg-20-24,.pure-u-lg-5-6{width:83.3333%}.pure-u-lg-21-24,.pure-u-lg-7-8{width:87.5%}.pure-u-lg-11-12,.pure-u-lg-22-24{width:91.6667%}.pure-u-lg-23-24{width:95.8333%}.pure-u-lg-1,.pure-u-lg-1-1,.pure-u-lg-24-24,.pure-u-lg-5-5{width:100%}}@media screen and (min-width:80em){.pure-u-xl-1,.pure-u-xl-1-1,.pure-u-xl-1-12,.pure-u-xl-1-2,.pure-u-xl-1-24,.pure-u-xl-1-3,.pure-u-xl-1-4,.pure-u-xl-1-5,.pure-u-xl-1-6,.pure-u-xl-1-8,.pure-u-xl-10-24,.pure-u-xl-11-12,.pure-u-xl-11-24,.pure-u-xl-12-24,.pure-u-xl-13-24,.pure-u-xl-14-24,.pure-u-xl-15-24,.pure-u-xl-16-24,.pure-u-xl-17-24,.pure-u-xl-18-24,.pure-u-xl-19-24,.pure-u-xl-2-24,.pure-u-xl-2-3,.pure-u-xl-2-5,.pure-u-xl-20-24,.pure-u-xl-21-24,.pure-u-xl-22-24,.pure-u-xl-23-24,.pure-u-xl-24-24,.pure-u-xl-3-24,.pure-u-xl-3-4,.pure-u-xl-3-5,.pure-u-xl-3-8,.pure-u-xl-4-24,.pure-u-xl-4-5,.pure-u-xl-5-12,.pure-u-xl-5-24,.pure-u-xl-5-5,.pure-u-xl-5-6,.pure-u-xl-5-8,.pure-u-xl-6-24,.pure-u-xl-7-12,.pure-u-xl-7-24,.pure-u-xl-7-8,.pure-u-xl-8-24,.pure-u-xl-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-xl-1-24{width:4.1667%}.pure-u-xl-1-12,.pure-u-xl-2-24{width:8.3333%}.pure-u-xl-1-8,.pure-u-xl-3-24{width:12.5%}.pure-u-xl-1-6,.pure-u-xl-4-24{width:16.6667%}.pure-u-xl-1-5{width:20%}.pure-u-xl-5-24{width:20.8333%}.pure-u-xl-1-4,.pure-u-xl-6-24{width:25%}.pure-u-xl-7-24{width:29.1667%}.pure-u-xl-1-3,.pure-u-xl-8-24{width:33.3333%}.pure-u-xl-3-8,.pure-u-xl-9-24{width:37.5%}.pure-u-xl-2-5{width:40%}.pure-u-xl-10-24,.pure-u-xl-5-12{width:41.6667%}.pure-u-xl-11-24{width:45.8333%}.pure-u-xl-1-2,.pure-u-xl-12-24{width:50%}.pure-u-xl-13-24{width:54.1667%}.pure-u-xl-14-24,.pure-u-xl-7-12{width:58.3333%}.pure-u-xl-3-5{width:60%}.pure-u-xl-15-24,.pure-u-xl-5-8{width:62.5%}.pure-u-xl-16-24,.pure-u-xl-2-3{width:66.6667%}.pure-u-xl-17-24{width:70.8333%}.pure-u-xl-18-24,.pure-u-xl-3-4{width:75%}.pure-u-xl-19-24{width:79.1667%}.pure-u-xl-4-5{width:80%}.pure-u-xl-20-24,.pure-u-xl-5-6{width:83.3333%}.pure-u-xl-21-24,.pure-u-xl-7-8{width:87.5%}.pure-u-xl-11-12,.pure-u-xl-22-24{width:91.6667%}.pure-u-xl-23-24{width:95.8333%}.pure-u-xl-1,.pure-u-xl-1-1,.pure-u-xl-24-24,.pure-u-xl-5-5{width:100%}}</style><style type=text/css media=screen>:root{--color:#484848;--color-footnote:#575757;--color-footer-content:#bbb;--background-color:rgb(252, 252, 252);--background-color-code:rgb(240, 240, 240);--background-color-toggle-content:rgb(249, 249, 249);--link-color:#c05b4d;--link-color-hover:#a5473a;--list-link-color:#336699;--border-navbar-and-footer:#e3e3e3}</style><style type=text/css media=screen>html{min-height:100%;width:100%;position:relative}body{background-color:#fcfcfc;background-color:var(--background-color);color:#484848;color:var(--color)}a{text-decoration:none}kbd,pre,code,samp{background-color:#f0f0f0;background-color:var(--background-color-code)}.nav-menu{margin-top:5px;padding-bottom:5px;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#e3e3e3;border-bottom-color:var(--border-navbar-and-footer)}.pure-menu-heading{text-transform:none;font-size:large}.pure-menu-link:hover{background-color:unset}.header{text-align:left;color:#484848;color:var(--color);margin-bottom:.5em}.header ul li{height:auto}.header ul li a{font-weight:700;color:#484848;color:var(--color);font-family:source sans pro,helveticaneue,helvetica neue,Helvetica,Arial,sans-serif}.header{font-weight:700;color:#484848;color:var(--color);font-family:source sans pro,helveticaneue,helvetica neue,Helvetica,Arial,sans-serif}.site-title{color:#484848;color:var(--color);text-transform:none;font-weight:400;font-family:source sans pro,helveticaneue,helvetica neue,Helvetica,Arial,sans-serif}.pull-right{float:right}.posts-name{text-transform:capitalize;font-weight:700;padding-left:1em;margin-top:1em;font-family:source sans pro,helveticaneue,helvetica neue,Helvetica,Arial,sans-serif}.posts{font-family:verdana,arial,helvetica,sans-serif;list-style-type:none;padding-left:1em}.posts li p{margin-top:0}.posts li{margin-bottom:1em}.posts li>a{color:#369;color:var(--list-link-color);text-decoration:none}.post-list{font-size:large}.footnote{font-family:verdana,arial,helvetica,sans-serif;color:#575757;color:var(--color-footnote);font-size:.75em;margin-bottom:0}.footnote a{color:#575757;color:var(--color-footnote)}.footnote a:hover{text-decoration:underline;color:#369;color:var(--list-link-color)}.footer{position:absolute;z-index:2;height:auto;width:100%;bottom:0}.footer-content{border-top-width:1px;border-top-style:solid;border-top-color:#e3e3e3;border-top:1px solid var(--border-navbar-and-footer);font-size:80%;color:#bbb;color:var(--color-footer-content)}.footer-content a{color:#575757;color:var(--color-footnote)}.footer-content ul{height:auto;margin-top:0;margin-bottom:0;display:inline-block;padding-left:0}#TableOfContents>ul{list-style:none;margin:0;padding:0}#gototop-btn{display:inline-block}#foot-name{color:#484848;color:var(--color);text-transform:none}#foot-copyright{padding-left:1em;padding-bottom:.5em;margin:0}.post{font-family:proxima-nova,helvetica neue,Helvetica,Roboto,Arial,sans-serif;color:#484848;color:var(--color);letter-spacing:normal;padding-left:.5em}.post h1,h2,h3,h4,h5,h6{font-weight:700;letter-spacing:normal}.post-content{z-index:9;overflow:auto;padding:0;padding-bottom:3em;font-size:16px;line-height:1.4}.post-content img{max-width:100%;height:auto}.post-content pre{padding:.5em}.post a{color:#c05b4d;color:var(--link-color);text-decoration:none}.post a:hover{color:#a5473a;color:var(--link-color-hover);text-decoration:underline}.post h1{font-size:28px}.post h2{font-size:25px}.post h3{font-size:23px}.post h4{font-size:21px}.post h5{font-size:19px}.post h6{font-size:18px}.post-title{margin-top:0;margin-bottom:1em}.post-title h1{font-weight:700;font-size:39px;line-height:40px;margin-top:0;margin-bottom:0}@media screen and (max-width:768px){.desktop{display:none}.mobile{display:block}#toggle-btn{display:inline-block;float:right;padding:.5em 1em;text-decoration:none;color:#484848;color:var(--color);font-weight:700}#toggle-content li{clear:both;height:auto;background-color:#f9f9f9;background-color:var(--background-color-toggle-content)}#toggle-home{display:inline-block}}@media screen and (min-width:769px){.mobile{display:none}.desktop{display:block}}</style><link rel="shortcut icon" href=/img/favicon.ico type=image/x-icon></head><body><div class="header pure-g"><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div><div class="pure-u-11-12 pure-u-md-20-24 pure-u-lg-7-12"><div class="desktop pure-menu pure-menu-horizontal nav-menu"><a href=/ class="site-title pure-menu-heading">随记</a><ul class="pure-menu-list pull-right"><li class=pure-menu-item><a href=/categories/development/ class=pure-menu-link>Development</a></li><li class=pure-menu-item><a href=/categories/os/ class=pure-menu-link>OS</a></li><li class=pure-menu-item><a href=/categories/reading/ class=pure-menu-link>Reading</a></li><li class=pure-menu-item><a href=/about/ class=pure-menu-link>About</a></li></ul></div><div class="mobile pure-menu nav-menu"><a href=/ class="site-title pure-menu-heading" id=toggle-home>随记</a>
+<a href=# id=toggle-btn>&#9776;</a><ul class=pure-menu-list id=toggle-content style=display:none><li class=pure-menu-item><a href=/categories/development/ class=pure-menu-link>Development</a></li><li class=pure-menu-item><a href=/categories/os/ class=pure-menu-link>OS</a></li><li class=pure-menu-item><a href=/categories/reading/ class=pure-menu-link>Reading</a></li><li class=pure-menu-item><a href=/about class=pure-menu-link>About</a></li></ul></div></div><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div></div><div class=pure-g><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div><div class="pure-u-11-12 pure-u-md-20-24 pure-u-lg-7-12"><div class=post><div class=post-title><p class=footnote><time datetime="2021-04-03 10:00:00 +0800 CST">2021-04-03
+</time>|
+tags: [ <a href=/tags/linux>Linux</a> <a href=/tags/archlinux>ArchLinux</a> <a href=/tags/gentoo>Gentoo</a> ]
+categories: [ <a href=/categories/os>OS</a> ]</p><h1>折腾 Linux 发行版 ArchLinux 和 Gentoo</h1></div><div class=post-content><nav id=TableOfContents></nav><p>接触 Linux 二十多年了，一直是排斥 Gentoo Linux 和 Arch Linux 的，觉得前者编译太慢太浪费电力，后者连个官方安装程序都没有而且软件包质量太低。然而今天心血来潮，总算挑战两个发行版的安装成功，Gentoo Linux 的<a href=https://wiki.gentoo.org/wiki/Handbook:AMD64>手册</a>写的非常规范，安装过程除了编译慢，倒也没太大槽点，安装完基础系统后重启进入系统，占用内存 77MB，挺惊艳的。<a href=https://mirrors.tuna.tsinghua.edu.cn/gentoo/>Gentoo</a> 和 <a href=https://mirrors.tuna.tsinghua.edu.cn/help/gentoo-portage/>Gentoo-Portage</a> 有清华 TUNA 镜像源，下载很快。</p><p>Arch Linux 则安装了两次，第一次失败了，看漏了 <a href=https://wiki.archlinux.org/index.php/Installation_guide>Installation_Guide</a> 关于挂载 ESP 分区的文字，而且这份指南中关于<a href=https://wiki.archlinux.org/index.php/Network_configuration>网络</a>配置和<a href=https://wiki.archlinux.org/index.php/Boot_loader>启动引导器</a>配置指向了两个满满当当的 wiki 页面，其实需要的信息只有一点点，看得好不烦躁😓️</p><p>下面简单记录下在 VMware Fusion 中安装 Arch Linux 的流水账，安装文件来自 <a href=https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/latest/>https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/latest/</a> 下的 .iso 文件，虚拟机使用 UEFI 引导操作系统。</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>timedatectl set-ntp <span style=color:#007020>true</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>fdisk /dev/sda
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># 按 g 选择 gpt 分区</span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># 按 n 创建 300M 分区，按 t 选择 EFI system partition 分区类型</span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># 按 n 创建 1G 分区，按 t 选择 Linux swap 分区类型</span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># 按 n 创建分区，按 t 选择 Linux root(x86-64) 分区类型</span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># 按 w 写出分区表</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>mkfs.ext4 /dev/sda3
+</span></span><span style=display:flex><span>mkswap /dev/sda2
+</span></span><span style=display:flex><span>mkfs.vfat /dev/sda1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>mount /dev/sda3 /mnt
+</span></span><span style=display:flex><span>mkdir /mnt/boot
+</span></span><span style=display:flex><span>mount /dev/sda1 /mnt/boot
+</span></span><span style=display:flex><span>swapon /dev/sda2
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>cat &gt;/etc/pacman.d/mirrorlist <span style=color:#4070a0>&lt;&lt;&#39;EOF&#39;
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>Server = https://opentuna.cn/archlinux/$repo/os/$arch
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>EOF</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>pacstrap /mnt base linux linux-firmware
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>arch-chroot /mnt
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>### &gt;&gt;&gt;&gt; 以下命令在 chroot 环境执行 &gt;&gt;&gt;&gt;</span>
+</span></span><span style=display:flex><span>ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</span></span><span style=display:flex><span>hwclock --systohc
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sed -i -e <span style=color:#4070a0>&#39;s/^#en_US.UTF-8/en_US.UTF-8/; s/^#en_US /en_US /; s/^#zh_CN.UTF-8/zh_CN.UTF-8/&#39;</span> /etc/locale.gen
+</span></span><span style=display:flex><span>locale-gen
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#007020>echo</span> <span style=color:#4070a0>&#39;LANG=en_US.UTF-8&#39;</span> &gt;&gt; /etc/locale.conf
+</span></span><span style=display:flex><span><span style=color:#007020>echo</span> <span style=color:#4070a0>&#39;LC_CTYPE=zh_CN.UTF-8&#39;</span> &gt;&gt; /etc/locale.conf
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#007020>echo</span> arch &gt; /etc/hostname
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>cat &gt;/etc/hosts <span style=color:#4070a0>&lt;&lt;EOF
+</span></span></span><span style=display:flex><span><span style=color:#4070a0># Static table lookup for hostnames.
+</span></span></span><span style=display:flex><span><span style=color:#4070a0># See hosts(5) for details.
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>127.0.0.1       localhost
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>::1             localhost
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>127.0.1.1       arch
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>EOF</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>## 使用 systemd-networkd systemd-resolved</span>
+</span></span><span style=display:flex><span>systemctl <span style=color:#007020>enable</span> systemd-networkd systemd-resolved
+</span></span><span style=display:flex><span>cat &gt;/etc/systemd/network/20-wired.network <span style=color:#4070a0>&lt;&lt;EOF
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>[Match]
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>Name=ens33
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>[Network]
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>DHCP=yes
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>EOF</span>
+</span></span><span style=display:flex><span>ln -snf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#60a0b0;font-style:italic>## 使用 dhcpcd</span>
+</span></span><span style=display:flex><span>    <span style=color:#60a0b0;font-style:italic>#pacman -S dhcpcd</span>
+</span></span><span style=display:flex><span>    <span style=color:#60a0b0;font-style:italic>#systemctl enable dhcpcd</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># 修改 root 账户密码</span>
+</span></span><span style=display:flex><span>passwd
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>## 使用 GRUB</span>
+</span></span><span style=display:flex><span>pacman -S grub efibootmgr
+</span></span><span style=display:flex><span>grub-install --target<span style=color:#666>=</span>x86_64-efi --efi-directory<span style=color:#666>=</span>/boot --bootloader-id<span style=color:#666>=</span>GRUB
+</span></span><span style=display:flex><span>grub-mkconfig -o /boot/grub/grub.cfg
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#007020>exit</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># &lt;&lt;&lt;&lt; 以下两条命令在 liveCD 环境执行 &lt;&lt;&lt;&lt;</span>
+</span></span><span style=display:flex><span>umount -R /mnt
+</span></span><span style=display:flex><span>reboot
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>### 重启后进入刚安装好的系统，创建第一个用户</span>
+</span></span><span style=display:flex><span>useradd -m -G wheel,audio,video -s /bin/bash dieken
+</span></span><span style=display:flex><span>passwd dieken
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>### 安装一些软件包</span>
+</span></span><span style=display:flex><span>pacman -S openssh sudo vim which man-db pacutils htop open-vm-tools
+</span></span><span style=display:flex><span>systemctl <span style=color:#007020>enable</span> sshd vmtoolsd vmware-vmblock-fuse
+</span></span><span style=display:flex><span>systemctl restart sshd vmtoolsd vmware-vmblock-fuse
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>EDITOR</span><span style=color:#666>=</span>vim
+</span></span><span style=display:flex><span>visudo   <span style=color:#60a0b0;font-style:italic># 把 %wheel 两行中的「其中一行」去掉开头的 &#34;# &#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>### 安装 yay 和 paru，以普通用户身份执行</span>
+</span></span><span style=display:flex><span>sudo pacman -Sy --needed base-devel asp pkgfile go
+</span></span><span style=display:flex><span>go env -w <span style=color:#bb60d5>GO111MODULE</span><span style=color:#666>=</span>on
+</span></span><span style=display:flex><span>go env -w <span style=color:#bb60d5>GOPROXY</span><span style=color:#666>=</span>https://goproxy.cn,direct
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>mkdir ~/builds <span style=color:#666>&amp;&amp;</span> <span style=color:#007020>cd</span> ~/builds
+</span></span><span style=display:flex><span>git config --global url.https://github.com.cnpmjs.org/.insteadOf https://github.com/
+</span></span><span style=display:flex><span>git clone https://aur.tuna.tsinghua.edu.cn/yay.git
+</span></span><span style=display:flex><span><span style=color:#007020>cd</span> yay
+</span></span><span style=display:flex><span>makepkg -sirc
+</span></span><span style=display:flex><span>yay --aururl <span style=color:#4070a0>&#34;https://aur.tuna.tsinghua.edu.cn&#34;</span> --save
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># 加快 paru 安装速度</span>
+</span></span><span style=display:flex><span>mkdir -p ~/.cargo
+</span></span><span style=display:flex><span>cat &gt; ~/.cargo/config <span style=color:#4070a0>&lt;&lt;EOF
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>[source.crates-io]
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>replace-with = &#39;tuna&#39;
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>[source.tuna]
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>registry = &#34;https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git&#34;
+</span></span></span><span style=display:flex><span><span style=color:#4070a0>EOF</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>yay paru
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>## 编辑 /etc/paru.conf，在 [options] 一节下面添加 AurUrl = https://aur.tuna.tsinghua.edu.cn/</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo sed -i -e <span style=color:#4070a0>&#39;s/^#BottomUp$/BottomUp/&#39;</span> /etc/paru.conf
+</span></span><span style=display:flex><span>sudo sed -i -e <span style=color:#4070a0>&#39;s/^#Color$/Color/&#39;</span> /etc/pacman.conf
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>paru pbget
+</span></span><span style=display:flex><span>paru lf
+</span></span><span style=display:flex><span>paru downgrade
+</span></span></code></pre></div><p>Pacman 常用命令：</p><ul><li><code>pacman -S foo</code>: 安装软件包</li><li><code>pacman -Scc</code>: 清除软件包缓存</li><li><code>pacman -Ss foo</code>: 搜索软件包</li><li><code>pacman -Sy</code>: 更新软件包数据库</li></ul><p>Arch Linux 的优点：</p><ol><li><code>pacman</code> 软件包管理器设计简单，安装二进制软件包非常快速，PKGBUILD 文件方便编写；</li><li>Arch Linux 对 FHS 以及软件包的文件布局改造很少，<code>/etc</code>目录几乎看不到 Arch 自定义的痕迹；</li><li>Arch Linux 滚动更新，软件包版本非常新；</li><li>Arch Linux 社区集中运作的 <a href=https://aur.archlinux.org/>AUR</a> 软件仓库，便于大家共享非官方软件包；</li></ol><p>更多 VMWare 下安装 Arch Linux 的信息参考 <a href=https://wiki.archlinux.org/index.php/VMware/Install_Arch_Linux_as_a_guest>https://wiki.archlinux.org/index.php/VMware/Install_Arch_Linux_as_a_guest</a> 。</p><hr><p>Gentoo 的一些重要文件：</p><p>/etc/portage/make.conf</p><pre tabindex=0><code># These settings were set by the catalyst build script that automatically
+# built this stage.
+# Please consult /usr/share/portage/config/make.conf.example for a more
+# detailed example.
+COMMON_FLAGS=&#34;-march=native -O2 -pipe&#34;
+CFLAGS=&#34;${COMMON_FLAGS}&#34;
+CXXFLAGS=&#34;${COMMON_FLAGS}&#34;
+FCFLAGS=&#34;${COMMON_FLAGS}&#34;
+FFLAGS=&#34;${COMMON_FLAGS}&#34;
+
+# NOTE: This stage was built with the bindist Use flag enabled
+PORTDIR=&#34;/var/db/repos/gentoo&#34;
+DISTDIR=&#34;/var/cache/distfiles&#34;
+PKGDIR=&#34;/var/cache/binpkgs&#34;
+
+# This sets the language of build output to English.
+# Please keep this setting intact when reporting bugs.
+LC_MESSAGES=C
+
+FEAUTURES=&#34;${FEATURES} binpkg-request-signature&#34;
+EMERGE_DEFAULT_OPTS=&#34;--jobs 4 --load-average=3.6 --ask --quiet-build=y --keep-going --getbinpkg --binpkg-respect-use=y&#34;
+GENTOO_MIRRORS=&#34;https://mirrors.tuna.tsinghua.edu.cn/gentoo&#34;
+MAKEOPTS=&#34;-j4&#34;
+USE=&#34;elogind&#34;
+</code></pre><p>/etc/portage/package.license</p><pre tabindex=0><code>sys-kernel/linux-firmware linux-fw-redistributable no-source-code
+media-fonts/font-bh-ttf bh-luxi
+media-fonts/font-bh-type1 bh-luxi
+</code></pre><p>/etc/portage/repos.conf/gentoo.conf</p><pre tabindex=0><code>[DEFAULT]
+main-repo = gentoo
+
+[gentoo]
+location = /var/db/repos/gentoo
+#sync-type = rsync
+#sync-uri = rsync://mirrors.tuna.tsinghua.edu.cn/gentoo-portage
+auto-sync = yes
+sync-rsync-verify-jobs = 1
+sync-rsync-verify-metamanifest = yes
+sync-rsync-verify-max-age = 24
+sync-openpgp-key-path = /usr/share/openpgp-keys/gentoo-release.asc
+sync-openpgp-keyserver = hkps://keys.gentoo.org
+sync-openpgp-key-refresh-retry-count = 40
+sync-openpgp-key-refresh-retry-overall-timeout = 1200
+sync-openpgp-key-refresh-retry-delay-exp-base = 2
+sync-openpgp-key-refresh-retry-delay-max = 60
+sync-openpgp-key-refresh-retry-delay-mult = 4
+sync-webrsync-verify-signature = yes
+
+sync-type = git
+sync-uri = https://mirrors.tuna.tsinghua.edu.cn/git/gentoo-portage.git
+sync-depth = 1
+sync-git-verify-commit-signature = yes
+</code></pre><p>/var/lib/portage/world</p><pre tabindex=0><code>app-admin/eclean-kernel
+app-admin/sudo
+app-admin/sysklogd
+app-editors/vim
+app-emulation/open-vm-tools
+app-eselect/eselect-repository
+app-misc/neofetch
+app-misc/ranger
+app-portage/eix
+app-portage/genlop
+app-portage/gentoolkit
+dev-vcs/git
+net-misc/chrony
+net-misc/dhcpcd
+net-misc/netifrc
+sys-apps/lsb-release
+sys-apps/mlocate
+sys-boot/grub:2
+sys-fs/ncdu
+sys-kernel/gentoo-kernel-bin
+sys-kernel/installkernel-gentoo
+sys-kernel/linux-firmware
+sys-process/cronie
+x11-base/xorg-x11
+x11-drivers/xf86-video-vmware
+x11-misc/dmenu
+x11-misc/i3lock
+x11-misc/i3status
+x11-misc/slim
+x11-misc/urxvt-font-size
+x11-misc/urxvt-perls
+x11-misc/urxvt-tabbedex
+x11-misc/xss-lock
+x11-terms/rxvt-unicode
+x11-themes/slim-themes
+x11-wm/i3-gaps
+</code></pre><p>/etc/conf.d/xdm 中设置 DISPLAYMANAGER=&ldquo;slim&rdquo;，注意 slim, lightdm, lxdm 都不支持 non-root X，slim 也不支持 elogind。</p><p>重要服务：</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>rc-update add net.eno16777736 default       <span style=color:#60a0b0;font-style:italic># /etc/init.d/net.eno16777736 -&gt; net.lo</span>
+</span></span><span style=display:flex><span>rc-update add sysklogd default
+</span></span><span style=display:flex><span>rc-update add cronie default
+</span></span><span style=display:flex><span>rc-update add sshd default
+</span></span><span style=display:flex><span>rc-update add chronyd default
+</span></span><span style=display:flex><span>rc-update add xdm default
+</span></span><span style=display:flex><span>rc-update add elogind boot
+</span></span><span style=display:flex><span>rc-update add dbus default
+</span></span><span style=display:flex><span>rc-update add vmware-tools default
+</span></span></code></pre></div><p>升级 Gentoo:</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>sudo eix-sync                   <span style=color:#60a0b0;font-style:italic># sudo emerge --sync &amp;&amp; sudo eix-update &amp;&amp; sudo eix-diff</span>
+</span></span><span style=display:flex><span>sudo emerge -avuDN @world      <span style=color:#60a0b0;font-style:italic># sudo emerge --ask --verbose --update --deep --newuse @world</span>
+</span></span></code></pre></div><p>参考： <a href=https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet>https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet</a></p><p>Overlay 搜索： <a href=https://gpo.zugaina.org/>https://gpo.zugaina.org/</a></p><hr><p>中文 Linux 论坛：</p><ol><li>水木社区LinuxApp版： <a href=https://m.newsmth.net/board/LinuxApp>https://m.newsmth.net/board/LinuxApp</a></li><li>Debian: <a href=https://forums.debiancn.org/>https://forums.debiancn.org/</a></li><li>Ubuntu: <a href=https://forum.ubuntu.com.cn/>https://forum.ubuntu.com.cn/</a> <a href=https://forum.ubuntu.org.cn/>https://forum.ubuntu.org.cn/</a> 两个是同一个站。</li><li>Arch: <a href=https://bbs.archlinuxcn.org/>https://bbs.archlinuxcn.org/</a></li><li>Manjaro: <a href=https://manjaro.org.cn/bbs>https://manjaro.org.cn/bbs</a> <a href=https://forum.manjaro.org/c/languages/70-category/70>https://forum.manjaro.org/c/languages/70-category/70</a> 后一个是官方的，人很少</li><li>Gentoo: <a href=https://bbs.gentoocn.org/>https://bbs.gentoocn.org</a> 跳转到了 <a href=https://forums.gentoo.org/viewforum-f-50.html>https://forums.gentoo.org/viewforum-f-50.html</a></li><li>openSUSE: <a href=https://forum.suse.org.cn/>https://forum.suse.org.cn/</a></li><li>Fedora: <a href=https://ask.fedoraproject.org/c/simplified-chinese/103>https://ask.fedoraproject.org/c/simplified-chinese/103</a></li><li>Deepin: <a href=https://bbs.deepin.org/>https://bbs.deepin.org/</a></li><li>Redflag: <a href=http://www.linuxsir.cn/>http://www.linuxsir.cn/</a> (这个是2019年成立的，不知道和之前的中科红旗啥关系)</li></ol></div></div></div><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div></div><div class="footer pure-g"><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div><div class="pure-u-11-12 pure-u-md-20-24 pure-u-lg-7-12"><div class=footer-content><div class="pure-menu pure-menu-horizontal"><ul><li class=pure-menu-item id=foot-name>© Yubao Liu</li></ul><a href=# class="pure-menu-link pull-right" id=gototop-btn>↑↑</a></div></div></div><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div></div><script type=text/javascript>go(),window.addEventListener("resize",go);function go(){var e=document.querySelector(".desktop");document.documentElement.clientWidth>768?e.style.display="":e.style.display="none"}</script><script type=text/javascript>var a=document.querySelector("#toggle-btn"),b=document.querySelector("#toggle-content");a.addEventListener("click",function(){""==b.style.display?(b.style.display="none",a.innerHTML="☰"):(b.style.display="",a.innerHTML="X")})</script></body></html>
