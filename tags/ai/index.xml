@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on 随记</title><link>/tags/ai/</link><description>Recent content in AI on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 17 Jan 2026 22:00:00 +0800</lastBuildDate><atom:link href="/tags/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>大语言模型编程助手</title><link>/posts/llm-code-assistant/</link><pubDate>Sat, 17 Jan 2026 22:00:00 +0800</pubDate><guid>/posts/llm-code-assistant/</guid><description>&lt;h2 id="cli"&gt;CLI&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/anthropics/claude-code"&gt;Claude Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://geminicli.com/"&gt;Gemini CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/openai/codex"&gt;Codex CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.grokcli.dev/"&gt;Grok CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/charmbracelet/crush"&gt;Crush&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://opencode.ai/"&gt;OpenCode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aider.chat/"&gt;Aider&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/features/copilot/cli/"&gt;Github Copilot CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/QwenLM/qwen-code"&gt;Qwen Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://cursor.com/docs/cli/overview"&gt;Cursor CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://cli.iflow.cn/"&gt;iFlow CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.augmentcode.com/product/CLI"&gt;Augment CLI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="ide"&gt;IDE&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.cursor.com/"&gt;Cursor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.trae.cn/"&gt;Trae&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://windsurf.com/"&gt;Windsurf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://antigravity.google/"&gt;Google Antigravity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zed.dev/"&gt;Zed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lingma.aliyun.com/download"&gt;Lingma IDE&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="extension"&gt;Extension&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/features/copilot#features"&gt;Github Copilot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://developers.google.com/gemini-code-assist/docs/overview"&gt;Gemini Code Assist&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://tongyi.aliyun.com/lingma"&gt;通义灵码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.augmentcode.com/"&gt;Augment Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://about.gitlab.com/gitlab-duo/"&gt;Gitlab Duo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://codegeex.cn/"&gt;CodeGeeX&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/q/developer/"&gt;Amazon Q Developer&lt;/a&gt;(原 Amazon CodeWhisperer)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.continue.dev/"&gt;Continue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://supermaven.com"&gt;SuperMaven&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://code.fittentech.com"&gt;Fitten&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>LLM: 大语言模型</title><link>/posts/large-language-models/</link><pubDate>Sun, 21 Jan 2024 15:00:00 +0800</pubDate><guid>/posts/large-language-models/</guid><description>&lt;h2 id="国内大语言模型"&gt;国内大语言模型&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;序号&lt;/th&gt;
+ &lt;th&gt;名字&lt;/th&gt;
+ &lt;th&gt;网址&lt;/th&gt;
+ &lt;th&gt;访问方式&lt;/th&gt;
+ &lt;th&gt;备注&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;td&gt;Kimi Chat&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://www.moonshot.cn"&gt;https://www.moonshot.cn&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web + app&lt;/td&gt;
+ &lt;td&gt;月之暗面 Moonshot&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;2&lt;/td&gt;
+ &lt;td&gt;智谱清言&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://chatglm.cn"&gt;https://chatglm.cn&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web + app&lt;/td&gt;
+ &lt;td&gt;智谱&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;3&lt;/td&gt;
+ &lt;td&gt;通义千问&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://tongyi.aliyun.com"&gt;https://tongyi.aliyun.com&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web + app&lt;/td&gt;
+ &lt;td&gt;阿里&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;4&lt;/td&gt;
+ &lt;td&gt;文心一言&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://yiyan.baidu.com"&gt;https://yiyan.baidu.com&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web + app&lt;/td&gt;
+ &lt;td&gt;百度&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;5&lt;/td&gt;
+ &lt;td&gt;海螺问问&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://yingshi-ai.com"&gt;https://yingshi-ai.com&lt;/a&gt; （原名「应事AI助手」）&lt;/td&gt;
+ &lt;td&gt;web + app&lt;/td&gt;
+ &lt;td&gt;Minimax&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;6&lt;/td&gt;
+ &lt;td&gt;讯飞星火&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://xinghuo.xfyun.cn"&gt;https://xinghuo.xfyun.cn&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web + app&lt;/td&gt;
+ &lt;td&gt;讯飞&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;7&lt;/td&gt;
+ &lt;td&gt;抖音豆包&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://www.doubao.com"&gt;https://www.doubao.com&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web + app&lt;/td&gt;
+ &lt;td&gt;抖音&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;8&lt;/td&gt;
+ &lt;td&gt;360智脑&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://ai.360.cn"&gt;https://ai.360.cn&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web + app&lt;/td&gt;
+ &lt;td&gt;360&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;9&lt;/td&gt;
+ &lt;td&gt;混元助手&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://hunyuan.tencent.com/bot/chat"&gt;https://hunyuan.tencent.com/bot/chat&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web + mini app&lt;/td&gt;
+ &lt;td&gt;腾讯&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;10&lt;/td&gt;
+ &lt;td&gt;百川智能&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://www.baichuan-ai.com"&gt;https://www.baichuan-ai.com&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web&lt;/td&gt;
+ &lt;td&gt;搜狗&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;11&lt;/td&gt;
+ &lt;td&gt;商汤商量&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://chat.sensetime.com"&gt;https://chat.sensetime.com&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web&lt;/td&gt;
+ &lt;td&gt;商汤&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;12&lt;/td&gt;
+ &lt;td&gt;紫东太初&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://taichu-web.ia.ac.cn"&gt;https://taichu-web.ia.ac.cn&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web&lt;/td&gt;
+ &lt;td&gt;中科院&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;13&lt;/td&gt;
+ &lt;td&gt;DeepSeek&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://chat.deepseek.com"&gt;https://chat.deepseek.com&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;14&lt;/td&gt;
+ &lt;td&gt;零一万物&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://01.ai"&gt;https://01.ai&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;模型&lt;/td&gt;
+ &lt;td&gt;开&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;15&lt;/td&gt;
+ &lt;td&gt;书生・浦语&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://intern-ai.org.cn"&gt;https://intern-ai.org.cn&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;模型&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;16&lt;/td&gt;
+ &lt;td&gt;华为盘古&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://pangu.huaweicloud.com"&gt;https://pangu.huaweicloud.com&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;无&lt;/td&gt;
+ &lt;td&gt;开放给企业申请&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="生产环境运行-llm"&gt;生产环境运行 LLM&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;vLLM： &lt;a href="https://docs.vllm.ai/en/latest/"&gt;https://docs.vllm.ai/en/latest/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Triton TensorRT-LLM： &lt;a href="https://github.com/NVIDIA/TensorRT-LLM"&gt;https://github.com/NVIDIA/TensorRT-LLM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;BentoML： &lt;a href="https://github.com/bentoml/BentoML"&gt;https://github.com/bentoml/BentoML&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="消费级-pc-运行-llm"&gt;消费级 PC 运行 LLM&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/ggerganov/llama.cpp"&gt;https://github.com/ggerganov/llama.cpp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/SJTU-IPADS/PowerInfer"&gt;https://github.com/SJTU-IPADS/PowerInfer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ollama.ai"&gt;https://ollama.ai&lt;/a&gt; ， &lt;a href="https://github.com/ollama-webui/ollama-webui"&gt;https://github.com/ollama-webui/ollama-webui&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://gpt4all.io/index.html"&gt;https://gpt4all.io/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/oobabooga/text-generation-webui"&gt;https://github.com/oobabooga/text-generation-webui&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/imartinez/privateGPT"&gt;https://github.com/imartinez/privateGPT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/xorbitsai/inference"&gt;https://github.com/xorbitsai/inference&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/withcatai/catai"&gt;https://github.com/withcatai/catai&lt;/a&gt; 基于 &lt;a href="https://github.com/withcatai/node-llama-cpp"&gt;node-llama-cpp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lmstudio.ai"&gt;https://lmstudio.ai&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/langchain-ai/langchain"&gt;https://github.com/langchain-ai/langchain&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/mudler/LocalAI"&gt;https://github.com/mudler/LocalAI&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Vcpkg and Dlib Face Recognition</title><link>/posts/vcpkg-and-dlib-face-recognition/</link><pubDate>Sun, 02 Feb 2020 22:00:25 +0800</pubDate><guid>/posts/vcpkg-and-dlib-face-recognition/</guid><description>&lt;h2 id="安装-vcpkg"&gt;安装 vcpkg&lt;/h2&gt;
+&lt;p&gt;安装 Vcpkg 源码的 &lt;a href="https://github.com/microsoft/vcpkg"&gt;README&lt;/a&gt; 来：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git clone https://github.com/Microsoft/vcpkg.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#007020"&gt;cd&lt;/span&gt; vcpkg
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;./bootstrap-vcpkg.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="安装-dlib"&gt;安装 Dlib&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;./vcpkg install dlib
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="使用-dlib-做人脸识别"&gt;使用 Dlib 做人脸识别&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;编译实例代码&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;mkdir &lt;span style="color:#007020"&gt;test&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#007020"&gt;cd&lt;/span&gt; &lt;span style="color:#007020"&gt;test&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;...下载 http://dlib.net/dnn_face_recognition_ex.cpp.html *内容*
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;... 保存为 dnn_face_recognition_ex.cpp
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cat &amp;gt; CMakeLists.txt &lt;span style="color:#4070a0"&gt;&amp;lt;&amp;lt;EOF
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#4070a0"&gt;cmake_minimum_required(VERSION 3.0)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#4070a0"&gt;project(test)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#4070a0"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#4070a0"&gt;find_package(dlib CONFIG REQUIRED)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#4070a0"&gt;find_package(jpeg REQUIRED)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#4070a0"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#4070a0"&gt;add_executable(dnn_face_recognition_ex dnn_face_recognition_ex.cpp)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#4070a0"&gt;target_link_libraries(dnn_face_recognition_ex PRIVATE dlib::dlib JPEG::JPEG)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#4070a0"&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;mkdir build
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#007020"&gt;cd&lt;/span&gt; build
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cmake .. -DCMAKE_TOOLCHAIN_FILE&lt;span style="color:#666"&gt;=&lt;/span&gt;&lt;span style="color:#bb60d5"&gt;$VCPKG_ROOT&lt;/span&gt;/scripts/buildsystems/vcpkg.cmake
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;make
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下载模型文件&lt;/p&gt;</description></item><item><title>《人工智能简史》，尼克 著</title><link>/posts/a-brief-history-of-artificial-intelligence/</link><pubDate>Thu, 25 Jul 2019 22:00:00 +0800</pubDate><guid>/posts/a-brief-history-of-artificial-intelligence/</guid><description>&lt;h2 id="目录"&gt;目录&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;第1章　达特茅斯会议：人工智能的缘起
+第2章　自动定理证明兴衰纪
+第3章　从专家系统到知识图谱
+第4章　第五代计算机的教训
+第5章　神经网络简史
+第6章　计算机下棋简史：机定胜人，人定胜天
+第7章　自然语言处理
+第8章　向自然学习：从遗传算法到强化学习
+第9章　哲学家和人工智能
+第10章　人是机器吗？——人工智能的计算理论基础
+第11章　智能的进化
+第12章　当我们谈论生死时，我们在谈论什么？
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="人工智能的计算理论基础"&gt;人工智能的计算理论基础&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;丘奇-图灵论题（Church-Turing Thesis）：所有功能足够强的计算装置的计算能力都等价于图灵机。这是一个观察，而不是定理。 （可计算性)&lt;/li&gt;
+&lt;li&gt;理论计算机科学家洪加威在20世纪80年代提出了相似性原则：计算装置之间互相模拟的成本是多项式的，也就是说靠谱的计算装置之间并不存在原则上的差异。相似性原则，类似于丘奇-图灵论题，是观察而不是数学定理。(计算复杂性)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="人工智能三大流派"&gt;人工智能三大流派&lt;/h2&gt;
+&lt;p&gt;&lt;img src="images/%E9%80%BB%E8%BE%91%E4%B8%BB%E4%B9%89.jpg" alt="逻辑主义"&gt;
+&lt;img src="images/%E8%81%94%E6%8E%A5%E4%B8%BB%E4%B9%89.jpg" alt="联接主义"&gt;
+&lt;img src="images/%E8%87%AA%E7%84%B6%E4%B8%BB%E4%B9%89.jpg" alt="自然主义"&gt;&lt;/p&gt;</description></item></channel></rss>
