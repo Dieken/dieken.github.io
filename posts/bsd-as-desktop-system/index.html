@@ -1,0 +1,314 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>使用 BSD 作为桌面系统</title><meta name=description content="使用 BSD 作为桌面系统"><meta name=author content="Yubao Liu"><meta name=viewport content="width=device-width,initial-scale=1"><noscript><link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel=stylesheet type=text/css><link rel=stylesheet href=/css/fonts.css></noscript><style type=text/css media=screen>/*!Pure v3.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/pure-css/pure/blob/master/LICENSE*//*!normalize.css v | MIT License | https://necolas.github.io/normalize.css/
+Copyright (c) Nicolas Gallagher and Jonathan Neal*//*!normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css*/html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}html{font-family:sans-serif}.hidden,[hidden]{display:none !important}.pure-img{max-width:100%;height:auto;display:block}</style><style type=text/css media=screen>/*!Pure v3.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/pure-css/pure/blob/master/LICENSE*/.pure-menu{box-sizing:border-box}.pure-menu-fixed{position:fixed;left:0;top:0;z-index:3}.pure-menu-item,.pure-menu-list{position:relative}.pure-menu-list{list-style:none;margin:0;padding:0}.pure-menu-item{padding:0;margin:0;height:100%}.pure-menu-heading,.pure-menu-link{display:block;text-decoration:none;white-space:nowrap}.pure-menu-horizontal{width:100%;white-space:nowrap}.pure-menu-horizontal .pure-menu-list{display:inline-block}.pure-menu-horizontal .pure-menu-heading,.pure-menu-horizontal .pure-menu-item,.pure-menu-horizontal .pure-menu-separator{display:inline-block;vertical-align:middle}.pure-menu-item .pure-menu-item{display:block}.pure-menu-children{display:none;position:absolute;left:100%;top:0;margin:0;padding:0;z-index:3}.pure-menu-horizontal .pure-menu-children{left:0;top:auto;width:inherit}.pure-menu-active>.pure-menu-children,.pure-menu-allow-hover:hover>.pure-menu-children{display:block;position:absolute}.pure-menu-has-children>.pure-menu-link:after{padding-left:.5em;content:"\25B8";font-size:small}.pure-menu-horizontal .pure-menu-has-children>.pure-menu-link:after{content:"\25BE"}.pure-menu-scrollable{overflow-y:scroll;overflow-x:hidden}.pure-menu-scrollable .pure-menu-list{display:block}.pure-menu-horizontal.pure-menu-scrollable .pure-menu-list{display:inline-block}.pure-menu-horizontal.pure-menu-scrollable{white-space:nowrap;overflow-y:hidden;overflow-x:auto;padding:.5em 0}.pure-menu-horizontal .pure-menu-children .pure-menu-separator,.pure-menu-separator{background-color:#ccc;height:1px;margin:.3em 0}.pure-menu-horizontal .pure-menu-separator{width:1px;height:1.3em;margin:0 .3em}.pure-menu-horizontal .pure-menu-children .pure-menu-separator{display:block;width:auto}.pure-menu-heading{text-transform:uppercase;color:#565d64}.pure-menu-link{color:#777}.pure-menu-children{background-color:#fff}.pure-menu-heading,.pure-menu-link{padding:.5em 1em}.pure-menu-disabled{opacity:.5}.pure-menu-disabled .pure-menu-link:hover{background-color:transparent;cursor:default}.pure-menu-active>.pure-menu-link,.pure-menu-link:focus,.pure-menu-link:hover{background-color:#eee}.pure-menu-selected>.pure-menu-link,.pure-menu-selected>.pure-menu-link:visited{color:#000}</style><style type=text/css media=screen>/*!Pure v3.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/pure-css/pure/blob/master/LICENSE*/.pure-g{display:flex;flex-flow:row wrap;align-content:flex-start}.pure-u{display:inline-block;vertical-align:top}.pure-u-1,.pure-u-1-1,.pure-u-1-12,.pure-u-1-2,.pure-u-1-24,.pure-u-1-3,.pure-u-1-4,.pure-u-1-5,.pure-u-1-6,.pure-u-1-8,.pure-u-10-24,.pure-u-11-12,.pure-u-11-24,.pure-u-12-24,.pure-u-13-24,.pure-u-14-24,.pure-u-15-24,.pure-u-16-24,.pure-u-17-24,.pure-u-18-24,.pure-u-19-24,.pure-u-2-24,.pure-u-2-3,.pure-u-2-5,.pure-u-20-24,.pure-u-21-24,.pure-u-22-24,.pure-u-23-24,.pure-u-24-24,.pure-u-3-24,.pure-u-3-4,.pure-u-3-5,.pure-u-3-8,.pure-u-4-24,.pure-u-4-5,.pure-u-5-12,.pure-u-5-24,.pure-u-5-5,.pure-u-5-6,.pure-u-5-8,.pure-u-6-24,.pure-u-7-12,.pure-u-7-24,.pure-u-7-8,.pure-u-8-24,.pure-u-9-24{display:inline-block;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-1-24{width:4.1667%}.pure-u-1-12,.pure-u-2-24{width:8.3333%}.pure-u-1-8,.pure-u-3-24{width:12.5%}.pure-u-1-6,.pure-u-4-24{width:16.6667%}.pure-u-1-5{width:20%}.pure-u-5-24{width:20.8333%}.pure-u-1-4,.pure-u-6-24{width:25%}.pure-u-7-24{width:29.1667%}.pure-u-1-3,.pure-u-8-24{width:33.3333%}.pure-u-3-8,.pure-u-9-24{width:37.5%}.pure-u-2-5{width:40%}.pure-u-10-24,.pure-u-5-12{width:41.6667%}.pure-u-11-24{width:45.8333%}.pure-u-1-2,.pure-u-12-24{width:50%}.pure-u-13-24{width:54.1667%}.pure-u-14-24,.pure-u-7-12{width:58.3333%}.pure-u-3-5{width:60%}.pure-u-15-24,.pure-u-5-8{width:62.5%}.pure-u-16-24,.pure-u-2-3{width:66.6667%}.pure-u-17-24{width:70.8333%}.pure-u-18-24,.pure-u-3-4{width:75%}.pure-u-19-24{width:79.1667%}.pure-u-4-5{width:80%}.pure-u-20-24,.pure-u-5-6{width:83.3333%}.pure-u-21-24,.pure-u-7-8{width:87.5%}.pure-u-11-12,.pure-u-22-24{width:91.6667%}.pure-u-23-24{width:95.8333%}.pure-u-1,.pure-u-1-1,.pure-u-24-24,.pure-u-5-5{width:100%}</style><style type=text/css media=screen>/*!Pure v3.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/pure-css/pure/blob/master/LICENSE*/.pure-table{border-collapse:collapse;border-spacing:0;empty-cells:show;border:1px solid #cbcbcb}.pure-table caption{color:#000;font:italic 85%/1 arial,sans-serif;padding:1em 0;text-align:center}.pure-table td,.pure-table th{border-left:1px solid #cbcbcb;border-width:0 0 0 1px;font-size:inherit;margin:0;overflow:visible;padding:.5em 1em}.pure-table thead{background-color:#e0e0e0;color:#000;text-align:left;vertical-align:bottom}.pure-table td{background-color:transparent}.pure-table-odd td{background-color:#f2f2f2}.pure-table-striped tr:nth-child(2n-1) td{background-color:#f2f2f2}.pure-table-bordered td{border-bottom:1px solid #cbcbcb}.pure-table-bordered tbody>tr:last-child>td{border-bottom-width:0}.pure-table-horizontal td,.pure-table-horizontal th{border-width:0 0 1px;border-bottom:1px solid #cbcbcb}.pure-table-horizontal tbody>tr:last-child>td{border-bottom-width:0}</style><style type=text/css media=screen>/*!Pure v1.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md*/@media screen and (min-width:35.5em){.pure-u-sm-1,.pure-u-sm-1-1,.pure-u-sm-1-12,.pure-u-sm-1-2,.pure-u-sm-1-24,.pure-u-sm-1-3,.pure-u-sm-1-4,.pure-u-sm-1-5,.pure-u-sm-1-6,.pure-u-sm-1-8,.pure-u-sm-10-24,.pure-u-sm-11-12,.pure-u-sm-11-24,.pure-u-sm-12-24,.pure-u-sm-13-24,.pure-u-sm-14-24,.pure-u-sm-15-24,.pure-u-sm-16-24,.pure-u-sm-17-24,.pure-u-sm-18-24,.pure-u-sm-19-24,.pure-u-sm-2-24,.pure-u-sm-2-3,.pure-u-sm-2-5,.pure-u-sm-20-24,.pure-u-sm-21-24,.pure-u-sm-22-24,.pure-u-sm-23-24,.pure-u-sm-24-24,.pure-u-sm-3-24,.pure-u-sm-3-4,.pure-u-sm-3-5,.pure-u-sm-3-8,.pure-u-sm-4-24,.pure-u-sm-4-5,.pure-u-sm-5-12,.pure-u-sm-5-24,.pure-u-sm-5-5,.pure-u-sm-5-6,.pure-u-sm-5-8,.pure-u-sm-6-24,.pure-u-sm-7-12,.pure-u-sm-7-24,.pure-u-sm-7-8,.pure-u-sm-8-24,.pure-u-sm-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-sm-1-24{width:4.1667%}.pure-u-sm-1-12,.pure-u-sm-2-24{width:8.3333%}.pure-u-sm-1-8,.pure-u-sm-3-24{width:12.5%}.pure-u-sm-1-6,.pure-u-sm-4-24{width:16.6667%}.pure-u-sm-1-5{width:20%}.pure-u-sm-5-24{width:20.8333%}.pure-u-sm-1-4,.pure-u-sm-6-24{width:25%}.pure-u-sm-7-24{width:29.1667%}.pure-u-sm-1-3,.pure-u-sm-8-24{width:33.3333%}.pure-u-sm-3-8,.pure-u-sm-9-24{width:37.5%}.pure-u-sm-2-5{width:40%}.pure-u-sm-10-24,.pure-u-sm-5-12{width:41.6667%}.pure-u-sm-11-24{width:45.8333%}.pure-u-sm-1-2,.pure-u-sm-12-24{width:50%}.pure-u-sm-13-24{width:54.1667%}.pure-u-sm-14-24,.pure-u-sm-7-12{width:58.3333%}.pure-u-sm-3-5{width:60%}.pure-u-sm-15-24,.pure-u-sm-5-8{width:62.5%}.pure-u-sm-16-24,.pure-u-sm-2-3{width:66.6667%}.pure-u-sm-17-24{width:70.8333%}.pure-u-sm-18-24,.pure-u-sm-3-4{width:75%}.pure-u-sm-19-24{width:79.1667%}.pure-u-sm-4-5{width:80%}.pure-u-sm-20-24,.pure-u-sm-5-6{width:83.3333%}.pure-u-sm-21-24,.pure-u-sm-7-8{width:87.5%}.pure-u-sm-11-12,.pure-u-sm-22-24{width:91.6667%}.pure-u-sm-23-24{width:95.8333%}.pure-u-sm-1,.pure-u-sm-1-1,.pure-u-sm-24-24,.pure-u-sm-5-5{width:100%}}@media screen and (min-width:48em){.pure-u-md-1,.pure-u-md-1-1,.pure-u-md-1-12,.pure-u-md-1-2,.pure-u-md-1-24,.pure-u-md-1-3,.pure-u-md-1-4,.pure-u-md-1-5,.pure-u-md-1-6,.pure-u-md-1-8,.pure-u-md-10-24,.pure-u-md-11-12,.pure-u-md-11-24,.pure-u-md-12-24,.pure-u-md-13-24,.pure-u-md-14-24,.pure-u-md-15-24,.pure-u-md-16-24,.pure-u-md-17-24,.pure-u-md-18-24,.pure-u-md-19-24,.pure-u-md-2-24,.pure-u-md-2-3,.pure-u-md-2-5,.pure-u-md-20-24,.pure-u-md-21-24,.pure-u-md-22-24,.pure-u-md-23-24,.pure-u-md-24-24,.pure-u-md-3-24,.pure-u-md-3-4,.pure-u-md-3-5,.pure-u-md-3-8,.pure-u-md-4-24,.pure-u-md-4-5,.pure-u-md-5-12,.pure-u-md-5-24,.pure-u-md-5-5,.pure-u-md-5-6,.pure-u-md-5-8,.pure-u-md-6-24,.pure-u-md-7-12,.pure-u-md-7-24,.pure-u-md-7-8,.pure-u-md-8-24,.pure-u-md-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-md-1-24{width:4.1667%}.pure-u-md-1-12,.pure-u-md-2-24{width:8.3333%}.pure-u-md-1-8,.pure-u-md-3-24{width:12.5%}.pure-u-md-1-6,.pure-u-md-4-24{width:16.6667%}.pure-u-md-1-5{width:20%}.pure-u-md-5-24{width:20.8333%}.pure-u-md-1-4,.pure-u-md-6-24{width:25%}.pure-u-md-7-24{width:29.1667%}.pure-u-md-1-3,.pure-u-md-8-24{width:33.3333%}.pure-u-md-3-8,.pure-u-md-9-24{width:37.5%}.pure-u-md-2-5{width:40%}.pure-u-md-10-24,.pure-u-md-5-12{width:41.6667%}.pure-u-md-11-24{width:45.8333%}.pure-u-md-1-2,.pure-u-md-12-24{width:50%}.pure-u-md-13-24{width:54.1667%}.pure-u-md-14-24,.pure-u-md-7-12{width:58.3333%}.pure-u-md-3-5{width:60%}.pure-u-md-15-24,.pure-u-md-5-8{width:62.5%}.pure-u-md-16-24,.pure-u-md-2-3{width:66.6667%}.pure-u-md-17-24{width:70.8333%}.pure-u-md-18-24,.pure-u-md-3-4{width:75%}.pure-u-md-19-24{width:79.1667%}.pure-u-md-4-5{width:80%}.pure-u-md-20-24,.pure-u-md-5-6{width:83.3333%}.pure-u-md-21-24,.pure-u-md-7-8{width:87.5%}.pure-u-md-11-12,.pure-u-md-22-24{width:91.6667%}.pure-u-md-23-24{width:95.8333%}.pure-u-md-1,.pure-u-md-1-1,.pure-u-md-24-24,.pure-u-md-5-5{width:100%}}@media screen and (min-width:64em){.pure-u-lg-1,.pure-u-lg-1-1,.pure-u-lg-1-12,.pure-u-lg-1-2,.pure-u-lg-1-24,.pure-u-lg-1-3,.pure-u-lg-1-4,.pure-u-lg-1-5,.pure-u-lg-1-6,.pure-u-lg-1-8,.pure-u-lg-10-24,.pure-u-lg-11-12,.pure-u-lg-11-24,.pure-u-lg-12-24,.pure-u-lg-13-24,.pure-u-lg-14-24,.pure-u-lg-15-24,.pure-u-lg-16-24,.pure-u-lg-17-24,.pure-u-lg-18-24,.pure-u-lg-19-24,.pure-u-lg-2-24,.pure-u-lg-2-3,.pure-u-lg-2-5,.pure-u-lg-20-24,.pure-u-lg-21-24,.pure-u-lg-22-24,.pure-u-lg-23-24,.pure-u-lg-24-24,.pure-u-lg-3-24,.pure-u-lg-3-4,.pure-u-lg-3-5,.pure-u-lg-3-8,.pure-u-lg-4-24,.pure-u-lg-4-5,.pure-u-lg-5-12,.pure-u-lg-5-24,.pure-u-lg-5-5,.pure-u-lg-5-6,.pure-u-lg-5-8,.pure-u-lg-6-24,.pure-u-lg-7-12,.pure-u-lg-7-24,.pure-u-lg-7-8,.pure-u-lg-8-24,.pure-u-lg-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-lg-1-24{width:4.1667%}.pure-u-lg-1-12,.pure-u-lg-2-24{width:8.3333%}.pure-u-lg-1-8,.pure-u-lg-3-24{width:12.5%}.pure-u-lg-1-6,.pure-u-lg-4-24{width:16.6667%}.pure-u-lg-1-5{width:20%}.pure-u-lg-5-24{width:20.8333%}.pure-u-lg-1-4,.pure-u-lg-6-24{width:25%}.pure-u-lg-7-24{width:29.1667%}.pure-u-lg-1-3,.pure-u-lg-8-24{width:33.3333%}.pure-u-lg-3-8,.pure-u-lg-9-24{width:37.5%}.pure-u-lg-2-5{width:40%}.pure-u-lg-10-24,.pure-u-lg-5-12{width:41.6667%}.pure-u-lg-11-24{width:45.8333%}.pure-u-lg-1-2,.pure-u-lg-12-24{width:50%}.pure-u-lg-13-24{width:54.1667%}.pure-u-lg-14-24,.pure-u-lg-7-12{width:58.3333%}.pure-u-lg-3-5{width:60%}.pure-u-lg-15-24,.pure-u-lg-5-8{width:62.5%}.pure-u-lg-16-24,.pure-u-lg-2-3{width:66.6667%}.pure-u-lg-17-24{width:70.8333%}.pure-u-lg-18-24,.pure-u-lg-3-4{width:75%}.pure-u-lg-19-24{width:79.1667%}.pure-u-lg-4-5{width:80%}.pure-u-lg-20-24,.pure-u-lg-5-6{width:83.3333%}.pure-u-lg-21-24,.pure-u-lg-7-8{width:87.5%}.pure-u-lg-11-12,.pure-u-lg-22-24{width:91.6667%}.pure-u-lg-23-24{width:95.8333%}.pure-u-lg-1,.pure-u-lg-1-1,.pure-u-lg-24-24,.pure-u-lg-5-5{width:100%}}@media screen and (min-width:80em){.pure-u-xl-1,.pure-u-xl-1-1,.pure-u-xl-1-12,.pure-u-xl-1-2,.pure-u-xl-1-24,.pure-u-xl-1-3,.pure-u-xl-1-4,.pure-u-xl-1-5,.pure-u-xl-1-6,.pure-u-xl-1-8,.pure-u-xl-10-24,.pure-u-xl-11-12,.pure-u-xl-11-24,.pure-u-xl-12-24,.pure-u-xl-13-24,.pure-u-xl-14-24,.pure-u-xl-15-24,.pure-u-xl-16-24,.pure-u-xl-17-24,.pure-u-xl-18-24,.pure-u-xl-19-24,.pure-u-xl-2-24,.pure-u-xl-2-3,.pure-u-xl-2-5,.pure-u-xl-20-24,.pure-u-xl-21-24,.pure-u-xl-22-24,.pure-u-xl-23-24,.pure-u-xl-24-24,.pure-u-xl-3-24,.pure-u-xl-3-4,.pure-u-xl-3-5,.pure-u-xl-3-8,.pure-u-xl-4-24,.pure-u-xl-4-5,.pure-u-xl-5-12,.pure-u-xl-5-24,.pure-u-xl-5-5,.pure-u-xl-5-6,.pure-u-xl-5-8,.pure-u-xl-6-24,.pure-u-xl-7-12,.pure-u-xl-7-24,.pure-u-xl-7-8,.pure-u-xl-8-24,.pure-u-xl-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-xl-1-24{width:4.1667%}.pure-u-xl-1-12,.pure-u-xl-2-24{width:8.3333%}.pure-u-xl-1-8,.pure-u-xl-3-24{width:12.5%}.pure-u-xl-1-6,.pure-u-xl-4-24{width:16.6667%}.pure-u-xl-1-5{width:20%}.pure-u-xl-5-24{width:20.8333%}.pure-u-xl-1-4,.pure-u-xl-6-24{width:25%}.pure-u-xl-7-24{width:29.1667%}.pure-u-xl-1-3,.pure-u-xl-8-24{width:33.3333%}.pure-u-xl-3-8,.pure-u-xl-9-24{width:37.5%}.pure-u-xl-2-5{width:40%}.pure-u-xl-10-24,.pure-u-xl-5-12{width:41.6667%}.pure-u-xl-11-24{width:45.8333%}.pure-u-xl-1-2,.pure-u-xl-12-24{width:50%}.pure-u-xl-13-24{width:54.1667%}.pure-u-xl-14-24,.pure-u-xl-7-12{width:58.3333%}.pure-u-xl-3-5{width:60%}.pure-u-xl-15-24,.pure-u-xl-5-8{width:62.5%}.pure-u-xl-16-24,.pure-u-xl-2-3{width:66.6667%}.pure-u-xl-17-24{width:70.8333%}.pure-u-xl-18-24,.pure-u-xl-3-4{width:75%}.pure-u-xl-19-24{width:79.1667%}.pure-u-xl-4-5{width:80%}.pure-u-xl-20-24,.pure-u-xl-5-6{width:83.3333%}.pure-u-xl-21-24,.pure-u-xl-7-8{width:87.5%}.pure-u-xl-11-12,.pure-u-xl-22-24{width:91.6667%}.pure-u-xl-23-24{width:95.8333%}.pure-u-xl-1,.pure-u-xl-1-1,.pure-u-xl-24-24,.pure-u-xl-5-5{width:100%}}</style><style type=text/css media=screen>:root{--color:#484848;--color-footnote:#575757;--color-footer-content:#bbb;--background-color:rgb(252, 252, 252);--background-color-code:rgb(240, 240, 240);--background-color-toggle-content:rgb(249, 249, 249);--link-color:#c05b4d;--link-color-hover:#a5473a;--list-link-color:#336699;--border-navbar-and-footer:#e3e3e3}</style><style type=text/css media=screen>html{min-height:100%;width:100%;position:relative}body{background-color:#fcfcfc;background-color:var(--background-color);color:#484848;color:var(--color)}a{text-decoration:none}kbd,pre,code,samp{background-color:#f0f0f0;background-color:var(--background-color-code)}.nav-menu{margin-top:5px;padding-bottom:5px;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#e3e3e3;border-bottom-color:var(--border-navbar-and-footer)}.pure-menu-heading{text-transform:none;font-size:large}.pure-menu-link:hover{background-color:unset}.header{text-align:left;color:#484848;color:var(--color);margin-bottom:.5em}.header ul li{height:auto}.header ul li a{font-weight:700;color:#484848;color:var(--color);font-family:source sans pro,helveticaneue,helvetica neue,Helvetica,Arial,sans-serif}.header{font-weight:700;color:#484848;color:var(--color);font-family:source sans pro,helveticaneue,helvetica neue,Helvetica,Arial,sans-serif}.site-title{color:#484848;color:var(--color);text-transform:none;font-weight:400;font-family:source sans pro,helveticaneue,helvetica neue,Helvetica,Arial,sans-serif}.pull-right{float:right}.posts-name{text-transform:capitalize;font-weight:700;padding-left:1em;margin-top:1em;font-family:source sans pro,helveticaneue,helvetica neue,Helvetica,Arial,sans-serif}.posts{font-family:verdana,arial,helvetica,sans-serif;list-style-type:none;padding-left:1em}.posts li p{margin-top:0}.posts li{margin-bottom:1em}.posts li>a{color:#369;color:var(--list-link-color);text-decoration:none}.post-list{font-size:large}.footnote{font-family:verdana,arial,helvetica,sans-serif;color:#575757;color:var(--color-footnote);font-size:.75em;margin-bottom:0}.footnote a{color:#575757;color:var(--color-footnote)}.footnote a:hover{text-decoration:underline;color:#369;color:var(--list-link-color)}.footer{position:absolute;z-index:2;height:auto;width:100%;bottom:0}.footer-content{border-top-width:1px;border-top-style:solid;border-top-color:#e3e3e3;border-top:1px solid var(--border-navbar-and-footer);font-size:80%;color:#bbb;color:var(--color-footer-content)}.footer-content a{color:#575757;color:var(--color-footnote)}.footer-content ul{height:auto;margin-top:0;margin-bottom:0;display:inline-block;padding-left:0}#TableOfContents>ul{list-style:none;margin:0;padding:0}#gototop-btn{display:inline-block}#foot-name{color:#484848;color:var(--color);text-transform:none}#foot-copyright{padding-left:1em;padding-bottom:.5em;margin:0}.post{font-family:proxima-nova,helvetica neue,Helvetica,Roboto,Arial,sans-serif;color:#484848;color:var(--color);letter-spacing:normal;padding-left:.5em}.post h1,h2,h3,h4,h5,h6{font-weight:700;letter-spacing:normal}.post-content{z-index:9;overflow:auto;padding:0;padding-bottom:3em;font-size:16px;line-height:1.4}.post-content img{max-width:100%;height:auto}.post-content pre{padding:.5em}.post a{color:#c05b4d;color:var(--link-color);text-decoration:none}.post a:hover{color:#a5473a;color:var(--link-color-hover);text-decoration:underline}.post h1{font-size:28px}.post h2{font-size:25px}.post h3{font-size:23px}.post h4{font-size:21px}.post h5{font-size:19px}.post h6{font-size:18px}.post-title{margin-top:0;margin-bottom:1em}.post-title h1{font-weight:700;font-size:39px;line-height:40px;margin-top:0;margin-bottom:0}@media screen and (max-width:768px){.desktop{display:none}.mobile{display:block}#toggle-btn{display:inline-block;float:right;padding:.5em 1em;text-decoration:none;color:#484848;color:var(--color);font-weight:700}#toggle-content li{clear:both;height:auto;background-color:#f9f9f9;background-color:var(--background-color-toggle-content)}#toggle-home{display:inline-block}}@media screen and (min-width:769px){.mobile{display:none}.desktop{display:block}}</style><link rel="shortcut icon" href=/img/favicon.ico type=image/x-icon></head><body><div class="header pure-g"><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div><div class="pure-u-11-12 pure-u-md-20-24 pure-u-lg-7-12"><div class="desktop pure-menu pure-menu-horizontal nav-menu"><a href=/ class="site-title pure-menu-heading">随记</a><ul class="pure-menu-list pull-right"><li class=pure-menu-item><a href=/categories/development/ class=pure-menu-link>Development</a></li><li class=pure-menu-item><a href=/categories/os/ class=pure-menu-link>OS</a></li><li class=pure-menu-item><a href=/categories/reading/ class=pure-menu-link>Reading</a></li><li class=pure-menu-item><a href=/about/ class=pure-menu-link>About</a></li></ul></div><div class="mobile pure-menu nav-menu"><a href=/ class="site-title pure-menu-heading" id=toggle-home>随记</a>
+<a href=# id=toggle-btn>&#9776;</a><ul class=pure-menu-list id=toggle-content style=display:none><li class=pure-menu-item><a href=/categories/development/ class=pure-menu-link>Development</a></li><li class=pure-menu-item><a href=/categories/os/ class=pure-menu-link>OS</a></li><li class=pure-menu-item><a href=/categories/reading/ class=pure-menu-link>Reading</a></li><li class=pure-menu-item><a href=/about class=pure-menu-link>About</a></li></ul></div></div><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div></div><div class=pure-g><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div><div class="pure-u-11-12 pure-u-md-20-24 pure-u-lg-7-12"><div class=post><div class=post-title><p class=footnote><time datetime="2019-02-18 00:00:00 +0800 CST">2019-02-18
+</time>|
+tags: [ <a href=/tags/bsd>BSD</a> <a href=/tags/freebsd>FreeBSD</a> <a href=/tags/netbsd>NetBSD</a> <a href=/tags/openbsd>OpenBSD</a> <a href=/tags/dragonflybsd>DragonFlyBSD</a> ]
+categories: [ <a href=/categories/os>OS</a> ]</p><h1>使用 BSD 作为桌面系统</h1></div><div class=post-content><nav id=TableOfContents><ul><li><a href=#netbsd>NetBSD</a></li><li><a href=#openbsd>OpenBSD</a></li><li><a href=#dragonflybsd>DragonFlyBSD</a></li><li><a href=#freebsd>FreeBSD</a></li><li><a href=#freebsd-root-on-zfs-千古奇坑>FreeBSD root on ZFS 千古奇坑</a></li></ul></nav><p>macOS 和 Linux 用久了有点审美疲劳，尝试下用 BSD 作桌面系统，目标是能用 Firefox 或者 Chrome Web 浏览器成功播放 <a href=https://douban.fm>https://douban.fm</a> 的音乐，能正常显示中文，能正常输入中文，并使用 MacBook Pro 的高分辨率显示屏。</p><p>使用 macOS Mojave 10.14.2 上运行的 VirtualBox 5.2.22 作为虚拟机，分配两个 CPU，Audio Controller 为 &ldquo;Intel HD Audio&rdquo;，128MB Video memory，开启 HiDPI support。</p><h2 id=netbsd>NetBSD</h2><p>安装程序非常易用，使用 <a href=https://mirrors4.tuna.tsinghua.edu.cn/>https://mirrors4.tuna.tsinghua.edu.cn/</a> 上的 pkgsrc 镜像，下载速度飞快，安装完后的起步文档：</p><ul><li><a href=https://mirrors4.tuna.tsinghua.edu.cn/NetBSD/NetBSD-8.0/amd64/INSTALL.html>INSTALL.html</a></li><li><a href=http://netbsd.gw.com/cgi-bin/man-cgi?afterboot++NetBSD-8.0>afterboot(8)</a></li></ul><p>软件包管理：pkgsrc，pkg_install 和 pkgin。</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>pkgin install mksh bash fish    <span style=color:#60a0b0;font-style:italic># 默认的 ksh 在 xterm 里中文宽度和位置判断有问题</span>
+</span></span><span style=display:flex><span>chsh -s /usr/pkg/bin/fish       <span style=color:#60a0b0;font-style:italic># 针对普通用户，需要 logout 再 login 生效</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>pkgin install dejavu-ttf noto-ttf
+</span></span><span style=display:flex><span>pkgin install firefox52     <span style=color:#60a0b0;font-style:italic># 最后一个不依赖 Rust 的 Firefox 版本</span>
+</span></span><span style=display:flex><span>pkgin install fcitx fcitx-configtool adwaita-icon-theme
+</span></span><span style=display:flex><span>pkgin install xdg-utils
+</span></span><span style=display:flex><span>mkdir -p /usr/local/bin
+</span></span><span style=display:flex><span>ln -s /usr/pkg/bin/firefox52 /usr/local/bin/firefox
+</span></span></code></pre></div><p>NetBSD 默认使用 xdm 启动 X server，不用 startx + xinit，所以配置 <code>$HOME/.xinitrc</code> 是无效的，需要配置 <code>$HOME/.xsession</code>，参考 <code>/etc/X11/xdm/Xsession</code> 以及 <a href=https://fcitx-im.org/wiki/Special:MyLanguage/Configure_(Other)>Fcitx 官方文档</a>：</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>## ~/.xsession</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>LANG</span><span style=color:#666>=</span>en_US.UTF-8
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>LC_CTYPE</span><span style=color:#666>=</span>zh_CN.UTF-8
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>XMODIFIERS</span><span style=color:#666>=</span>@im<span style=color:#666>=</span>fcitx
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>GTK_IM_MODULE</span><span style=color:#666>=</span>fcitx
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>QT_IM_MODULE</span><span style=color:#666>=</span>fcitx
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb60d5>resources</span><span style=color:#666>=</span><span style=color:#bb60d5>$HOME</span>/.Xresources
+</span></span><span style=display:flex><span><span style=color:#666>[</span> -r <span style=color:#4070a0>&#34;</span><span style=color:#bb60d5>$resources</span><span style=color:#4070a0>&#34;</span> <span style=color:#666>]</span> <span style=color:#666>&amp;&amp;</span> /usr/X11R7/bin/xrdb -load <span style=color:#4070a0>&#34;</span><span style=color:#bb60d5>$resources</span><span style=color:#4070a0>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>/usr/pkg/bin/fcitx-autostart
+</span></span><span style=display:flex><span><span style=color:#007020;font-weight:700>for</span> i in <span style=color:#40a070>1</span> <span style=color:#40a070>2</span> <span style=color:#40a070>3</span> <span style=color:#40a070>4</span> 5; <span style=color:#007020;font-weight:700>do</span>
+</span></span><span style=display:flex><span>    <span style=color:#007020>echo</span> waiting <span style=color:#007020;font-weight:700>for</span> fcitx...
+</span></span><span style=display:flex><span>    sleep <span style=color:#40a070>1</span>
+</span></span><span style=display:flex><span>    /usr/pkg/bin/fcitx-remote &gt;/dev/null 2&gt;&amp;<span style=color:#40a070>1</span> <span style=color:#666>&amp;&amp;</span> <span style=color:#007020>break</span>
+</span></span><span style=display:flex><span><span style=color:#007020;font-weight:700>done</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#007020>exec</span> /usr/X11R7/bin/xsm
+</span></span></code></pre></div><p>给 xterm 设置一些基本参数，另两个强大的轻量级终端模拟器 rxvt-unicode 和 mlterm 很值得试试。NetBSD 预先编译的软件包有些问题，比如 mlterm 启动不了，vim-gtk3 也启动不了，基础系统的 /usr/X11R7/bin/xterm 不支持 smaller-vt-font() 和 larger-vt-font()，需要在 /usr/pkgsrc/x11/xterm 下 <code>make install</code> 安装一份新的。</p><pre tabindex=0><code class=language-conf data-lang=conf>! ~/.Xresources
+
+! See https://www.freedesktop.org/software/fontconfig/fontconfig-user.html
+Xft.antialias: 1
+Xft.autohint: 0
+! set to 120, 144, 168 or 192 for HiDPI screen
+Xft.dpi: 96
+Xft.hinting: 1
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+
+XTerm*loginShell: true
+XTerm*termName: xterm-256color
+XTerm*saveLines: 1024
+XTerm*selectToClipboard: true
+XTerm*vt100.translations: #override \n\
+    Ctrl Shift &lt;Key&gt; C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift &lt;Key&gt; V: insert-selection(CLIPBOARD) \n\
+    ~Shift &lt;Btn1Up&gt;: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
+    Shift &lt;Btn1Up&gt;: exec-selectable(&#34;xdg-open &#39;%t&#39;&#34;, word) \n\
+    Shift &lt;KeyPress&gt; Up: scroll-back(1, page) \n\
+    Shift &lt;KeyPress&gt; Down: scroll-forw(1, page) \n\
+    Ctrl &lt;Key&gt; minus: smaller-vt-font() \n\
+    Ctrl &lt;Key&gt; plus: larger-vt-font() \n\
+    Ctrl &lt;Key&gt; 0: set-vt-font(d)
+XTerm*cjkWidth: false
+XTerm*faceName: DejaVu Sans Mono:style=Book:antialias=true
+XTerm*faceNameDoublesize: Noto Sans Mono CJK SC:style=Regular
+XTerm*faceSize: 12
+XTerm*faceSize1: 8
+XTerm*faceSize2: 10
+XTerm*faceSize3: 12
+XTerm*faceSize4: 14
+XTerm*faceSize5: 16
+XTerm*faceSize6: 22
+XTerm*renderFont: true
+XTerm*scaleHeight: 1.01
+XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+XTerm*scrollBar: true
+XTerm*scrollKey: true
+XTerm*rightScrollBar: true
+XTerm*scrollTtyOutput: false
+XTerm*highlightSelection: true
+XTerm*trimSelection: true
+</code></pre><p>参考 <a href=https://www.tumfatig.net/20190131/customized-resolution-for-openbsd-in-virtualbox/>https://www.tumfatig.net/20190131/customized-resolution-for-openbsd-in-virtualbox/</a> 使用 VESA 1600x1200 分辨率，没搞定 Retina 屏的 2880x1800 分辨率。由于 1600x1200 是 VESA 内置模式，因此并不需要用 VBoxManage 命令设置一个自定义分辨率。使用 VirtualBox 的 View -> Scale Factor -> 150%，能占据 Retina 屏大部分区域，但是大概是缩放的原因，运行非常缓慢。</p><pre tabindex=0><code class=language-conf data-lang=conf># /etc/X11/xorg.conf.d/00-virtualbox.conf
+
+Section &#34;Device&#34;
+  Identifier   &#34;VirtualBox-Card&#34;
+  Driver       &#34;vesa&#34;
+  VendorName   &#34;InnoTek&#34;
+  BoardName    &#34;VirtualBox Graphics Adapter&#34;
+EndSection
+Section &#34;Monitor&#34;
+  Identifier   &#34;VirtualBox-Monitor&#34;
+  VendorName   &#34;InnoTek&#34;
+  ModelName    &#34;VirtualBox Screen&#34;
+  HorizSync    1.0 - 1000.0
+  VertRefresh  1.0 - 1000.0
+EndSection
+Section &#34;Screen&#34;
+  Identifier   &#34;VirtualBox-Screen&#34;
+  Device       &#34;VirtualBox-Card&#34;
+  Monitor      &#34;VirtualBox-Monitor&#34;
+  DefaultDepth 24
+  SubSection   &#34;Display&#34;
+    Viewport   0 0
+    Depth      24
+    Modes      &#34;1600x1200&#34;
+  EndSubSection
+EndSection
+</code></pre><h2 id=openbsd>OpenBSD</h2><p>OpenBSD 的安装程序没那么 user-friendly，尤其吐槽的是自动分区分的特别细碎，我只是试用，所以把根分区和swap分区之外的分区全删除了，把空出来的磁盘全部分配给了根分区。对 Xenodm 选择 yes。安装完成后进入系统，以 root 账户执行 <code>syspatch</code> 打上补丁(如果 syspatch 更新了自己，会提示再执行一次)。</p><p>修改 <code>/etc/installurl</code>，使用 <a href=https://mirrors4.tuna.tsinghua.edu.cn/OpenBSD>https://mirrors4.tuna.tsinghua.edu.cn/OpenBSD</a>。</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>pkg_info -Q fcitx
+</span></span><span style=display:flex><span>pkg_info -Q chrom
+</span></span><span style=display:flex><span>pkg_info -Q firefox
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>pkg_add fcitx fcitx-gtk3 fcitx-qt4 fcitx-qt5
+</span></span><span style=display:flex><span>pkg_add firefox chromium noto-fonts noto-cjk
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>pkg_add bash fish                   <span style=color:#60a0b0;font-style:italic># 默认的 ksh 在 xterm 里中文宽度和位置判断有问题</span>
+</span></span><span style=display:flex><span>chsh -s /usr/local/bin/fish         <span style=color:#60a0b0;font-style:italic># 针对普通用户，需要 logout 再 login 生效</span>
+</span></span></code></pre></div><p>OpenBSD 使用 Xenodm 显示管理器，跟 XDM 非常像，同样使用 <code>~/.xsession</code> 和 <code>~/.Xresources</code> 来定制。</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>## ~/.xsession</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>LANG</span><span style=color:#666>=</span>en_US.UTF-8
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>LC_CTYPE</span><span style=color:#666>=</span>zh_CN.UTF-8
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>XMODIFIERS</span><span style=color:#666>=</span>@im<span style=color:#666>=</span>fcitx
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>GTK_IM_MODULE</span><span style=color:#666>=</span>fcitx
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>QT_IM_MODULE</span><span style=color:#666>=</span>fcitx
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb60d5>resources</span><span style=color:#666>=</span><span style=color:#bb60d5>$HOME</span>/.Xresources
+</span></span><span style=display:flex><span><span style=color:#666>[</span> -r <span style=color:#4070a0>&#34;</span><span style=color:#bb60d5>$resources</span><span style=color:#4070a0>&#34;</span> <span style=color:#666>]</span> <span style=color:#666>&amp;&amp;</span> /usr/X11R6/bin/xrdb -load <span style=color:#4070a0>&#34;</span><span style=color:#bb60d5>$resources</span><span style=color:#4070a0>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>/usr/local/bin/fcitx-autostart
+</span></span><span style=display:flex><span><span style=color:#007020;font-weight:700>for</span> i in <span style=color:#40a070>1</span> <span style=color:#40a070>2</span> <span style=color:#40a070>3</span> <span style=color:#40a070>4</span> 5; <span style=color:#007020;font-weight:700>do</span>
+</span></span><span style=display:flex><span>    <span style=color:#007020>echo</span> waiting <span style=color:#007020;font-weight:700>for</span> fcitx...
+</span></span><span style=display:flex><span>    sleep <span style=color:#40a070>1</span>
+</span></span><span style=display:flex><span>    /usr/local/bin/fcitx-remote &gt;/dev/null 2&gt;&amp;<span style=color:#40a070>1</span> <span style=color:#666>&amp;&amp;</span> <span style=color:#007020>break</span>
+</span></span><span style=display:flex><span><span style=color:#007020;font-weight:700>done</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>/usr/X11R6/bin/xterm &amp;
+</span></span><span style=display:flex><span><span style=color:#007020>exec</span> /usr/X11R6/bin/fvwm
+</span></span></code></pre></div><p><code>~/.Xresources</code> 内容和 NetBSD 的版本一样。使用 1600x1200 分辨率的方式同 NetBSD。</p><h2 id=dragonflybsd>DragonFlyBSD</h2><p>DragonFlyBSD 派生自 FreeBSD，所以在 VirtualBox 里创建 FreeBSD 64bit 类型的虚拟机。</p><p>修改 /usr/local/etc/pkg/repos/df-latest.conf 将 Avalon 的 enabled 改成 no，新建文件 /usr/local/etc/pkg/repos/koddos.conf:</p><pre tabindex=0><code class=language-conf data-lang=conf>Koddos {
+        url         : https://mirror-hk.koddos.net/dragonflybsd/dports/${ABI}/LATEST,
+        enabled     : yes
+}
+</code></pre><p>FreeBSD 和 DragonFlyBSD 都使用 pkg 命令管理二进制软件包。</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>pkg update
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>pkg install xorg xdm
+</span></span></code></pre></div><p>DragonFlyBSD 的官方文档很少，也很短，有三篇跟桌面相关:</p><ol><li><a href=https://www.dragonflybsd.org/docs/handbook/X/>https://www.dragonflybsd.org/docs/handbook/X/</a></li><li><a href=https://www.dragonflybsd.org/docs/how_to_get_to_the_desktop/>https://www.dragonflybsd.org/docs/how_to_get_to_the_desktop/</a></li><li><a href=https://panoramacircle.com/2018/10/07/setup-dragonflybsd-with-a-desktop-on-real-hardware-thinkpad-t410/>https://panoramacircle.com/2018/10/07/setup-dragonflybsd-with-a-desktop-on-real-hardware-thinkpad-t410/</a></li></ol><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># 允许指定用户使用 3D 加速</span>
+</span></span><span style=display:flex><span>pw groupmod video -m YOUR-FIRST-NON-ROOT-USER
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>pkg install dejavu noto
+</span></span><span style=display:flex><span>pkg install zh-fcitx zh-fcitx-configtool zh-fcitx-libpinyin fcitx-qt5
+</span></span><span style=display:flex><span>pkg install firefox chromium
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>dbus-uuidgen --ensure<span style=color:#666>=</span>/etc/machine-id   <span style=color:#60a0b0;font-style:italic># fcitx 依赖了 dbus，dbus 依赖这个文件</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>pkg install mksh bash fish
+</span></span><span style=display:flex><span>chsh -s /usr/local/bin/fish         <span style=color:#60a0b0;font-style:italic># 针对普通用户，需要 logout 再 login 生效</span>
+</span></span></code></pre></div><p>配置 <code>~/.xsession</code>:</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>## ~/.xsession</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>LANG</span><span style=color:#666>=</span>en_US.UTF-8
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>LC_CTYPE</span><span style=color:#666>=</span>zh_CN.UTF-8
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>XMODIFIERS</span><span style=color:#666>=</span>@im<span style=color:#666>=</span>fcitx
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>GTK_IM_MODULE</span><span style=color:#666>=</span>fcitx
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>QT_IM_MODULE</span><span style=color:#666>=</span>fcitx
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb60d5>resources</span><span style=color:#666>=</span><span style=color:#bb60d5>$HOME</span>/.Xresources
+</span></span><span style=display:flex><span><span style=color:#666>[</span> -r <span style=color:#4070a0>&#34;</span><span style=color:#bb60d5>$resources</span><span style=color:#4070a0>&#34;</span> <span style=color:#666>]</span> <span style=color:#666>&amp;&amp;</span> /usr/local/bin/xrdb -load <span style=color:#4070a0>&#34;</span><span style=color:#bb60d5>$resources</span><span style=color:#4070a0>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>/usr/local/bin/fcitx-remote &gt;/dev/null 2&gt;&amp;<span style=color:#40a070>1</span> <span style=color:#666>||</span> /usr/local/bin/fcitx
+</span></span><span style=display:flex><span><span style=color:#007020;font-weight:700>for</span> i in <span style=color:#40a070>1</span> <span style=color:#40a070>2</span> <span style=color:#40a070>3</span> <span style=color:#40a070>4</span> 5; <span style=color:#007020;font-weight:700>do</span>
+</span></span><span style=display:flex><span>    <span style=color:#007020>echo</span> waiting <span style=color:#007020;font-weight:700>for</span> fcitx...
+</span></span><span style=display:flex><span>    sleep <span style=color:#40a070>1</span>
+</span></span><span style=display:flex><span>    /usr/local/bin/fcitx-remote &gt;/dev/null 2&gt;&amp;<span style=color:#40a070>1</span> <span style=color:#666>&amp;&amp;</span> <span style=color:#007020>break</span>
+</span></span><span style=display:flex><span><span style=color:#007020;font-weight:700>done</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>/usr/local/bin/xterm &amp;
+</span></span><span style=display:flex><span><span style=color:#007020>exec</span> /usr/local/bin/twm
+</span></span></code></pre></div><p><code>~/.Xresources</code> 内容和 NetBSD 的版本一样。使用 1600x1200 分辨率的方式同 NetBSD。</p><p>修改 <code>/boot/loader.conf</code>，加入:</p><pre tabindex=0><code class=language-conf data-lang=conf>snd_hda_load=”YES”
+snd_uaudio_load=”YES”
+</code></pre><p>修改 <code>/etc/rc.conf</code>，加入：</p><pre tabindex=0><code class=language-conf data-lang=conf>moused_enable=&#34;YES&#34;
+</code></pre><p>修改 <code>/etc/ttys</code> 把下面这行中的 <code>off</code> 改成 <code>on</code>，然后重启虚拟机：</p><pre tabindex=0><code class=language-conf data-lang=conf>ttyv8   &#34;/usr/local/bin/xdm -nodaemon&#34;  xterm   off secure
+</code></pre><h2 id=freebsd>FreeBSD</h2><p>四大 BSD 分支里，最流行的 FreeBSD 得天独厚的有 <a href=https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/virtualization-guest-virtualbox.html>VirtualBox Guest Addition 的支持</a>，基于 FreeBSD 的桌面定制版也是最多的，主要有这四个：</p><ul><li><del>PC-BSD -> TrueOS Desktop -> <a href=https://project-trident.org/>Project Trident</a>: TrueOS 最早从著名的 FreeBSD 桌面发行版 PC-BSD 起家，后来逐渐转向服务端，其产品称为 TrueOS，桌面版本称为 TrueOS Desktop，如今则更进一步，TrueOS 成为各个衍生“三手版”的基石，在此基础上 TrueOS Desktop 变为 Project Trident，GhostBSD 目前也是基于 TrueOS。</del> (2019 年 Project Trident <a href=https://project-trident.org/information/heritage/>转向</a>以 Void Linux 为基础)</li><li><a href=https://www.ghostbsd.org/>GhostBSD</a>: 采用 Gnome 2 的后续分支 MATE 桌面环境，在 MacBook Pro 上的 VirtualBox 下运行的很好，MATE 桌面环境做的很精致，除了鼠标移动飘忽不定，伊探测用了 vmware 的鼠标驱动 vmmouse，失败后转去用了 Xorg 自带的鼠标驱动 mouse，手动切换为 vboxmouse 后倒是鼠标不飘了，鼠标点击却失效了。抛开这个缺憾，这大概是基于 FreeBSD 做的最好的桌面系统了。</li><li><a href=https://www.midnightbsd.org/>MidnightBSD</a>: 使用自己独有的 mports 软件包。</li><li><a href=https://nomadbsd.org/>NomadBSD</a>: NomadBSD is a 64bit live system for USB flash drives, based on FreeBSD®</li><li><del><a href=https://www.furybsd.org/>FuryBSD</a>: 最新出的轻量级 FreeBSD 桌面版。</del> (2020 年<a href=https://www.furybsd.org/>停止</a>开发)</li></ul><p>配置 FreeBSD 桌面的文章：</p><ul><li><a href=https://vermaden.wordpress.com/2018/03/29/freebsd-desktop-part-1-simplified-boot/>FreeBSD Desktop</a></li><li><a href="http://trafyx.com/?p=2551">Mac-like FreeBSD Laptop</a></li><li><a href=http://www.daemonology.net/blog/2020-05-22-my-new-FreeBSD-laptop-Dell-7390.html>My new FreeBSD Laptop: Dell Latitude 7390</a></li></ul><p>FreeBSD 在国内的非官方镜像：</p><ul><li><a href=http://mirrors.ustc.edu.cn/>http://mirrors.ustc.edu.cn/</a> freebsd, freebsd-pkg, freebsd-ports</li><li><a href=https://mirrors.aliyun.com/>https://mirrors.aliyun.com/</a> freebsd</li><li><a href=http://mirrors.163.com/>http://mirrors.163.com/</a> freebsd, freebsd-ports</li><li><a href=http://www.chinafreebsd.cn/article/chinafreebsd-resouce>http://www.chinafreebsd.cn/article/chinafreebsd-resouce</a> freebsd, pkg, ports, update</li></ul><p>安装完 FreeBSD 后的一些后续步骤：</p><ol><li><p>升级系统</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>freebsd-update fetch
+</span></span><span style=display:flex><span>freebsd-update install
+</span></span><span style=display:flex><span>reboot
+</span></span></code></pre></div><p>如果升级后系统无法启动，报告 ZFS i/o error，可以尝试以 FreeBSD 安装 iso 启动，进入 Live 模式：</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>mkdir /tmp/altroot
+</span></span><span style=display:flex><span>zpool import -o <span style=color:#bb60d5>altroot</span><span style=color:#666>=</span>/tmp/altroot -N -f zroot
+</span></span><span style=display:flex><span>zfs mount zroot/ROOT/default
+</span></span><span style=display:flex><span>zfs mount -a
+</span></span><span style=display:flex><span><span style=color:#007020>cd</span> /tmp/altroot/boot
+</span></span><span style=display:flex><span>mv kernel kernel.bad
+</span></span><span style=display:flex><span>mv kernel.old kernel
+</span></span><span style=display:flex><span>reboot
+</span></span></code></pre></div><p>另一种更简单但是不一定工作的方式，在启动时按 ESC 进入 boot loader 提示符，输入：</p><pre tabindex=0><code>unload
+load kernel.old
+</code></pre><p>进入系统后将 /boot/kernel.old 恢复成 /boot/kernel，或者使用 <code>freebsd-update rollback</code> 回滚。</p></li><li><p>将普通用户加入 wheel 组才能执行 <code>su</code> 命令: <code>pw groupmod wheel -m YOUR-FIRST-NON-ROOT-USER</code>。</p></li><li><p>设置环境变量 <code>MANWIDTH</code> 为 <code>tty</code>，则 <code>man</code> 命令输出会占满终端窗口；设置环境变量 <code>MANPAGER</code> 为 <code>most</code> 并安装 <code>most</code> 软件包后可以查看彩色手册页；设置环境变量 <code>CLICOLOR=1</code> 让 <code>ls</code> 显示彩色。</p></li><li><p>FreeBSD Generic 内核默认使用新的 <a href="https://www.freebsd.org/cgi/man.cgi?query=vt&amp;sektion=4&amp;apropos=0&amp;manpath=FreeBSD+12.1-RELEASE+and+Ports">vt driver</a>，不是老的 <a href="https://www.freebsd.org/cgi/man.cgi?query=syscons&amp;sektion=4&amp;apropos=0&amp;manpath=FreeBSD+12.1-RELEASE+and+Ports">sc driver</a>，vt driver 目前<a href=https://wiki.freebsd.org/Newcons>不支持 vesa</a>，Handbook <a href=https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/consoles.html#consoles-vidcontrol>这里</a>描述的 <code>kldload vesa</code> <a href="https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=213045">不工作</a>，解决办法是在 /boot/<a href="https://www.freebsd.org/cgi/man.cgi?query=loader.conf&amp;apropos=0&amp;sektion=0&amp;manpath=FreeBSD+12.1-RELEASE+and+Ports&amp;arch=default&amp;format=html">loader.conf</a> 写入如下配置：</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># 需要使用 EFI 引导系统，1080p 指 1920x1080</span>
+</span></span><span style=display:flex><span><span style=color:#bb60d5>efi_max_resolution</span><span style=color:#666>=</span><span style=color:#4070a0>&#34;1080p&#34;</span>
+</span></span></code></pre></div><p>在 /etc/rc.conf 写入:</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># 可用字体：/usr/share/vt/fonts/</span>
+</span></span><span style=display:flex><span><span style=color:#bb60d5>allscreens_flags</span><span style=color:#666>=</span><span style=color:#4070a0>&#34;-f terminus-b32&#34;</span>
+</span></span></code></pre></div></li><li><p>local_unbound 默认开启了 DNSSEC，一些 ISP 的 DNS 服务器不支持，从而无法解析任何域名，可以使用 <code>drill -S freebsd.org @DNS-SERVER-IP</code> 确认。可以禁止 resolvconf 自动生成 /etc/unbound/forward.conf:</p><pre tabindex=0><code>## /etc/resolvconf.conf
+
+unbound=&#34;NO&#34;
+
+
+## /etc/unbound/forward.conf
+
+# 对 name: &#34;.&#34; 指定固定的 DNS server
+forward-zone:
+        name: &#34;.&#34;
+        forward-addr: 8.8.8.8
+</code></pre><p>执行 <code>service local_unbound reload</code> 让 unbound 重新加载配置。</p></li><li><p>更新 <a href=https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/ports-using.html>ports collection</a>:</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># 使用 host -t srv _http._tcp.portsnap.freebsd.org 8.8.8.8 或者</span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># dig @8.8.8.8 _http._tcp.portsnap.freebsd.org srv 检查 portsnap 镜像，</span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># 其中 ec2-eu-west-1.portsnap.freebsd.org 和 your-org.portsnap.freebsd.org</span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># 速度比较快，但是都不稳定。</span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>#</span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># portsnap.cn.FreeBSD.org 对应的 portsnap.hshh.org 和 portsnap.tw.FreeBSD.org 比较快。</span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>#</span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># 可以直接修改 /etc/portsnap.conf 配置文件</span>
+</span></span><span style=display:flex><span>portsnap -s portsnap.cn.FreeBSD.org auto
+</span></span></code></pre></div></li><li><p>在 /etc/make.conf 里设置 ports 的 distfiles 下载镜像:</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>## 需要提前 pkg install axel</span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>## 参考：/usr/ports/Mk/bsd.port.mk，注意 make.conf 是 Makefile 语法</span>
+</span></span><span style=display:flex><span><span style=color:#bb60d5>FETCH_CMD</span><span style=color:#666>=</span>axel -a -n <span style=color:#40a070>4</span>
+</span></span><span style=display:flex><span><span style=color:#bb60d5>DISABLE_SIZE</span><span style=color:#666>=</span>yes
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>MASTER_SITE_OVERRIDE?<span style=color:#666>=</span><span style=color:#4070a0;font-weight:700>\
+</span></span></span><span style=display:flex><span><span style=color:#4070a0;font-weight:700></span>  http://mirrors.163.com/freebsd-ports/distfiles/<span style=color:#70a0d0>${</span><span style=color:#bb60d5>DIST_SUBDIR</span><span style=color:#70a0d0>}</span>/ <span style=color:#4070a0;font-weight:700>\
+</span></span></span><span style=display:flex><span><span style=color:#4070a0;font-weight:700></span>  http://mirrors.ustc.edu.cn/freebsd-ports/distfiles/<span style=color:#70a0d0>${</span><span style=color:#bb60d5>DIST_SUBDIR</span><span style=color:#70a0d0>}</span>/
+</span></span></code></pre></div></li><li><p>安装图形界面</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>pkg install xorg xdm xsm noto
+</span></span><span style=display:flex><span>pkg install drm-kmod xf86-video-vmware virtualbox-ose-additions
+</span></span><span style=display:flex><span>pkg install fcitx-qt5 zh-fcitx zh-fcitx-configtool zh-fcitx-libpinyin zh-fcitx-sunpinyin
+</span></span><span style=display:flex><span>pkg install chromium firefox
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>dbus-uuidgen --ensure<span style=color:#666>=</span>/etc/machine-id    <span style=color:#60a0b0;font-style:italic># fcitx 依赖了 dbus，dbus 依赖这个文件</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>pw groupmod video -m SOME_USER
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>## 修改 /etc/ttys 将 xdm 所在行的 off 改成 on</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>## 根据 xorg-server 包的提示，修改 /etc/sysctl.conf 添加:</span>
+</span></span><span style=display:flex><span>kern.evdev.rcpt_mask<span style=color:#666>=</span><span style=color:#40a070>6</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>## 根据 virtualbox-ose-additions 包的提示，修改 /etc/rc.conf 添加：</span>
+</span></span><span style=display:flex><span><span style=color:#bb60d5>vboxguest_enable</span><span style=color:#666>=</span><span style=color:#4070a0>&#34;YES&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#bb60d5>vboxservice_enable</span><span style=color:#666>=</span><span style=color:#4070a0>&#34;YES&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>## 很多桌面应用依赖 dbus，所以修改 /etc/rc.conf 添加：</span>
+</span></span><span style=display:flex><span><span style=color:#bb60d5>dbus_enable</span><span style=color:#666>=</span><span style=color:#4070a0>&#34;YES&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>## 启动系统级别的 dbus</span>
+</span></span><span style=display:flex><span>service dbus start
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>pw groupmod wheel -m SOME_USER  <span style=color:#60a0b0;font-style:italic># 支持 virtualbox clipboard sharing, window scaling</span>
+</span></span></code></pre></div><p>使用 <code>xrandr</code> 命令获得获得支持的分辨率，然后写入文件 <code>/usr/local/etc/X11/xorg.conf.d/screen-resolution.conf</code>：</p><pre tabindex=0><code>Section &#34;Screen&#34;
+    Identifier &#34;Screen0&#34;
+    Device     &#34;Card0&#34;
+    SubSection &#34;Display&#34;
+        Modes      &#34;2880x1620&#34;
+    EndSubSection
+EndSection
+</code></pre><p>配置 <code>~/.xsession</code>:</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#007020>#!/bin/sh
+</span></span></span><span style=display:flex><span><span style=color:#007020></span>
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>LANG</span><span style=color:#666>=</span>en_US.UTF-8
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>LC_CTYPE</span><span style=color:#666>=</span>zh_CN.UTF-8
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>XMODIFIERS</span><span style=color:#666>=</span>@im<span style=color:#666>=</span>fcitx
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>GTK_IM_MODULE</span><span style=color:#666>=</span>fcitx
+</span></span><span style=display:flex><span><span style=color:#007020>export</span> <span style=color:#bb60d5>QT_IM_MODULE</span><span style=color:#666>=</span>fcitx
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb60d5>resources</span><span style=color:#666>=</span><span style=color:#bb60d5>$HOME</span>/.Xresources
+</span></span><span style=display:flex><span><span style=color:#666>[</span> -r <span style=color:#4070a0>&#34;</span><span style=color:#bb60d5>$resources</span><span style=color:#4070a0>&#34;</span> <span style=color:#666>]</span> <span style=color:#666>&amp;&amp;</span> /usr/local/bin/xrdb -load <span style=color:#4070a0>&#34;</span><span style=color:#bb60d5>$resources</span><span style=color:#4070a0>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>/usr/local/bin/fcitx
+</span></span><span style=display:flex><span><span style=color:#007020;font-weight:700>for</span> i in <span style=color:#40a070>1</span> <span style=color:#40a070>2</span> <span style=color:#40a070>3</span> <span style=color:#40a070>4</span> 5; <span style=color:#007020;font-weight:700>do</span>
+</span></span><span style=display:flex><span>    <span style=color:#007020>echo</span> waiting <span style=color:#007020;font-weight:700>for</span> fcitx...
+</span></span><span style=display:flex><span>    sleep <span style=color:#40a070>1</span>
+</span></span><span style=display:flex><span>    /usr/local/bin/fcitx-remote &gt;/dev/null 2&gt;&amp;<span style=color:#40a070>1</span> <span style=color:#666>&amp;&amp;</span> <span style=color:#007020>break</span>
+</span></span><span style=display:flex><span><span style=color:#007020;font-weight:700>done</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#007020>exec</span> /usr/local/bin/xsm
+</span></span></code></pre></div><p><code>~/.Xresources</code> 内容和 NetBSD 的版本一样。</p></li></ol><h2 id=freebsd-root-on-zfs-千古奇坑>FreeBSD root on ZFS 千古奇坑</h2><p>参考 <a href=https://forums.freebsd.org/threads/10-1-doesnt-boot-anymore-from-zroot-after-applying-p25.54422/#post-308876>https://forums.freebsd.org/threads/10-1-doesnt-boot-anymore-from-zroot-after-applying-p25.54422/#post-308876</a> ，FreeBSD 的 <a href=https://wiki.freebsd.org/RootOnZFS>root on zfs</a> 对 vdev 有要求，需要对磁盘分区，并设置分区类型为 freebsd-zfs，不能把整块磁盘加入 zpool，虽然 zfs 本身能工作，但是 /boot/loader 不能识别，一旦 <code>freebsd-update install</code> 后 /boot 目录的文件写入了这个整盘构成的 vdev，loader 就会报错 <code>ZFS: i/o error - all block copies unavailable</code>。推荐的配置是构成 root zpool 的所有 vdev 采用相同的分区结构，并且冗余 efi、freebsd-boot、freebsd-swap 分区，以使得任何一块盘坏掉了，还可以用其它盘成功启动。</p><p>给 zroot 增加第二块盘：</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>gpart destroy -F ada1               <span style=color:#60a0b0;font-style:italic># optional for new disk</span>
+</span></span><span style=display:flex><span>zpool labelclear -f /dev/ada1       <span style=color:#60a0b0;font-style:italic># optional for new disk</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>gpart create -s gpt ada1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>## For UEFI Boot:</span>
+</span></span><span style=display:flex><span>gpart add -a 4k -l efiboot1 -t efi -s 200M ada1
+</span></span><span style=display:flex><span>gpart bootcode -p /boot/boot1.efifat -i <span style=color:#40a070>1</span> ada1  <span style=color:#60a0b0;font-style:italic># 写入第一个分区</span>
+</span></span><span style=display:flex><span>    <span style=color:#60a0b0;font-style:italic>### boot1.efifat 等价于:</span>
+</span></span><span style=display:flex><span>    <span style=color:#60a0b0;font-style:italic># newfs_msdos -F 16 -L EFISYS /dev/ada1p1</span>
+</span></span><span style=display:flex><span>    <span style=color:#60a0b0;font-style:italic># mount -t msdosfs /dev/ada1p1 /mnt</span>
+</span></span><span style=display:flex><span>    <span style=color:#60a0b0;font-style:italic># mkdir -p /mnt/efi/boot</span>
+</span></span><span style=display:flex><span>    <span style=color:#60a0b0;font-style:italic># cp /boot/loader.efi /mnt/efi/boot/BOOTx64.efi</span>
+</span></span><span style=display:flex><span>    <span style=color:#60a0b0;font-style:italic># echo BOOTx64.efi &gt; /mnt/efi/boot/startup.nsh</span>
+</span></span><span style=display:flex><span>    <span style=color:#60a0b0;font-style:italic># umount /mnt</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>## For Legacy Boot:</span>
+</span></span><span style=display:flex><span>gpart add -a 4k -l gptboot1 -t freebsd-boot -s 512K ada1
+</span></span><span style=display:flex><span>gpart bootcode -b /boot/pmbr -p /boot/gptzfsboot -i <span style=color:#40a070>2</span> ada1  <span style=color:#60a0b0;font-style:italic># 写入第二个分区</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic>## For swap and data:</span>
+</span></span><span style=display:flex><span>gpart add -a 1m -l swap1 -t freebsd-swap -s 2G ada1
+</span></span><span style=display:flex><span>gpart add -a 1m -l zfs1 -t freebsd-zfs ada1
+</span></span><span style=display:flex><span>zpool labelclear -f /dev/ada1p3     <span style=color:#60a0b0;font-style:italic># optional for new disk</span>
+</span></span><span style=display:flex><span>zpool labelclear -f /dev/ada1p4     <span style=color:#60a0b0;font-style:italic># optional for new disk</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>zpool add zroot /dev/ada1p4
+</span></span></code></pre></div></div></div></div><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div></div><div class="footer pure-g"><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div><div class="pure-u-11-12 pure-u-md-20-24 pure-u-lg-7-12"><div class=footer-content><div class="pure-menu pure-menu-horizontal"><ul><li class=pure-menu-item id=foot-name>© Yubao Liu</li></ul><a href=# class="pure-menu-link pull-right" id=gototop-btn>↑↑</a></div></div></div><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div></div><script type=text/javascript>go(),window.addEventListener("resize",go);function go(){var e=document.querySelector(".desktop");document.documentElement.clientWidth>768?e.style.display="":e.style.display="none"}</script><script type=text/javascript>var a=document.querySelector("#toggle-btn"),b=document.querySelector("#toggle-content");a.addEventListener("click",function(){""==b.style.display?(b.style.display="none",a.innerHTML="☰"):(b.style.display="",a.innerHTML="X")})</script></body></html>

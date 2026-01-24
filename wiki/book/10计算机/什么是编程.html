@@ -1,0 +1,543 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>什么是编程 - 乐果百科</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="欢迎来到「乐果百科」，乐果一家的知识笔记！">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">乐果百科</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="什么是编程"><a class="header" href="#什么是编程">什么是编程？</a></h1>
+<h2 id="计算机组成"><a class="header" href="#计算机组成">计算机组成</a></h2>
+<p>Computer 一词最早出现于 <a href="https://en.wikipedia.org/wiki/Computer#Etymology">1613</a> 年，指人类「计算员」，使用计算器做算术运算，直到 20 世纪中期，才被用于指「可编程的数字电子计算机」，简称「计算机」，中文里也被翻译成「电脑」。</p>
+<p>一台计算机由硬件(hardware)和软件(software)组成，「硬件」指直接可见可触摸的设备，「软件」指存储、运行在硬件中的不能直接可见可触摸的数据和程序。</p>
+<h3 id="硬件"><a class="header" href="#硬件">硬件</a></h3>
+<ul>
+<li>计算和控制：最典型的是中央处理器（CPU，Central Processing Unit)，主流的 CPU 家族有 X86、ARM。CPU 主要有如下元件组成：
+<ul>
+<li>算术逻辑单元(ALU, Arithmetic Logic Unit)：负责算术和逻辑运算，包含加法器、乘法器、除法器等电路；</li>
+<li>控制单元(CU, Control Unit)：负责解释指令并控制其它部件执行；</li>
+<li>寄存器(Registers)：存储 CPU 当前运行用到的指令、数据；</li>
+<li>缓存(Cache)：在寄存器和内存之间缓存指令和数据；</li>
+</ul>
+</li>
+<li>存储器
+<ul>
+<li>主存储器、内存(memory)：一般指断电即丢失数据的随机访问存储（ RAM，Random Access Memory）；</li>
+<li>辅存储器、外存(storage)：包括软盘、硬盘、光盘等，断电不会丢失数据的存储设备；</li>
+</ul>
+</li>
+<li>输入设备(Input Device)：键盘、鼠标、麦克风、扫描仪、网卡等，用于外界输入数据给计算机处理；</li>
+<li>输出设备(Output Device)：屏幕、扬声器、打印机、指示灯、网卡等，用于计算机输出结果给外界；</li>
+<li>总线(Bus)：连接各个设备的线缆，传输数据和控制信号；</li>
+</ul>
+<p><img src="images/Computer_architecture_block_diagram.avif" alt="https://en.wikipedia.org/wiki/Computer_architecture" /></p>
+<h3 id="软件"><a class="header" href="#软件">软件</a></h3>
+<ul>
+<li>代码 (Code)：用编程语言写成的文本，人可以阅读和修改；</li>
+<li>操作系统(OS, Operating System)：狭义指直接管理硬件的操作系统内核(Kernel) ，广义指硬件上的基础软件。主流的 OS 有 Windows、Linux、BSD、macOS、Android、iOS；</li>
+<li>程序(Program)：也称为应用(application)，可供操作系统运行；
+<ul>
+<li>Shell：指操作系统提供的最基本的人机交互界面应用，用于输入命令、查看结果，例如  Linux、BSD 上的  sh 命令行工具，Windows、macOS 上提供的桌面、任务栏、程序列表、文件管理器等图形工具；</li>
+<li>编辑器(Editor)：一般指文本编辑器(Text Editor)，可以用来编辑代码保存到外存里；</li>
+<li>编译器(Compiler)、汇编器(Assembler)、链接器(Linker)、加载器(Loader)：
+<ul>
+<li>编译器：指将高级编程语言翻译到汇编语言的程序；</li>
+<li>汇编器：指将汇编语言翻译到机器码的程序；</li>
+<li>链接器：指将多个机器指令的程序片断合并到一起的程序；</li>
+<li>加载器：指操作系统用来加载外存上的程序进入内存的程序；</li>
+</ul>
+</li>
+<li>解释器(Interpreter)：指直接运行代码，不用显式的经过编译、汇编、链接、加载四个阶段的一类程序；</li>
+</ul>
+</li>
+</ul>
+<h2 id="高级编程语言和汇编语言"><a class="header" href="#高级编程语言和汇编语言">高级编程语言和汇编语言</a></h2>
+<p>下面是三种语言定义函数的语法，以及机器码的十六进制表示，Python 和 C 都属于高级语言。</p>
+<p>Python 语言：</p>
+<pre><code class="language-python">def square(n):
+	return n * n
+</code></pre>
+<p>C 语言：</p>
+<pre><code class="language-c">int square(int n)
+{
+	return n * n;
+}
+</code></pre>
+<p>x86-64 Intel 语法的汇编语言，右边的注释是对应的十六进制<a href="https://godbolt.org/z/8ETqhx4Me">机器码</a>：</p>
+<pre><code class="language-x86asm">square:
+  push rbp                                   ; 55
+  mov  rbp, rsp                              ; 48 89 e5
+  mov  DWORD PTR [rbp - 0x4], edi            ; 89 7d fc
+  mov  eax, DWORD PTR [rbp - 0x4]            ; 8b 45 fc
+  imul eax, eax                              ; 0f af c0
+  pop  rbp                                   ; 5d
+  ret                                        ; c3
+</code></pre>
+<h2 id="编程语言的实现和编写流程"><a class="header" href="#编程语言的实现和编写流程">编程语言的实现和编写流程</a></h2>
+<p>编程语言有三种实现方式：</p>
+<ol>
+<li>显式编译后执行，如 C、C++ 语言；</li>
+<li>直接解释执行，如 Python；</li>
+<li>编译到中间形式（还没到机器码）再解释执行，如 Java。</li>
+</ol>
+<p>不同的编程语言实现，其编写程序的流程也不一样，也分成三种：</p>
+<ol>
+<li>「编辑 → 编译 → 执行」循环，典型如 C/C++ 和 Java。</li>
+</ol>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+
+int main(int argc, char** argv)
+{
+	std::cout &lt;&lt; "Hello world!\n";
+	return EXIT_SUCCESS;
+}
+</code></pre>
+<pre><code class="language-sh">$ g++ -o hello hello.cpp
+$ ./hello
+Hello world!
+</code></pre>
+<pre><code class="language-java">public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello world!");
+  }
+}
+</code></pre>
+<pre><code class="language-sh">$ javac HelloWorld.java
+$ java HelloWorld
+Hello world!
+</code></pre>
+<ol start="2">
+<li>「编辑 → 执行」循环，典型如 Python。Java 也支持这种方式用于简单程序。</li>
+</ol>
+<pre><code class="language-python">#!/usr/bin/env python3
+
+print("Hello world!")
+</code></pre>
+<pre><code class="language-sh">$ python3 hello.py
+Hello world!
+
+# 或者
+$ chmod a+rx hello.py
+$ ./hello.py
+Hello world!
+
+# Java 也可以不用显式编译
+$ java HelloWorld.java
+Hello world!
+</code></pre>
+<ol start="3">
+<li>「读取 → 执行」循环，也称为 REPL(read-evaluate-print-loop，print 指输出表达式的值)，典型如 Lisp 和 Smalltalk。Python 和 Java 也支持这种方式用于简单测试。</li>
+</ol>
+<pre><code class="language-sh">$ sbcl
+* (format t "Hello world!~%")
+Hello world!
+NIL
+
+$ python3
+&gt;&gt;&gt; print("Hello world!")
+Hello world!
+
+$ jshell
+jshell&gt; System.out.println("Hello world!")
+Hello world!
+</code></pre>
+<p>从 Java 的例子可以看到「编程语言」和「编程语言的实现」是两个不同的概念，前者指语法和语义，后者指编译、执行形式。</p>
+<h2 id="编程风格的分类"><a class="header" href="#编程风格的分类">编程风格的分类</a></h2>
+<p>编程风格(style)也常被称为<a href="https://en.wikipedia.org/wiki/Programming_paradigm">编程范式</a>(paradigm)，指如何组织数据和代码。一种编程语言可以以某种风格为主，同时支持多种风格，常见的编程风格如下：</p>
+<ul>
+<li>命令式(Imperative)，也经常狭义指代「过程式」，明确指定计算机一步步「怎么做(how)」；
+<ul>
+<li>过程式(procedural)，如 Fortran、Basic、Pascal、C；</li>
+<li>面向对象式(object-oriented)
+<ul>
+<li>基于类(class-based)，如 C++、Java；</li>
+<li>基于原型(prototype-based)，如 JavaScript、<a href="https://iolanguage.org">Io</a>；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>声明式(declarative)，只给出「要做什么(what)」，让计算机（实际是设计好的算法）给出「怎么做」的具体步骤；
+<ul>
+<li>函数式(functional)，如 Haskell、OCaml；</li>
+<li>逻辑式(logical)，如 Prolog；</li>
+<li>响应式(reactive)，如 Verilog，Elm；</li>
+</ul>
+</li>
+</ul>
+<p>截止 2024 年，主流使用的编程语言以过程式、面向对象式为主。</p>
+<h2 id="选择编程语言"><a class="header" href="#选择编程语言">选择编程语言</a></h2>
+<p>自从计算机诞生以来，人们发明了<a href="https://rosettacode.org/wiki/Hello_world/Text">上千种</a>编程语言，如下是一些有名的语言：</p>
+<ul>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#NASM">汇编语言</a>(Assembly)：最古老的语言，已经很少人直接写汇编代码了；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#Fortran">Fortran</a>： 1957 年诞生，常用于科学计算；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#Common_Lisp">Lisp</a>：1960 年诞生，早年常用于人工智能；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#BASIC">Basic</a>：1964 年诞生，常用于<a href="https://smallbasic-publicwebsite.azurewebsites.net">编程教育</a>；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#Pascal">Pascal</a>：1970 年诞生，1980 年代最火的编程语言；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#Smalltalk">Smalltalk</a>：1972 年诞生，常用于<a href="https://cuis.st">编程教育</a>；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#C11">C</a>：1972 年诞生，常用于写操作系统、编译器、数据库等基础软件；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#C++">C++</a>：1985 年诞生，扩充了 C 语言；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#Python">Python</a>：1991 年诞生，常用于科学计算、人工智能；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#Java">Java</a>：1995 年诞生，常用于服务器端的服务开发；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#JavaScript">JavaScript</a>：1995 年诞生，常用于浏览器端的动态网页开发；</li>
+</ul>
+<p>各种编程竞赛中常用 C++、Java、Python 三种语言，C++ 的性能最快但最难学，Python 的性能最慢但最易学。</p>
+<h2 id="选择编辑器"><a class="header" href="#选择编辑器">选择编辑器</a></h2>
+<p>编辑器也<a href="http://texteditors.org/cgi-bin/wiki.pl?EditorIndex">非常多</a>，部分常见的如下：</p>
+<ul>
+<li><a href="https://www.vim.org">VIM</a>（<a href="https://neovim.io">Neovim</a>)、<a href="https://www.gnu.org/software/emacs/">GNU Emacs</a>：Linux 上最普遍使用的文本编辑器，对初学者比较难；
+<ul>
+<li>Emacs 配置：<a href="https://github.com/doomemacs/">Doom Emacs</a>、<a href="https://www.spacemacs.org">Spacemacs</a>、<a href="https://seagle0128.github.io/.emacs.d/">Centaur Emacs</a>、<a href="https://github.com/purcell/emacs.d">purcell/emacs.d</a>、<a href="https://github.com/bbatsov/prelude">bbatsov/prelude</a>；</li>
+<li>VIM/Neovim 配置：<a href="https://astronvim.com">AstroNvim</a>、<a href="https://nvchad.com">NvChad</a>、<a href="http://www.lazyvim.org">LazyVim</a>；</li>
+<li>Neovim GUI: <a href="https://neovide.dev">Neovide</a>、<a href="https://github.com/akiyosi/goneovim">goneovim</a>、<a href="https://github.com/equalsraf/neovim-qt">Neovim Qt</a>；</li>
+</ul>
+</li>
+<li><a href="https://helix-editor.com">Helix</a>、<a href="https://github.com/mawww/kakoune">Kakoune</a>、<a href="https://github.com/martanne/vis">Vis</a>：改进 VI 风格的代码编辑器；</li>
+<li><a href="https://lem-project.github.io">Lem</a>：使用 Common Lisp 编写的 Emacs 仿品；</li>
+<li><a href="https://micro-editor.github.io">micro</a>：使用 Go 编写的代码编辑器；</li>
+<li><a href="https://getfresh.dev/">Fresh</a>：使用 Rust 编写的代码编辑器；</li>
+<li><a href="https://code.visualstudio.com">Visual Studio Code</a>: 最流行的轻量级集成开发环境；</li>
+<li><a href="https://zed.dev">Zed</a>：新兴的集成 AI 的代码编辑器；</li>
+<li><a href="https://www.sublimetext.com">Sublime Text</a>：轻量级的代码编辑器；</li>
+<li><a href="https://kate-editor.org">Kate</a>：Linux KDE 桌面环境曾经的默认编辑器(已换成更简单的 <a href="https://apps.kde.org/kwrite/">KWrite</a>)；</li>
+<li><a href="https://gedit-text-editor.org">Gedit</a>：Linux GNOME 桌面环境曾经的默认编辑器（已换成更简单的 <a href="https://apps.gnome.org/TextEditor/">GNOME Text Editor</a>)；</li>
+<li><a href="https://cudatext.github.io">CudaText</a>：使用 Free Pascal 编写的代码编辑器；</li>
+<li><a href="https://gitee.com/cxasm/notepad--">Notepad--</a>： 国产跨平台代码编辑器；</li>
+<li><a href="https://www.geany.org">Geany</a>、<a href="https://codelite.org">CodeLite</a>、<a href="https://www.codeblocks.org">CodeBlocks</a>、<a href="https://github.com/royqh1979/RedPanda-CPP">Redpanda C++</a>： 轻量级的集成开发环境；</li>
+</ul>
+<p>VIM 和 Emacs 功能丰富但比较难，Visual Studio Code、Zed、Kate 功能丰富且易用。</p>
+<h2 id="基本语法"><a class="header" href="#基本语法">基本语法</a></h2>
+<p>编程语言很多，语法各异，但都有一些类似的基本语法。</p>
+<h3 id="数据类型"><a class="header" href="#数据类型">数据类型</a></h3>
+<p>从 CPU 的机器指令视角看，数据类型只有两大类：</p>
+<ul>
+<li>标量(scalar)
+<ul>
+<li>整数
+<ul>
+<li>byte(字节)：存储单位，一个字节包含 8 比特(bit)，分有符号字节，范围 0 ~ 255，和无符号字节，范围 -128 ~ 127；</li>
+<li>word(字)：计算单位，表示 CPU 一条整数指令能计算的数据长度，在 32 位 CPU 中是 4 字节（也就是 32 比特)，在 64 位 CPU 中是 8 字节（也就是 64 比特）；</li>
+</ul>
+</li>
+<li>浮点数
+<ul>
+<li>float(单精度浮点数)：4 字节；</li>
+<li>double(双精度浮点数)：8 字节；</li>
+<li>long double(扩展精度浮点数)：12 或 16 字节；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>向量(vector)：也就是数组(array)，在内存中连续存储的多个标量；</li>
+</ul>
+<p>从编程语言的语法角度看，使用变量和常量指代数据，数据类型表现的更多样，以 C/C++ 为例：</p>
+<ul>
+<li>整数：char, short, int, long, long long, int8_t, int16_t, int32_t, int64_t 等，以及对应的 无符号(unsigned)版本；
+<ul>
+<li>char 既表示字节，也表示 ASCII 字符，区分只在输入、输出上；</li>
+<li>布尔类型 (_Bool, bool) 也是整数，但只有两个取值 true 和 false；</li>
+<li>指针类型，本质也是个整数，用来表示内存地址；</li>
+</ul>
+</li>
+<li>浮点数：float, double, long double，符合浮点算术标准 <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE 754</a>；</li>
+</ul>
+<p>由于长度限制，整数能表达的范围是有限的，N 比特能表达 2<sup>N</sup> 个整数，所以无符号整数范围是 0 ~ 2<sup>N</sup> - 1，有符号整数范围是 -2<sup>N</sup> ~ 2<sup>N</sup> - 1。因为有长度限制，运算时会发生溢出回绕，例如 signed char 的 <code>127 + 1 = -128</code>， <code>-128 - 1 = 127</code>，unsigned char 的 <code>255 + 1 = 0</code>，<code>0 - 1 = 255</code>。有的编程语言如 Python 的默认整数类型是利用多个机器整数拼起来的，可以表达任意小和任意大的整数，不会发生溢出回绕。</p>
+<p>类似的，由于长度限制，浮点数能表达的范围和精度是有限的，特别是精度问题，浮点数不应该用 "==" 判断相等，例如 <code>0.1 + 0.2 == 0.3</code> 的结果是 <code>false</code>，并不相等。有的语言支持分数类型，可以用来做精确的四则运算，结果依然为分数。</p>
+<p>除了整数和浮点数两种基本类型，大多编程语言还有以下复合类型：</p>
+<ul>
+<li>结构体(struct) 、类(class)、元组(tuple)</li>
+<li>枚举(enum)</li>
+<li>联合(union)</li>
+<li>字符串(string)</li>
+<li>向量(vector)、数组(array)</li>
+<li>链表(list)</li>
+<li>映射(map)、词典(dictionary)、集合(set)</li>
+</ul>
+<h3 id="控制结构"><a class="header" href="#控制结构">控制结构</a></h3>
+<p>代码语句的执行次序分成顺序、分支、循环、递归、异常五种，顺序就是一句句往下执行，递归是函数调用自身，分支、循环、异常有自己的语法，以 C++ 为例：</p>
+<ul>
+<li>分支(branch)
+<ul>
+<li>if  ... else</li>
+<li>continue, break</li>
+<li>goto</li>
+</ul>
+</li>
+<li>循环(loop)
+<ul>
+<li>while,  do ... while</li>
+<li>for</li>
+</ul>
+</li>
+<li>异常(exception)
+<ul>
+<li>throw, try ... catch ... finally</li>
+</ul>
+</li>
+</ul>
+<h3 id="函数"><a class="header" href="#函数">函数</a></h3>
+<p>常用的代码语句可以提取到函数(function)里，方便在代码的其它地方按名字调用，不再重复写，在上面已经展示了 <code>square</code> 函数。函数在不同语言里有不同称呼，如在 Perl 中称为 subroutine(子例程)，在 Pascal 中按有无返回值分为 function 和 procedure( 过程)。</p>
+<h3 id="模块"><a class="header" href="#模块">模块</a></h3>
+<p>除了函数是组织代码的一种方式，另一种更高层的方式是把常用的函数和复合数据类型提取到模块(module) 供多个程序复用，在有的语言里用包(package)指代模块，进一步的，多个模块可以放在一起成为库(library)，方便分发用途相关的多个模块。</p>
+<h2 id="数据结构--算法--程序"><a class="header" href="#数据结构--算法--程序">数据结构 + 算法 = 程序</a></h2>
+<p>《Data Structures + Algorithms = Programs》是 Pascal 语言之父、著名计算机科学家尼古拉斯·沃斯（<em>Niklaus Wirth</em>，1934年2月15日—2024年1月1日）编写的一本名著，揭示了编程的要点：设计一个程序，就是对输入的数据，考虑如何组织数据以及如何操作数据，最终得到期望的输出。</p>
+<p>常用的数据结构：</p>
+<ol>
+<li>array, vector: 一般内置在编程语言里；</li>
+<li>string: 一般内置在编程语言里；</li>
+<li>单向链表、双向链表：比 array 和 vector 能更高效的在开头和中间插入和删除元素；</li>
+<li>stack, queue, dequeue, heap</li>
+<li>tree, hash table</li>
+<li>graph</li>
+<li>matrix</li>
+</ol>
+<p>常用的算法：</p>
+<ol>
+<li>查找，包括字符串查找和数组、树的元素查找和插入；</li>
+<li>数组的排序；</li>
+<li>集合运算；</li>
+<li>图的拓扑排序、最短路径；</li>
+</ol>
+<h2 id="常用库"><a class="header" href="#常用库">常用库</a></h2>
+<p>日常编程中，所有语言都有类似的常用库：</p>
+<ol>
+<li>文件读写，包括记录日志；</li>
+<li>网络读写，最常用的是发送 HTTP 请求；</li>
+<li>JSON 数据格式解析；</li>
+<li>关系数据库的读写；</li>
+<li>图形用户界面(GUI)；</li>
+<li>命令行选项解析；</li>
+<li>配置文件读写；</li>
+</ol>
+<h2 id="项目构建工具"><a class="header" href="#项目构建工具">项目构建工具</a></h2>
+<p>一个项目(project)由多个源文件组成，当文件很多而且要考虑在多种操作系统下编译时，手动写命令会很麻烦，因此需要专门的构建工具来：</p>
+<ul>
+<li>检测所需的库、编译器等；</li>
+<li>编译、链接、测试；</li>
+<li>打包、安装；</li>
+</ul>
+<p>以 C/C++ 为例，有最基本的 <a href="https://www.gnu.org/software/make/">make</a> ，更高级的 <a href="https://www.gnu.org/software/automake/manual/html_node/index.html">Autotools</a>、<a href="https://cmake.org">CMake</a>、<a href="https://www.boost.org/build/">Boost Build</a>，更新潮的 <a href="https://xmake.io/">xmake</a>、<a href="https://mesonbuild.com">Meson</a>，注重封闭(hermetic)构建的 <a href="https://bazel.build/">Bazel</a>、<a href="https://buck2.build">Buck 2</a>、<a href="https://please.build/">Please</a>、<a href="https://www.pantsbuild.org">Pants</a>。</p>
+<h2 id="版本控制系统"><a class="header" href="#版本控制系统">版本控制系统</a></h2>
+<p>开发过程中需要记录文件的版本变更，以方便回溯历史，下面是常见的版本控制系统（Version Control System)：</p>
+<ol>
+<li><a href="https://subversion.apache.org/">Subversion</a>
+<ol>
+<li><a href="https://tortoisesvn.net/">TortoiseSVN</a></li>
+</ol>
+</li>
+<li><a href="https://git-scm.com/">Git</a>
+<ol>
+<li><a href="https://github.com/sourcegit-scm/sourcegit">SourceGit</a></li>
+<li><a href="https://github.com/gitui-org/gitui">gitui</a></li>
+<li><a href="https://github.com/jesseduffield/lazygit">lazygit</a></li>
+<li><a href="https://jonas.github.io/tig/">tig</a></li>
+<li><a href="https://magit.vc/">Magit</a></li>
+<li><a href="https://github.com/altsem/gitu">gitu</a></li>
+</ol>
+</li>
+<li><a href="https://www.mercurial-scm.org/">Mercurial</a></li>
+<li><a href="https://www.fossil-scm.org/">Fossil</a></li>
+<li><a href="https://www.perforce.com/">Perforce</a></li>
+<li><a href="https://www.plasticscm.com/">PlasticSCM</a></li>
+<li><a href="https://jj-vcs.github.io/jj/latest/">Jujutsu</a></li>
+<li><a href="https://sapling-scm.com/">Sapling</a></li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../10计算机/EDA概览.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../11经济/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../10计算机/EDA概览.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../11经济/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on 随记</title><link>/tags/docker/</link><description>Recent content in Docker on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 19 Nov 2025 22:00:00 +0800</lastBuildDate><atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux 沙箱工具</title><link>/posts/linux-sandbox-tools/</link><pubDate>Wed, 19 Nov 2025 22:00:00 +0800</pubDate><guid>/posts/linux-sandbox-tools/</guid><description>&lt;h2 id="lsm-linux-security-module"&gt;LSM: Linux Security Module&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.kernel.org/doc/html/latest/admin-guide/LSM/index.html"&gt;https://www.kernel.org/doc/html/latest/admin-guide/LSM/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;By label: SELinux, Smack；&lt;/li&gt;
+&lt;li&gt;By path: &lt;a href="https://apparmor.net/"&gt;AppArmor&lt;/a&gt;, &lt;a href="https://tomoyo.sourceforge.net/"&gt;TOMOYO&lt;/a&gt;, &lt;a href="https://www.kernel.org/doc/html/latest/userspace-api/landlock.html"&gt;Landlock&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;LoadPin: 确保所有固件、内核模块来自同一文件系统；&lt;/li&gt;
+&lt;li&gt;Yama：限制 ptrace；&lt;/li&gt;
+&lt;li&gt;SafeSetID：限制 setid 切换 uid 和 gid；&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.kernel.org/doc/html/latest/admin-guide/LSM/ipe.html"&gt;Integrity Policy Enforcement (IPE)&lt;/a&gt;：基于数据完整性（数字签名）的安全策略；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="沙箱工具"&gt;沙箱工具&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Low-level tools
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://apparmor.net/"&gt;AppArmor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Container
+&lt;ol&gt;
+&lt;li&gt;Fakeroot： &lt;a href="https://github.com/rootless-containers/rootlesskit"&gt;Rootlesskit&lt;/a&gt;、&lt;a href="https://proot-me.github.io/"&gt;proot&lt;/a&gt; + &lt;a href="https://proot-me.github.io/care/"&gt;care&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/containers/bubblewrap"&gt;Bubblewrap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://podman.io/"&gt;Podman&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/containerd/nerdctl"&gt;Nerdctl&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.freedesktop.org/software/systemd/man/latest/systemd-nspawn.html"&gt;systemd-nspawn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://linuxcontainers.org/incus/"&gt;Incus&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/google/gvisor"&gt;gVisor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://katacontainers.io/"&gt;KataContainers&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;High-level tools
+&lt;ol&gt;
+&lt;li&gt;强隔离
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/zouuup/landrun"&gt;Landrun&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/netblue30/firejail"&gt;Firejail&lt;/a&gt; + &lt;a href="https://github.com/netblue30/firetools"&gt;Firetools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/igo95862/bubblejail"&gt;Bubblejail&lt;/a&gt;，&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://flatpak.org/"&gt;Flatpak&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/canonical/snapd"&gt;Snap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://linyaps.org.cn/"&gt;玲珑&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/queer/boxxy"&gt;boxxy&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;弱隔离
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/89luca89/distrobox/"&gt;Distrobox&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/containers/toolbox"&gt;Toolbx&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>给阿里云容器镜像服务器架设反向代理</title><link>/posts/docker-registry-reverse-proxy/</link><pubDate>Mon, 30 Dec 2019 22:00:00 +0800</pubDate><guid>/posts/docker-registry-reverse-proxy/</guid><description>&lt;p&gt;早期我司使用 &lt;a href="https://github.com/goharbor/harbor"&gt;Harbor&lt;/a&gt; 自建 Docker Registry，后来阿里云推出了容器镜像服务，服务还处于公测阶段，使用免费，看起来不错，但是两者的 URI 是不一样的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我司：registry.example.com/NAMESPACE/REPOSITORY&lt;/li&gt;
+&lt;li&gt;阿里云：registry.cn-shenzhen.aliyuncs.com/PREFIX_NAMESPACE/REPOSITORY&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;除了域名不一样，两者的 namespace 也不一样，阿里云比较矬，它的 RDS、Redis 服务提供的域名是每个用户不一样的，而 docker registry 却选择了一个固定域名，于是不同租户的 namespace 名字会冲突，非常不幸的是我司用的 namespace 名字已经被人占用了，阿里云推荐的解决办法是加一个公司名字前缀。 由于这个原因，我们不能把 registry.example.com以 DNS CNAME 的方式直接映射到 registry.cn-shenzhen.aliyuncs.com，而是要借助一层 Nginx 代理：&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Emacs on 随记</title><link>/tags/emacs/</link><description>Recent content in Emacs on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 06 Jan 2021 22:25:00 +0800</lastBuildDate><atom:link href="/tags/emacs/index.xml" rel="self" type="application/rss+xml"/><item><title>Doom Emacs 按键绑定</title><link>/posts/doom-emacs-key-bindings/</link><pubDate>Wed, 06 Jan 2021 22:25:00 +0800</pubDate><guid>/posts/doom-emacs-key-bindings/</guid><description>&lt;h2 id="核心快捷键前缀"&gt;核心快捷键前缀&lt;/h2&gt;
+&lt;p&gt;在 Doom Emacs 中按快捷键前缀时会提示接下来可能的按键说明，非常方便。快捷键修饰符如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SPC&lt;/code&gt; 表示 &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C-&lt;/code&gt; 表示 &lt;code&gt;Ctrl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;M-&lt;/code&gt; 表示 &lt;code&gt;Meta&lt;/code&gt; or &lt;code&gt;Alt&lt;/code&gt; or &lt;code&gt;Option&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;S-&lt;/code&gt; 表示 &lt;code&gt;Shift&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s-&lt;/code&gt; 表示 &lt;code&gt;Super&lt;/code&gt; or &lt;code&gt;Command&lt;/code&gt; or &lt;code&gt;Win&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;跟 Spacemacs 一样，Doom Emacs 也默认开启了 evil 模式来模拟 VI 的编辑体验，需要在插入等状态下按 &lt;code&gt;ESC&lt;/code&gt; 回到 normal state，所有 &lt;code&gt;SPC&lt;/code&gt; 开头的快捷键都要退出 emacs-state 和 insert-state 才能使用，在这两个状态里可以用 &lt;code&gt;M-SPC&lt;/code&gt; 前缀避免模式切换。&lt;/p&gt;</description></item></channel></rss>

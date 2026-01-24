@@ -1,0 +1,708 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.1. C++ 学习资源 &#8212; 乐果百科</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=2693749b"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=540d3cec"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '10计算机/CPlusPlus学习资源';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="1.2. C++ 实践" href="CPlusPlus%E5%AE%9E%E8%B7%B5.html" />
+    <link rel="prev" title="1. 目录" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">乐果百科</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">基础知识</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00%E8%AF%AD%E6%96%87/index.html">1. 语文</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00%E8%AF%AD%E6%96%87/%E5%90%8D%E5%AE%B6%E5%90%8D%E8%91%97.html">1.1. 名家名著</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00%E8%AF%AD%E6%96%87/%E9%9F%B3%E9%9F%B5%E5%AD%A6.html">1.2. 音韵学</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01%E6%95%B0%E5%AD%A6/index.html">2. 数学</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%AD%A6%E5%88%86%E7%B1%BB.html">2.1. 数学分类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01%E6%95%B0%E5%AD%A6/%E6%95%B0%E7%9A%84%E5%88%86%E7%B1%BB.html">2.2. 数的分类</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../02%E5%A4%96%E8%AF%AD/index.html">3. 外语</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03%E7%89%A9%E7%90%86/index.html">4. 物理</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03%E7%89%A9%E7%90%86/%E5%9C%B0%E7%90%83%E5%9C%A8%E5%AE%87%E5%AE%99%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE.html">4.1. 地球在宇宙中的位置</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../04%E5%8C%96%E5%AD%A6/index.html">5. 化学</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05%E7%94%9F%E7%89%A9/index.html">6. 生物</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05%E7%94%9F%E7%89%A9/%E7%94%9F%E7%89%A9%E5%88%86%E7%B1%BB.html">6.1. 生物分类</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../06%E6%94%BF%E6%B2%BB/index.html">7. 政治</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07%E5%8E%86%E5%8F%B2/index.html">8. 历史</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07%E5%8E%86%E5%8F%B2/%E4%B8%AD%E5%9B%BD%E6%9C%9D%E4%BB%A3.html">8.1. 中国朝代</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../08%E5%9C%B0%E7%90%86/index.html">9. 地理</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">专业技能</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">1. 计算机</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1. C++ 学习资源</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CPlusPlus%E5%AE%9E%E8%B7%B5.html">1.2. C++ 实践</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CPlusPlus%E8%AF%AD%E6%B3%95.html">1.3. C++ 语法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EDA%E6%A6%82%E8%A7%88.html">1.4. EDA 概览</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E4%BB%80%E4%B9%88%E6%98%AF%E7%BC%96%E7%A8%8B.html">1.5. 什么是编程？</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../11%E7%BB%8F%E6%B5%8E/index.html">2. 经济</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12%E9%87%91%E8%9E%8D/index.html">3. 金融</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13%E6%B3%95%E5%BE%8B/index.html">4. 法律</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../14%E5%93%B2%E5%AD%A6/index.html">5. 哲学</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15%E5%8C%BB%E5%AD%A6/index.html">6. 医学</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../16%E9%A9%BE%E9%A9%B6/index.html">7. 驾驶</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../16%E9%A9%BE%E9%A9%B6/%E7%A7%91%E7%9B%AE%E4%B8%80%E6%B3%95%E8%A7%84.html">7.1. 科目一法规</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">人文艺术</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../20%E7%BE%8E%E6%9C%AF/index.html">1. 美术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../21%E9%9F%B3%E4%B9%90/index.html">2. 音乐</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../22%E4%BD%93%E8%82%B2/index.html">3. 体育</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../22%E4%BD%93%E8%82%B2/%E7%BB%B3%E7%BB%93%E7%AE%80%E4%BB%8B.html">3.1. 绳结简介</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/10计算机/CPlusPlus学习资源.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>C++ 学习资源</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#awesome-c">1.1.1. Awesome C++</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ide-editor">1.1.2. IDE &amp; Editor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiler">1.1.3. Compiler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugger-linter">1.1.4. Debugger &amp; Linter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatter">1.1.5. Code Formatter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-system-package-manager">1.1.6. Building System &amp; Package Manager</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-comparison">1.1.7. File Comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-browser">1.1.8. Documentation Browser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-generator">1.1.9. Documentation Generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-template">1.1.10. Project Template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">1.1.11. Libraries</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="c">
+<h1><span class="section-number">1.1. </span>C++ 学习资源<a class="headerlink" href="#c" title="链接到此标题。">#</a></h1>
+<section id="awesome-c">
+<h2><span class="section-number">1.1.1. </span>Awesome C++<a class="headerlink" href="#awesome-c" title="链接到此标题。">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://faraz.work/awesome-cpp/">https://faraz.work/awesome-cpp/</a></p></li>
+<li><p><a class="reference external" href="https://awesomecpp.com/">https://awesomecpp.com/</a></p></li>
+<li><p><a class="reference external" href="https://cpp.libhunt.com/">https://cpp.libhunt.com/</a></p></li>
+<li><p><a class="github reference external" href="https://github.com/r-lyeh/single_file_libs">r-lyeh/single_file_libs</a></p></li>
+<li><p><a class="reference external" href="https://en.cppreference.com/">https://en.cppreference.com/</a></p></li>
+</ol>
+</section>
+<section id="ide-editor">
+<h2><span class="section-number">1.1.2. </span>IDE &amp; Editor<a class="headerlink" href="#ide-editor" title="链接到此标题。">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.jetbrains.com/clion/">CLion</a> 非商业使用免费 ⭐⭐⭐⭐⭐</p></li>
+<li><p><a class="reference external" href="https://zed.dev/">Zed</a> 开箱即用 ⭐⭐⭐⭐⭐</p></li>
+<li><p><a class="reference external" href="https://kate-editor.org/">Kate</a> LSP 开箱即用 ⭐⭐⭐</p></li>
+<li><p><a class="reference external" href="https://www.codeblocks.org/">Code::Blocks</a> 支持 SFML、wxWidgets 应用模板，wxSmith 插件 ⭐⭐⭐</p></li>
+<li><p><a class="reference external" href="https://codelite.org/">CodeLite</a> 支持 wxWidgets 应用模板，wxCrafter 插件</p></li>
+<li><p><a class="reference external" href="https://code.visualstudio.com/">VSCode</a>、<a class="reference external" href="https://vscodium.com/">VSCodium</a></p></li>
+<li><p><a class="reference external" href="https://helix-editor.com/">Helix</a> LSP 开箱即用</p></li>
+</ol>
+</section>
+<section id="compiler">
+<h2><span class="section-number">1.1.3. </span>Compiler<a class="headerlink" href="#compiler" title="链接到此标题。">#</a></h2>
+<p>三大 C++ 编译器：GCC、Clang、Visual C++。</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.msys2.org/">MSYS2</a> + <a class="reference external" href="https://www.mingw-w64.org/">Mingw-w64</a>, 其它类似项目：</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://mxe.cc/">https://mxe.cc/</a></p></li>
+<li><p><a class="reference external" href="https://winlibs.com/">https://winlibs.com/</a></p></li>
+<li><p><a class="github reference external" href="https://github.com/skeeto/w64devkit/">skeeto/w64devkit</a></p></li>
+</ol>
+</li>
+<li><p><a class="reference external" href="https://learn.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=msvc-170">Build Tools For Visual Studio</a>、<a class="reference external" href="https://visualstudio.microsoft.com/free-developer-offers/">Visual Studio Community</a></p></li>
+<li><p><a class="reference external" href="https://developer.apple.com/xcode/resources/">Xcode command line tools</a></p></li>
+<li><p><a class="reference external" href="https://emscripten.org/">Emscripten</a> 使用 Clang 将 C/C++ 程序编译到 WASM 从而能在 Web 浏览器里运行</p></li>
+</ol>
+</section>
+<section id="debugger-linter">
+<h2><span class="section-number">1.1.4. </span>Debugger &amp; Linter<a class="headerlink" href="#debugger-linter" title="链接到此标题。">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.gnu.org/software/ddd/">DDD</a></p></li>
+<li><p><a class="reference external" href="https://valgrind.org/">Valgrind</a></p></li>
+<li><p><a class="reference external" href="https://cppcheck.sourceforge.io/">Cppcheck</a></p></li>
+<li><p><a class="reference external" href="https://clang.llvm.org/extra/clang-tidy/">Clang-tidy</a></p></li>
+<li><p><a class="reference external" href="https://clang-analyzer.llvm.org/">Clang-analyzer</a></p></li>
+<li><p><a class="reference external" href="https://github.com/google/sanitizers/wiki/AddressSanitizer">AddressSanitizer</a>: <a class="reference external" href="https://clang.llvm.org/docs/AddressSanitizer.html">Clang</a>, <a class="reference external" href="https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html">GCC</a></p></li>
+</ol>
+</section>
+<section id="code-formatter">
+<h2><span class="section-number">1.1.5. </span>Code Formatter<a class="headerlink" href="#code-formatter" title="链接到此标题。">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://clang.llvm.org/docs/ClangFormat.html">Clang-format</a></p></li>
+</ol>
+</section>
+<section id="building-system-package-manager">
+<h2><span class="section-number">1.1.6. </span>Building System &amp; Package Manager<a class="headerlink" href="#building-system-package-manager" title="链接到此标题。">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://xmake.io/">Xmake</a> + <a class="reference external" href="https://xrepo.xmake.io/">Xrepo</a></p></li>
+<li><p><a class="reference external" href="https://mesonbuild.com/">Meson</a> + <a class="reference external" href="https://mesonbuild.com/Wrapdb-projects.html">WrapDB</a>, <a class="reference external" href="https://muon.build/">Muon</a></p></li>
+<li><p><a class="reference external" href="https://premake.github.io/">Premake</a></p></li>
+<li><p><a class="reference external" href="https://cmake.org/">CMake</a> + <a class="reference external" href="https://cmake.org/cmake/help/latest/guide/using-dependencies/index.html">FetchContent</a> / <a class="reference external" href="https://vcpkg.io/">vcpkg</a> / <a class="reference external" href="https://conan.io/">Conan</a> / <a class="reference external" href="https://hunter.readthedocs.io/en/latest/index.html">Hunter</a> / <strong><a class="reference external" href="https://github.com/cpm-cmake/CPM.cmake">CPM.cmake</a></strong> (复杂，但是当前事实标准)</p></li>
+<li><p><a class="reference external" href="https://build2.org/">Build2</a></p></li>
+<li><p><a class="reference external" href="https://www.bfgroup.xyz/b2/">Boost.Build</a> (不支持生成 IDE 工程)</p></li>
+<li><p><a class="reference external" href="https://gn.googlesource.com/gn/">GN</a> (适用超大型项目，不自带 toolchain 定义)</p></li>
+<li><p><s><a class="reference external" href="https://gyp.gsrc.io/">GYP</a></s> (已被 gn 取代)</p></li>
+<li><p><a class="reference external" href="https://www.gnu.org/software/autoconf/">Autotools</a> (复杂，用于 Unix/Linux 项目)</p></li>
+<li><p>封闭构建工具</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/bazelbuild/bazel">Bazel</a></p></li>
+<li><p><a class="reference external" href="https://buck2.build/">Buck2</a></p></li>
+<li><p><a class="reference external" href="https://please.build/">Please</a></p></li>
+<li><p><a class="reference external" href="https://www.pantsbuild.org/">Pants</a></p></li>
+</ol>
+</li>
+<li><p><a class="reference external" href="https://anaconda.org/">Anaconda</a></p></li>
+<li><p><a class="reference external" href="https://spack.io/">Spack</a></p></li>
+<li><p><a class="reference external" href="https://www.msys2.org/docs/package-management/">MSYS2 Pacman</a></p></li>
+<li><p><a class="reference external" href="https://www.marticliment.com/unigetui/">UniGetUI</a>:  <a class="reference external" href="https://learn.microsoft.com/en-us/windows/package-manager/">Winget</a>, <a class="reference external" href="https://scoop.sh/">Scoop</a>,  <a class="reference external" href="https://chocolatey.org/">Chocolatey</a></p></li>
+</ol>
+</section>
+<section id="file-comparison">
+<h2><span class="section-number">1.1.7. </span>File Comparison<a class="headerlink" href="#file-comparison" title="链接到此标题。">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://meldmerge.org/">Meld</a></p></li>
+<li><p><a class="reference external" href="https://apps.kde.org/kdiff3/">Kdiff3</a></p></li>
+<li><p><a class="reference external" href="https://mightycreak.github.io/diffuse/">Diffuse</a></p></li>
+<li><p><a class="reference external" href="https://apps.kde.org/kompare/">Kompare</a></p></li>
+</ol>
+</section>
+<section id="documentation-browser">
+<h2><span class="section-number">1.1.8. </span>Documentation Browser<a class="headerlink" href="#documentation-browser" title="链接到此标题。">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://zealdocs.org/">Zeal</a></p></li>
+<li><p><a class="reference external" href="https://devdocs.io/">DevDocs</a></p></li>
+</ol>
+</section>
+<section id="documentation-generator">
+<h2><span class="section-number">1.1.9. </span>Documentation Generator<a class="headerlink" href="#documentation-generator" title="链接到此标题。">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://doxide.org/">Doxide</a></p></li>
+<li><p><a class="reference external" href="https://www.doxygen.org/">Doxygen</a></p></li>
+<li><p><a class="reference external" href="https://github.com/NaturalDocs/NaturalDocs">NaturalDocs</a></p></li>
+</ol>
+</section>
+<section id="project-template">
+<h2><span class="section-number">1.1.10. </span>Project Template<a class="headerlink" href="#project-template" title="链接到此标题。">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/TheLartians/ModernCppStarter">ModernCppStarter</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cpp-best-practices/cmake_template">cmake_template</a></p></li>
+<li><p><a class="reference external" href="https://github.com/filipdutescu/modern-cpp-template">modern-cpp-template</a></p></li>
+<li><p><a class="reference external" href="https://github.com/TheLartians/MiniCppStarter">MiniCppStarter</a></p></li>
+</ol>
+</section>
+<section id="libraries">
+<h2><span class="section-number">1.1.11. </span>Libraries<a class="headerlink" href="#libraries" title="链接到此标题。">#</a></h2>
+<ol class="arabic simple">
+<li><p>Graphics</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.raylib.com/">Raylib</a> ⭐⭐⭐⭐⭐</p></li>
+<li><p><a class="reference external" href="https://www.sfml-dev.org/">SFML</a> ⭐⭐⭐⭐⭐</p></li>
+<li><p><a class="reference external" href="https://liballeg.org/">Allegro</a> ⭐⭐⭐</p></li>
+<li><p><a class="reference external" href="https://magnum.graphics/">Magnum</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org/">Godot</a></p></li>
+<li><p><a class="reference external" href="https://libsdl.org/">SDL</a></p></li>
+<li><p><a class="reference external" href="https://www.glfw.org/">GLFW</a></p></li>
+<li><p>ECS</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/skypjack/entt">EnTT</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SanderMertens/flecs">Flecs</a></p></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Unit Testing</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/doctest/doctest">doctest</a></p></li>
+<li><p><a class="reference external" href="https://github.com/catchorg/Catch2">Catch2</a></p></li>
+</ol>
+</li>
+<li><p>Logging</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/gabime/spdlog">spdlog</a></p></li>
+<li><p><a class="reference external" href="https://github.com/PlatformLab/NanoLog">Nanolog</a></p></li>
+</ol>
+</li>
+<li><p>Crash reporting</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/bombela/backward-cpp">Backward-cpp</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jeremy-rifkin/cpptrace">Cpptrace</a></p></li>
+<li><p><a class="reference external" href="https://github.com/chromium/crashpad">Crashpad</a></p></li>
+</ol>
+</li>
+<li><p>HTTP</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/yhirose/cpp-httplib">cpp-httplib</a></p></li>
+<li><p><a class="reference external" href="https://docs.libcpr.org/">cpr</a></p></li>
+</ol>
+</li>
+<li><p>JSON</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/nlohmann/json">nlohmann-json</a></p></li>
+<li><p><a class="reference external" href="https://github.com/simdjson/simdjson">simdjson</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Tencent/rapidjson">RapidJSON</a></p></li>
+<li><p><a class="reference external" href="https://github.com/open-source-parsers/jsoncpp">JsonCpp</a></p></li>
+</ol>
+</li>
+<li><p>Command line argument parser</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://cliutils.github.io/CLI11/book/">CLI11</a></p></li>
+<li><p><a class="reference external" href="https://github.com/p-ranav/argparse">argparse</a></p></li>
+<li><p><a class="reference external" href="https://github.com/taywee/args">args</a></p></li>
+<li><p><a class="reference external" href="https://github.com/muellan/clipp">clipp</a></p></li>
+<li><p><a class="reference external" href="https://github.com/bfgroup/Lyra">Lyra</a></p></li>
+</ol>
+</li>
+<li><p>UI</p>
+<ol class="arabic simple">
+<li><p>CLI</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/antirez/linenoise">linenoise</a></p></li>
+<li><p><a class="reference external" href="https://github.com/AmokHuginnsson/replxx">replxx</a></p></li>
+<li><p><a class="reference external" href="https://github.com/daniele77/cli">cli</a></p></li>
+</ol>
+</li>
+<li><p>TUI</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://arthursonzogni.github.io/FTXUI/">FTXUI</a> ⭐⭐⭐⭐⭐</p></li>
+<li><p><a class="reference external" href="https://github.com/gansm/finalcut">FINAL CUT</a> ⭐⭐⭐ 依赖 ncurses + Cygwin/MSYS</p></li>
+<li><p><a class="reference external" href="https://github.com/ggerganov/imtui">imtui</a> ⭐⭐⭐ 依赖 imgui，支持 pdcurses</p></li>
+<li><p><a class="reference external" href="https://github.com/a-n-t-h-o-n-y/TermOx">TermOx</a> ⭐ 依赖 Cygwin/MSYS，C++20</p></li>
+<li><p><a class="reference external" href="https://github.com/magiblot/tvision">Turbo Vision</a></p></li>
+<li><p><a class="reference external" href="https://github.com/s9w/oof">Oof</a> ⭐⭐⭐</p></li>
+<li><p><a class="reference external" href="https://github.com/p-ranav/indicators/">Indicators</a></p></li>
+<li><p><a class="reference external" href="https://github.com/p-ranav/tabulate">Tabulate</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dankamongmen/notcurses">Notcurses</a> ⭐</p></li>
+<li><p><a class="reference external" href="https://github.com/termbox/termbox2">termbox2</a> 只有基础 curses 功能</p></li>
+</ol>
+</li>
+<li><p>GUI</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://libui-ng.github.io/libui-ng/">libui-ng</a></p></li>
+<li><p><a class="reference external" href="https://www.fltk.org/">FLTK</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ocornut/imgui">Dear ImGui</a></p></li>
+<li><p><a class="reference external" href="https://lvgl.io/">LVGL</a></p></li>
+<li><p><a class="reference external" href="https://slint.dev/">Slint</a></p></li>
+<li><p><a class="reference external" href="https://immediate-mode-ui.github.io/Nuklear/">Nuklear</a></p></li>
+<li><p><a class="reference external" href="https://tgui.eu/">TGUI</a></p></li>
+<li><p><a class="reference external" href="https://wxwidgets.org/">wxWidgets</a></p></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>目录</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="CPlusPlus%E5%AE%9E%E8%B7%B5.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title"><span class="section-number">1.2. </span>C++ 实践</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#awesome-c">1.1.1. Awesome C++</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ide-editor">1.1.2. IDE &amp; Editor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiler">1.1.3. Compiler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugger-linter">1.1.4. Debugger &amp; Linter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-formatter">1.1.5. Code Formatter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-system-package-manager">1.1.6. Building System &amp; Package Manager</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-comparison">1.1.7. File Comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-browser">1.1.8. Documentation Browser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-generator">1.1.9. Documentation Generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-template">1.1.10. Project Template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">1.1.11. Libraries</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： 乐果一家
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, 乐果一家.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,891 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.5. 什么是编程？ &#8212; 乐果百科</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=2693749b"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=540d3cec"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '10计算机/什么是编程';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="2. 目录" href="../11%E7%BB%8F%E6%B5%8E/index.html" />
+    <link rel="prev" title="1.4. EDA 概览" href="EDA%E6%A6%82%E8%A7%88.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">乐果百科</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">基础知识</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00%E8%AF%AD%E6%96%87/index.html">1. 语文</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00%E8%AF%AD%E6%96%87/%E5%90%8D%E5%AE%B6%E5%90%8D%E8%91%97.html">1.1. 名家名著</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00%E8%AF%AD%E6%96%87/%E9%9F%B3%E9%9F%B5%E5%AD%A6.html">1.2. 音韵学</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01%E6%95%B0%E5%AD%A6/index.html">2. 数学</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%AD%A6%E5%88%86%E7%B1%BB.html">2.1. 数学分类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01%E6%95%B0%E5%AD%A6/%E6%95%B0%E7%9A%84%E5%88%86%E7%B1%BB.html">2.2. 数的分类</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../02%E5%A4%96%E8%AF%AD/index.html">3. 外语</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03%E7%89%A9%E7%90%86/index.html">4. 物理</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03%E7%89%A9%E7%90%86/%E5%9C%B0%E7%90%83%E5%9C%A8%E5%AE%87%E5%AE%99%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE.html">4.1. 地球在宇宙中的位置</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../04%E5%8C%96%E5%AD%A6/index.html">5. 化学</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05%E7%94%9F%E7%89%A9/index.html">6. 生物</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05%E7%94%9F%E7%89%A9/%E7%94%9F%E7%89%A9%E5%88%86%E7%B1%BB.html">6.1. 生物分类</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../06%E6%94%BF%E6%B2%BB/index.html">7. 政治</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07%E5%8E%86%E5%8F%B2/index.html">8. 历史</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07%E5%8E%86%E5%8F%B2/%E4%B8%AD%E5%9B%BD%E6%9C%9D%E4%BB%A3.html">8.1. 中国朝代</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../08%E5%9C%B0%E7%90%86/index.html">9. 地理</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">专业技能</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">1. 计算机</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="CPlusPlus%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90.html">1.1. C++ 学习资源</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CPlusPlus%E5%AE%9E%E8%B7%B5.html">1.2. C++ 实践</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CPlusPlus%E8%AF%AD%E6%B3%95.html">1.3. C++ 语法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EDA%E6%A6%82%E8%A7%88.html">1.4. EDA 概览</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.5. 什么是编程？</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../11%E7%BB%8F%E6%B5%8E/index.html">2. 经济</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12%E9%87%91%E8%9E%8D/index.html">3. 金融</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13%E6%B3%95%E5%BE%8B/index.html">4. 法律</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../14%E5%93%B2%E5%AD%A6/index.html">5. 哲学</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15%E5%8C%BB%E5%AD%A6/index.html">6. 医学</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../16%E9%A9%BE%E9%A9%B6/index.html">7. 驾驶</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../16%E9%A9%BE%E9%A9%B6/%E7%A7%91%E7%9B%AE%E4%B8%80%E6%B3%95%E8%A7%84.html">7.1. 科目一法规</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">人文艺术</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../20%E7%BE%8E%E6%9C%AF/index.html">1. 美术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../21%E9%9F%B3%E4%B9%90/index.html">2. 音乐</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../22%E4%BD%93%E8%82%B2/index.html">3. 体育</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../22%E4%BD%93%E8%82%B2/%E7%BB%B3%E7%BB%93%E7%AE%80%E4%BB%8B.html">3.1. 绳结简介</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/10计算机/什么是编程.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>什么是编程？</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.5.1. 计算机组成</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.5.1.1. 硬件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.5.1.2. 软件</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.5.2. 高级编程语言和汇编语言</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.5.3. 编程语言的实现和编写流程</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.5.4. 编程风格的分类</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.5.5. 选择编程语言</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">1.5.6. 选择编辑器</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">1.5.7. 基本语法</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">1.5.7.1. 数据类型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">1.5.7.2. 控制结构</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">1.5.7.3. 函数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">1.5.7.4. 模块</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">1.5.8. 数据结构 + 算法 = 程序</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">1.5.9. 常用库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">1.5.10. 项目构建工具</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">1.5.11. 版本控制系统</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><span class="section-number">1.5. </span>什么是编程？<a class="headerlink" href="#id1" title="链接到此标题。">#</a></h1>
+<section id="id2">
+<h2><span class="section-number">1.5.1. </span>计算机组成<a class="headerlink" href="#id2" title="链接到此标题。">#</a></h2>
+<p>Computer 一词最早出现于 <a class="reference external" href="https://en.wikipedia.org/wiki/Computer#Etymology">1613</a> 年，指人类「计算员」，使用计算器做算术运算，直到 20 世纪中期，才被用于指「可编程的数字电子计算机」，简称「计算机」，中文里也被翻译成「电脑」。</p>
+<p>一台计算机由硬件(hardware)和软件(software)组成，「硬件」指直接可见可触摸的设备，「软件」指存储、运行在硬件中的不能直接可见可触摸的数据和程序。</p>
+<section id="id3">
+<h3><span class="section-number">1.5.1.1. </span>硬件<a class="headerlink" href="#id3" title="链接到此标题。">#</a></h3>
+<ul class="simple">
+<li><p>计算和控制：最典型的是中央处理器（CPU，Central Processing Unit)，主流的 CPU 家族有 X86、ARM。CPU 主要有如下元件组成：</p>
+<ul>
+<li><p>算术逻辑单元(ALU, Arithmetic Logic Unit)：负责算术和逻辑运算，包含加法器、乘法器、除法器等电路；</p></li>
+<li><p>控制单元(CU, Control Unit)：负责解释指令并控制其它部件执行；</p></li>
+<li><p>寄存器(Registers)：存储 CPU 当前运行用到的指令、数据；</p></li>
+<li><p>缓存(Cache)：在寄存器和内存之间缓存指令和数据；</p></li>
+</ul>
+</li>
+<li><p>存储器</p>
+<ul>
+<li><p>主存储器、内存(memory)：一般指断电即丢失数据的随机访问存储（ RAM，Random Access Memory）；</p></li>
+<li><p>辅存储器、外存(storage)：包括软盘、硬盘、光盘等，断电不会丢失数据的存储设备；</p></li>
+</ul>
+</li>
+<li><p>输入设备(Input Device)：键盘、鼠标、麦克风、扫描仪、网卡等，用于外界输入数据给计算机处理；</p></li>
+<li><p>输出设备(Output Device)：屏幕、扬声器、打印机、指示灯、网卡等，用于计算机输出结果给外界；</p></li>
+<li><p>总线(Bus)：连接各个设备的线缆，传输数据和控制信号；</p></li>
+</ul>
+<p><img alt="https://en.wikipedia.org/wiki/Computer_architecture" src="../_images/Computer_architecture_block_diagram.avif" /></p>
+</section>
+<section id="id4">
+<h3><span class="section-number">1.5.1.2. </span>软件<a class="headerlink" href="#id4" title="链接到此标题。">#</a></h3>
+<ul class="simple">
+<li><p>代码 (Code)：用编程语言写成的文本，人可以阅读和修改；</p></li>
+<li><p>操作系统(OS, Operating System)：狭义指直接管理硬件的操作系统内核(Kernel) ，广义指硬件上的基础软件。主流的 OS 有 Windows、Linux、BSD、macOS、Android、iOS；</p></li>
+<li><p>程序(Program)：也称为应用(application)，可供操作系统运行；</p>
+<ul>
+<li><p>Shell：指操作系统提供的最基本的人机交互界面应用，用于输入命令、查看结果，例如  Linux、BSD 上的  sh 命令行工具，Windows、macOS 上提供的桌面、任务栏、程序列表、文件管理器等图形工具；</p></li>
+<li><p>编辑器(Editor)：一般指文本编辑器(Text Editor)，可以用来编辑代码保存到外存里；</p></li>
+<li><p>编译器(Compiler)、汇编器(Assembler)、链接器(Linker)、加载器(Loader)：</p>
+<ul>
+<li><p>编译器：指将高级编程语言翻译到汇编语言的程序；</p></li>
+<li><p>汇编器：指将汇编语言翻译到机器码的程序；</p></li>
+<li><p>链接器：指将多个机器指令的程序片断合并到一起的程序；</p></li>
+<li><p>加载器：指操作系统用来加载外存上的程序进入内存的程序；</p></li>
+</ul>
+</li>
+<li><p>解释器(Interpreter)：指直接运行代码，不用显式的经过编译、汇编、链接、加载四个阶段的一类程序；</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="id5">
+<h2><span class="section-number">1.5.2. </span>高级编程语言和汇编语言<a class="headerlink" href="#id5" title="链接到此标题。">#</a></h2>
+<p>下面是三种语言定义函数的语法，以及机器码的十六进制表示，Python 和 C 都属于高级语言。</p>
+<p>Python 语言：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span>
+</pre></div>
+</div>
+<p>C 语言：</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>x86-64 Intel 语法的汇编语言，右边的注释是对应的十六进制<a class="reference external" href="https://godbolt.org/z/8ETqhx4Me">机器码</a>：</p>
+<div class="highlight-x86asm notranslate"><div class="highlight"><pre><span></span><span class="nl">square:</span>
+<span class="w">  </span><span class="nf">push</span><span class="w"> </span><span class="no">rbp</span><span class="w">                                   </span><span class="c1">; 55</span>
+<span class="w">  </span><span class="nf">mov</span><span class="w">  </span><span class="no">rbp</span><span class="p">,</span><span class="w"> </span><span class="no">rsp</span><span class="w">                              </span><span class="c1">; 48 89 e5</span>
+<span class="w">  </span><span class="nf">mov</span><span class="w">  </span><span class="no">DWORD</span><span class="w"> </span><span class="no">PTR</span><span class="w"> </span><span class="p">[</span><span class="no">rbp</span><span class="w"> </span><span class="p">-</span><span class="w"> </span><span class="mi">0x4</span><span class="p">],</span><span class="w"> </span><span class="no">edi</span><span class="w">            </span><span class="c1">; 89 7d fc</span>
+<span class="w">  </span><span class="nf">mov</span><span class="w">  </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="no">DWORD</span><span class="w"> </span><span class="no">PTR</span><span class="w"> </span><span class="p">[</span><span class="no">rbp</span><span class="w"> </span><span class="p">-</span><span class="w"> </span><span class="mi">0x4</span><span class="p">]</span><span class="w">            </span><span class="c1">; 8b 45 fc</span>
+<span class="w">  </span><span class="nf">imul</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="no">eax</span><span class="w">                              </span><span class="c1">; 0f af c0</span>
+<span class="w">  </span><span class="nf">pop</span><span class="w">  </span><span class="no">rbp</span><span class="w">                                   </span><span class="c1">; 5d</span>
+<span class="w">  </span><span class="nf">ret</span><span class="w">                                        </span><span class="c1">; c3</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h2><span class="section-number">1.5.3. </span>编程语言的实现和编写流程<a class="headerlink" href="#id6" title="链接到此标题。">#</a></h2>
+<p>编程语言有三种实现方式：</p>
+<ol class="arabic simple">
+<li><p>显式编译后执行，如 C、C++ 语言；</p></li>
+<li><p>直接解释执行，如 Python；</p></li>
+<li><p>编译到中间形式（还没到机器码）再解释执行，如 Java。</p></li>
+</ol>
+<p>不同的编程语言实现，其编写程序的流程也不一样，也分成三种：</p>
+<ol class="arabic simple">
+<li><p>「编辑 → 编译 → 执行」循环，典型如 C/C++ 和 Java。</p></li>
+</ol>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">EXIT_SUCCESS</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>g++<span class="w"> </span>-o<span class="w"> </span>hello<span class="w"> </span>hello.cpp
+$<span class="w"> </span>./hello
+Hello<span class="w"> </span>world!
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello world!&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>javac<span class="w"> </span>HelloWorld.java
+$<span class="w"> </span>java<span class="w"> </span>HelloWorld
+Hello<span class="w"> </span>world!
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>「编辑 → 执行」循环，典型如 Python。Java 也支持这种方式用于简单程序。</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python3<span class="w"> </span>hello.py
+Hello<span class="w"> </span>world!
+
+<span class="c1"># 或者</span>
+$<span class="w"> </span>chmod<span class="w"> </span>a+rx<span class="w"> </span>hello.py
+$<span class="w"> </span>./hello.py
+Hello<span class="w"> </span>world!
+
+<span class="c1"># Java 也可以不用显式编译</span>
+$<span class="w"> </span>java<span class="w"> </span>HelloWorld.java
+Hello<span class="w"> </span>world!
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>「读取 → 执行」循环，也称为 REPL(read-evaluate-print-loop，print 指输出表达式的值)，典型如 Lisp 和 Smalltalk。Python 和 Java 也支持这种方式用于简单测试。</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sbcl
+*<span class="w"> </span><span class="o">(</span>format<span class="w"> </span>t<span class="w"> </span><span class="s2">&quot;Hello world!~%&quot;</span><span class="o">)</span>
+Hello<span class="w"> </span>world!
+NIL
+
+$<span class="w"> </span>python3
+&gt;&gt;&gt;<span class="w"> </span>print<span class="o">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="o">)</span>
+Hello<span class="w"> </span>world!
+
+$<span class="w"> </span>jshell
+jshell&gt;<span class="w"> </span>System.out.println<span class="o">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="o">)</span>
+Hello<span class="w"> </span>world!
+</pre></div>
+</div>
+<p>从 Java 的例子可以看到「编程语言」和「编程语言的实现」是两个不同的概念，前者指语法和语义，后者指编译、执行形式。</p>
+</section>
+<section id="id7">
+<h2><span class="section-number">1.5.4. </span>编程风格的分类<a class="headerlink" href="#id7" title="链接到此标题。">#</a></h2>
+<p>编程风格(style)也常被称为<a class="reference external" href="https://en.wikipedia.org/wiki/Programming_paradigm">编程范式</a>(paradigm)，指如何组织数据和代码。一种编程语言可以以某种风格为主，同时支持多种风格，常见的编程风格如下：</p>
+<ul class="simple">
+<li><p>命令式(Imperative)，也经常狭义指代「过程式」，明确指定计算机一步步「怎么做(how)」；</p>
+<ul>
+<li><p>过程式(procedural)，如 Fortran、Basic、Pascal、C；</p></li>
+<li><p>面向对象式(object-oriented)</p>
+<ul>
+<li><p>基于类(class-based)，如 C++、Java；</p></li>
+<li><p>基于原型(prototype-based)，如 JavaScript、<a class="reference external" href="https://iolanguage.org">Io</a>；</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>声明式(declarative)，只给出「要做什么(what)」，让计算机（实际是设计好的算法）给出「怎么做」的具体步骤；</p>
+<ul>
+<li><p>函数式(functional)，如 Haskell、OCaml；</p></li>
+<li><p>逻辑式(logical)，如 Prolog；</p></li>
+<li><p>响应式(reactive)，如 Verilog，Elm；</p></li>
+</ul>
+</li>
+</ul>
+<p>截止 2024 年，主流使用的编程语言以过程式、面向对象式为主。</p>
+</section>
+<section id="id8">
+<h2><span class="section-number">1.5.5. </span>选择编程语言<a class="headerlink" href="#id8" title="链接到此标题。">#</a></h2>
+<p>自从计算机诞生以来，人们发明了<a class="reference external" href="https://rosettacode.org/wiki/Hello_world/Text">上千种</a>编程语言，如下是一些有名的语言：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://rosettacode.org/wiki/Hello_world/Text#NASM">汇编语言</a>(Assembly)：最古老的语言，已经很少人直接写汇编代码了；</p></li>
+<li><p><a class="reference external" href="https://rosettacode.org/wiki/Hello_world/Text#Fortran">Fortran</a>： 1957 年诞生，常用于科学计算；</p></li>
+<li><p><a class="reference external" href="https://rosettacode.org/wiki/Hello_world/Text#Common_Lisp">Lisp</a>：1960 年诞生，早年常用于人工智能；</p></li>
+<li><p><a class="reference external" href="https://rosettacode.org/wiki/Hello_world/Text#BASIC">Basic</a>：1964 年诞生，常用于<a class="reference external" href="https://smallbasic-publicwebsite.azurewebsites.net">编程教育</a>；</p></li>
+<li><p><a class="reference external" href="https://rosettacode.org/wiki/Hello_world/Text#Pascal">Pascal</a>：1970 年诞生，1980 年代最火的编程语言；</p></li>
+<li><p><a class="reference external" href="https://rosettacode.org/wiki/Hello_world/Text#Smalltalk">Smalltalk</a>：1972 年诞生，常用于<a class="reference external" href="https://cuis.st">编程教育</a>；</p></li>
+<li><p><a class="reference external" href="https://rosettacode.org/wiki/Hello_world/Text#C11">C</a>：1972 年诞生，常用于写操作系统、编译器、数据库等基础软件；</p></li>
+<li><p><a class="reference external" href="https://rosettacode.org/wiki/Hello_world/Text#C++">C++</a>：1985 年诞生，扩充了 C 语言；</p></li>
+<li><p><a class="reference external" href="https://rosettacode.org/wiki/Hello_world/Text#Python">Python</a>：1991 年诞生，常用于科学计算、人工智能；</p></li>
+<li><p><a class="reference external" href="https://rosettacode.org/wiki/Hello_world/Text#Java">Java</a>：1995 年诞生，常用于服务器端的服务开发；</p></li>
+<li><p><a class="reference external" href="https://rosettacode.org/wiki/Hello_world/Text#JavaScript">JavaScript</a>：1995 年诞生，常用于浏览器端的动态网页开发；</p></li>
+</ul>
+<p>各种编程竞赛中常用 C++、Java、Python 三种语言，C++ 的性能最快但最难学，Python 的性能最慢但最易学。</p>
+</section>
+<section id="id9">
+<h2><span class="section-number">1.5.6. </span>选择编辑器<a class="headerlink" href="#id9" title="链接到此标题。">#</a></h2>
+<p>编辑器也<a class="reference external" href="http://texteditors.org/cgi-bin/wiki.pl?EditorIndex">非常多</a>，部分常见的如下：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.vim.org">VIM</a>（<a class="reference external" href="https://neovim.io">Neovim</a>)、<a class="reference external" href="https://www.gnu.org/software/emacs/">GNU Emacs</a>：Linux 上最普遍使用的文本编辑器，对初学者比较难；</p>
+<ul>
+<li><p>Emacs 配置：<a class="reference external" href="https://github.com/doomemacs/">Doom Emacs</a>、<a class="reference external" href="https://www.spacemacs.org">Spacemacs</a>、<a class="reference external" href="https://seagle0128.github.io/.emacs.d/">Centaur Emacs</a>、<a class="reference external" href="https://github.com/purcell/emacs.d">purcell/emacs.d</a>、<a class="reference external" href="https://github.com/bbatsov/prelude">bbatsov/prelude</a>；</p></li>
+<li><p>VIM/Neovim 配置：<a class="reference external" href="https://astronvim.com">AstroNvim</a>、<a class="reference external" href="https://nvchad.com">NvChad</a>、<a class="reference external" href="http://www.lazyvim.org">LazyVim</a>；</p></li>
+<li><p>Neovim GUI: <a class="reference external" href="https://neovide.dev">Neovide</a>、<a class="reference external" href="https://github.com/akiyosi/goneovim">goneovim</a>、<a class="reference external" href="https://github.com/equalsraf/neovim-qt">Neovim Qt</a>；</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://helix-editor.com">Helix</a>、<a class="reference external" href="https://github.com/mawww/kakoune">Kakoune</a>、<a class="reference external" href="https://github.com/martanne/vis">Vis</a>：改进 VI 风格的代码编辑器；</p></li>
+<li><p><a class="reference external" href="https://lem-project.github.io">Lem</a>：使用 Common Lisp 编写的 Emacs 仿品；</p></li>
+<li><p><a class="reference external" href="https://micro-editor.github.io">micro</a>：使用 Go 编写的代码编辑器；</p></li>
+<li><p><a class="reference external" href="https://getfresh.dev/">Fresh</a>：使用 Rust 编写的代码编辑器；</p></li>
+<li><p><a class="reference external" href="https://code.visualstudio.com">Visual Studio Code</a>: 最流行的轻量级集成开发环境；</p></li>
+<li><p><a class="reference external" href="https://zed.dev">Zed</a>：新兴的集成 AI 的代码编辑器；</p></li>
+<li><p><a class="reference external" href="https://www.sublimetext.com">Sublime Text</a>：轻量级的代码编辑器；</p></li>
+<li><p><a class="reference external" href="https://kate-editor.org">Kate</a>：Linux KDE 桌面环境曾经的默认编辑器(已换成更简单的 <a class="reference external" href="https://apps.kde.org/kwrite/">KWrite</a>)；</p></li>
+<li><p><a class="reference external" href="https://gedit-text-editor.org">Gedit</a>：Linux GNOME 桌面环境曾经的默认编辑器（已换成更简单的 <a class="reference external" href="https://apps.gnome.org/TextEditor/">GNOME Text Editor</a>)；</p></li>
+<li><p><a class="reference external" href="https://cudatext.github.io">CudaText</a>：使用 Free Pascal 编写的代码编辑器；</p></li>
+<li><p><a class="reference external" href="https://gitee.com/cxasm/notepad--">Notepad–</a>： 国产跨平台代码编辑器；</p></li>
+<li><p><a class="reference external" href="https://www.geany.org">Geany</a>、<a class="reference external" href="https://codelite.org">CodeLite</a>、<a class="reference external" href="https://www.codeblocks.org">CodeBlocks</a>、<a class="reference external" href="https://github.com/royqh1979/RedPanda-CPP">Redpanda C++</a>： 轻量级的集成开发环境；</p></li>
+</ul>
+<p>VIM 和 Emacs 功能丰富但比较难，Visual Studio Code、Zed、Kate 功能丰富且易用。</p>
+</section>
+<section id="id10">
+<h2><span class="section-number">1.5.7. </span>基本语法<a class="headerlink" href="#id10" title="链接到此标题。">#</a></h2>
+<p>编程语言很多，语法各异，但都有一些类似的基本语法。</p>
+<section id="id11">
+<h3><span class="section-number">1.5.7.1. </span>数据类型<a class="headerlink" href="#id11" title="链接到此标题。">#</a></h3>
+<p>从 CPU 的机器指令视角看，数据类型只有两大类：</p>
+<ul class="simple">
+<li><p>标量(scalar)</p>
+<ul>
+<li><p>整数</p>
+<ul>
+<li><p>byte(字节)：存储单位，一个字节包含 8 比特(bit)，分有符号字节，范围 0 ~ 255，和无符号字节，范围 -128 ~ 127；</p></li>
+<li><p>word(字)：计算单位，表示 CPU 一条整数指令能计算的数据长度，在 32 位 CPU 中是 4 字节（也就是 32 比特)，在 64 位 CPU 中是 8 字节（也就是 64 比特）；</p></li>
+</ul>
+</li>
+<li><p>浮点数</p>
+<ul>
+<li><p>float(单精度浮点数)：4 字节；</p></li>
+<li><p>double(双精度浮点数)：8 字节；</p></li>
+<li><p>long double(扩展精度浮点数)：12 或 16 字节；</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>向量(vector)：也就是数组(array)，在内存中连续存储的多个标量；</p></li>
+</ul>
+<p>从编程语言的语法角度看，使用变量和常量指代数据，数据类型表现的更多样，以 C/C++ 为例：</p>
+<ul class="simple">
+<li><p>整数：char, short, int, long, long long, int8_t, int16_t, int32_t, int64_t 等，以及对应的 无符号(unsigned)版本；</p>
+<ul>
+<li><p>char 既表示字节，也表示 ASCII 字符，区分只在输入、输出上；</p></li>
+<li><p>布尔类型 (_Bool, bool) 也是整数，但只有两个取值 true 和 false；</p></li>
+<li><p>指针类型，本质也是个整数，用来表示内存地址；</p></li>
+</ul>
+</li>
+<li><p>浮点数：float, double, long double，符合浮点算术标准 <a class="reference external" href="https://en.wikipedia.org/wiki/IEEE_754">IEEE 754</a>；</p></li>
+</ul>
+<p>由于长度限制，整数能表达的范围是有限的，N 比特能表达 2<sup>N</sup> 个整数，所以无符号整数范围是 0 ~ 2<sup>N</sup> - 1，有符号整数范围是 -2<sup>N</sup> ~ 2<sup>N</sup> - 1。因为有长度限制，运算时会发生溢出回绕，例如 signed char 的 <code class="docutils literal notranslate"><span class="pre">127</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">-128</span></code>， <code class="docutils literal notranslate"><span class="pre">-128</span> <span class="pre">-</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">127</span></code>，unsigned char 的 <code class="docutils literal notranslate"><span class="pre">255</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">0</span></code>，<code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">-</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">255</span></code>。有的编程语言如 Python 的默认整数类型是利用多个机器整数拼起来的，可以表达任意小和任意大的整数，不会发生溢出回绕。</p>
+<p>类似的，由于长度限制，浮点数能表达的范围和精度是有限的，特别是精度问题，浮点数不应该用 “==” 判断相等，例如 <code class="docutils literal notranslate"><span class="pre">0.1</span> <span class="pre">+</span> <span class="pre">0.2</span> <span class="pre">==</span> <span class="pre">0.3</span></code> 的结果是 <code class="docutils literal notranslate"><span class="pre">false</span></code>，并不相等。有的语言支持分数类型，可以用来做精确的四则运算，结果依然为分数。</p>
+<p>除了整数和浮点数两种基本类型，大多编程语言还有以下复合类型：</p>
+<ul class="simple">
+<li><p>结构体(struct) 、类(class)、元组(tuple)</p></li>
+<li><p>枚举(enum)</p></li>
+<li><p>联合(union)</p></li>
+<li><p>字符串(string)</p></li>
+<li><p>向量(vector)、数组(array)</p></li>
+<li><p>链表(list)</p></li>
+<li><p>映射(map)、词典(dictionary)、集合(set)</p></li>
+</ul>
+</section>
+<section id="id12">
+<h3><span class="section-number">1.5.7.2. </span>控制结构<a class="headerlink" href="#id12" title="链接到此标题。">#</a></h3>
+<p>代码语句的执行次序分成顺序、分支、循环、递归、异常五种，顺序就是一句句往下执行，递归是函数调用自身，分支、循环、异常有自己的语法，以 C++ 为例：</p>
+<ul class="simple">
+<li><p>分支(branch)</p>
+<ul>
+<li><p>if  … else</p></li>
+<li><p>continue, break</p></li>
+<li><p>goto</p></li>
+</ul>
+</li>
+<li><p>循环(loop)</p>
+<ul>
+<li><p>while,  do … while</p></li>
+<li><p>for</p></li>
+</ul>
+</li>
+<li><p>异常(exception)</p>
+<ul>
+<li><p>throw, try … catch … finally</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id13">
+<h3><span class="section-number">1.5.7.3. </span>函数<a class="headerlink" href="#id13" title="链接到此标题。">#</a></h3>
+<p>常用的代码语句可以提取到函数(function)里，方便在代码的其它地方按名字调用，不再重复写，在上面已经展示了 <code class="docutils literal notranslate"><span class="pre">square</span></code> 函数。函数在不同语言里有不同称呼，如在 Perl 中称为 subroutine(子例程)，在 Pascal 中按有无返回值分为 function 和 procedure( 过程)。</p>
+</section>
+<section id="id14">
+<h3><span class="section-number">1.5.7.4. </span>模块<a class="headerlink" href="#id14" title="链接到此标题。">#</a></h3>
+<p>除了函数是组织代码的一种方式，另一种更高层的方式是把常用的函数和复合数据类型提取到模块(module) 供多个程序复用，在有的语言里用包(package)指代模块，进一步的，多个模块可以放在一起成为库(library)，方便分发用途相关的多个模块。</p>
+</section>
+</section>
+<section id="id15">
+<h2><span class="section-number">1.5.8. </span>数据结构 + 算法 = 程序<a class="headerlink" href="#id15" title="链接到此标题。">#</a></h2>
+<p>《Data Structures + Algorithms = Programs》是 Pascal 语言之父、著名计算机科学家尼古拉斯·沃斯（<em>Niklaus Wirth</em>，1934年2月15日—2024年1月1日）编写的一本名著，揭示了编程的要点：设计一个程序，就是对输入的数据，考虑如何组织数据以及如何操作数据，最终得到期望的输出。</p>
+<p>常用的数据结构：</p>
+<ol class="arabic simple">
+<li><p>array, vector: 一般内置在编程语言里；</p></li>
+<li><p>string: 一般内置在编程语言里；</p></li>
+<li><p>单向链表、双向链表：比 array 和 vector 能更高效的在开头和中间插入和删除元素；</p></li>
+<li><p>stack, queue, dequeue, heap</p></li>
+<li><p>tree, hash table</p></li>
+<li><p>graph</p></li>
+<li><p>matrix</p></li>
+</ol>
+<p>常用的算法：</p>
+<ol class="arabic simple">
+<li><p>查找，包括字符串查找和数组、树的元素查找和插入；</p></li>
+<li><p>数组的排序；</p></li>
+<li><p>集合运算；</p></li>
+<li><p>图的拓扑排序、最短路径；</p></li>
+</ol>
+</section>
+<section id="id16">
+<h2><span class="section-number">1.5.9. </span>常用库<a class="headerlink" href="#id16" title="链接到此标题。">#</a></h2>
+<p>日常编程中，所有语言都有类似的常用库：</p>
+<ol class="arabic simple">
+<li><p>文件读写，包括记录日志；</p></li>
+<li><p>网络读写，最常用的是发送 HTTP 请求；</p></li>
+<li><p>JSON 数据格式解析；</p></li>
+<li><p>关系数据库的读写；</p></li>
+<li><p>图形用户界面(GUI)；</p></li>
+<li><p>命令行选项解析；</p></li>
+<li><p>配置文件读写；</p></li>
+</ol>
+</section>
+<section id="id17">
+<h2><span class="section-number">1.5.10. </span>项目构建工具<a class="headerlink" href="#id17" title="链接到此标题。">#</a></h2>
+<p>一个项目(project)由多个源文件组成，当文件很多而且要考虑在多种操作系统下编译时，手动写命令会很麻烦，因此需要专门的构建工具来：</p>
+<ul class="simple">
+<li><p>检测所需的库、编译器等；</p></li>
+<li><p>编译、链接、测试；</p></li>
+<li><p>打包、安装；</p></li>
+</ul>
+<p>以 C/C++ 为例，有最基本的 <a class="reference external" href="https://www.gnu.org/software/make/">make</a> ，更高级的 <a class="reference external" href="https://www.gnu.org/software/automake/manual/html_node/index.html">Autotools</a>、<a class="reference external" href="https://cmake.org">CMake</a>、<a class="reference external" href="https://www.boost.org/build/">Boost Build</a>，更新潮的 <a class="reference external" href="https://xmake.io/">xmake</a>、<a class="reference external" href="https://mesonbuild.com">Meson</a>，注重封闭(hermetic)构建的 <a class="reference external" href="https://bazel.build/">Bazel</a>、<a class="reference external" href="https://buck2.build">Buck 2</a>、<a class="reference external" href="https://please.build/">Please</a>、<a class="reference external" href="https://www.pantsbuild.org">Pants</a>。</p>
+</section>
+<section id="id18">
+<h2><span class="section-number">1.5.11. </span>版本控制系统<a class="headerlink" href="#id18" title="链接到此标题。">#</a></h2>
+<p>开发过程中需要记录文件的版本变更，以方便回溯历史，下面是常见的版本控制系统（Version Control System)：</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://subversion.apache.org/">Subversion</a></p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://tortoisesvn.net/">TortoiseSVN</a></p></li>
+</ol>
+</li>
+<li><p><a class="reference external" href="https://git-scm.com/">Git</a></p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://github.com/sourcegit-scm/sourcegit">SourceGit</a></p></li>
+<li><p><a class="reference external" href="https://github.com/gitui-org/gitui">gitui</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jesseduffield/lazygit">lazygit</a></p></li>
+<li><p><a class="reference external" href="https://jonas.github.io/tig/">tig</a></p></li>
+<li><p><a class="reference external" href="https://magit.vc/">Magit</a></p></li>
+<li><p><a class="reference external" href="https://github.com/altsem/gitu">gitu</a></p></li>
+</ol>
+</li>
+<li><p><a class="reference external" href="https://www.mercurial-scm.org/">Mercurial</a></p></li>
+<li><p><a class="reference external" href="https://www.fossil-scm.org/">Fossil</a></p></li>
+<li><p><a class="reference external" href="https://www.perforce.com/">Perforce</a></p></li>
+<li><p><a class="reference external" href="https://www.plasticscm.com/">PlasticSCM</a></p></li>
+<li><p><a class="reference external" href="https://jj-vcs.github.io/jj/latest/">Jujutsu</a></p></li>
+<li><p><a class="reference external" href="https://sapling-scm.com/">Sapling</a></p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="EDA%E6%A6%82%E8%A7%88.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title"><span class="section-number">1.4. </span>EDA 概览</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../11%E7%BB%8F%E6%B5%8E/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>目录</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.5.1. 计算机组成</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.5.1.1. 硬件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.5.1.2. 软件</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.5.2. 高级编程语言和汇编语言</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.5.3. 编程语言的实现和编写流程</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.5.4. 编程风格的分类</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.5.5. 选择编程语言</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">1.5.6. 选择编辑器</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">1.5.7. 基本语法</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">1.5.7.1. 数据类型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">1.5.7.2. 控制结构</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">1.5.7.3. 函数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">1.5.7.4. 模块</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">1.5.8. 数据结构 + 算法 = 程序</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">1.5.9. 常用库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">1.5.10. 项目构建工具</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">1.5.11. 版本控制系统</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： 乐果一家
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, 乐果一家.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

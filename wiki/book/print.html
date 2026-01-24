@@ -1,0 +1,2121 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>乐果百科</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="欢迎来到「乐果百科」，乐果一家的知识笔记！">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">乐果百科</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="乐果百科"><a class="header" href="#乐果百科">乐果百科</a></h1>
+<p>欢迎来到「乐果百科」，乐果一家的知识笔记！</p>
+<h2 id="基础知识"><a class="header" href="#基础知识">基础知识</a></h2>
+<ol>
+<li><a href="00%E8%AF%AD%E6%96%87/index.html">语文</a></li>
+<li><a href="01%E6%95%B0%E5%AD%A6/index.html">数学</a></li>
+<li><a href="02%E5%A4%96%E8%AF%AD/index.html">外语</a></li>
+<li><a href="03%E7%89%A9%E7%90%86/index.html">物理</a></li>
+<li><a href="04%E5%8C%96%E5%AD%A6/index.html">化学</a></li>
+<li><a href="05%E7%94%9F%E7%89%A9/index.html">生物</a></li>
+<li><a href="06%E6%94%BF%E6%B2%BB/index.html">政治</a></li>
+<li><a href="07%E5%8E%86%E5%8F%B2/index.html">历史</a></li>
+<li><a href="08%E5%9C%B0%E7%90%86/index.html">地理</a></li>
+</ol>
+<h2 id="专业技能"><a class="header" href="#专业技能">专业技能</a></h2>
+<ol>
+<li><a href="10%E8%AE%A1%E7%AE%97%E6%9C%BA/index.html">计算机</a></li>
+<li><a href="11%E7%BB%8F%E6%B5%8E/index.html">经济</a></li>
+<li><a href="12%E9%87%91%E8%9E%8D/index.html">金融</a></li>
+<li><a href="13%E6%B3%95%E5%BE%8B/index.html">法律</a></li>
+<li><a href="14%E5%93%B2%E5%AD%A6/index.html">哲学</a></li>
+<li><a href="15%E5%8C%BB%E5%AD%A6/index.html">医学</a></li>
+<li><a href="16%E9%A9%BE%E9%A9%B6/index.html">驾驶</a></li>
+</ol>
+<h2 id="人文艺术"><a class="header" href="#人文艺术">人文艺术</a></h2>
+<ol>
+<li><a href="20%E7%BE%8E%E6%9C%AF/index.html">美术</a></li>
+<li><a href="21%E9%9F%B3%E4%B9%90/index.html">音乐</a></li>
+<li><a href="22%E4%BD%93%E8%82%B2/index.html">体育</a></li>
+</ol>
+<div style="display: none">
+<pre><code class="language-{toctree}">:hidden:
+:numbered:
+:caption: 基础知识
+
+语文 &lt;00语文/index.md&gt;
+数学 &lt;01数学/index.md&gt;
+外语 &lt;02外语/index.md&gt;
+物理 &lt;03物理/index.md&gt;
+化学 &lt;04化学/index.md&gt;
+生物 &lt;05生物/index.md&gt;
+政治 &lt;06政治/index.md&gt;
+历史 &lt;07历史/index.md&gt;
+地理 &lt;08地理/index.md&gt;
+</code></pre>
+<pre><code class="language-{toctree}">:hidden:
+:numbered:
+:caption: 专业技能
+
+计算机 &lt;10计算机/index.md&gt;
+经济 &lt;11经济/index.md&gt;
+金融 &lt;12金融/index.md&gt;
+法律 &lt;13法律/index.md&gt;
+哲学 &lt;14哲学/index.md&gt;
+医学 &lt;15医学/index.md&gt;
+驾驶 &lt;16驾驶/index.md&gt;
+</code></pre>
+<pre><code class="language-{toctree}">:hidden:
+:numbered:
+:caption: 人文艺术
+
+美术 &lt;20美术/index.md&gt;
+音乐 &lt;21音乐/index.md&gt;
+体育 &lt;22体育/index.md&gt;
+</code></pre>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录"><a class="header" href="#目录">目录</a></h1>
+<ol>
+<li><a href="00%E8%AF%AD%E6%96%87/%E5%90%8D%E5%AE%B6%E5%90%8D%E8%91%97.html">名家名著</a></li>
+<li><a href="00%E8%AF%AD%E6%96%87/%E9%9F%B3%E9%9F%B5%E5%AD%A6.html">音韵学</a></li>
+</ol>
+<div style="display: none">
+<pre><code class="language-{toctree}">:hidden:
+
+名家名著.md
+音韵学.md
+</code></pre>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="名家名著"><a class="header" href="#名家名著">名家名著</a></h1>
+<p>始于汉代，成熟于唐代，沿用到清朝的书籍分类：</p>
+<ul>
+<li><strong>经</strong>：儒家经典，包括《易》（《周易》）、《书》（《尚书》）、《诗》（《诗经》）、《礼》（如《周礼》、《仪礼》、《礼记》）、《春秋》（《春秋左传》、《春秋公羊传》、《春秋穀梁传》）以及《论语》、《孟子》等；</li>
+<li><strong>史</strong>：历史文献，包括司马迁的《史记》、班固的《汉书》、范晔的《后汉书》、陈寿的《三国志》等正史，还有《资治通鉴》等编年体通史；</li>
+<li><strong>子</strong>：除儒家经典之外的各种学术著作，如道家的老子《道德经》、庄子《庄子》，墨家的《墨子》，法家的《韩非子》，兵家的《孙子兵法》，医家的《黄帝内经》等</li>
+<li><strong>集</strong>：文学作品的汇编，包括诗歌、散文、辞赋、小说等，如屈原的《楚辞》，陶渊明的《陶渊明集》，李白的《李太白全集》，杜甫的《杜工部集》，以及《全唐诗》、《全宋词》等大型总集；</li>
+</ul>
+<h2 id="周西周东周春秋战国"><a class="header" href="#周西周东周春秋战国">周：西周、东周、春秋、战国</a></h2>
+<p>四书：</p>
+<ol>
+<li>《论语》，春秋，孔子及其弟子；</li>
+<li>《孟子》，战国，孟子及其弟子；</li>
+<li>《大学》，战国，曾子，《礼记》中的一篇，在宋代独立成书；</li>
+<li>《中庸》，战国，相传孔子的孙子子思所作，在宋代独立成书；</li>
+</ol>
+<p>五经：</p>
+<ol>
+<li>《诗经》：西周至春秋中期，周代官方收集整理的民间歌谣和贵族诗歌；</li>
+<li>《尚书》：或称《书经》，上古至春秋，从尧舜到秦穆公时期的帝王诏令、训诫和史事；</li>
+<li>《礼记》：西汉，秦汉以前的各种礼仪制度和儒家论述；</li>
+<li>《周易》：或称《易经》，上古至春秋，相传由伏羲画八卦，周文王演为六十四卦，并作卦辞，周公旦作爻辞；</li>
+<li>《春秋》：春秋，据说是孔子根据鲁国史官所记的历史资料编写而成，是一部简明扼要的编年体史书；</li>
+</ol>
+<h2 id="秦"><a class="header" href="#秦">秦</a></h2>
+<ol>
+<li>《谏逐客书》，李斯</li>
+<li>《吕氏春秋》，又称《吕览》，吕不韦</li>
+</ol>
+<h2 id="汉西汉新东汉"><a class="header" href="#汉西汉新东汉">汉：西汉、新、东汉</a></h2>
+<ol>
+<li>《史记》，司马迁</li>
+<li>《汉书》，班固</li>
+<li>《战国策》，刘向</li>
+<li>《二京赋》，张衡</li>
+<li>《子虚赋》、《上林赋》，司马相如</li>
+<li>《孔雀东南飞》</li>
+<li>《古诗十九首》</li>
+<li>《神农百草经》</li>
+<li>《九章算术》</li>
+</ol>
+<h2 id="三国魏蜀汉吴"><a class="header" href="#三国魏蜀汉吴">三国：魏、蜀汉、吴</a></h2>
+<ol>
+<li>《短歌行》，《龟虽寿》，《观沧海》，曹操</li>
+<li>《燕歌行二首》，曹丕</li>
+<li>《白马篇》、《美女篇》、《名都篇》、《赠白马王彪》、《洛神赋》，曹植</li>
+<li>《隆中对》、《出师表》，诸葛亮</li>
+</ol>
+<h2 id="晋西晋东晋五胡十六国"><a class="header" href="#晋西晋东晋五胡十六国">晋：西晋、东晋、五胡十六国</a></h2>
+<ol>
+<li>《三国志》，陈寿，西晋</li>
+<li>《三都赋》，左思，西晋，引发「洛阳纸贵」</li>
+<li>《归园田居》、《桃花源记》，陶渊明，东晋</li>
+<li>《搜神记》，干宝，东晋</li>
+<li>《兰亭集序》，王羲之，东晋</li>
+</ol>
+<h2 id="南北朝"><a class="header" href="#南北朝">南北朝</a></h2>
+<ol>
+<li>《文心雕龙》，刘勰，南朝</li>
+<li>《后汉书》，范晔，南朝</li>
+<li>《颜氏家训》，颜之推，南朝</li>
+<li>《世说新语》，刘义庆，南朝</li>
+<li>《木兰诗》</li>
+</ol>
+<h2 id="隋唐"><a class="header" href="#隋唐">隋、唐</a></h2>
+<ol>
+<li>《将进酒》、《静夜思》、《庐山谣寄卢侍御虚舟》，李白</li>
+<li>《春望》、《登高》、《茅屋为秋风所破歌》，杜甫</li>
+<li>《琵琶行》、《长恨歌》、《赋得古原草送别》，白居易</li>
+<li>《山居秋暝》、《鸟鸣涧》，《使至塞上》，王维</li>
+<li>《师说》、《杂说》，韩愈</li>
+<li>《捕蛇者说》、《黔之驴》、《小石潭记》，柳宗元</li>
+<li>《陋室铭》、《竹枝词》、《杨柳枝词》、《乌衣巷》，刘禹锡</li>
+<li>《春江花月夜》，张若虚</li>
+<li>《白雪歌送武判官归京》，岑参</li>
+<li>《锦瑟》、《夜雨寄北》、《无题》，李商隐</li>
+<li>《泊秦淮》、《赤壁》、《江南春》、《阿房宫赋》，杜牧</li>
+<li>《咏柳》、《回乡偶书》，贺知章</li>
+<li>《春晓》，孟浩然</li>
+<li>《登鹳雀楼》，王之涣</li>
+<li>《从军行》、《出塞》、《芙蓉楼送辛渐二首》，王昌龄</li>
+<li>《别董大二首》，高适</li>
+<li>《雁门太守行》、《马诗二十三首》，李贺</li>
+<li>《秦妇吟》，韦庄</li>
+</ol>
+<h2 id="五代十国"><a class="header" href="#五代十国">五代十国</a></h2>
+<ol>
+<li>《虞美人・春花秋月何时了》，李煜</li>
+<li>《花间集》，赵崇祚</li>
+</ol>
+<h2 id="宋"><a class="header" href="#宋">宋</a></h2>
+<ol>
+<li>《赤壁赋》、《念奴娇・赤壁怀古》、《水调歌头・明月几时有》、《江城子・乙卯正月二十日夜记梦》，苏轼</li>
+<li>《醉翁亭记》，《新五代史》，欧阳修</li>
+<li>《岳阳楼记》，范仲淹</li>
+<li>《爱莲说》，周敦颐</li>
+<li>《声声慢・寻寻觅觅》、《如梦令・常记溪亭日暮》，李清照</li>
+<li>《卜算子・咏梅》、《示儿》，陆游</li>
+<li>《青玉案・元夕》、《破阵子·为陈同甫赋壮词以寄之》、《永遇乐·京口北固亭怀古》，辛弃疾</li>
+<li>《雨霖铃・寒蝉凄切》，柳永</li>
+<li>《游褒禅山记》、《桂枝香・金陵怀古》，王安石</li>
+<li>《梦溪笔谈》，沈括</li>
+<li>《四书章句集注》，朱熹</li>
+<li>《资治通鉴》，司马光</li>
+</ol>
+<h2 id="元"><a class="header" href="#元">元</a></h2>
+<ol>
+<li>《窦娥冤》、《拜月亭》，关汉卿</li>
+<li>《西厢记》，王实甫</li>
+<li>《倩女离魂》，郑光祖</li>
+<li>《裴少俊墙头马上》，白朴</li>
+<li>《天净沙・秋思》，马致远</li>
+<li>《中山集》，元好问</li>
+<li>赵孟頫</li>
+</ol>
+<h2 id="明"><a class="header" href="#明">明</a></h2>
+<ol>
+<li>《三国演义》，罗贯中</li>
+<li>《水浒传》，施耐庵</li>
+<li>《西游记》，吴承恩</li>
+<li>《金瓶梅》，兰陵笑笑生</li>
+<li>《喻世明言》、《警世通言》、《醒世恒言》，冯梦龙</li>
+<li>《初刻拍案惊奇》、《二刻拍案惊奇》，凌濛初</li>
+<li>《牡丹亭》，汤显祖</li>
+<li>《封神演义》，许仲琳</li>
+<li>《本草纲目》，李时珍</li>
+<li>《天工开物》，宋应星</li>
+<li>《徐霞客游记》，徐霞客</li>
+<li>《传习录》，王阳明</li>
+<li>《张太岳集》，张居正</li>
+<li>宋濂</li>
+</ol>
+<h2 id="清"><a class="header" href="#清">清</a></h2>
+<ol>
+<li>《红楼梦》，曹雪芹、高鹗</li>
+<li>《儒林外史》，吴敬梓</li>
+<li>《聊斋志异》，蒲松龄</li>
+<li>《三侠五义》，石玉昆</li>
+<li>《浮生六记》，沈复</li>
+<li>《桃花扇》，孔尚任</li>
+<li>《长生殿》，洪升</li>
+<li>《阅微草堂笔记》，纪昀（纪晓岚）</li>
+<li>《官场现形记》，李宝嘉</li>
+<li>《二十年目睹之怪现状》，吴沃尧（吴趼人）</li>
+<li>《老残游记》，刘鹗</li>
+<li>《孽海花》，曾朴</li>
+<li>《镜花缘》，李汝珍</li>
+<li>《随园诗话》，袁枚</li>
+<li>《定庵文集》，龚自珍</li>
+<li>《大同书》，康有为</li>
+<li>《狱中题壁》，谭嗣同</li>
+<li>梁启超</li>
+</ol>
+<h2 id="中华民国"><a class="header" href="#中华民国">中华民国</a></h2>
+<ol>
+<li>鲁迅</li>
+<li>胡适</li>
+<li>沈从文</li>
+<li>老舍</li>
+<li>林语堂</li>
+<li>茅盾</li>
+<li>巴金</li>
+<li>郭沫若</li>
+<li>钱锺书</li>
+<li>张爱玲</li>
+<li>徐志摩</li>
+<li>曹禺</li>
+<li>郁达夫</li>
+</ol>
+<hr />
+<h2 id="参考"><a class="header" href="#参考">参考</a></h2>
+<ol>
+<li>识古典籍： <a href="https://www.shidianguji.com">https://www.shidianguji.com</a></li>
+<li>中国哲学书电子化计划： <a href="https://ctext.org/zhs">https://ctext.org/zhs</a></li>
+<li>古书网导航： <a href="http://d.gushu.net.cn">http://d.gushu.net.cn</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="音韵学"><a class="header" href="#音韵学">音韵学</a></h1>
+<h2 id="韵书"><a class="header" href="#韵书">韵书</a></h2>
+<p>韵书是中国古代按调和韵编排的字典，记录了每个字的意义之外，还用反切记录了它的读音。</p>
+<ol>
+<li>《声类》，李登， 魏，已失传；</li>
+<li>《韵集》，吕静，晋，已失传；</li>
+<li>《切韵》，陆法言，公元 601，隋，分 193 韵部；</li>
+<li>《唐韵》，孙愐，公元 732，唐，分 195 韵部，修订《切韵》，已失传；</li>
+<li>《广韵》，陈彭年、邱雍，公元 1007-1008，北宋，分 206 韵部，全称《大宋重修广韵》，修订《唐韵》；</li>
+<li>《集韵》，丁度，公元 1037，北宋，分 206 韵部，修订《广韵》；</li>
+</ol>
+<p>《切韵》到了 1947 年才被发现全本，而《集韵》传世的抄本错误很多，也受宋代语音变化影响，因此音韵学研究以《广韵》为主。</p>
+<p>Unihan 数据中 <code>Unihan_DictionaryIndices.txt</code> 的 <code>kSBGY</code> 属性记录了汉字在《宋本广韵》的页码位置，<code>Unihan_Readings.txt</code> 中的 <code>kFanqie</code> 属性记录了汉字的反切读音。</p>
+<h2 id="平水韵"><a class="header" href="#平水韵">平水韵</a></h2>
+<p>简化自《广韵》，用于诗歌和散文的押韵，分 106 韵部，编纂于金朝。</p>
+<ol>
+<li>《新刊韵略》，王文郁，公元 1223，金，分 106 韵部，已失传；</li>
+<li>《壬子新刊礼部韵略》，刘渊，原籍江北平水（今山西临汾），公元 1252，南宋，分 107 韵部，基本跟《新刊韵略》一样，已失传；</li>
+<li>《韵府群玉》，阴时夫，元，分 106 韵部；</li>
+<li>《佩文韵府》、《佩文诗韵》、《诗韵合璧》，清；</li>
+</ol>
+<h2 id="其它"><a class="header" href="#其它">其它</a></h2>
+<ol>
+<li>《中原音韵》，周德清，元，分 19 韵部，适合戏曲和散曲创作；</li>
+<li>《词林正韵》，戈载，清，简化平水韵为 19 韵部，适合词牌创作；</li>
+<li>十三辙，用于北方说唱艺术如京剧，分 13 韵部；</li>
+<li>《中华新韵》，中华诗词学会，2005，分 14 韵部，尊重音理，平衡了传统与现实，在诗词界接受度较高，被认为是较为成功的现代诗韵；</li>
+<li>《中华通韵》，中华诗词学会，2019，分 15 韵部，作为国家标准，意图统一和规范当代诗韵，但被批评为机械地依据汉语拼音书写形式，违背了音位学和听觉感知原则，在学术界和诗词创作圈引发较大争议，认为其科学性和实用性不如《中华新韵》；</li>
+</ol>
+<h2 id="参考-1"><a class="header" href="#参考-1">参考</a></h2>
+<ol>
+<li>音韵学教程（第三版），唐作藩 著</li>
+<li><a href="https://en.wikipedia.org/wiki/Rhyme_dictionary">https://en.wikipedia.org/wiki/Rhyme_dictionary</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Qieyun">https://en.wikipedia.org/wiki/Qieyun</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Guangyun">https://en.wikipedia.org/wiki/Guangyun</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Jiyun">https://en.wikipedia.org/wiki/Jiyun</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Pingshui_Yun">https://en.wikipedia.org/wiki/Pingshui_Yun</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-1"><a class="header" href="#目录-1">目录</a></h1>
+<ol>
+<li><a href="01%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%AD%A6%E5%88%86%E7%B1%BB.html">数学分类</a></li>
+<li><a href="01%E6%95%B0%E5%AD%A6/%E6%95%B0%E7%9A%84%E5%88%86%E7%B1%BB.html">数的分类</a></li>
+</ol>
+<div style="display: none">
+<pre><code class="language-{toctree}">:hidden:
+
+数学分类.md
+数的分类.md
+</code></pre>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="数学分类"><a class="header" href="#数学分类">数学分类</a></h1>
+<h2 id="数学基础foundation"><a class="header" href="#数学基础foundation">数学基础：Foundation</a></h2>
+<p>研究数学基础和逻辑。</p>
+<ol>
+<li>Model theory</li>
+<li>Computability theory</li>
+<li>Set theory</li>
+<li>Proof theory</li>
+<li>Algebraic logic</li>
+<li>Type theory</li>
+</ol>
+<h2 id="代数algebra"><a class="header" href="#代数algebra">代数：Algebra</a></h2>
+<p>研究公式、方程、数学抽象的结构。</p>
+<ol>
+<li>Number theory</li>
+<li>Combinatorics</li>
+<li>Field theory</li>
+<li>Linear algebras</li>
+<li>Category theory</li>
+<li>K-theory</li>
+<li>Group theory</li>
+<li>Lie groups</li>
+</ol>
+<p>也有分类把 Number Theory 单分出来，研究整数。Number theory 早期被叫作 arithmetic，如今叫 numerical analysis。</p>
+<h2 id="几何geometry"><a class="header" href="#几何geometry">几何：Geometry</a></h2>
+<p>研究空间。</p>
+<ol>
+<li>Geometry</li>
+<li>Convex geometry</li>
+<li>Discrete geometry</li>
+<li>Differential geometry</li>
+<li>General topology</li>
+<li>Algebraic topology</li>
+<li>Manifolds</li>
+</ol>
+<h2 id="分析analysis"><a class="header" href="#分析analysis">分析：Analysis</a></h2>
+<p>研究数量和变化。</p>
+<ol>
+<li>Real functions(derivatives, integrals)</li>
+<li>Complex functions</li>
+<li>Special functions</li>
+<li>Ordinary differential equations</li>
+<li>Partial differential equations</li>
+<li>Series</li>
+<li>Harmonic analysis(Fourier analysis, Fourier transforms)</li>
+<li>Integral transforms</li>
+<li>Integral equations</li>
+<li>Functional analysis</li>
+</ol>
+<p>Infinitesimal Calculus(微积分)简称 Calculus, 指「分析」中的初等部分。</p>
+<h2 id="应用数学applied-mathematics"><a class="header" href="#应用数学applied-mathematics">应用数学：Applied mathematics</a></h2>
+<p>研究数学抽象在生活中的实际应用。</p>
+<ol>
+<li>Probability theory</li>
+<li>Stochastic processes</li>
+<li>Statistics,</li>
+<li>Numerical analysis</li>
+<li>Computer science</li>
+<li>Mechanics</li>
+<li>Fluid mechanics</li>
+<li>Optics</li>
+<li>Classical thermodynamics</li>
+<li>Quantum theory</li>
+<li>Statistical mechanics</li>
+<li>Relativity and gravitational theory</li>
+<li>Astronomy and astrophysics</li>
+<li>Geophysics</li>
+<li>Game theory</li>
+<li>Biology</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="数的分类"><a class="header" href="#数的分类">数的分类</a></h1>
+<ul>
+<li>数(Number)
+<ul>
+<li>八元数(Octonions)，更高维数目前没有实际应用
+<ul>
+<li>四元数(Quaternions)
+<ul>
+<li>复数(Complex numbers)
+<ul>
+<li>实数(Real numbers)，可以表示成小数
+<ul>
+<li>无理数(Irrational numbers)，对应无限不循环小数</li>
+<li>有理数(Rational numbers)，可以表示成分数(即两个整数之比），包含有限小数（包含整数)和无限循环小数
+<ul>
+<li>整数(Integers)
+<ul>
+<li>自然数(Natural Numbers)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-2"><a class="header" href="#目录-2">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-3"><a class="header" href="#目录-3">目录</a></h1>
+<ol>
+<li><a href="03%E7%89%A9%E7%90%86/%E5%9C%B0%E7%90%83%E5%9C%A8%E5%AE%87%E5%AE%99%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE.html">地球在宇宙中的位置</a></li>
+</ol>
+<div style="display: none">
+<pre><code class="language-{toctree}">:hidden:
+
+地球在宇宙中的位置.md
+</code></pre>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="地球在宇宙中的位置"><a class="header" href="#地球在宇宙中的位置">地球在宇宙中的位置</a></h1>
+<h2 id="位置"><a class="header" href="#位置">位置</a></h2>
+<ul>
+<li>Observable universe：可观测宇宙，直径达 930 亿光年；</li>
+<li><strong>Pisces-Cetus Supercluster Complex</strong>：双鱼-鲸鱼超星系团复合体，直径达 10 亿光年；
+<ul>
+<li><strong>Laniakea Supercluster</strong>：拉尼亚凯亚超星系团，夏威夷语意思是“无尽的天堂”（open skies, immense heaven)，2014 年九月被定义，直径达 5.2 亿光年，质量是银河系的 10 万倍；
+<ol>
+<li><strong>Virgo Supercluster</strong>：室女超星系团，也称「本超星系团」(Local Supercluster)，直径 1.1 亿光年，包含银河系；
+<ul>
+<li><strong>Local Group</strong>: 本星系群，直径达 1000 万光年；
+<ul>
+<li><strong>Milky Way Galaxy</strong>：银河系，也称 the Galaxy，直径 10 万光年；
+<ul>
+<li><strong>Orion Arm</strong>：猎户臂，长度 1 万光年；
+<ul>
+<li><strong>Gould Belt</strong>：古尔德带，太阳所处的幼年恒星环，直径 3000 光年；
+<ul>
+<li><strong>Solar System</strong>: 太阳系，直径 4 光年；
+<ul>
+<li><strong>Earth</strong>：地球，直径 12700 公里；</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Hydra-Centaurus Supercluster：长蛇-半人马超星系团，包含了拉尼亚凯亚超星系团的重力中心「巨引源」（Great Attractor)；</li>
+<li>Pavo-Indus Supercluster：孔雀-印地安超星系团</li>
+<li>Southern Supercluster</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="参考-2"><a class="header" href="#参考-2">参考</a></h2>
+<ol>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E5%9C%B0%E7%90%83%E5%9C%A8%E5%AE%87%E5%AE%99%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE">https://zh.wikipedia.org/zh-cn/地球在宇宙中的位置</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-4"><a class="header" href="#目录-4">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-5"><a class="header" href="#目录-5">目录</a></h1>
+<ol>
+<li><a href="05%E7%94%9F%E7%89%A9/%E7%94%9F%E7%89%A9%E5%88%86%E7%B1%BB.html">生物分类</a></li>
+</ol>
+<div style="display: none">
+<pre><code class="language-{toctree}">:hidden:
+
+生物分类.md
+</code></pre>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="生物分类"><a class="header" href="#生物分类">生物分类</a></h1>
+<h2 id="基本分类层级"><a class="header" href="#基本分类层级">基本分类层级</a></h2>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">中文</th><th style="text-align: center">英文</th><th style="text-align: center">示例：人</th></tr></thead><tbody>
+<tr><td style="text-align: center">域</td><td style="text-align: center">domain</td><td style="text-align: center">真核生物(Eukaryota)</td></tr>
+<tr><td style="text-align: center">界</td><td style="text-align: center">kingdom</td><td style="text-align: center">动物界(Animalia)</td></tr>
+<tr><td style="text-align: center">门</td><td style="text-align: center">phylum<sup>(动物学)</sup>  division<sup>(植物学)</sup></td><td style="text-align: center">脊索动物(Chordata)</td></tr>
+<tr><td style="text-align: center">纲</td><td style="text-align: center">class</td><td style="text-align: center">哺乳纲(Mammalia)</td></tr>
+<tr><td style="text-align: center">目</td><td style="text-align: center">order</td><td style="text-align: center">灵长目(Primates)</td></tr>
+<tr><td style="text-align: center">科</td><td style="text-align: center">family</td><td style="text-align: center">人科(Hominidae)</td></tr>
+<tr><td style="text-align: center">属</td><td style="text-align: center">genus</td><td style="text-align: center">人属(Homo)</td></tr>
+<tr><td style="text-align: center">种</td><td style="text-align: center">species</td><td style="text-align: center">智人(Homo sapiens)</td></tr>
+</tbody></table>
+</div>
+<h2 id="域界"><a class="header" href="#域界">域、界</a></h2>
+<ul>
+<li>细胞生物
+<ul>
+<li>细菌域(Bacteria)
+<ul>
+<li>细菌界</li>
+</ul>
+</li>
+<li>古菌域(Archaea)
+<ul>
+<li>古细菌界</li>
+</ul>
+</li>
+<li>真核域(Eukaryota)
+<ul>
+<li>囊泡藻界(Chromalveolata)</li>
+<li>古虫界(Excavata)</li>
+<li>有孔虫界(Rhizaria)</li>
+<li>真菌界(Fungi)</li>
+<li>植物界(Plantae)</li>
+<li>动物界(Animalia, Metazoa)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>非细胞生物
+<ul>
+<li>病毒(Virus)</li>
+<li>亚病毒因子</li>
+</ul>
+</li>
+</ul>
+<h2 id="参考-3"><a class="header" href="#参考-3">参考</a></h2>
+<ol>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E5%88%86%E7%B1%BB%E9%98%B6%E5%85%83">https://zh.wikipedia.org/zh-cn/分类阶元</a></li>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E7%94%9F%E7%89%A9%E5%88%86%E7%B1%BB%E5%AD%A6">https://zh.wikipedia.org/zh-cn/生物分类学</a></li>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E7%94%9F%E7%89%A9%E5%88%86%E9%A1%9E%E6%B3%95">https://zh.wikipedia.org/zh-cn/生物分類法</a></li>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E7%94%9F%E7%89%A9%E5%88%86%E9%A1%9E%E7%B8%BD%E8%A1%A8">https://zh.wikipedia.org/zh-cn/生物分類總表</a></li>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E5%9F%9F_(%E7%94%9F%E7%89%A9)">https://zh.wikipedia.org/zh-cn/域_(生物)</a></li>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E7%95%8C_(%E7%94%9F%E7%89%A9)">https://zh.wikipedia.org/zh-cn/界_(生物)</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-6"><a class="header" href="#目录-6">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-7"><a class="header" href="#目录-7">目录</a></h1>
+<ol>
+<li><a href="07%E5%8E%86%E5%8F%B2/%E4%B8%AD%E5%9B%BD%E6%9C%9D%E4%BB%A3.html">中国朝代</a></li>
+</ol>
+<div style="display: none">
+<pre><code class="language-{toctree}">:hidden:
+
+中国朝代.md
+</code></pre>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="中国朝代"><a class="header" href="#中国朝代">中国朝代</a></h1>
+<h2 id="历史年表"><a class="header" href="#历史年表">历史年表</a></h2>
+<p><img src="07%E5%8E%86%E5%8F%B2/images/China_Dynasties.avif" alt="中国朝代" /></p>
+<h2 id="朝代和疆域"><a class="header" href="#朝代和疆域">朝代和疆域</a></h2>
+<p><a href="07%E5%8E%86%E5%8F%B2/images/Chronicle_of_China_Dynasties.xlsx">源文件</a></p>
+<p><img src="07%E5%8E%86%E5%8F%B2/images/China_Dynasties_and_Territories.avif" alt="中国朝代和疆域" /></p>
+<h2 id="疆域演变"><a class="header" href="#疆域演变">疆域演变</a></h2>
+<p><img src="07%E5%8E%86%E5%8F%B2/images/Territories_of_Dynasties_in_China.gif" alt="Territories_of_Dynasties_in_China" /></p>
+<h2 id="参考-4"><a class="header" href="#参考-4">参考</a></h2>
+<ol>
+<li><a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E6%9C%9D%E4%BB%A3">https://zh.wikipedia.org/wiki/中国朝代</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%8E%86%E5%8F%B2%E5%B9%B4%E8%A1%A8">https://zh.wikipedia.org/wiki/中国历史年表</a></li>
+<li><a href="https://baike.baidu.com/item/%E6%9C%9D%E4%BB%A3/7716136">https://baike.baidu.com/item/朝代/7716136</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-8"><a class="header" href="#目录-8">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-9"><a class="header" href="#目录-9">目录</a></h1>
+<ol>
+<li><a href="10%E8%AE%A1%E7%AE%97%E6%9C%BA/CPlusPlus%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90.html">CPlusPlus学习资源</a></li>
+<li><a href="10%E8%AE%A1%E7%AE%97%E6%9C%BA/CPlusPlus%E5%AE%9E%E8%B7%B5.html">CPlusPlus实践</a></li>
+<li><a href="10%E8%AE%A1%E7%AE%97%E6%9C%BA/CPlusPlus%E8%AF%AD%E6%B3%95.html">CPlusPlus语法</a></li>
+<li><a href="10%E8%AE%A1%E7%AE%97%E6%9C%BA/EDA%E6%A6%82%E8%A7%88.html">EDA概览</a></li>
+<li><a href="10%E8%AE%A1%E7%AE%97%E6%9C%BA/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BC%96%E7%A8%8B.html">什么是编程</a></li>
+</ol>
+<div style="display: none">
+<pre><code class="language-{toctree}">:hidden:
+
+CPlusPlus学习资源.md
+CPlusPlus实践.md
+CPlusPlus语法.md
+EDA概览.md
+什么是编程.md
+</code></pre>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="c-学习资源"><a class="header" href="#c-学习资源">C++ 学习资源</a></h1>
+<h2 id="awesome-c"><a class="header" href="#awesome-c">Awesome C++</a></h2>
+<ol>
+<li><a href="https://faraz.work/awesome-cpp/">https://faraz.work/awesome-cpp/</a></li>
+<li><a href="https://awesomecpp.com/">https://awesomecpp.com/</a></li>
+<li><a href="https://cpp.libhunt.com/">https://cpp.libhunt.com/</a></li>
+<li><a href="https://github.com/r-lyeh/single_file_libs">https://github.com/r-lyeh/single_file_libs</a></li>
+<li><a href="https://en.cppreference.com/">https://en.cppreference.com/</a></li>
+</ol>
+<h2 id="ide--editor"><a class="header" href="#ide--editor">IDE &amp; Editor</a></h2>
+<ol>
+<li><a href="https://www.jetbrains.com/clion/">CLion</a> 非商业使用免费 ⭐⭐⭐⭐⭐</li>
+<li><a href="https://zed.dev/">Zed</a> 开箱即用 ⭐⭐⭐⭐⭐</li>
+<li><a href="https://kate-editor.org/">Kate</a> LSP 开箱即用 ⭐⭐⭐</li>
+<li><a href="https://www.codeblocks.org/">Code::Blocks</a> 支持 SFML、wxWidgets 应用模板，wxSmith 插件 ⭐⭐⭐</li>
+<li><a href="https://codelite.org/">CodeLite</a> 支持 wxWidgets 应用模板，wxCrafter 插件</li>
+<li><a href="https://code.visualstudio.com/">VSCode</a>、<a href="https://vscodium.com/">VSCodium</a></li>
+<li><a href="https://helix-editor.com/">Helix</a> LSP 开箱即用</li>
+</ol>
+<h2 id="compiler"><a class="header" href="#compiler">Compiler</a></h2>
+<p>三大 C++ 编译器：GCC、Clang、Visual C++。</p>
+<ol>
+<li><a href="https://www.msys2.org/">MSYS2</a> + <a href="https://www.mingw-w64.org/">Mingw-w64</a>, 其它类似项目：
+<ol>
+<li><a href="https://mxe.cc/">https://mxe.cc/</a></li>
+<li><a href="https://winlibs.com/">https://winlibs.com/</a></li>
+<li>https://github.com/skeeto/w64devkit/</li>
+</ol>
+</li>
+<li><a href="https://learn.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=msvc-170">Build Tools For Visual Studio</a>、<a href="https://visualstudio.microsoft.com/free-developer-offers/">Visual Studio Community</a></li>
+<li><a href="https://developer.apple.com/xcode/resources/">Xcode command line tools</a></li>
+<li><a href="https://emscripten.org/">Emscripten</a> 使用 Clang 将 C/C++ 程序编译到 WASM 从而能在 Web 浏览器里运行</li>
+</ol>
+<h2 id="debugger--linter"><a class="header" href="#debugger--linter">Debugger &amp; Linter</a></h2>
+<ol>
+<li><a href="https://www.gnu.org/software/ddd/">DDD</a></li>
+<li><a href="https://valgrind.org/">Valgrind</a></li>
+<li><a href="https://cppcheck.sourceforge.io/">Cppcheck</a></li>
+<li><a href="https://clang.llvm.org/extra/clang-tidy/">Clang-tidy</a></li>
+<li><a href="https://clang-analyzer.llvm.org/">Clang-analyzer</a></li>
+<li><a href="https://github.com/google/sanitizers/wiki/AddressSanitizer">AddressSanitizer</a>: <a href="https://clang.llvm.org/docs/AddressSanitizer.html">Clang</a>, <a href="https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html">GCC</a></li>
+</ol>
+<h2 id="code-formatter"><a class="header" href="#code-formatter">Code Formatter</a></h2>
+<ol>
+<li><a href="https://clang.llvm.org/docs/ClangFormat.html">Clang-format</a></li>
+</ol>
+<h2 id="building-system--package-manager"><a class="header" href="#building-system--package-manager">Building System &amp; Package Manager</a></h2>
+<ol>
+<li><a href="https://xmake.io/">Xmake</a> + <a href="https://xrepo.xmake.io/">Xrepo</a></li>
+<li><a href="https://mesonbuild.com/">Meson</a> + <a href="https://mesonbuild.com/Wrapdb-projects.html">WrapDB</a>, <a href="https://muon.build/">Muon</a></li>
+<li><a href="https://premake.github.io/">Premake</a></li>
+<li><a href="https://cmake.org/">CMake</a> + <a href="https://cmake.org/cmake/help/latest/guide/using-dependencies/index.html">FetchContent</a> / <a href="https://vcpkg.io/">vcpkg</a> / <a href="https://conan.io/">Conan</a> / <a href="https://hunter.readthedocs.io/en/latest/index.html">Hunter</a> / <strong><a href="https://github.com/cpm-cmake/CPM.cmake">CPM.cmake</a></strong> (复杂，但是当前事实标准)</li>
+<li><a href="https://build2.org/">Build2</a></li>
+<li><a href="https://www.bfgroup.xyz/b2/">Boost.Build</a> (不支持生成 IDE 工程)</li>
+<li><a href="https://gn.googlesource.com/gn/">GN</a> (适用超大型项目，不自带 toolchain 定义)</li>
+<li><del><a href="https://gyp.gsrc.io/">GYP</a></del> (已被 gn 取代)</li>
+<li><a href="https://www.gnu.org/software/autoconf/">Autotools</a> (复杂，用于 Unix/Linux 项目)</li>
+<li>封闭构建工具
+<ol>
+<li><a href="https://github.com/bazelbuild/bazel">Bazel</a></li>
+<li><a href="https://buck2.build/">Buck2</a></li>
+<li><a href="https://please.build/">Please</a></li>
+<li><a href="https://www.pantsbuild.org/">Pants</a></li>
+</ol>
+</li>
+<li><a href="https://anaconda.org/">Anaconda</a></li>
+<li><a href="https://spack.io/">Spack</a></li>
+<li><a href="https://www.msys2.org/docs/package-management/">MSYS2 Pacman</a></li>
+<li><a href="https://www.marticliment.com/unigetui/">UniGetUI</a>:  <a href="https://learn.microsoft.com/en-us/windows/package-manager/">Winget</a>, <a href="https://scoop.sh/">Scoop</a>,  <a href="https://chocolatey.org/">Chocolatey</a></li>
+</ol>
+<h2 id="file-comparison"><a class="header" href="#file-comparison">File Comparison</a></h2>
+<ol>
+<li><a href="https://meldmerge.org/">Meld</a></li>
+<li><a href="https://apps.kde.org/kdiff3/">Kdiff3</a></li>
+<li><a href="https://mightycreak.github.io/diffuse/">Diffuse</a></li>
+<li><a href="https://apps.kde.org/kompare/">Kompare</a></li>
+</ol>
+<h2 id="documentation-browser"><a class="header" href="#documentation-browser">Documentation Browser</a></h2>
+<ol>
+<li><a href="https://zealdocs.org/">Zeal</a></li>
+<li><a href="https://devdocs.io/">DevDocs</a></li>
+</ol>
+<h2 id="documentation-generator"><a class="header" href="#documentation-generator">Documentation Generator</a></h2>
+<ol>
+<li><a href="https://doxide.org/">Doxide</a></li>
+<li><a href="https://www.doxygen.org/">Doxygen</a></li>
+<li><a href="https://github.com/NaturalDocs/NaturalDocs">NaturalDocs</a></li>
+</ol>
+<h2 id="project-template"><a class="header" href="#project-template">Project Template</a></h2>
+<ol>
+<li><a href="https://github.com/TheLartians/ModernCppStarter">ModernCppStarter</a></li>
+<li><a href="https://github.com/cpp-best-practices/cmake_template">cmake_template</a></li>
+<li><a href="https://github.com/filipdutescu/modern-cpp-template">modern-cpp-template</a></li>
+<li><a href="https://github.com/TheLartians/MiniCppStarter">MiniCppStarter</a></li>
+</ol>
+<h2 id="libraries"><a class="header" href="#libraries">Libraries</a></h2>
+<ol>
+<li>Graphics
+<ol>
+<li><a href="https://www.raylib.com/">Raylib</a> ⭐⭐⭐⭐⭐</li>
+<li><a href="https://www.sfml-dev.org/">SFML</a> ⭐⭐⭐⭐⭐</li>
+<li><a href="https://liballeg.org/">Allegro</a> ⭐⭐⭐</li>
+<li><a href="https://magnum.graphics/">Magnum</a></li>
+<li><a href="https://godotengine.org/">Godot</a></li>
+<li><a href="https://libsdl.org/">SDL</a></li>
+<li><a href="https://www.glfw.org/">GLFW</a></li>
+<li>ECS
+<ol>
+<li><a href="https://github.com/skypjack/entt">EnTT</a></li>
+<li><a href="https://github.com/SanderMertens/flecs">Flecs</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Unit Testing
+<ol>
+<li><a href="https://github.com/doctest/doctest">doctest</a></li>
+<li><a href="https://github.com/catchorg/Catch2">Catch2</a></li>
+</ol>
+</li>
+<li>Logging
+<ol>
+<li><a href="https://github.com/gabime/spdlog">spdlog</a></li>
+<li><a href="https://github.com/PlatformLab/NanoLog">Nanolog</a></li>
+</ol>
+</li>
+<li>Crash reporting
+<ol>
+<li><a href="https://github.com/bombela/backward-cpp">Backward-cpp</a></li>
+<li><a href="https://github.com/jeremy-rifkin/cpptrace">Cpptrace</a></li>
+<li><a href="https://github.com/chromium/crashpad">Crashpad</a></li>
+</ol>
+</li>
+<li>HTTP
+<ol>
+<li><a href="https://github.com/yhirose/cpp-httplib">cpp-httplib</a></li>
+<li><a href="https://docs.libcpr.org/">cpr</a></li>
+</ol>
+</li>
+<li>JSON
+<ol>
+<li><a href="https://github.com/nlohmann/json">nlohmann-json</a></li>
+<li><a href="https://github.com/simdjson/simdjson">simdjson</a></li>
+<li><a href="https://github.com/Tencent/rapidjson">RapidJSON</a></li>
+<li><a href="https://github.com/open-source-parsers/jsoncpp">JsonCpp</a></li>
+</ol>
+</li>
+<li>Command line argument parser
+<ol>
+<li><a href="https://cliutils.github.io/CLI11/book/">CLI11</a></li>
+<li><a href="https://github.com/p-ranav/argparse">argparse</a></li>
+<li><a href="https://github.com/taywee/args">args</a></li>
+<li><a href="https://github.com/muellan/clipp">clipp</a></li>
+<li><a href="https://github.com/bfgroup/Lyra">Lyra</a></li>
+</ol>
+</li>
+<li>UI
+<ol>
+<li>CLI
+<ol>
+<li><a href="https://github.com/antirez/linenoise">linenoise</a></li>
+<li><a href="https://github.com/AmokHuginnsson/replxx">replxx</a></li>
+<li><a href="https://github.com/daniele77/cli">cli</a></li>
+</ol>
+</li>
+<li>TUI
+<ol>
+<li><a href="https://arthursonzogni.github.io/FTXUI/">FTXUI</a> ⭐⭐⭐⭐⭐</li>
+<li><a href="https://github.com/gansm/finalcut">FINAL CUT</a> ⭐⭐⭐ 依赖 ncurses + Cygwin/MSYS</li>
+<li><a href="https://github.com/ggerganov/imtui">imtui</a> ⭐⭐⭐ 依赖 imgui，支持 pdcurses</li>
+<li><a href="https://github.com/a-n-t-h-o-n-y/TermOx">TermOx</a> ⭐ 依赖 Cygwin/MSYS，C++20</li>
+<li><a href="https://github.com/magiblot/tvision">Turbo Vision</a></li>
+<li><a href="https://github.com/s9w/oof">Oof</a> ⭐⭐⭐</li>
+<li><a href="https://github.com/p-ranav/indicators/">Indicators</a></li>
+<li><a href="https://github.com/p-ranav/tabulate">Tabulate</a></li>
+<li><a href="https://github.com/dankamongmen/notcurses">Notcurses</a> ⭐</li>
+<li><a href="https://github.com/termbox/termbox2">termbox2</a> 只有基础 curses 功能</li>
+</ol>
+</li>
+<li>GUI
+<ol>
+<li><a href="https://libui-ng.github.io/libui-ng/">libui-ng</a></li>
+<li><a href="https://www.fltk.org/">FLTK</a></li>
+<li><a href="https://github.com/ocornut/imgui">Dear ImGui</a></li>
+<li><a href="https://lvgl.io/">LVGL</a></li>
+<li><a href="https://slint.dev/">Slint</a></li>
+<li><a href="https://immediate-mode-ui.github.io/Nuklear/">Nuklear</a></li>
+<li><a href="https://tgui.eu/">TGUI</a></li>
+<li><a href="https://wxwidgets.org/">wxWidgets</a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="c-实践"><a class="header" href="#c-实践">C++ 实践</a></h1>
+<h2 id="codeblocks-使用"><a class="header" href="#codeblocks-使用">CodeBlocks 使用</a></h2>
+<ol>
+<li>Code::Blocks 界面
+<ol>
+<li>Title bar, menu bar, tool bar, status bar,  project window, editor window</li>
+<li>Menu:  <code>File</code>, <code>Edit</code>, ...</li>
+<li>Shortcuts:  <kbd>Ctrl + A/S/Z/X/C/V</kbd></li>
+<li>Tool bar:
+<ol>
+<li>file</li>
+<li>redo, undo</li>
+<li>cut, copy, paste</li>
+<li>search, replace</li>
+<li>build, run, build and run, rebuild</li>
+<li>debug,  set breakpoint</li>
+<li>jump, set bookmark</li>
+</ol>
+</li>
+<li><code>File</code> -&gt; <code>new</code> -&gt; <code>Project...</code>: <code>Console Application</code></li>
+<li>使用 <code>Project Properties</code> 检查路径</li>
+</ol>
+</li>
+<li>C++ Reference
+<ol>
+<li>https://cppreference.com/</li>
+<li>https://cppreference.net/</li>
+<li>https://zh.cppreference.net/</li>
+<li>https://cppreference.cn/</li>
+</ol>
+</li>
+</ol>
+<h2 id="c-标准库"><a class="header" href="#c-标准库">C++ 标准库</a></h2>
+<p>https://zh.cppreference.net/cpp/headers.html</p>
+<ol>
+<li>C library
+<ol>
+<li><code>&lt;cassert&gt;</code></li>
+<li><code>&lt;cctype&gt;</code></li>
+<li><code>&lt;climits&gt;</code></li>
+<li><code>&lt;cmath&gt;</code></li>
+<li><code>&lt;cstdio&gt;</code></li>
+<li><code>&lt;cstdlib&gt;</code></li>
+<li><code>&lt;cstring&gt;</code></li>
+<li><code>&lt;ctime&gt;</code></li>
+</ol>
+</li>
+<li>Input/Output
+<ol>
+<li><code>&lt;iostream&gt;</code>, <code>&lt;fstream&gt;</code>, <code>&lt;filesystem&gt;</code></li>
+<li><code>&lt;format&gt;</code>, <code>&lt;print&gt;</code></li>
+</ol>
+</li>
+<li>Container
+<ol>
+<li><code>&lt;string&gt;</code>, <code>&lt;string_view&gt;</code></li>
+<li><code>&lt;array&gt;</code>, <code>&lt;list&gt;</code>, <code>&lt;map&gt;</code>, <code>&lt;queue&gt;</code>, <code>&lt;set&gt;</code>, <code>&lt;stack&gt;</code>, <code>&lt;vector&gt;</code>, <code>&lt;forward_list&gt;</code>, <code>&lt;tuple&gt;</code>, <code>&lt;unordered_map&gt;</code>, <code>&lt;unordered_set&gt;</code>, <code>&lt;flat_map&gt;</code>, <code>&lt;flat_set&gt;</code></li>
+</ol>
+</li>
+<li><code>&lt;chrono&gt;</code></li>
+<li><code>&lt;random&gt;</code></li>
+<li><code>&lt;limits&gt;</code></li>
+<li><code>&lt;numbers&gt;</code></li>
+<li><code>&lt;ratio&gt;</code></li>
+</ol>
+<h2 id="常用工具"><a class="header" href="#常用工具">常用工具</a></h2>
+<ol>
+<li>编译器：MSYS2, <code>gcc</code>, <code>g++</code>, <code>clang</code>, <code>clang++</code>, <code>cl</code></li>
+<li>编辑器、IDE：Zed, Code::Blocks, CodeLite, Visual Studio Code</li>
+<li>构建系统：<code>make</code>, <code>cmake</code>, <code>meson</code>, <code>xmake</code>, <code>premake</code></li>
+<li>版本管理：<code>git</code> + SourceGit/TortoiseGit, <code>svn</code> + TortoiseSVN</li>
+<li>文件比较：Meld, Kdiff3, WinMerge</li>
+<li>Shell:  Cmd, PowerShell, Bash, Fish</li>
+<li>终端模拟器：Windows Terminal,  Mintty UCRT64, WezTerm, Kitty, Ghostty</li>
+</ol>
+<h2 id="tui"><a class="header" href="#tui">TUI</a></h2>
+<ol>
+<li><a href="https://arthursonzogni.github.io/FTXUI/">FTXUI</a></li>
+<li><a href="https://github.com/gansm/finalcut">FINAL CUT</a></li>
+<li><a href="https://github.com/ggerganov/imtui">imtui</a></li>
+<li><a href="https://github.com/s9w/oof">Oof</a></li>
+</ol>
+<h2 id="raylib"><a class="header" href="#raylib">Raylib</a></h2>
+<h2 id="高级语法"><a class="header" href="#高级语法">高级语法</a></h2>
+<ol>
+<li>array</li>
+<li>function</li>
+<li>struct</li>
+<li>class</li>
+<li>union</li>
+<li>pointer &amp; reference</li>
+</ol>
+<h2 id="gui"><a class="header" href="#gui">GUI</a></h2>
+<ol>
+<li><a href="https://libui-ng.github.io/libui-ng/">libui-ng</a></li>
+<li><a href="https://www.fltk.org/">FLTK</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="c-语法"><a class="header" href="#c-语法">C++ 语法</a></h1>
+<h2 id="数据类型"><a class="header" href="#数据类型">数据类型</a></h2>
+<p>https://cppreference.com/w/cpp/language/type-id.html</p>
+<ol>
+<li>基本类型
+<ol>
+<li>整数： [signed | unsigned] <strong>int</strong> | long | long long</li>
+<li>浮点数：<strong>double</strong>，float, long double</li>
+<li>字符:  <strong>char</strong> (单引号)</li>
+<li>布尔型: <strong>bool</strong> (true, false)</li>
+<li>指针</li>
+</ol>
+</li>
+<li>复合类型
+<ol>
+<li>字符串:  <strong>string</strong>, char*</li>
+<li>数组</li>
+<li>结构体</li>
+<li>联合体</li>
+<li>类</li>
+</ol>
+</li>
+<li>auto</li>
+</ol>
+<h2 id="变量"><a class="header" href="#变量">变量</a></h2>
+<ol>
+<li>TYPE  name = VAULE;</li>
+<li>const TYPE name = VALUE;</li>
+</ol>
+<h2 id="控制结构"><a class="header" href="#控制结构">控制结构</a></h2>
+<ol>
+<li>顺序</li>
+<li>分支
+<ol>
+<li>if (COND) { ... } else { ... }</li>
+<li>goto</li>
+</ol>
+</li>
+<li>循环
+<ol>
+<li><code>for(INIT; COND; EXP) { ... }</code></li>
+<li><code>while (COND) { ... }</code></li>
+<li><code>do { ... } while (COND)</code></li>
+<li><code>continue</code>, <code>break</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="操作符"><a class="header" href="#操作符">操作符</a></h2>
+<p>https://cppreference.com/w/cpp/language/expressions.html#Operators</p>
+<ol>
+<li>
+<ul>
+<li>
+<ul>
+<li>*    /    %</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>++    --</li>
+<li>=    +=    -=     *=     /=   %=</li>
+<li>==  !=  &gt;   &gt;=     &lt;    &lt;=   &amp;&amp;   ||     !</li>
+</ol>
+<h2 id="函数"><a class="header" href="#函数">函数</a></h2>
+<p>声明：</p>
+<pre><code>TYPE name(TYPE name,  ...);
+</code></pre>
+<p>定义：</p>
+<pre><code>TYPE  name(TYPE name, ...) {
+      ....;
+      return ...;
+}
+</code></pre>
+<p>主函数:</p>
+<pre><code>int main(int argc, char** argv) { ... }
+
+int main(int argc, char* argv[]) { ... }
+
+int main() { ... }
+</code></pre>
+<h2 id="宏"><a class="header" href="#宏">宏</a></h2>
+<ol>
+<li>头文件： https://cppreference.com/w/cpp/headers.html
+<ol>
+<li><code>#include &lt;xxx&gt;</code></li>
+<li><code>#include "xxx"</code></li>
+<li><code>iostream</code>,  <code>string</code>, <code>cstdlib</code>, <code>cstdio</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="命名空间"><a class="header" href="#命名空间">命名空间</a></h2>
+<ol>
+<li>使用： <code>using namespace std;</code></li>
+<li>定义： <code>namespace xxx { ... }</code></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="eda-概览"><a class="header" href="#eda-概览">EDA 概览</a></h1>
+<ul>
+<li><strong>EDA</strong>: Electronic Design Automation</li>
+<li><strong>CAD</strong>: Computer Aided Design</li>
+<li><strong>CAE</strong>: Computer Aided Engineering</li>
+<li><strong>CAM</strong>: Computer Aided Manufacturing</li>
+</ul>
+<h2 id="前端"><a class="header" href="#前端">前端</a></h2>
+<ol>
+<li><strong>High level synthesis(HLS，高级综合)</strong>: 将高级语言（如C/C++、SystemC）或特定DSL转换为RTL代码。
+<ul>
+<li>工具示例：<a href="https://google.github.io/xls/">Google XLS</a>（使用类Rust的 DSLx 语言）</li>
+</ul>
+</li>
+<li><strong>Synthesis(逻辑综合，简称「综合」)</strong>: 跟据 RTL 代码、工艺库(Technology Library) 和设计约束(Design Constraints) 生成门级网表(gate-level netlist)和时序、面积、功耗报告。
+<ul>
+<li>商业工具标杆为 Synopsys 的 Design Compiler</li>
+</ul>
+</li>
+<li>RTL(Register transfer level) 的硬件描述语言(HDL)：
+<ul>
+<li>传统 HDL：Verilog、SystemVerilog、VHDL</li>
+<li>eDSL(embedded DSL)
+<ul>
+<li>基于 Scala：
+<ul>
+<li><a href="https://www.chisel-lang.org/">Chisel</a></li>
+<li><a href="https://spinalhdl.github.io/SpinalDoc-RTD/zh_CN/master/index.html">SpinalHDL</a></li>
+</ul>
+</li>
+<li>基于 Python
+<ul>
+<li><a href="https://github.com/amaranth-lang/amaranth">Amaranth</a> (前身 Migen <a href="https://m-labs.hk/migen/manual/fhdl.html">FHDL</a>)</li>
+<li><a href="https://docs.pygears.org/">PyGears</a></li>
+<li><a href="https://www.myhdl.org/">MyHDL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>门级网表格式：
+<ul>
+<li>Verilog Netlist</li>
+<li>EDIF(Electronic Design Interchange Format)</li>
+</ul>
+</li>
+</ol>
+<h2 id="后端"><a class="header" href="#后端">后端</a></h2>
+<p>布局布线，物理验证，生成物理版图。</p>
+<p>物理版图格式：</p>
+<ol>
+<li>PCB： <a href="https://www.ucamco.com/en/gerber">Gerber</a></li>
+<li>IC:
+<ul>
+<li>GDSII：传统格式，广泛用于晶圆代工厂（Foundry）。</li>
+<li>OASIS：更现代的格式，文件尺寸更小。</li>
+</ul>
+</li>
+</ol>
+<h2 id="开源工具"><a class="header" href="#开源工具">开源工具</a></h2>
+<ol>
+<li>PCB 设计
+<ol>
+<li>设计：<a href="https://www.kicad.org/">KiCAD</a></li>
+<li>仿真：<a href="https://ngspice.sourceforge.io/">ngspice</a></li>
+</ol>
+</li>
+<li>IC 设计
+<ol>
+<li><strong>解释型仿真器​</strong>​（功能完整）：<a href="https://bleyer.org/icarus/">Icarus Verilog</a> ，<a href="https://github.com/ghdl/ghdl">GHDL</a>（用于 VHDL），波形查看常用 <a href="https://gtkwave.sourceforge.net/">GTKWave</a>。</li>
+<li><strong>编译型仿真器​</strong>​（高速）：<a href="https://www.veripool.org/verilator/">Verilator</a>（将设计编译成C++模型进行仿真）。</li>
+<li>综合: <a href="https://yosyshq.net/">Yosys</a></li>
+<li>布局布线：
+<ul>
+<li>FPGA: <a href="https://github.com/YosysHQ/nextpnr">nextpnr</a></li>
+<li>ASIC:  <a href="https://theopenroadproject.org/">OpenROAD</a>(也是 RTL-to-GDSII 全流程工具)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="什么是编程"><a class="header" href="#什么是编程">什么是编程？</a></h1>
+<h2 id="计算机组成"><a class="header" href="#计算机组成">计算机组成</a></h2>
+<p>Computer 一词最早出现于 <a href="https://en.wikipedia.org/wiki/Computer#Etymology">1613</a> 年，指人类「计算员」，使用计算器做算术运算，直到 20 世纪中期，才被用于指「可编程的数字电子计算机」，简称「计算机」，中文里也被翻译成「电脑」。</p>
+<p>一台计算机由硬件(hardware)和软件(software)组成，「硬件」指直接可见可触摸的设备，「软件」指存储、运行在硬件中的不能直接可见可触摸的数据和程序。</p>
+<h3 id="硬件"><a class="header" href="#硬件">硬件</a></h3>
+<ul>
+<li>计算和控制：最典型的是中央处理器（CPU，Central Processing Unit)，主流的 CPU 家族有 X86、ARM。CPU 主要有如下元件组成：
+<ul>
+<li>算术逻辑单元(ALU, Arithmetic Logic Unit)：负责算术和逻辑运算，包含加法器、乘法器、除法器等电路；</li>
+<li>控制单元(CU, Control Unit)：负责解释指令并控制其它部件执行；</li>
+<li>寄存器(Registers)：存储 CPU 当前运行用到的指令、数据；</li>
+<li>缓存(Cache)：在寄存器和内存之间缓存指令和数据；</li>
+</ul>
+</li>
+<li>存储器
+<ul>
+<li>主存储器、内存(memory)：一般指断电即丢失数据的随机访问存储（ RAM，Random Access Memory）；</li>
+<li>辅存储器、外存(storage)：包括软盘、硬盘、光盘等，断电不会丢失数据的存储设备；</li>
+</ul>
+</li>
+<li>输入设备(Input Device)：键盘、鼠标、麦克风、扫描仪、网卡等，用于外界输入数据给计算机处理；</li>
+<li>输出设备(Output Device)：屏幕、扬声器、打印机、指示灯、网卡等，用于计算机输出结果给外界；</li>
+<li>总线(Bus)：连接各个设备的线缆，传输数据和控制信号；</li>
+</ul>
+<p><img src="10%E8%AE%A1%E7%AE%97%E6%9C%BA/images/Computer_architecture_block_diagram.avif" alt="https://en.wikipedia.org/wiki/Computer_architecture" /></p>
+<h3 id="软件"><a class="header" href="#软件">软件</a></h3>
+<ul>
+<li>代码 (Code)：用编程语言写成的文本，人可以阅读和修改；</li>
+<li>操作系统(OS, Operating System)：狭义指直接管理硬件的操作系统内核(Kernel) ，广义指硬件上的基础软件。主流的 OS 有 Windows、Linux、BSD、macOS、Android、iOS；</li>
+<li>程序(Program)：也称为应用(application)，可供操作系统运行；
+<ul>
+<li>Shell：指操作系统提供的最基本的人机交互界面应用，用于输入命令、查看结果，例如  Linux、BSD 上的  sh 命令行工具，Windows、macOS 上提供的桌面、任务栏、程序列表、文件管理器等图形工具；</li>
+<li>编辑器(Editor)：一般指文本编辑器(Text Editor)，可以用来编辑代码保存到外存里；</li>
+<li>编译器(Compiler)、汇编器(Assembler)、链接器(Linker)、加载器(Loader)：
+<ul>
+<li>编译器：指将高级编程语言翻译到汇编语言的程序；</li>
+<li>汇编器：指将汇编语言翻译到机器码的程序；</li>
+<li>链接器：指将多个机器指令的程序片断合并到一起的程序；</li>
+<li>加载器：指操作系统用来加载外存上的程序进入内存的程序；</li>
+</ul>
+</li>
+<li>解释器(Interpreter)：指直接运行代码，不用显式的经过编译、汇编、链接、加载四个阶段的一类程序；</li>
+</ul>
+</li>
+</ul>
+<h2 id="高级编程语言和汇编语言"><a class="header" href="#高级编程语言和汇编语言">高级编程语言和汇编语言</a></h2>
+<p>下面是三种语言定义函数的语法，以及机器码的十六进制表示，Python 和 C 都属于高级语言。</p>
+<p>Python 语言：</p>
+<pre><code class="language-python">def square(n):
+	return n * n
+</code></pre>
+<p>C 语言：</p>
+<pre><code class="language-c">int square(int n)
+{
+	return n * n;
+}
+</code></pre>
+<p>x86-64 Intel 语法的汇编语言，右边的注释是对应的十六进制<a href="https://godbolt.org/z/8ETqhx4Me">机器码</a>：</p>
+<pre><code class="language-x86asm">square:
+  push rbp                                   ; 55
+  mov  rbp, rsp                              ; 48 89 e5
+  mov  DWORD PTR [rbp - 0x4], edi            ; 89 7d fc
+  mov  eax, DWORD PTR [rbp - 0x4]            ; 8b 45 fc
+  imul eax, eax                              ; 0f af c0
+  pop  rbp                                   ; 5d
+  ret                                        ; c3
+</code></pre>
+<h2 id="编程语言的实现和编写流程"><a class="header" href="#编程语言的实现和编写流程">编程语言的实现和编写流程</a></h2>
+<p>编程语言有三种实现方式：</p>
+<ol>
+<li>显式编译后执行，如 C、C++ 语言；</li>
+<li>直接解释执行，如 Python；</li>
+<li>编译到中间形式（还没到机器码）再解释执行，如 Java。</li>
+</ol>
+<p>不同的编程语言实现，其编写程序的流程也不一样，也分成三种：</p>
+<ol>
+<li>「编辑 → 编译 → 执行」循环，典型如 C/C++ 和 Java。</li>
+</ol>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+
+int main(int argc, char** argv)
+{
+	std::cout &lt;&lt; "Hello world!\n";
+	return EXIT_SUCCESS;
+}
+</code></pre>
+<pre><code class="language-sh">$ g++ -o hello hello.cpp
+$ ./hello
+Hello world!
+</code></pre>
+<pre><code class="language-java">public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello world!");
+  }
+}
+</code></pre>
+<pre><code class="language-sh">$ javac HelloWorld.java
+$ java HelloWorld
+Hello world!
+</code></pre>
+<ol start="2">
+<li>「编辑 → 执行」循环，典型如 Python。Java 也支持这种方式用于简单程序。</li>
+</ol>
+<pre><code class="language-python">#!/usr/bin/env python3
+
+print("Hello world!")
+</code></pre>
+<pre><code class="language-sh">$ python3 hello.py
+Hello world!
+
+# 或者
+$ chmod a+rx hello.py
+$ ./hello.py
+Hello world!
+
+# Java 也可以不用显式编译
+$ java HelloWorld.java
+Hello world!
+</code></pre>
+<ol start="3">
+<li>「读取 → 执行」循环，也称为 REPL(read-evaluate-print-loop，print 指输出表达式的值)，典型如 Lisp 和 Smalltalk。Python 和 Java 也支持这种方式用于简单测试。</li>
+</ol>
+<pre><code class="language-sh">$ sbcl
+* (format t "Hello world!~%")
+Hello world!
+NIL
+
+$ python3
+&gt;&gt;&gt; print("Hello world!")
+Hello world!
+
+$ jshell
+jshell&gt; System.out.println("Hello world!")
+Hello world!
+</code></pre>
+<p>从 Java 的例子可以看到「编程语言」和「编程语言的实现」是两个不同的概念，前者指语法和语义，后者指编译、执行形式。</p>
+<h2 id="编程风格的分类"><a class="header" href="#编程风格的分类">编程风格的分类</a></h2>
+<p>编程风格(style)也常被称为<a href="https://en.wikipedia.org/wiki/Programming_paradigm">编程范式</a>(paradigm)，指如何组织数据和代码。一种编程语言可以以某种风格为主，同时支持多种风格，常见的编程风格如下：</p>
+<ul>
+<li>命令式(Imperative)，也经常狭义指代「过程式」，明确指定计算机一步步「怎么做(how)」；
+<ul>
+<li>过程式(procedural)，如 Fortran、Basic、Pascal、C；</li>
+<li>面向对象式(object-oriented)
+<ul>
+<li>基于类(class-based)，如 C++、Java；</li>
+<li>基于原型(prototype-based)，如 JavaScript、<a href="https://iolanguage.org">Io</a>；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>声明式(declarative)，只给出「要做什么(what)」，让计算机（实际是设计好的算法）给出「怎么做」的具体步骤；
+<ul>
+<li>函数式(functional)，如 Haskell、OCaml；</li>
+<li>逻辑式(logical)，如 Prolog；</li>
+<li>响应式(reactive)，如 Verilog，Elm；</li>
+</ul>
+</li>
+</ul>
+<p>截止 2024 年，主流使用的编程语言以过程式、面向对象式为主。</p>
+<h2 id="选择编程语言"><a class="header" href="#选择编程语言">选择编程语言</a></h2>
+<p>自从计算机诞生以来，人们发明了<a href="https://rosettacode.org/wiki/Hello_world/Text">上千种</a>编程语言，如下是一些有名的语言：</p>
+<ul>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#NASM">汇编语言</a>(Assembly)：最古老的语言，已经很少人直接写汇编代码了；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#Fortran">Fortran</a>： 1957 年诞生，常用于科学计算；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#Common_Lisp">Lisp</a>：1960 年诞生，早年常用于人工智能；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#BASIC">Basic</a>：1964 年诞生，常用于<a href="https://smallbasic-publicwebsite.azurewebsites.net">编程教育</a>；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#Pascal">Pascal</a>：1970 年诞生，1980 年代最火的编程语言；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#Smalltalk">Smalltalk</a>：1972 年诞生，常用于<a href="https://cuis.st">编程教育</a>；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#C11">C</a>：1972 年诞生，常用于写操作系统、编译器、数据库等基础软件；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#C++">C++</a>：1985 年诞生，扩充了 C 语言；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#Python">Python</a>：1991 年诞生，常用于科学计算、人工智能；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#Java">Java</a>：1995 年诞生，常用于服务器端的服务开发；</li>
+<li><a href="https://rosettacode.org/wiki/Hello_world/Text#JavaScript">JavaScript</a>：1995 年诞生，常用于浏览器端的动态网页开发；</li>
+</ul>
+<p>各种编程竞赛中常用 C++、Java、Python 三种语言，C++ 的性能最快但最难学，Python 的性能最慢但最易学。</p>
+<h2 id="选择编辑器"><a class="header" href="#选择编辑器">选择编辑器</a></h2>
+<p>编辑器也<a href="http://texteditors.org/cgi-bin/wiki.pl?EditorIndex">非常多</a>，部分常见的如下：</p>
+<ul>
+<li><a href="https://www.vim.org">VIM</a>（<a href="https://neovim.io">Neovim</a>)、<a href="https://www.gnu.org/software/emacs/">GNU Emacs</a>：Linux 上最普遍使用的文本编辑器，对初学者比较难；
+<ul>
+<li>Emacs 配置：<a href="https://github.com/doomemacs/">Doom Emacs</a>、<a href="https://www.spacemacs.org">Spacemacs</a>、<a href="https://seagle0128.github.io/.emacs.d/">Centaur Emacs</a>、<a href="https://github.com/purcell/emacs.d">purcell/emacs.d</a>、<a href="https://github.com/bbatsov/prelude">bbatsov/prelude</a>；</li>
+<li>VIM/Neovim 配置：<a href="https://astronvim.com">AstroNvim</a>、<a href="https://nvchad.com">NvChad</a>、<a href="http://www.lazyvim.org">LazyVim</a>；</li>
+<li>Neovim GUI: <a href="https://neovide.dev">Neovide</a>、<a href="https://github.com/akiyosi/goneovim">goneovim</a>、<a href="https://github.com/equalsraf/neovim-qt">Neovim Qt</a>；</li>
+</ul>
+</li>
+<li><a href="https://helix-editor.com">Helix</a>、<a href="https://github.com/mawww/kakoune">Kakoune</a>、<a href="https://github.com/martanne/vis">Vis</a>：改进 VI 风格的代码编辑器；</li>
+<li><a href="https://lem-project.github.io">Lem</a>：使用 Common Lisp 编写的 Emacs 仿品；</li>
+<li><a href="https://micro-editor.github.io">micro</a>：使用 Go 编写的代码编辑器；</li>
+<li><a href="https://getfresh.dev/">Fresh</a>：使用 Rust 编写的代码编辑器；</li>
+<li><a href="https://code.visualstudio.com">Visual Studio Code</a>: 最流行的轻量级集成开发环境；</li>
+<li><a href="https://zed.dev">Zed</a>：新兴的集成 AI 的代码编辑器；</li>
+<li><a href="https://www.sublimetext.com">Sublime Text</a>：轻量级的代码编辑器；</li>
+<li><a href="https://kate-editor.org">Kate</a>：Linux KDE 桌面环境曾经的默认编辑器(已换成更简单的 <a href="https://apps.kde.org/kwrite/">KWrite</a>)；</li>
+<li><a href="https://gedit-text-editor.org">Gedit</a>：Linux GNOME 桌面环境曾经的默认编辑器（已换成更简单的 <a href="https://apps.gnome.org/TextEditor/">GNOME Text Editor</a>)；</li>
+<li><a href="https://cudatext.github.io">CudaText</a>：使用 Free Pascal 编写的代码编辑器；</li>
+<li><a href="https://gitee.com/cxasm/notepad--">Notepad--</a>： 国产跨平台代码编辑器；</li>
+<li><a href="https://www.geany.org">Geany</a>、<a href="https://codelite.org">CodeLite</a>、<a href="https://www.codeblocks.org">CodeBlocks</a>、<a href="https://github.com/royqh1979/RedPanda-CPP">Redpanda C++</a>： 轻量级的集成开发环境；</li>
+</ul>
+<p>VIM 和 Emacs 功能丰富但比较难，Visual Studio Code、Zed、Kate 功能丰富且易用。</p>
+<h2 id="基本语法"><a class="header" href="#基本语法">基本语法</a></h2>
+<p>编程语言很多，语法各异，但都有一些类似的基本语法。</p>
+<h3 id="数据类型-1"><a class="header" href="#数据类型-1">数据类型</a></h3>
+<p>从 CPU 的机器指令视角看，数据类型只有两大类：</p>
+<ul>
+<li>标量(scalar)
+<ul>
+<li>整数
+<ul>
+<li>byte(字节)：存储单位，一个字节包含 8 比特(bit)，分有符号字节，范围 0 ~ 255，和无符号字节，范围 -128 ~ 127；</li>
+<li>word(字)：计算单位，表示 CPU 一条整数指令能计算的数据长度，在 32 位 CPU 中是 4 字节（也就是 32 比特)，在 64 位 CPU 中是 8 字节（也就是 64 比特）；</li>
+</ul>
+</li>
+<li>浮点数
+<ul>
+<li>float(单精度浮点数)：4 字节；</li>
+<li>double(双精度浮点数)：8 字节；</li>
+<li>long double(扩展精度浮点数)：12 或 16 字节；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>向量(vector)：也就是数组(array)，在内存中连续存储的多个标量；</li>
+</ul>
+<p>从编程语言的语法角度看，使用变量和常量指代数据，数据类型表现的更多样，以 C/C++ 为例：</p>
+<ul>
+<li>整数：char, short, int, long, long long, int8_t, int16_t, int32_t, int64_t 等，以及对应的 无符号(unsigned)版本；
+<ul>
+<li>char 既表示字节，也表示 ASCII 字符，区分只在输入、输出上；</li>
+<li>布尔类型 (_Bool, bool) 也是整数，但只有两个取值 true 和 false；</li>
+<li>指针类型，本质也是个整数，用来表示内存地址；</li>
+</ul>
+</li>
+<li>浮点数：float, double, long double，符合浮点算术标准 <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE 754</a>；</li>
+</ul>
+<p>由于长度限制，整数能表达的范围是有限的，N 比特能表达 2<sup>N</sup> 个整数，所以无符号整数范围是 0 ~ 2<sup>N</sup> - 1，有符号整数范围是 -2<sup>N</sup> ~ 2<sup>N</sup> - 1。因为有长度限制，运算时会发生溢出回绕，例如 signed char 的 <code>127 + 1 = -128</code>， <code>-128 - 1 = 127</code>，unsigned char 的 <code>255 + 1 = 0</code>，<code>0 - 1 = 255</code>。有的编程语言如 Python 的默认整数类型是利用多个机器整数拼起来的，可以表达任意小和任意大的整数，不会发生溢出回绕。</p>
+<p>类似的，由于长度限制，浮点数能表达的范围和精度是有限的，特别是精度问题，浮点数不应该用 "==" 判断相等，例如 <code>0.1 + 0.2 == 0.3</code> 的结果是 <code>false</code>，并不相等。有的语言支持分数类型，可以用来做精确的四则运算，结果依然为分数。</p>
+<p>除了整数和浮点数两种基本类型，大多编程语言还有以下复合类型：</p>
+<ul>
+<li>结构体(struct) 、类(class)、元组(tuple)</li>
+<li>枚举(enum)</li>
+<li>联合(union)</li>
+<li>字符串(string)</li>
+<li>向量(vector)、数组(array)</li>
+<li>链表(list)</li>
+<li>映射(map)、词典(dictionary)、集合(set)</li>
+</ul>
+<h3 id="控制结构-1"><a class="header" href="#控制结构-1">控制结构</a></h3>
+<p>代码语句的执行次序分成顺序、分支、循环、递归、异常五种，顺序就是一句句往下执行，递归是函数调用自身，分支、循环、异常有自己的语法，以 C++ 为例：</p>
+<ul>
+<li>分支(branch)
+<ul>
+<li>if  ... else</li>
+<li>continue, break</li>
+<li>goto</li>
+</ul>
+</li>
+<li>循环(loop)
+<ul>
+<li>while,  do ... while</li>
+<li>for</li>
+</ul>
+</li>
+<li>异常(exception)
+<ul>
+<li>throw, try ... catch ... finally</li>
+</ul>
+</li>
+</ul>
+<h3 id="函数-1"><a class="header" href="#函数-1">函数</a></h3>
+<p>常用的代码语句可以提取到函数(function)里，方便在代码的其它地方按名字调用，不再重复写，在上面已经展示了 <code>square</code> 函数。函数在不同语言里有不同称呼，如在 Perl 中称为 subroutine(子例程)，在 Pascal 中按有无返回值分为 function 和 procedure( 过程)。</p>
+<h3 id="模块"><a class="header" href="#模块">模块</a></h3>
+<p>除了函数是组织代码的一种方式，另一种更高层的方式是把常用的函数和复合数据类型提取到模块(module) 供多个程序复用，在有的语言里用包(package)指代模块，进一步的，多个模块可以放在一起成为库(library)，方便分发用途相关的多个模块。</p>
+<h2 id="数据结构--算法--程序"><a class="header" href="#数据结构--算法--程序">数据结构 + 算法 = 程序</a></h2>
+<p>《Data Structures + Algorithms = Programs》是 Pascal 语言之父、著名计算机科学家尼古拉斯·沃斯（<em>Niklaus Wirth</em>，1934年2月15日—2024年1月1日）编写的一本名著，揭示了编程的要点：设计一个程序，就是对输入的数据，考虑如何组织数据以及如何操作数据，最终得到期望的输出。</p>
+<p>常用的数据结构：</p>
+<ol>
+<li>array, vector: 一般内置在编程语言里；</li>
+<li>string: 一般内置在编程语言里；</li>
+<li>单向链表、双向链表：比 array 和 vector 能更高效的在开头和中间插入和删除元素；</li>
+<li>stack, queue, dequeue, heap</li>
+<li>tree, hash table</li>
+<li>graph</li>
+<li>matrix</li>
+</ol>
+<p>常用的算法：</p>
+<ol>
+<li>查找，包括字符串查找和数组、树的元素查找和插入；</li>
+<li>数组的排序；</li>
+<li>集合运算；</li>
+<li>图的拓扑排序、最短路径；</li>
+</ol>
+<h2 id="常用库"><a class="header" href="#常用库">常用库</a></h2>
+<p>日常编程中，所有语言都有类似的常用库：</p>
+<ol>
+<li>文件读写，包括记录日志；</li>
+<li>网络读写，最常用的是发送 HTTP 请求；</li>
+<li>JSON 数据格式解析；</li>
+<li>关系数据库的读写；</li>
+<li>图形用户界面(GUI)；</li>
+<li>命令行选项解析；</li>
+<li>配置文件读写；</li>
+</ol>
+<h2 id="项目构建工具"><a class="header" href="#项目构建工具">项目构建工具</a></h2>
+<p>一个项目(project)由多个源文件组成，当文件很多而且要考虑在多种操作系统下编译时，手动写命令会很麻烦，因此需要专门的构建工具来：</p>
+<ul>
+<li>检测所需的库、编译器等；</li>
+<li>编译、链接、测试；</li>
+<li>打包、安装；</li>
+</ul>
+<p>以 C/C++ 为例，有最基本的 <a href="https://www.gnu.org/software/make/">make</a> ，更高级的 <a href="https://www.gnu.org/software/automake/manual/html_node/index.html">Autotools</a>、<a href="https://cmake.org">CMake</a>、<a href="https://www.boost.org/build/">Boost Build</a>，更新潮的 <a href="https://xmake.io/">xmake</a>、<a href="https://mesonbuild.com">Meson</a>，注重封闭(hermetic)构建的 <a href="https://bazel.build/">Bazel</a>、<a href="https://buck2.build">Buck 2</a>、<a href="https://please.build/">Please</a>、<a href="https://www.pantsbuild.org">Pants</a>。</p>
+<h2 id="版本控制系统"><a class="header" href="#版本控制系统">版本控制系统</a></h2>
+<p>开发过程中需要记录文件的版本变更，以方便回溯历史，下面是常见的版本控制系统（Version Control System)：</p>
+<ol>
+<li><a href="https://subversion.apache.org/">Subversion</a>
+<ol>
+<li><a href="https://tortoisesvn.net/">TortoiseSVN</a></li>
+</ol>
+</li>
+<li><a href="https://git-scm.com/">Git</a>
+<ol>
+<li><a href="https://github.com/sourcegit-scm/sourcegit">SourceGit</a></li>
+<li><a href="https://github.com/gitui-org/gitui">gitui</a></li>
+<li><a href="https://github.com/jesseduffield/lazygit">lazygit</a></li>
+<li><a href="https://jonas.github.io/tig/">tig</a></li>
+<li><a href="https://magit.vc/">Magit</a></li>
+<li><a href="https://github.com/altsem/gitu">gitu</a></li>
+</ol>
+</li>
+<li><a href="https://www.mercurial-scm.org/">Mercurial</a></li>
+<li><a href="https://www.fossil-scm.org/">Fossil</a></li>
+<li><a href="https://www.perforce.com/">Perforce</a></li>
+<li><a href="https://www.plasticscm.com/">PlasticSCM</a></li>
+<li><a href="https://jj-vcs.github.io/jj/latest/">Jujutsu</a></li>
+<li><a href="https://sapling-scm.com/">Sapling</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-10"><a class="header" href="#目录-10">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-11"><a class="header" href="#目录-11">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-12"><a class="header" href="#目录-12">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-13"><a class="header" href="#目录-13">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-14"><a class="header" href="#目录-14">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-15"><a class="header" href="#目录-15">目录</a></h1>
+<ol>
+<li><a href="16%E9%A9%BE%E9%A9%B6/%E7%A7%91%E7%9B%AE%E4%B8%80%E6%B3%95%E8%A7%84.html">科目一法规</a></li>
+</ol>
+<div style="display: none">
+<pre><code class="language-{toctree}">:hidden:
+
+科目一法规.md
+</code></pre>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="科目一法规"><a class="header" href="#科目一法规">科目一法规</a></h1>
+<h2 id="机动车驾驶证申领与使用"><a class="header" href="#机动车驾驶证申领与使用">机动车驾驶证申领与使用</a></h2>
+<ol>
+<li>准驾车型</li>
+</ol>
+<div class="table-wrapper"><table><thead><tr><th>准驾车型</th><th>代号</th><th>准予驾驶的车类</th><th>准予驾驶的其他准驾车型</th></tr></thead><tbody>
+<tr><td>大型客车</td><td>A1</td><td>大型载客汽车(&gt;= 20人)</td><td><strong>A3</strong>, <strong>B1/B2</strong>, C1/C2/C3/C4, <strong>M</strong></td></tr>
+<tr><td>牵引车</td><td>A2</td><td>重型、中型全挂、半挂汽车列车</td><td><strong>B1/B2</strong>, C1/C2/C3/C4, <strong>M</strong></td></tr>
+<tr><td>城市公交车</td><td>A3</td><td>核载 10 人以上的城市公共汽车</td><td>C1/C2/C3/C4</td></tr>
+<tr><td></td><td></td><td>~</td><td></td></tr>
+<tr><td>中型客车</td><td>B1</td><td>中型载客汽车（含核载 10 人以上、19 人以下的城市公共汽车）</td><td>C1/C2/C3/C4, <strong>M</strong></td></tr>
+<tr><td>大型货车</td><td>B2</td><td>重型、中型载货汽车、大、重、中型专项作业车</td><td>C1/C2/C3/C4, <strong>M</strong></td></tr>
+<tr><td></td><td></td><td>~</td><td></td></tr>
+<tr><td>小型汽车</td><td>C1</td><td></td><td>C2/C3/C4</td></tr>
+<tr><td>小型自动档汽车</td><td>C2</td><td></td><td></td></tr>
+<tr><td>低速载货汽车</td><td>C3</td><td>原四轮农用运车</td><td>C4</td></tr>
+<tr><td>三轮汽车</td><td>C4</td><td></td><td></td></tr>
+<tr><td>残疾人专用小型自动档载客汽车</td><td>C5</td><td></td><td></td></tr>
+<tr><td>轻型牵引挂车</td><td>C6</td><td>前车（拖车）​和​​后车（挂车）​总质量加起来​小于4.5吨</td><td></td></tr>
+<tr><td></td><td></td><td>~</td><td></td></tr>
+<tr><td>普通三轮摩托车</td><td>D</td><td></td><td>E、F</td></tr>
+<tr><td>普通二轮摩托车</td><td>E</td><td></td><td>F</td></tr>
+<tr><td>轻便摩托车</td><td>F</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>~</td><td></td></tr>
+<tr><td>轮式自行机械车</td><td>M</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>~</td><td></td></tr>
+<tr><td>无轨电车</td><td>N</td><td></td><td></td></tr>
+<tr><td>有轨电车</td><td>P</td><td></td><td></td></tr>
+</tbody></table>
+</div>
+<ol start="2">
+<li>
+<p>A1、A2、B1、C6 不能初次申领。</p>
+</li>
+<li>
+<p>驾驶证有效期：6 年、10 年、长期，到期前 90 天内申请换证。</p>
+</li>
+<li>
+<p>饮酒驾驶 vs 醉酒驾驶 对比表​​：</p>
+</li>
+</ol>
+<div class="table-wrapper"><table><thead><tr><th>项目</th><th>​<strong>​饮酒驾驶​</strong>​</th><th>​<strong>​醉酒驾驶​</strong>​</th></tr></thead><tbody>
+<tr><td>​<strong>​血液酒精含量​</strong>​</td><td>​​20mg/100ml ≤ 酒精含量 &lt; 80mg/100ml​​</td><td>​​酒精含量 ≥ 80mg/100ml​​</td></tr>
+<tr><td>​<strong>​法律定性​</strong>​</td><td>​​违法行为​​</td><td>​​犯罪行为（危险驾驶罪）​​</td></tr>
+<tr><td>​<strong>​行政处罚​</strong>​</td><td>• 暂扣驾驶证​​6个月​​  <br>• 罚款​​1000-2000元​​</td><td>• ​​吊销驾驶证​​，且​​5年内​​不得重考  <br>• 由公安机关​​约束至酒醒​​</td></tr>
+<tr><td>​<strong>​刑事处罚​</strong>​</td><td>无</td><td>• ​​处拘役，并处罚金​​  <br>• 留下​​犯罪记录​​（对工作、生活有巨大影响）</td></tr>
+<tr><td>​<strong>​记分​</strong>​</td><td>​​一次记12分​​</td><td>吊销驾驶证，无记分</td></tr>
+<tr><td>​<strong>​再次违法​</strong>​</td><td>再次酒驾：处​​10日以下拘留​​，并处​​1000-2000元​​罚款，​​吊销驾驶证​​</td><td>无“再次”，一旦构成即入刑</td></tr>
+<tr><td>​<strong>​发生重大事故​</strong>​</td><td>构成犯罪的，依法追究刑事责任，并​​吊销驾驶证​​，终生不得重新取得</td><td>构成犯罪的，依法追究刑事责任，并​​吊销驾驶证​​，终生不得重新取得</td></tr>
+<tr><td>​<strong>​营运车辆​</strong>​</td><td>驾驶营运机动车酒驾：处​​15日拘留​​，罚款​​5000元​​，​​吊销驾驶证​​，​​5年内​​不得重考</td><td>驾驶营运机动车醉驾：​​吊销驾驶证​​，​​10年内​​不得重考，终生不得驾驶营运车辆</td></tr>
+</tbody></table>
+</div>
+<h2 id="驾驶证管理"><a class="header" href="#驾驶证管理">驾驶证管理</a></h2>
+<ol>
+<li>记分规则 <a href="https://www.gov.cn/zhengce/2021-12/27/content_5712880.htm">2022 年版</a>， 分 12 分、9 分、6 分、3 分、 1 分五档。
+<ol>
+<li>12 分
+<ol>
+<li>酒后驾车；</li>
+<li>轻伤或死亡的事故逃逸；</li>
+<li>伪造、变造机动车号牌、行驶证、驾驶证；</li>
+<li>超员 20%（大车）、100%；</li>
+<li>高速、城市快速路上超速 20%（大车）、50%；</li>
+<li>高速、城市快速路上倒车、逆行、穿越中央分隔带掉头的；</li>
+<li>代替别人处罚；</li>
+</ol>
+</li>
+<li>9 分
+<ol>
+<li>超员 50% ~ 100%（7座以上）；</li>
+<li>高速、城市快速<strong>以外</strong>路上超速 50% ；</li>
+<li>高速、城市快速上违法停车；</li>
+<li>未悬挂、故意遮挡、污损号牌；</li>
+<li>驾驶证与准驾车型不符；</li>
+<li>疲劳驾驶：中型以上载客汽车、危险物品运输车辆</li>
+</ol>
+</li>
+<li>6 分
+<ol>
+<li>超员 &lt;20%（大车）, 20~50%（7座以上）， 50~100%；</li>
+<li>超速 &lt;20%（高速、快速路）, 20~50%;</li>
+<li>货车超重 50%；</li>
+<li><strong>不按交通信号灯指示通行</strong>；</li>
+<li>轻微伤、财产损失的事故逃逸；</li>
+<li><strong>违法占用应急车道行驶</strong>；</li>
+</ol>
+</li>
+<li>3 分
+<ol>
+<li>超员 20~50% （小车）；</li>
+<li>超速 20~50% ；</li>
+<li>高速公路或者城市快速路上不按规定车道行驶；</li>
+<li>不按规定超车、让行，或者在高速公路、城市快速路以外的道路上逆行的；</li>
+<li>占用对面车道；</li>
+<li>拨打、接听手持电话；</li>
+<li>经人行横道不按规定减速、停车、避让行人；</li>
+<li>货车超重 30% ~  50% ;</li>
+<li>发生故障、事故停车后，不按规定使用灯光或者设置警告标志的；</li>
+<li>疲劳驾驶：货车；</li>
+<li>高速公路上行驶低于规定最低时速；</li>
+</ol>
+</li>
+<li>1 分
+<ol>
+<li>超速： 10~20%；</li>
+<li>不按规定会车，不按规定倒车、掉头；</li>
+<li>不按规定使用灯光；</li>
+<li>违反禁令标志、禁止标线指示；</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<div class="table-wrapper"><table><thead><tr><th>分类</th><th>道路</th><th>车型</th><th>12 分</th><th>9 分</th><th>6 分</th><th>3 分</th><th>1 分</th></tr></thead><tbody>
+<tr><td>超员</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>校车、公路客运汽车、旅游客运汽车</td><td>&gt;= 20%</td><td></td><td>&lt; 20%</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>7座以上载客汽车</td><td>&gt;= 100%</td><td>&gt;= 50%</td><td>&gt;= 20%</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>其他载客汽车</td><td>&gt;= 100%</td><td></td><td>&gt;= 50%</td><td>&gt;= 20%</td><td></td></tr>
+<tr><td>超速</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>高速公路、城市快速路</td><td>校车、中型以上载客载货汽车、危险物品运输车辆</td><td>&gt;= 20%</td><td></td><td>&lt; 20%</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>其他机动车</td><td>&gt;= 50%</td><td></td><td>&gt;= 20%</td><td></td><td></td></tr>
+<tr><td></td><td>以外道路</td><td>校车、中型以上载客载货汽车、危险物品运输车辆</td><td></td><td>&gt;= 50%</td><td>&gt;= 20%</td><td></td><td>&gt;= 10%</td></tr>
+<tr><td></td><td></td><td>其他机动车</td><td></td><td></td><td>&gt;= 50%</td><td>&gt;= 20%</td><td></td></tr>
+<tr><td>超重</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>载货汽车</td><td></td><td></td><td>&gt;= 50%</td><td>&gt;= 30%</td><td>&lt; 30%</td></tr>
+</tbody></table>
+</div>
+<h2 id="道路通行规定"><a class="header" href="#道路通行规定">道路通行规定</a></h2>
+<ol>
+<li>四项基本原则
+<ol>
+<li>右侧通行；</li>
+<li>分道通行：机动车道、非机动车道、人行道；</li>
+<li>多车道：左为快、右为慢，不要侵占公交专用车道；</li>
+<li>单车道：中间通行；</li>
+</ol>
+</li>
+<li>车辆灯光
+<ol>
+<li>灯光控制拔杆
+<ol>
+<li>示廓灯（示宽灯、行车灯） + 后位灯</li>
+<li>前照灯：分为近光灯、远光灯；没有交通信号灯的路口要交替使用近光、远光灯来示意；会车 150m 外不能用远光灯；</li>
+<li>转向灯</li>
+</ol>
+</li>
+<li>单独开关
+<ol>
+<li>危险报警闪光灯(双闪灯)</li>
+<li>雾灯：分为前雾灯和后雾灯​​，先打开​​示廓灯​​或​​近光灯​​，然后才能开启雾灯（这是电路设计逻辑）；</li>
+</ol>
+</li>
+<li>自动打开
+<ol>
+<li>制动灯（刹车灯）</li>
+<li>倒车灯：自动打开</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>设置警告标置：50 ~ 100m，雨天 &gt;100m</li>
+<li>交叉路口通行
+<ol>
+<li>拐弯让直行；</li>
+<li>支路让主路；</li>
+<li>无信号灯或无方向指示信号灯路口：
+<ol>
+<li>右方道路来车先行；</li>
+<li>对向行驶：右转让左转，因为左转路径复杂；</li>
+</ol>
+</li>
+<li>左转时要从路口中心<strong>左侧</strong>绕行，以避免与对向左转车相撞；</li>
+</ol>
+</li>
+<li>环岛
+<ol>
+<li>进环岛：不打转向灯（因为右转是出环岛，左转是逆行）；</li>
+<li>出环岛：打右转向灯；</li>
+<li>岛外车让岛内车先行；</li>
+</ol>
+</li>
+</ol>
+<h2 id="跟车与限制超车"><a class="header" href="#跟车与限制超车">跟车与限制超车</a></h2>
+<ol>
+<li>超车：
+<ol>
+<li><strong>提前3-5秒开启左转向灯</strong>；</li>
+<li>观察<strong>内后视镜</strong>、<strong>左后视镜</strong>，<strong>转头快速扫视</strong>车辆B柱后方的区域；</li>
+<li>变换远、近光灯（白天不明显，晚间使用），或者鸣喇叭提示前车；</li>
+<li>确认有<strong>充足安全距离</strong>后超车；</li>
+<li>确认拉开<strong>充足距离</strong>后，<strong>右转向灯</strong>，驶回原车道；</li>
+</ol>
+</li>
+<li>会车
+<ol>
+<li>减速靠右；</li>
+<li>遇到前方障碍时的处理，无障碍一方先行，但已经驶入障碍区的车先行；</li>
+<li>狭窄路段：
+<ol>
+<li>上坡：上坡车先行，但已经在下坡的车先行；</li>
+<li>盘山路：外侧车先行；</li>
+</ol>
+</li>
+<li>相距 150m 外改用近光灯；</li>
+<li>辅路让主路；</li>
+</ol>
+</li>
+<li>掉头与倒车</li>
+</ol>
+<h2 id="避让行人和非机动车"><a class="header" href="#避让行人和非机动车">避让行人和非机动车</a></h2>
+<ol>
+<li>事故中机动车没有责任时，也要赔偿 &lt;=10%；</li>
+<li>铁路道口
+<ol>
+<li>有人值守铁路道口；</li>
+<li>无人值守铁路道口；
+<ol>
+<li>没有信号灯时，减速观察或停车观察，&lt;= 30 km/h 匀速通过，不要换档以免熄火；</li>
+</ol>
+</li>
+<li>没有停止线时停在 50m 外；</li>
+<li>前方捅堵时，不可通行；</li>
+</ol>
+</li>
+<li>车道合并时：两车道依次交替通行；</li>
+<li>漫水路，漫水桥：
+<ol>
+<li><strong>停车</strong>察明水情（<strong>不是水流</strong>，是深浅、有无暗坑），确认安全后，低速通过；挂低档，不换档，不转弯、不停车；</li>
+<li>水中发动机熄火时，不要再次打火；</li>
+<li>通过后，间断轻刹几次以恢复制动效果，排掉制动盘鼓中的水；</li>
+</ol>
+</li>
+</ol>
+<h2 id="机动车限速"><a class="header" href="#机动车限速">机动车限速</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-16"><a class="header" href="#目录-16">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-17"><a class="header" href="#目录-17">目录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="目录-18"><a class="header" href="#目录-18">目录</a></h1>
+<ol>
+<li><a href="22%E4%BD%93%E8%82%B2/%E7%BB%B3%E7%BB%93%E7%AE%80%E4%BB%8B.html">绳结简介</a></li>
+</ol>
+<div style="display: none">
+<pre><code class="language-{toctree}">:hidden:
+
+绳结简介.md
+</code></pre>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="绳结简介"><a class="header" href="#绳结简介">绳结简介</a></h1>
+<h2 id="基础结"><a class="header" href="#基础结">基础结</a></h2>
+<ol>
+<li><a href="https://www.animatedknots.com/overhand-knot">Overhand knot</a>：单结，反手结，交腕结。最简单的单股止索结，难解开。
+<ol>
+<li><a href="https://www.animatedknots.com/figure-8-knot">Figure-eight knot</a>：八字结，较易解开的止索结。</li>
+<li><a href="https://www.animatedknots.com/slip-knot">Slip knot</a>：活结，活动端折弯的单结。</li>
+<li><a href="https://www.animatedknots.com/noose-knot">Noose knot</a>：套索，最简单的滑结(running knot)，固定端折弯的单结。</li>
+</ol>
+</li>
+<li><a href="https://www.animatedknots.com/half-knot">Half knot</a>：半结，最简单的捆绑结，平结的第一步（其实拓扑上就是单结)。
+<ol>
+<li><a href="https://www.animatedknots.com/square-knot">Square knot</a>：平结(方结)，最常用的捆绑结。</li>
+</ol>
+</li>
+<li><a href="https://www.animatedknots.com/half-hitch-knot">Half hitch</a>: 半结，最简单的拴结(其实拓扑上就是单结）。</li>
+<li><a href="https://www.animatedknots.com/sheet-bend-knot">Sheet bend</a>：单编结，最常用的连接结，可以连接不同粗细的绳子。</li>
+</ol>
+<p>绳结的考量点：</p>
+<ol>
+<li>用途：
+<ol>
+<li>捆绑(binding) ：<a href="https://en.wikipedia.org/wiki/Boa_knot">Boa knot</a>, <a href="https://www.animatedknots.com/millers-knot">Miller's knot</a>, <a href="https://www.animatedknots.com/square-knot">Reef knot</a></li>
+<li>连接(bend) ：<a href="https://en.wikipedia.org/wiki/Simple_Simon_under">Simple Simon double bend</a>, Simple Simon symmetric bend,  <strong><a href="https://www.animatedknots.com/zeppelin-bend-knot">Zeppelin bend</a></strong>,  <a href="https://www.animatedknots.com/alpine-butterfly-bend-knot">Butterfly bend</a>，<strong><a href="https://www.animatedknots.com/double-fishermans-bend-knot">Double/Triple fisherman's knot</a></strong></li>
+<li>拴系(hitch) ：<strong><a href="https://www.animatedknots.com/round-turn-two-half-hitches-knot">Round turn and two half-hitches</a></strong>，<a href="https://www.animatedknots.com/boom-hitch-knot">Boom Hitch</a>, <a href="https://www.animatedknots.com/buntline-hitch-knot">EStar hitch</a>, <strong><a href="https://www.animatedknots.com/midshipmans-hitch-knot">Midshipman's hitch</a></strong>, <a href="https://www.animatedknots.com/tumble-hitch-knot">Tumble hitch</a>, <a href="https://www.animatedknots.com/siberian-hitch-knot">Siberian hitch</a></li>
+<li>抓结(friction hitch) ：<strong><a href="https://www.animatedknots.com/prusik-knot">Prusik hitch</a></strong></li>
+<li>防脱(stopper) ： <a href="https://www.animatedknots.com/estar-stopper-knot">EStar stopper knot</a>, <strong><a href="https://www.animatedknots.com/stevedore-stopper-knot">Double figure-eight knot(Stevedore knot)</a></strong>, <strong><a href="https://www.animatedknots.com/double-overhand-stopper-knot">Double overhand knot</a></strong></li>
+<li>绳环(loop) ：<strong><a href="https://www.animatedknots.com/alpine-butterfly-loop-knot">Butterfly loop</a></strong>,  <a href="https://www.animatedknots.com/double-alpine-butterfly-loop-knot">Double butterfly loop</a>, <strong><a href="https://www.animatedknots.com/figure-8-follow-through-loop-knot">Figure-eight loop</a></strong>/<a href="https://en.wikipedia.org/wiki/Figure-of-nine_loop">Figure-nine loop</a>, <strong><a href="https://www.animatedknots.com/figure-8-double-loop-knot">Double figure-eight loop</a></strong>, <a href="https://en.wikipedia.org/wiki/Zeppelin_loop">Zeppelin loop</a></li>
+<li>滑结(running knot) ： <a href="https://www.animatedknots.com/running-bowline-knot">Running bowline</a></li>
+<li>盘绳(coil)：<a href="https://www.animatedknots.com/coil-unattached-rope-knot">Butterfly coil</a>, <a href="https://www.animatedknots.com/chain-sinnet-knot">Chain Sinnet</a></li>
+</ol>
+</li>
+<li>安全：是否易打滑、翻转，能承受多大负荷，适用多粗多细、什么材料的绳子，是否适用光滑、弹性的绳子，是否易磨损绳子，结的大小(影响卡塞），结构是否对称（影响受力均匀）。</li>
+<li>易用：步骤是不是够少，是不是易错，是不是容易解开，能不能单手操作，能否在受力时打结、解开、调整，易于检查是否正确。</li>
+</ol>
+<p>绳子种类：</p>
+<ol>
+<li>天然纤维绳
+<ol>
+<li>棉绳</li>
+<li>麻绳</li>
+<li>棕绳</li>
+<li>丝绳</li>
+</ol>
+</li>
+<li>合成纤维绳
+<ol>
+<li>聚丙烯绳，Polypropylene，丙纶，聚丙烯纤维，能浮水，低强度，不耐磨。</li>
+<li><strong>尼龙绳</strong>，Nylon，绵纶，耐纶，聚酰胺纤维，高弹性，可用作动力绳和静力绳（需特殊工艺降低弹性）。</li>
+<li><strong>涤纶绳</strong>，Polyester，聚酯纤维，低弹性，常用作静力绳。</li>
+<li>芳纶绳，Aramid，如凯夫拉(Kevlar)，芳酰胺纤维，高强度但很脆，耐高温。</li>
+<li>聚乙烯绳，Polyethylene，如迪尼玛(Dyneema)，能浮水，高强度，不耐磨，不耐高温。</li>
+</ol>
+</li>
+</ol>
+<p>注意事项：</p>
+<ol>
+<li>不要将 Reef knot 用于连接两条绳子！！！</li>
+<li>不要单独使用 Clove hitch！！！</li>
+<li>不要使用不安全的标准 Bowline，最好避开 Bowline 家族，变种太多，难以检查，很多不安全。</li>
+<li>止索结要缠绕在主绳上，不能只打在绳头自身。</li>
+<li>相比单重版本的绳结，为了安全，倾向使用双重甚至三重版本。</li>
+<li>滑结一般不要用在人身上，以免过于勒紧而发生危险——Noose 和 Poacher's knot 都很危险。</li>
+</ol>
+<h2 id="stopper-knot止索结"><a class="header" href="#stopper-knot止索结">Stopper knot：止索结</a></h2>
+<p>防止绳子从孔隙中脱落。</p>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Overhand_knot">Overhand knot</a>: 单结，反手结，交腕结，难解开。
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Double_overhand_knot">Double overhand knot</a>：<strong>双反手结</strong>，不易松动，难解开。</li>
+<li><a href="https://en.wikipedia.org/wiki/Double_fisherman%27s_knot">Double fisherman's knot</a>，也可用于止索结。</li>
+<li><a href="https://en.wikipedia.org/wiki/Strangle_knot">Strangle knot</a>，扼结，也可用于止索结。</li>
+</ol>
+</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Figure-eight_knot">Figure-eight knot</a>: 八字结，比反手结更大、易解，但易松开。</del>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Double_figure-eight">Double figure-eight knot,  Stevedore knot</a>：<strong>双八字结，码头工人结/装卸工结</strong>。更大，易解。</li>
+</ol>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Ashley%27s_stopper_knot">Ashley's stopper knot,  Oysterman's stopper knot</a>: <strong>阿什利止索结，牡蛎渔夫止索结</strong>，不易松动，比双反手结和双八字结大。</li>
+<li><a href="https://www.animatedknots.com/estar-stopper-knot">EStar stopper knot</a>，由 Evans Starzinger 描述，源自 <a href="https://www.animatedknots.com/buntline-hitch-knot">EStar hitch</a>，更适合光滑的绳索。重负载后难解开。</li>
+<li><a href="https://en.wikipedia.org/wiki/Monkey%27s_fist">Monkey's fist</a>：猴拳结</li>
+</ol>
+<h2 id="binding-knot捆绑结"><a class="header" href="#binding-knot捆绑结">Binding knot：捆绑结</a></h2>
+<p>用一根绳子捆绑物体。有的 binding knot 也可用作 hitch knot。</p>
+<ol>
+<li>Friction knots: 靠绳子的摩擦力固定，摩擦力由小到大：
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Miller%27s_knot">Miller's knot,  bag knot</a>：<strong>磨坊主结，米勒结</strong>，常用来绑袋子口，易绑也易解。</li>
+<li><a href="https://en.wikipedia.org/wiki/Strangle_knot">Strangle knot</a>:  扼结，简单，常用来绑袋子口和缚扎鞭子末端。没 constrictor knot 可靠。</li>
+<li><a href="https://en.wikipedia.org/wiki/Constrictor_knot">Constrictor knot</a>：紧缚结，可能难解开。</li>
+<li><a href="https://en.wikipedia.org/wiki/Boa_knot">Boa knot</a>：<strong>蟒蛇结</strong>，Strangle knot(扼结）和Double constrictor knot(双重紧缚结）的结合，更适合捆绑物体末端。可能更难解开。</li>
+</ol>
+</li>
+<li>Knotted-ends knots: 靠绳子末端打结来固定
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Reef_knot">Reef/Square knot</a>: <strong>平结、方结</strong>，由两个半结组成。狭义的方结指没有滑结的版本，而平结指一头是滑结的版本。<strong>因拉扯自由端时容易翻转散开，因此千万不要用作连接结</strong>！！！
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Surgeon%27s_knot">Surgeon's knot</a>：外科结，适合细绳，打第一个结时多绕几圈的平结改良版</li>
+<li><a href="https://en.wikipedia.org/wiki/Shoelace_knot">Shoelace knot(bow knot)</a>：鞋带结，领结，两头都有滑结的平结</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Thief_knot">Thief knot</a>：贼结</del></li>
+<li><del><a href="https://en.wikipedia.org/wiki/Granny_knot">Granny knot</a>：奶奶结</del></li>
+<li><del><a href="https://en.wikipedia.org/wiki/Grief_knot">Grief knot(what knot)</a>：悲伤结（莫名其妙结）</del></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="lashing-knot绑扎结"><a class="header" href="#lashing-knot绑扎结">Lashing knot：绑扎结</a></h2>
+<p>用一根绳子将多根物体固定在一起。</p>
+<h2 id="bend-knot连接结"><a class="header" href="#bend-knot连接结">Bend (knot)：连接结</a></h2>
+<p>也叫 joining knot，连接两条绳子。</p>
+<ol>
+<li>适用不同粗细绳子
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Sheet_bend">Sheet bend</a>，<a href="https://en.wikipedia.org/wiki/Sheet_bend#Double_sheet_bend">Double sheet bend</a>： 单编结，<strong>双编结</strong>，织工结(weaver's knot, weaver's hitch)，易用，注意单编结在光滑或受力不均时可能滑脱。
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Simple_Simon_under">Simple Simon under bend</a>：西蒙下接结，适用于不同粗细绳子和光滑的合成绳索，优于 sheet bend，但未成为主流标准。注意 simple Simon over bend 不安全。</li>
+<li><strong>Simple Simon double bend</strong></li>
+<li><strong>Simple Simon symmetric bend</strong>：有点像 Reever knot</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>适用相同粗细绳子
+<ol>
+<li>两个反手结互锁的结构
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Zeppelin_bend">Zeppelin bend</a>: <strong>齐柏林结</strong>，飞艇结，非常易解，比猎人结更好。</li>
+<li><a href="https://en.wikipedia.org/wiki/Butterfly_bend">Butterfly bend</a>：<strong>蝴蝶连接结</strong>，易解，但易错。</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Hunter%27s_bend">Hunter's bend</a>:  猎人结，很像 Zeppelin bend，多一步缠绕，受力后难解</del>。</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Ashley&#x27;s_bend">Ashley's bend</a>:  阿什利结，打法复杂，受力后很难解。</del></li>
+</ol>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Fisherman%27s_knot">Fisherman's knot</a>：渔夫结，渔人结，易绑，难解。
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Double_fisherman%27s_knot">Double fisherman's knot (grapevine knot)</a>：<strong>双渔夫结</strong>，葡萄藤结，极难解，攀岩行业标准。</li>
+<li><a href="https://en.wikipedia.org/wiki/Triple_fisherman%27s_knot">Triple fisherman's knot</a>：<strong>三重渔夫结</strong>，极高安全性。</li>
+</ol>
+</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Water_knot">Water knot:</a> 水结，扁带结，专用于扁平织带，不可用于圆绳，受力后难解。易滑动，不太安全。</del></li>
+<li><del><a href="https://en.wikipedia.org/wiki/Reever_Knot">Reever Knot</a>：由登山家设计，旨在提供与双渔人结同等的可靠性，但承重后更容易解开。测试报告显示它表现良好，但不如双渔人结或齐柏林结那样普及。</del></li>
+<li><del><a href="https://en.wikipedia.org/wiki/Flemish_bend">Flemish bend, figure-eight bend, double figure-eight bend</a>：双重八字结，安全，但体积大，打结麻烦，受力后难解开。</del></li>
+<li><a href="https://en.wikipedia.org/wiki/Carrick_bend">Carrick bend</a>：卡里克结，金钱结，特别适合非常粗重的绳索，易解，但易错。</li>
+<li><a href="https://en.wikipedia.org/wiki/Offset_overhand_bend">Offset overhand bend, thumb bend</a>：偏置反手结，拇指结。非常容易系，但可能比较难解。因其体积小和偏置的特性，不容易被岩缝卡住，容易绕边缘移动，所以在沿绳速降方面很受欢迎。在高负载下可能翻转而不安全。注意不要用 offset figure-eight bend，它在低负载下就会翻转而不安全。</li>
+<li><a href="https://en.wikipedia.org/wiki/Blood_knot">Blood knot</a>：血结，常用于钓鱼时连接单丝尼龙线，很难解。</li>
+</ol>
+</li>
+</ol>
+<h2 id="hitch-knot拴系结"><a class="header" href="#hitch-knot拴系结">Hitch (knot)：拴系结</a></h2>
+<p>拴在柱子、缆绳、环上来固定。</p>
+<ol>
+<li><del><a href="https://en.wikipedia.org/wiki/Clove_hitch">Clove hitch</a>： 丁香结、双套结，由两个 <a href="https://en.wikipedia.org/wiki/Single_hitch">single hitches</a> 叠加组成，易滑动，易松动，常用来组成其它绳结。</del><strong>！！！不要单独使用！！！</strong>。 相关的绳结类型：
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Constrictor_knot">Constrictor knot</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Miller%27s_knot">Miller's knot</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Strangle_knot">Strangle knot</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Ground-line_hitch">Ground-line hitch</a></li>
+</ol>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Round_turn_and_two_half-hitches">Round turn and two half-hitches</a>：<strong>旋圆双半结，双绕双半结</strong>，简单可靠。</li>
+<li><a href="https://en.wikipedia.org/wiki/Buntline_hitch">Buntline hitch</a>：收帆索结（将帆底部的收帆索固定到帆桁上），无法在受力状态下打结，稳固但难解，因此常用<strong>收帆索滑结</strong>(slipped buntline hitch)。系领带的 <a href="https://en.wikipedia.org/wiki/Four-in-hand_knot">Four-in-hand knot</a> 其实就是 buntline hitch。
+<ol>
+<li><strong><a href="https://www.animatedknots.com/buntline-hitch-knot">EStar hitch</a></strong>：改进 buntline hitch，更适合光滑的绳索。</li>
+<li><a href="https://www.animatedknots.com/gnat-hitch-knot">Gnat hitch</a>：蚊结，简单可靠，比 buntline hitch 易结也易解，适合轻负载，必须维持拉力，一旦松弛即松脱。</li>
+</ol>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Boom_hitch">Boom hitch</a>：<strong>吊杆结</strong>，即使在光滑的钢管上也很难滑动。比 Buntline hitch 易解。</li>
+<li><a href="https://en.wikipedia.org/wiki/Taut-line_hitch">Taut-line hitch</a>：<strong>紧绳结</strong>，营钉结，适合帐篷拉线，不适合长期固定。有三种变体，其中 见习船员结(<a href="https://www.animatedknots.com/midshipmans-hitch-knot">Midshipman's hitch</a>) 是最安全的，但在重力下更难调节。</li>
+<li><a href="https://en.wikipedia.org/wiki/Timber_hitch">Timber hitch</a>：曳木结，专为拖曳设计，松开负载则绳结散开。</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Cow_hitch">Cow hitch</a>：牛结，除非对绳索的两个固定部分施加相等的张力，否则可能会失效。易滑动。</del>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Bale_sling_hitch">Bale sling hitch</a>：包索吊结，把 cow hitch 的两个自由端相连，也即用绳环系到杆状物。易滑动。</li>
+</ol>
+</li>
+<li>临时拴系，一拉即解快速释放，注意强度不高，可能不稳定。
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Tumble_hitch">Tumble hitch</a>：<strong>翻转结</strong>，更好的强盗结，最安全的快速释放绳结。</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Highwayman%27s_hitch">Highwayman's hitch</a>：强盗结（因为逃跑时要快速解开马的缰绳），容易翻转滑脱。</del></li>
+<li><a href="https://en.wikipedia.org/wiki/Siberian_hitch">Siberian hitch</a>：西伯利亚结，方便戴着手套也能系。</li>
+<li><a href="https://en.wikipedia.org/wiki/Halter_hitch">Halter hitch</a>：缰绳结，用来把动物系在柱子或环上。其实是个套索，为了避免动物拉开，可以把套索的自由端穿过套索的弯。没有 <a href="https://en.wikipedia.org/wiki/Siberian_hitch">Siberian hitch</a> 牢固。</li>
+<li><del><a href="https://www.animatedknots.com/mooring-hitch-knot">Mooring hitch</a>：系泊结。注意不适用于长期停泊。</del></li>
+</ol>
+</li>
+</ol>
+<h3 id="friction-hitch-knot摩擦结抓结"><a class="header" href="#friction-hitch-knot摩擦结抓结">Friction hitch (knot)：摩擦结、抓结</a></h3>
+<p>也叫 slide &amp; grip hitch，系在另一根绳上用来助力上升、下降。</p>
+<ol>
+<li>可双向受力
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Prusik">Prusik</a>：<strong>普鲁士结</strong>。</li>
+</ol>
+</li>
+<li>只可单向受力
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Klemheist_knot">Klemheist knot,  Machard knot, French prusik</a>: 克莱姆海斯特结，马沙尔结，法式普鲁士结。</li>
+<li><a href="https://en.wikipedia.org/wiki/Distel_hitch">Distel hitch</a>：迪斯泰尔结。</li>
+<li><a href="https://en.wikipedia.org/wiki/Bachmann_knot">Bachmann knot</a>： 巴赫曼结。</li>
+</ol>
+</li>
+</ol>
+<h2 id="loop-knot环结"><a class="header" href="#loop-knot环结">Loop knot：环结</a></h2>
+<p>形成固定大小的圈套。</p>
+<ol>
+<li>在绳子中间结环
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Butterfly_loop">Butterfly loop</a>： <strong>蝴蝶结</strong>，lineman's loop, butterfly knot, alpine butterfly knot, lineman's rider，在绳子中间结一个环。可能打错成 false butterfly 而容易发生滑动。双环独立受力。
+<ol>
+<li><a href="https://www.animatedknots.com/double-alpine-butterfly-loop-knot">Double Butterfly Loop</a>：<strong>双环蝴蝶结</strong>。</li>
+</ol>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Figure-eight_loop">Figure-eight loop, Figure-eight follow-through, Flemish loop</a>：八字环结，难解开
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Figure-of-nine_loop">Figure-nine loop</a>：<strong>九字环结</strong>，比八字环结使用的绳索更多且更为笨重，但它在某种程度上强度更高，也更不容易卡住。</li>
+<li><a href="https://en.wikipedia.org/wiki/Double_figure-eight_loop">Double figure-eight loop</a>：形成双环。</li>
+</ol>
+</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Farmer%27s_loop">Farmer's loop</a>：农夫结</del></li>
+<li><del><a href="https://en.wikipedia.org/wiki/Bowline_on_a_bight">Bowline on a bight</a>:  绳耳上之称人结，形成双环，当仅对一个绳环施加负载时，绳结可能会滑脱。易滑动。</del>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Karash_double_loop">Karash double loop</a>：卡拉什双环。</li>
+</ol>
+</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Spanish_bowline">Spanish bowline</a>：西班牙布林结，形成双环。双环共享受力，只适合一同受力，可能滑动失衡。</del>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Fireman%27s_chair_knot">Fireman's chair knot</a>：消防员椅结，在收紧前可调节。现代已很少使用。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>在绳子末端结环
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Zeppelin_loop">Zeppelin loop， zeppelin eye knot</a>：<strong>齐柏林环</strong>，能用于蹦极绳上，易解开。</li>
+<li><a href="https://en.wikipedia.org/wiki/Angler%27s_loop">Angler's loop,   perfection loop</a>：<strong>钓鱼者结</strong>，<strong>完美环结</strong>，能用于蹦极绳上，很难解开。
+<ol>
+<li><a href="https://www.animatedknots.com/double-dragon-loop">Double dragon loop</a>，双龙环，跟 Double angler's loop 很相似。适合高模量和光滑的绳索，如迪尼玛绳，相比bowline 更不易松动。即使在承受重负荷后，也能相当容易地解开。</li>
+</ol>
+</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Trident_loop">Trident loop</a>：强度介于 bowline 和 figure-eight loop 之间。</del></li>
+<li><del><a href="https://en.wikipedia.org/wiki/Bowline">Bowline</a>：布林结，称人结，单套结，广泛使用，被誉为「绳结之王」，与 sheet bend 和 clove hitch 一起都是最基本的绳结（但单独用都不安全！）。Bow line 指系在船头拉住方帆边缘以让帆兜住风的绳子，也指在船头拉住岸边泊位的绳子。Bowline 易结易解，简单可靠，但在不受载荷（或承受周期性载荷）时容易松动，受到侧向拉力时会滑动，以及在某些情况下绳结的环部会发生翻转形成致命的活结。Bowline <a href="https://en.wikipedia.org/wiki/Lapp_knot#/media/File:Bowline_knot_family.png">其实</a>是在绳子折弯处的 sheet bend。</del>
+<ol>
+<li><del><a href="https://en.wikipedia.org/wiki/Cowboy_bowline">Cowboy bowline, left-hand bowline</a>，布林结的稍微安全版本，但也有同样的问题，不建议用于性命攸关的场合。</del></li>
+<li><a href="https://en.wikipedia.org/wiki/Double_bowline">Double bowline，round turn bowline</a>, 双布林结。与八字结相比，双布林结的优点是在坠落受力后更容易解开，因此被那些多次在先锋攀登中坠落之后难以解开八字结的运动攀岩者所使用。双布林结的缺点是安全性不如八字结，打结所需时间更长，且检查起来也没那么容易。</li>
+<li><a href="https://en.wikipedia.org/wiki/Water_bowline">Water bowline</a>：适合潮湿环境。</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Yosemite_bowline">Yosemite bowline</a>：存在系错以及在固定前就发生翻转的风险。</del></li>
+<li><a href="https://en.wikipedia.org/wiki/Portuguese_bowline">Portuguese bowline</a>: 葡萄牙式布林结，形成可调节大小的双环。</li>
+<li><a href="https://en.wikipedia.org/wiki/Triple_bowline">Triple bowling</a>：形成三环。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="running-knot滑结"><a class="header" href="#running-knot滑结">Running knot：滑结</a></h2>
+<p>活结(slip knot)和套索(noose)都基于带滑段的反手结（a slipped overhand knot)，拉动工作端(自由端)打开活结，拉动固定端打开套索。</p>
+<ol>
+<li><del><a href="https://en.wikipedia.org/wiki/Noose">Noose</a>：套索，最简单，但不可靠。套住物体后继续拉主绳时，圈无限缩小，直至勒紧或切断。</del>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Hangman%27s_knot">Hangman's knot</a>：绞索</li>
+</ol>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Running_bowline">Running bowline</a>：<strong>滑布林结</strong>，通用首选，很可靠，易解开。套住物体后继续拉主绳时，圈收紧到一定程度后自锁，不再缩小 → 安全！</li>
+<li><a href="https://www.animatedknots.com/poachers-knot">Poacher's knot</a>：偷猎者结，极可靠，很难解开。套住物体后继续拉主绳时，圈持续缩小，缓慢勒紧。
+<ol>
+<li>Scaffold knot： 三圈版 Poacher，更难解开。</li>
+</ol>
+</li>
+<li><a href="https://www.animatedknots.com/honda-knot">Honda knot</a></li>
+</ol>
+<h2 id="coil绳卷"><a class="header" href="#coil绳卷">Coil：绳卷</a></h2>
+<p>收纳绳索便于存放。</p>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Coiling#Butterfly_coil">Butterfly coil</a>：蝴蝶绳卷，也适用于短小的线，如耳机线。</li>
+<li><a href="https://en.wikipedia.org/wiki/Coiling#Mountaineer&#x27;s_coil">Mountaineer's coil</a>：登山者盘绳卷，比蝴蝶结卷更容易产生扭曲和缠绕。</li>
+<li><a href="https://en.wikipedia.org/wiki/Chain_sinnet">Chain Sinnet</a>: 链式绳卷，方便收纳、洗涤。</li>
+</ol>
+<h2 id="参考-5"><a class="header" href="#参考-5">参考</a></h2>
+<ol>
+<li>https://www.animatedknots.com/  ⭐️⭐️⭐️⭐️⭐️</li>
+<li>https://en.wikipedia.org/wiki/List_of_knots</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
