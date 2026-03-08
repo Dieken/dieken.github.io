@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LLM on 随记</title><link>/tags/llm/</link><description>Recent content in LLM on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 02 Mar 2026 22:00:00 +0800</lastBuildDate><atom:link href="/tags/llm/index.xml" rel="self" type="application/rss+xml"/><item><title>试玩 OpenClaw</title><link>/posts/play-openclaw/</link><pubDate>Mon, 02 Mar 2026 22:00:00 +0800</pubDate><guid>/posts/play-openclaw/</guid><description>&lt;h2 id="准备"&gt;准备&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;在 macOS 安装 &lt;a href="https://forgejo.org/"&gt;Forgejo&lt;/a&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;brew install forgejo
+brew services start forgejo
+
+# 访问 http://localhost:3000 初始化
+
+vim /usr/local/var/forgejo/custom/conf/app.ini
+## 在 [server] 段设置：
+## START_SSH_SERVER = true
+## SSH_DOMAIN = forgejo.local
+## DOMAIN = forgejo.local
+## HTTP_PORT = 4444
+## ROOT_URL = http://forgejo.local:4444/
+## SSH_PORT = 2222
+## DISABLE_SSH = false
+
+# 在 /etc/hosts 添加 127.0.0.1 forgejo.local 的映射
+
+brew services restart forgejo
+
+# 访问 http://forgejo.local:4444
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="openclaw"&gt;OpenClaw&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;在 Linux 安装 &lt;a href="https://linuxcontainers.org/incus/"&gt;Incus&lt;/a&gt;，Debian 12 可以使用 &lt;a href="https://github.com/zabbly/incus"&gt;https://github.com/zabbly/incus&lt;/a&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;apt install incus
+sudo incus admin init
+sudo adduser $USER incus
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;创建容器：&lt;code&gt;incus launch images:debian/13 claw&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;允许快照：&lt;code&gt;sudo incus project set user-1000 restricted.snapshots=allow&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;进入 claw 容器：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;incus exec claw bash
+
+dpkg-reconfigure tzdata # 选择 Asia/Shanghai
+
+# 换 APT 源： https://mirrors.tuna.tsinghua.edu.cn/help/debian/
+apt update
+apt install etckeeper curl less telnet byobu man-db python3 nodejs npm golang
+
+# 在 /etc/hosts 添加 MACOS-IP forgejo.local 的映射
+
+adduser claw
+adduser claw sudo
+
+su - claw # 切换到 claw 用户
+
+byobu-enable
+byobu-ctrl-a
+byobu-config # change escape sequence: Ctrl-j
+
+echo &amp;#39;registry=https://registry.npmmirror.com&amp;#39; &amp;gt; ~claw/.npmrc
+
+go env -w GOPROXY=https://goproxy.cn,direct
+
+ssh-keygen -t ed25519
+# 将 ~claw/.ssh/id_ed25519.pub 添加到 Forgejo 的用户 SSH key 设置中
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start="5"&gt;
+&lt;li&gt;创建容器快照: &lt;code&gt;incus snapshot create claw after-basic-setup&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;安装 OpenClaw:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;incus exec claw bash
+su - claw
+
+# OpenClaw 会安装 linuxbrew，访问 Github
+export http_proxy=http://....
+export https_proxy=$http_proxy
+export HTTP_PROXY=$http_proxy
+export HTTPS_PROXY=$http_proxy
+
+curl -fsSL https://openclaw.ai/install.sh | bash
+
+# 加上代理环境变量，以及 PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+systemctl edit --user openclaw-gateway
+systemctl restart --user openclaw-gateway
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>Awesome LLM</title><link>/posts/awesome-llm/</link><pubDate>Sun, 01 Mar 2026 17:00:00 +0800</pubDate><guid>/posts/awesome-llm/</guid><description>&lt;h2 id="排行榜"&gt;排行榜&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://artificialanalysis.ai/"&gt;https://artificialanalysis.ai/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://llm-stats.com/"&gt;https://llm-stats.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.swebench.com/"&gt;https://www.swebench.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://openrouter.ai/rankings"&gt;https://openrouter.ai/rankings&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kilo.ai/leaderboard"&gt;https://kilo.ai/leaderboard&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://llmdb.com/"&gt;https://llmdb.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://crfm.stanford.edu/helm/lite/latest/#/leaderboard"&gt;https://crfm.stanford.edu/helm/lite/latest/#/leaderboard&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;截止 2026-02 的&lt;a href="https://artificialanalysis.ai"&gt;领先模型&lt;/a&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;GPT-5.4 (xhigh)&lt;/li&gt;
+&lt;li&gt;Claude Opus 4.6 (max)&lt;/li&gt;
+&lt;li&gt;Gemini 3.1 Pro&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GLM-5&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kimi K2.5&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Qwen3.5 397B A17B&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Minimax M2.5&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DeepSeek V3.2&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Grok 4&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MiMo-V2-Flash&lt;/strong&gt;(Feb 2026)&lt;/li&gt;
+&lt;li&gt;gpt-oss-120B (high)&lt;/li&gt;
+&lt;li&gt;gpt-oss-20B (high)&lt;/li&gt;
+&lt;li&gt;Step-3.5-Flash&lt;/li&gt;
+&lt;li&gt;LongCat-Flash-Thinking&lt;/li&gt;
+&lt;li&gt;Mistral Large 3&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16"&gt;NVIDIA Nemotron 3 Nano&lt;/a&gt;，开放程度高&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.k2think.ai/k2think"&gt;K2 Think V2&lt;/a&gt;，开放程度很高&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://allenai.org/olmo"&gt;Olmo 32B&lt;/a&gt;，示范用途，完全开放。更早的开源开放模型有 &lt;a href="https://github.com/EleutherAI/pythia"&gt;Pythia&lt;/a&gt;、&lt;a href="https://www.llm360.ai/"&gt;LLM360&lt;/a&gt;、&lt;a href="https://opencoder-llm.github.io/"&gt;OpenCoder&lt;/a&gt;、&lt;a href="https://bigscience.huggingface.co/"&gt;BLOOM&lt;/a&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="价格"&gt;价格&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://openrouter.ai/models"&gt;https://openrouter.ai/models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://artificialanalysis.ai/"&gt;https://artificialanalysis.ai/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json"&gt;https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.dmxapi.cn/rmb"&gt;https://www.dmxapi.cn/rmb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://llm-stats.com/leaderboards/llm-leaderboard"&gt;https://llm-stats.com/leaderboards/llm-leaderboard&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://whatllm.org/"&gt;https://whatllm.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pricepertoken.com/"&gt;https://pricepertoken.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://llm.minprices.com/"&gt;https://llm.minprices.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/syaoranwe/LLM-Price"&gt;https://github.com/syaoranwe/LLM-Price&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="运行"&gt;运行&lt;/h2&gt;
+&lt;h3 id="cli"&gt;CLI&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/ggerganov/llama.cpp"&gt;https://github.com/ggerganov/llama.cpp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/foldl/chatllm.cpp"&gt;https://github.com/foldl/chatllm.cpp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/ggerganov/whisper.cpp"&gt;https://github.com/ggerganov/whisper.cpp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/google/gemma.cpp"&gt;https://github.com/google/gemma.cpp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/EricLBuehler/mistral.rs"&gt;https://github.com/EricLBuehler/mistral.rs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/ml-explore/mlx-lm"&gt;https://github.com/ml-explore/mlx-lm&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="desktop"&gt;Desktop&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://ollama.com"&gt;https://ollama.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lmstudio.ai"&gt;https://lmstudio.ai&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://cherry-ai.com"&gt;https://cherry-ai.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://msty.app"&gt;https://msty.app&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/open-webui/open-webui"&gt;https://github.com/open-webui/open-webui&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lobehub/lobe-chat"&gt;https://github.com/lobehub/lobe-chat&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/chatboxai/chatbox"&gt;https://github.com/chatboxai/chatbox&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://anythingllm.com"&gt;https://anythingllm.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.nomic.ai/gpt4all"&gt;https://www.nomic.ai/gpt4all&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lostruins/koboldcpp"&gt;https://github.com/lostruins/koboldcpp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Mozilla-Ocho/llamafile"&gt;https://github.com/Mozilla-Ocho/llamafile&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="server"&gt;Server&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/vllm-project/vllm"&gt;https://github.com/vllm-project/vllm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/sgl-project/sglang"&gt;https://github.com/sgl-project/sglang&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/triton-inference-server/tensorrtllm_backend"&gt;https://github.com/triton-inference-server/tensorrtllm_backend&lt;/a&gt;
+&lt;a href="https://github.com/NVIDIA/TensorRT-LLM"&gt;https://github.com/NVIDIA/TensorRT-LLM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/skypilot-org/skypilot"&gt;https://github.com/skypilot-org/skypilot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/huggingface/text-generation-inference"&gt;https://github.com/huggingface/text-generation-inference&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/lm-sys/FastChat"&gt;https://github.com/lm-sys/FastChat&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/bentoml/OpenLLM"&gt;https://github.com/bentoml/OpenLLM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://haystack.deepset.ai"&gt;https://haystack.deepset.ai&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="proxy"&gt;Proxy&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/maximhq/bifrost"&gt;https://github.com/maximhq/bifrost&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/BerriAI/litellm"&gt;https://github.com/BerriAI/litellm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/QuantumNous/new-api"&gt;https://github.com/QuantumNous/new-api&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/songquanpeng/one-api"&gt;https://github.com/songquanpeng/one-api&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/helicone/helicone"&gt;https://github.com/helicone/helicone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://portkey.ai/"&gt;https://portkey.ai/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="智能体"&gt;智能体&lt;/h2&gt;
+&lt;p&gt;Github star 数量统计于 2026-03-08。&lt;/p&gt;</description></item><item><title>大语言模型编程助手</title><link>/posts/llm-code-assistant/</link><pubDate>Sat, 17 Jan 2026 22:00:00 +0800</pubDate><guid>/posts/llm-code-assistant/</guid><description>&lt;h2 id="cli"&gt;CLI&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/anthropics/claude-code"&gt;Claude Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/openai/codex"&gt;Codex CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://geminicli.com/"&gt;Gemini CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.grokcli.dev/"&gt;Grok CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://opencode.ai/"&gt;OpenCode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/charmbracelet/crush"&gt;Crush&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://factory.ai/"&gt;Droid&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://block.github.io/goose/"&gt;Goose&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/badlogic/pi-mono"&gt;Pi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aider.chat/"&gt;Aider&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/features/copilot/cli/"&gt;Github Copilot CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/QwenLM/qwen-code"&gt;Qwen Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.kimi.com/code"&gt;Kimi Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kilo.ai/install"&gt;Kilo Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://cursor.com/docs/cli/overview"&gt;Cursor CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kiro.dev/cli/"&gt;Kiro CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://cli.iflow.cn/"&gt;iFlow CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.augmentcode.com/product/CLI"&gt;Augment CLI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="ide"&gt;IDE&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.cursor.com/"&gt;Cursor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.trae.cn/"&gt;Trae&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://windsurf.com/"&gt;Windsurf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://antigravity.google/"&gt;Google Antigravity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kiro.dev/"&gt;Kiro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zed.dev/"&gt;Zed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lingma.aliyun.com/download"&gt;Lingma IDE&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="extension"&gt;Extension&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/features/copilot#features"&gt;Github Copilot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://developers.google.com/gemini-code-assist/docs/overview"&gt;Gemini Code Assist&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://tongyi.aliyun.com/lingma"&gt;通义灵码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.augmentcode.com/"&gt;Augment Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://about.gitlab.com/gitlab-duo/"&gt;Gitlab Duo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://codegeex.cn/"&gt;CodeGeeX&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/q/developer/"&gt;Amazon Q Developer&lt;/a&gt;(原 Amazon CodeWhisperer)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.continue.dev/"&gt;Continue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://supermaven.com"&gt;SuperMaven&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://code.fittentech.com"&gt;Fitten&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="workflow"&gt;Workflow&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/github/spec-kit"&gt;https://github.com/github/spec-kit&lt;/a&gt; 72.8k stars&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/obra/superpowers"&gt;https://github.com/obra/superpowers&lt;/a&gt; 65.6k stars&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/affaan-m/everything-claude-code"&gt;https://github.com/affaan-m/everything-claude-code&lt;/a&gt; 54.6k stars&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/bmad-code-org/BMAD-METHOD"&gt;https://github.com/bmad-code-org/BMAD-METHOD&lt;/a&gt; 38.4k stars&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/code-yeongyu/oh-my-opencode"&gt;https://github.com/code-yeongyu/oh-my-opencode&lt;/a&gt; 35.8k stars&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Fission-AI/OpenSpec"&gt;https://github.com/Fission-AI/OpenSpec&lt;/a&gt; 26.5k stars&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/gsd-build/get-shit-done"&gt;https://github.com/gsd-build/get-shit-done&lt;/a&gt; 22.1k stars&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/SuperClaude-Org/SuperClaude_Framework"&gt;https://github.com/SuperClaude-Org/SuperClaude_Framework&lt;/a&gt; 21.1k stars&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/gemini-cli-extensions/conductor"&gt;https://github.com/gemini-cli-extensions/conductor&lt;/a&gt; 2.9k stars&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/maxritter/pilot-shell"&gt;https://github.com/maxritter/pilot-shell&lt;/a&gt; 1.5k stars&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>LLM: 大语言模型</title><link>/posts/large-language-models/</link><pubDate>Sun, 21 Jan 2024 15:00:00 +0800</pubDate><guid>/posts/large-language-models/</guid><description>&lt;h2 id="国内大语言模型"&gt;国内大语言模型&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;序号&lt;/th&gt;
+ &lt;th&gt;名字&lt;/th&gt;
+ &lt;th&gt;网址&lt;/th&gt;
+ &lt;th&gt;访问方式&lt;/th&gt;
+ &lt;th&gt;备注&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;td&gt;Kimi Chat&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://www.moonshot.cn"&gt;https://www.moonshot.cn&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web + app&lt;/td&gt;
+ &lt;td&gt;月之暗面 Moonshot&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;2&lt;/td&gt;
+ &lt;td&gt;智谱清言&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://chatglm.cn"&gt;https://chatglm.cn&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web + app&lt;/td&gt;
+ &lt;td&gt;智谱&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;3&lt;/td&gt;
+ &lt;td&gt;通义千问&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://tongyi.aliyun.com"&gt;https://tongyi.aliyun.com&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web + app&lt;/td&gt;
+ &lt;td&gt;阿里&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;4&lt;/td&gt;
+ &lt;td&gt;文心一言&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://yiyan.baidu.com"&gt;https://yiyan.baidu.com&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web + app&lt;/td&gt;
+ &lt;td&gt;百度&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;5&lt;/td&gt;
+ &lt;td&gt;海螺问问&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://yingshi-ai.com"&gt;https://yingshi-ai.com&lt;/a&gt; （原名「应事AI助手」）&lt;/td&gt;
+ &lt;td&gt;web + app&lt;/td&gt;
+ &lt;td&gt;Minimax&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;6&lt;/td&gt;
+ &lt;td&gt;讯飞星火&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://xinghuo.xfyun.cn"&gt;https://xinghuo.xfyun.cn&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web + app&lt;/td&gt;
+ &lt;td&gt;讯飞&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;7&lt;/td&gt;
+ &lt;td&gt;抖音豆包&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://www.doubao.com"&gt;https://www.doubao.com&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web + app&lt;/td&gt;
+ &lt;td&gt;抖音&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;8&lt;/td&gt;
+ &lt;td&gt;360智脑&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://ai.360.cn"&gt;https://ai.360.cn&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web + app&lt;/td&gt;
+ &lt;td&gt;360&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;9&lt;/td&gt;
+ &lt;td&gt;混元助手&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://hunyuan.tencent.com/bot/chat"&gt;https://hunyuan.tencent.com/bot/chat&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web + mini app&lt;/td&gt;
+ &lt;td&gt;腾讯&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;10&lt;/td&gt;
+ &lt;td&gt;百川智能&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://www.baichuan-ai.com"&gt;https://www.baichuan-ai.com&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web&lt;/td&gt;
+ &lt;td&gt;搜狗&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;11&lt;/td&gt;
+ &lt;td&gt;商汤商量&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://chat.sensetime.com"&gt;https://chat.sensetime.com&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web&lt;/td&gt;
+ &lt;td&gt;商汤&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;12&lt;/td&gt;
+ &lt;td&gt;紫东太初&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://taichu-web.ia.ac.cn"&gt;https://taichu-web.ia.ac.cn&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web&lt;/td&gt;
+ &lt;td&gt;中科院&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;13&lt;/td&gt;
+ &lt;td&gt;DeepSeek&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://chat.deepseek.com"&gt;https://chat.deepseek.com&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;web&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;14&lt;/td&gt;
+ &lt;td&gt;零一万物&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://01.ai"&gt;https://01.ai&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;模型&lt;/td&gt;
+ &lt;td&gt;开&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;15&lt;/td&gt;
+ &lt;td&gt;书生・浦语&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://intern-ai.org.cn"&gt;https://intern-ai.org.cn&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;模型&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;16&lt;/td&gt;
+ &lt;td&gt;华为盘古&lt;/td&gt;
+ &lt;td&gt;&lt;a href="https://pangu.huaweicloud.com"&gt;https://pangu.huaweicloud.com&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;无&lt;/td&gt;
+ &lt;td&gt;开放给企业申请&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="生产环境运行-llm"&gt;生产环境运行 LLM&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;vLLM： &lt;a href="https://docs.vllm.ai/en/latest/"&gt;https://docs.vllm.ai/en/latest/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Triton TensorRT-LLM： &lt;a href="https://github.com/NVIDIA/TensorRT-LLM"&gt;https://github.com/NVIDIA/TensorRT-LLM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;BentoML： &lt;a href="https://github.com/bentoml/BentoML"&gt;https://github.com/bentoml/BentoML&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="消费级-pc-运行-llm"&gt;消费级 PC 运行 LLM&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/ggerganov/llama.cpp"&gt;https://github.com/ggerganov/llama.cpp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/SJTU-IPADS/PowerInfer"&gt;https://github.com/SJTU-IPADS/PowerInfer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ollama.ai"&gt;https://ollama.ai&lt;/a&gt; ， &lt;a href="https://github.com/ollama-webui/ollama-webui"&gt;https://github.com/ollama-webui/ollama-webui&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://gpt4all.io/index.html"&gt;https://gpt4all.io/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/oobabooga/text-generation-webui"&gt;https://github.com/oobabooga/text-generation-webui&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/imartinez/privateGPT"&gt;https://github.com/imartinez/privateGPT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/xorbitsai/inference"&gt;https://github.com/xorbitsai/inference&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/withcatai/catai"&gt;https://github.com/withcatai/catai&lt;/a&gt; 基于 &lt;a href="https://github.com/withcatai/node-llama-cpp"&gt;node-llama-cpp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lmstudio.ai"&gt;https://lmstudio.ai&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/langchain-ai/langchain"&gt;https://github.com/langchain-ai/langchain&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/mudler/LocalAI"&gt;https://github.com/mudler/LocalAI&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description></item></channel></rss>
