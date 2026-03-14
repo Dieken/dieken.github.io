@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Embedded on 随记</title><link>/tags/embedded/</link><description>Recent content in Embedded on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 17 Mar 2019 22:37:36 +0800</lastBuildDate><atom:link href="/tags/embedded/index.xml" rel="self" type="application/rss+xml"/><item><title>构建 Orange Pi 3 系统</title><link>/posts/build-orange-pi-3/</link><pubDate>Sun, 17 Mar 2019 22:37:36 +0800</pubDate><guid>/posts/build-orange-pi-3/</guid><description>&lt;h2 id="构建"&gt;构建&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Orange Pi 3 用户手册推荐用 Ubuntu 14.04 编译，其实用最新的 Debian 10 也可以。以下操作都是在 VirtualBox 里的 Debian 10 (Buster) 里进行；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;按用户手册里的步骤编译：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt install sudo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install git debootstrap
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install zlib1g-dev &lt;span style="color:#60a0b0;font-style:italic"&gt;# 缺失此包会导致下面 OrangePi_Build 执行失败&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git clone https://github.com/orangepi-xunlong/OrangePi_Build.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#007020"&gt;cd&lt;/span&gt; OrangePi_Build
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;./Build_OrangePi.sh &lt;span style="color:#60a0b0;font-style:italic"&gt;# 选择 4.9 内核，比 3.10 新&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#007020"&gt;cd&lt;/span&gt; ../OrangePiH6_Linux4.9
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install binfmt-support &lt;span style="color:#60a0b0;font-style:italic"&gt;# 缺失此包会导致 &amp;#34;Build Release Image&amp;#34; 时失败，&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#60a0b0;font-style:italic"&gt;# 参考 https://wiki.debian.org/QemuUserEmulation&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sed -i -e &lt;span style="color:#4070a0"&gt;&amp;#39;s/jessie/buster/g; s/Jessie/Buster/g;&amp;#39;&lt;/span&gt; scripts/*.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sed -i -e &lt;span style="color:#4070a0"&gt;&amp;#39;s/rm -rf &amp;#34;$TEMP&amp;#34;/echo rm -rf &amp;#34;$TEMP&amp;#34;/&amp;#39;&lt;/span&gt; scripts/*.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sed -i -e &lt;span style="color:#4070a0"&gt;&amp;#39;s/EXCLUDE=&amp;#34;--exclude=init,systemd-sysv&amp;#34;/#EXCLUDE=&amp;#34;--exclude=init,systemd-sysv&amp;#34;/&amp;#39;&lt;/span&gt; scripts/*.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sed -i -e &lt;span style="color:#4070a0"&gt;&amp;#39;s/mirrors.ustc.edu.cn/mirrors.tuna.tsinghua.edu.cn/g&amp;#39;&lt;/span&gt; scripts/*.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sed -i -e &lt;span style="color:#4070a0"&gt;&amp;#39;s|install_readonly /usr/share/keyrings/debian-archive-keyring.gpg|#install_readonly /usr/share/keyrings/debian-archive-keyring.gpg|&amp;#39;&lt;/span&gt; scripts/*.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#60a0b0;font-style:italic"&gt;#sed -i -e &amp;#39;s/disk_size=&amp;#34;1200&amp;#34;/disk_size=&amp;#34;3800&amp;#34;/&amp;#39; scripts/build_image.sh&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;./build.sh														&lt;span style="color:#60a0b0;font-style:italic"&gt;# 选择 Buster&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 balenaEtcher 将 output/images/*.img 写入 SD 卡&lt;/p&gt;</description></item></channel></rss>
