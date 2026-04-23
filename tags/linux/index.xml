@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on 随记</title><link>/tags/linux/</link><description>Recent content in Linux on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 29 Mar 2026 22:00:00 +0800</lastBuildDate><atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>穷人的安全 rm 命令: trash-cli 和 gtrash</title><link>/posts/poor-man-safe-rm/</link><pubDate>Sun, 29 Mar 2026 22:00:00 +0800</pubDate><guid>/posts/poor-man-safe-rm/</guid><description>&lt;p&gt;UNIX、Linux 下的 rm 删除文件后难以恢复，很多人会设置别名 rm=&amp;lsquo;rm -i&amp;rsquo;，但删除时的提示很烦人，而且会被 rm -rf 的 -f 覆盖，不会提示。于是，很多人会写替代版的 rm，思路很简单，把 rm 变成 mv 语义，按日期放入某个 Trash 目录，很多年前我也写过一段穷人的回收站：&lt;/p&gt;</description></item><item><title>一些开源 OS 的支持周期</title><link>/posts/lifecycles-of-open-sources-os/</link><pubDate>Thu, 23 Oct 2025 22:00:00 +0800</pubDate><guid>/posts/lifecycles-of-open-sources-os/</guid><description>&lt;p&gt;数据来自 &lt;a href="https://endoflife.date/tags/os"&gt;https://endoflife.date/tags/os&lt;/a&gt; ， 总结：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Alpine 很厚道，半年发布一次，每个版本维护 2 年；&lt;/li&gt;
+&lt;li&gt;Debian 很稳，大版本两年发布一次，大版本维护 5 年，留了 3 年时间升级；&lt;/li&gt;
+&lt;li&gt;Fedora 一般，半年发布一次，每个版本维护 1 年，也就是留了半年升级；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NixOS 很黑，半年发布一次，只维护 0.5 年，仅留一个月时间升级！！！；&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ubuntu non-LTS 也不行，半年发布一次，只维护半年多一点，留了三个月时间升级；&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;FreeBSD 的 quarterly ports、NetBSD 的 quarterly pkgsrc 以及 OpenBSD 半年一次随 OS 一起发布的 OpenBSD ports 都只支持一年；&lt;/li&gt;
+&lt;li&gt;Slackware 是唯一一个基本以一人之力维护 10 年以上的发行版，不愧是&lt;a href="../timeline-for-first-releases-of-famous-linux-bsd-illumos"&gt;最老的 Linux 发行版&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;服务器操作系统请优先用 Debian stable、次之 Ubuntu LTS，再次之 Rocky Linux 或 Alma Linux&lt;/strong&gt;；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;OS&lt;/th&gt;
+ &lt;th&gt;Lifecycle(years)&lt;/th&gt;
+ &lt;th&gt;Version&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Alma Linux&lt;/td&gt;
+ &lt;td&gt;10&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Alpine Linux&lt;/td&gt;
+ &lt;td&gt;2&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;minor&lt;/strong&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Debian stable&lt;/td&gt;
+ &lt;td&gt;5&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Fedora&lt;/td&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;FreeBSD&lt;/td&gt;
+ &lt;td&gt;5&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Linux Mint&lt;/td&gt;
+ &lt;td&gt;5&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;MX Linux&lt;/td&gt;
+ &lt;td&gt;5&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;NetBSD&lt;/td&gt;
+ &lt;td&gt;5~6&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;NixOS&lt;/td&gt;
+ &lt;td&gt;0.5&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;minor&lt;/strong&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;OpenBSD&lt;/td&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;minor&lt;/strong&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;openSUSE Leap&lt;/td&gt;
+ &lt;td&gt;2&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;minor&lt;/strong&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;OpenWrt&lt;/td&gt;
+ &lt;td&gt;2&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;minor&lt;/strong&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Rocky Linux&lt;/td&gt;
+ &lt;td&gt;10&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Slackware&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;5~11&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Ubuntu LTS&lt;/td&gt;
+ &lt;td&gt;5~10&lt;/td&gt;
+ &lt;td&gt;major&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Ubuntu non-LTS&lt;/td&gt;
+ &lt;td&gt;0.7&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;minor&lt;/strong&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;</description></item><item><title>主流 Linux 发行版的官方维护源码包数量</title><link>/posts/count-source-packages-of-linux-distributions/</link><pubDate>Tue, 25 Jul 2023 08:00:00 +0800</pubDate><guid>/posts/count-source-packages-of-linux-distributions/</guid><description>&lt;pre tabindex="0"&gt;&lt;code&gt;1007 Slackware
+1218 Ubuntu 23.04 main
+1549 Alpine main
+2065 CRUX
+2540 Arch core + extra
+2649 Rocky 9.2
+8794 Void Linux
+14509 openSUSE Leap 15.5
+18855 Gentoo
+20715 Debian Booksworm main
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意 Ubuntu 只有 main section 的软件才是 Canonical 官方维护的。Redhat 果然财力雄厚，一个公司之力维护了 2649 个源码包。&lt;/p&gt;</description></item><item><title>著名 Linux 发行版、BSD 分支首次发布时间线</title><link>/posts/timeline-for-first-releases-of-famous-linux-bsd-illumos/</link><pubDate>Sun, 23 Jul 2023 10:00:00 +0800</pubDate><guid>/posts/timeline-for-first-releases-of-famous-linux-bsd-illumos/</guid><description>&lt;pre tabindex="0"&gt;&lt;code&gt;1993.4.19 NetBSD
+1993.7.17 Slackware(still alive and well maintained!)
+1993.9.15 Debian(still alive and well maintained!)
+1993.11.1 FreeBSD
+1994.3.29 S.u.S.E. Linux(originally based on Slackware)
+1995.5.13 Redhat Linux
+1996.7 OpenBSD
+1998.7.23 Mandrake Linux(based on Redhat Linux 5.1)
+2000.2.22 RHEL
+2000.8.31 SUSE Linux Enterprise
+2002.3.11 Arch Linux(inspired by CRUX)
+2002.3.31 Gentoo Linux
+2002.12 CRUX
+2003.6.3 NixOS
+2004.10.20 Ubuntu
+2005.4 Mandrake renamed to Mandriva
+2005.8 Alpine Linux
+2005.10 openSUSE
+2008 Void Linux
+2011.6.1 Mageia
+2011.8.28 Last release of Mandriva
+2012.4.2 OmniOS
+2013.11.22 OpenMandriva
+2021.5.30 Chimera Linux(not famous yet but very interesting)
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>再论 Linux 发行版选择，并推荐几个 Linux 发行版</title><link>/posts/recommend-some-linux-distributions/</link><pubDate>Mon, 30 Jan 2023 23:00:00 +0800</pubDate><guid>/posts/recommend-some-linux-distributions/</guid><description>&lt;p&gt;续 《&lt;a href="../analyze-bsd-linux-softwae-repositories/"&gt;BSD、Linux 软件库的一点分析&lt;/a&gt;》 和 《&lt;a href="../linux-distributions-using-ports/"&gt;几个使用类似 BSD ports 软件包管理的 Linux 发行版&lt;/a&gt;》两篇后，小小总结下几个 Linux 发行版的选择，并推荐几个 Linux 发行版，以下纯个人观点，喜与不喜都请评论区走起。&lt;/p&gt;</description></item><item><title>BSD、Linux 软件库的一点分析</title><link>/posts/analyze-bsd-linux-software-repositories/</link><pubDate>Sun, 29 Jan 2023 22:00:00 +0800</pubDate><guid>/posts/analyze-bsd-linux-software-repositories/</guid><description>&lt;p&gt;参考：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://archiveprogram.github.com/assets/img/archive-repos.txt"&gt;https://archiveprogram.github.com/assets/img/archive-repos.txt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ghe.clickhouse.tech"&gt;https://ghe.clickhouse.tech&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://gitmostwanted.com"&gt;https://gitmostwanted.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/sindresorhus/awesome"&gt;https://github.com/sindresorhus/awesome&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://repology.org"&gt;https://repology.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://softwareheritage.org"&gt;https://softwareheritage.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.tuhs.org"&gt;https://www.tuhs.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mirrorz.org"&gt;https://mirrorz.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;LXR：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://lxr.linux.no"&gt;http://lxr.linux.no&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://elixir.bootlin.com/linux/latest/source"&gt;https://elixir.bootlin.com/linux/latest/source&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lxr.missinglinkelectronics.com"&gt;https://lxr.missinglinkelectronics.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://archiveos.org"&gt;https://archiveos.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;根据 &lt;a href="https://repology.org/repositories/graphs"&gt;https://repology.org/repositories/graphs&lt;/a&gt; 分析活跃的软件仓库有NixPkgs, AUR, Debian, FreeBSD Ports, DPorts, Fedora, Gentoo, Guix, pkgsrc, openSUSE, Alpine, LFS/BLFS。&lt;/p&gt;
+&lt;p&gt;先说结论，Slackware、Debian、Ubuntu、Redhat、SuSE 直接在软件仓库里附带了源码包，其中 Slackware、Debian、Ubuntu、Redhat 历史留存完好。Slackware 虽然很值得敬仰，但基本是个人作品不适合做服务器用途，Redhat 商业化味道很重，版本比较乱，历经多次变更，尤其现在 CentOS 不再让白嫖了，实在没必要再去贴冷屁股，SuSE 断代的她爹都不认识了， &lt;strong&gt;所以剩下的只有值得信赖的 Debian 和 Ubuntu 了&lt;/strong&gt;，2022 年依然可以使用 2005 年发布的Debian Sarge(3.1) 和 2004 年发布的 Ubuntu 4.04(Warty Warthog)。&lt;/p&gt;</description></item><item><title>几个使用类似 BSD ports 软件包管理的 Linux 发行版</title><link>/posts/linux-distributions-using-ports/</link><pubDate>Sun, 29 Jan 2023 21:00:00 +0800</pubDate><guid>/posts/linux-distributions-using-ports/</guid><description>&lt;p&gt;四大 BSD 不约而同的选择了 ports 这种形式管理第三方软件包：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在一个集中的版本控制系统里维护第三方源码包的构建脚本，包括下载源码、编译、打包、安装，这个目录树被称为 ports 或者 ports collection 或者 ports tree 或者 ports repository&lt;/li&gt;
+&lt;li&gt;用户直接从 ports 里构建软件包并安装，也可能操作系统维护者提供编译好的二进制软件包&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在 ports 系统里，源代码一般从各个软件包的官网下载，也可能操作系统维护者为了便利以及避免下载链接失效而自行缓存一份源码包。&lt;/p&gt;</description></item><item><title>试玩 Slackware Linux</title><link>/posts/play-slackware-linux/</link><pubDate>Wed, 25 Jan 2023 22:00:00 +0800</pubDate><guid>/posts/play-slackware-linux/</guid><description>&lt;p&gt;忽然去看了下 Slackware 主页的 &lt;a href="http://www.slackware.com/releasenotes/15.0.php"&gt;15.0 Release note&lt;/a&gt;，有点感动于 Pat Volkerding 的坚持，于是又在虚拟机里安装了下 Slackware 试试——我为什么要说「又」呢？😄&lt;/p&gt;
+&lt;h2 id="安装"&gt;安装&lt;/h2&gt;
+&lt;p&gt;USTC 的 Slackware 镜像速度很快，下载 [ISO 文件](&lt;a href="https://mirrors.ustc.edu.cn/slackware/slackware-iso/slackware64-15.0-iso/"&gt;Index of /slackware/slackware-iso/slackware64-15.0-iso/&lt;/a&gt;)后放到 VMWare 虚拟机里启动，使用 UEFI 模式，安装开头会要求用 fdisk 或者 cfdisk 手动分区，做一个 300M EFI System 分区，剩下的做一个 Linux filesystem 分区即可，然后执行 setup 命令进入安装程序，整个安装过程基本一路回车，非常简单，由于 Slackware Linux 并不维护软件包粒度的依赖关系，所以为了简单，选择全部安装即可，占用大约 16GB 磁盘。&lt;/p&gt;</description></item><item><title>折腾 Linux 发行版 ArchLinux 和 Gentoo</title><link>/posts/play-arch-and-gentoo/</link><pubDate>Sat, 03 Apr 2021 10:00:00 +0800</pubDate><guid>/posts/play-arch-and-gentoo/</guid><description>&lt;p&gt;接触 Linux 二十多年了，一直是排斥 Gentoo Linux 和 Arch Linux 的，觉得前者编译太慢太浪费电力，后者连个官方安装程序都没有而且软件包质量太低。然而今天心血来潮，总算挑战两个发行版的安装成功，Gentoo Linux 的&lt;a href="https://wiki.gentoo.org/wiki/Handbook:AMD64"&gt;手册&lt;/a&gt;写的非常规范，安装过程除了编译慢，倒也没太大槽点，安装完基础系统后重启进入系统，占用内存 77MB，挺惊艳的。&lt;a href="https://mirrors.tuna.tsinghua.edu.cn/gentoo/"&gt;Gentoo&lt;/a&gt; 和 &lt;a href="https://mirrors.tuna.tsinghua.edu.cn/help/gentoo-portage/"&gt;Gentoo-Portage&lt;/a&gt; 有清华 TUNA 镜像源，下载很快。&lt;/p&gt;</description></item><item><title>动态扩容 ZFS pool</title><link>/posts/dynamically-expand-zfs-pool/</link><pubDate>Wed, 11 Mar 2020 21:09:15 +0800</pubDate><guid>/posts/dynamically-expand-zfs-pool/</guid><description>&lt;p&gt;往 ZFS Pool 里加新磁盘来扩容是很容易的，但是阿里云的云盘快照只有用于单块云盘时才是原子性的，而且阿里云云盘的 IOPS 指标是跟单盘容量成线性比例的，所以新加一块云盘不如扩容云盘划算。阿里云的云盘扩容现在支持&lt;a href="https://help.aliyun.com/document_detail/35095.html"&gt;在线扩容&lt;/a&gt;，于是就可以不干扰服务动态扩容 ZFS pool 里的磁盘了。&lt;/p&gt;</description></item></channel></rss>

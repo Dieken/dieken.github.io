@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenGL on 随记</title><link>/tags/opengl/</link><description>Recent content in OpenGL on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 04 Aug 2020 12:00:00 +0800</lastBuildDate><atom:link href="/tags/opengl/index.xml" rel="self" type="application/rss+xml"/><item><title>Learn OpenGL</title><link>/posts/learn-opengl/</link><pubDate>Tue, 04 Aug 2020 12:00:00 +0800</pubDate><guid>/posts/learn-opengl/</guid><description>&lt;p&gt;《Learn OpenGL》https://learnopengl.com/Introduction 讲述 OpenGL 3.3 core profile 版本。&lt;/p&gt;
+&lt;h2 id="getting-started"&gt;Getting Started&lt;/h2&gt;
+&lt;h3 id="opengl"&gt;OpenGL&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;OpenGL 3.0 引入 API 废弃机制；OpenGL 3.1 废弃了fixed-function pipeline相关的函数；OpenGL 3.2 开始划分 core profile 和 compatibility profile。&lt;/p&gt;</description></item></channel></rss>
