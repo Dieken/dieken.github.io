@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mirrors on 随记</title><link>/tags/mirrors/</link><description>Recent content in Mirrors on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 28 Jan 2021 21:00:00 +0800</lastBuildDate><atom:link href="/tags/mirrors/index.xml" rel="self" type="application/rss+xml"/><item><title>国内镜像</title><link>/posts/mirror-sites-in-china/</link><pubDate>Thu, 28 Jan 2021 21:00:00 +0800</pubDate><guid>/posts/mirror-sites-in-china/</guid><description>&lt;h2 id="github-镜像"&gt;Github 镜像&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com.cnpmjs.org/"&gt;https://github.com.cnpmjs.org/&lt;/a&gt; 将 github.com 替换成 github.com.cnpmjs.org&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://gitclone.com/"&gt;https://gitclone.com/&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#60a0b0;font-style:italic"&gt;# Method 1 (replace url)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git clone https://gitclone.com/github.com/tendermint/tendermint.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#60a0b0;font-style:italic"&gt;# Method 2 (set git parameters)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git config --global url.&lt;span style="color:#4070a0"&gt;&amp;#34;https://gitclone.com/&amp;#34;&lt;/span&gt;.insteadOf https://
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git clone https://github.com/tendermint/tendermint.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#60a0b0;font-style:italic"&gt;# Method 3 (use cgit client)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cgit clone https://github.com/tendermint/tendermint.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://hub.fastgit.org/"&gt;https://hub.fastgit.org/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://toolwa.com/github/"&gt;http://toolwa.com/github/&lt;/a&gt; 加速下载 release 文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 &lt;a href="https://www.ipaddress.com/"&gt;https://www.ipaddress.com/&lt;/a&gt; 查询 IP 后修改 /etc/hosts&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com.ipaddress.com/"&gt;https://github.com.ipaddress.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.global.ssl.fastly.net.ipaddress.com"&gt;https://github.global.ssl.fastly.net.ipaddress.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="开源软件镜像"&gt;开源软件镜像&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://mirrorz.org/list"&gt;https://mirrorz.org/list&lt;/a&gt; 国内镜像汇总&lt;/p&gt;</description></item></channel></rss>
