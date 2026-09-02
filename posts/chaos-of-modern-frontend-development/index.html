@@ -1,0 +1,203 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>现代前端开发之混沌</title><meta name=description content="现代前端开发之混沌"><meta name=author content="Yubao Liu"><meta name=viewport content="width=device-width,initial-scale=1"><noscript><link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel=stylesheet type=text/css><link rel=stylesheet href=/css/fonts.css></noscript><style type=text/css media=screen>/*!Pure v3.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/pure-css/pure/blob/master/LICENSE*//*!normalize.css v | MIT License | https://necolas.github.io/normalize.css/
+Copyright (c) Nicolas Gallagher and Jonathan Neal*//*!normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css*/html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}html{font-family:sans-serif}.hidden,[hidden]{display:none !important}.pure-img{max-width:100%;height:auto;display:block}</style><style type=text/css media=screen>/*!Pure v3.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/pure-css/pure/blob/master/LICENSE*/.pure-menu{box-sizing:border-box}.pure-menu-fixed{position:fixed;left:0;top:0;z-index:3}.pure-menu-item,.pure-menu-list{position:relative}.pure-menu-list{list-style:none;margin:0;padding:0}.pure-menu-item{padding:0;margin:0;height:100%}.pure-menu-heading,.pure-menu-link{display:block;text-decoration:none;white-space:nowrap}.pure-menu-horizontal{width:100%;white-space:nowrap}.pure-menu-horizontal .pure-menu-list{display:inline-block}.pure-menu-horizontal .pure-menu-heading,.pure-menu-horizontal .pure-menu-item,.pure-menu-horizontal .pure-menu-separator{display:inline-block;vertical-align:middle}.pure-menu-item .pure-menu-item{display:block}.pure-menu-children{display:none;position:absolute;left:100%;top:0;margin:0;padding:0;z-index:3}.pure-menu-horizontal .pure-menu-children{left:0;top:auto;width:inherit}.pure-menu-active>.pure-menu-children,.pure-menu-allow-hover:hover>.pure-menu-children{display:block;position:absolute}.pure-menu-has-children>.pure-menu-link:after{padding-left:.5em;content:"\25B8";font-size:small}.pure-menu-horizontal .pure-menu-has-children>.pure-menu-link:after{content:"\25BE"}.pure-menu-scrollable{overflow-y:scroll;overflow-x:hidden}.pure-menu-scrollable .pure-menu-list{display:block}.pure-menu-horizontal.pure-menu-scrollable .pure-menu-list{display:inline-block}.pure-menu-horizontal.pure-menu-scrollable{white-space:nowrap;overflow-y:hidden;overflow-x:auto;padding:.5em 0}.pure-menu-horizontal .pure-menu-children .pure-menu-separator,.pure-menu-separator{background-color:#ccc;height:1px;margin:.3em 0}.pure-menu-horizontal .pure-menu-separator{width:1px;height:1.3em;margin:0 .3em}.pure-menu-horizontal .pure-menu-children .pure-menu-separator{display:block;width:auto}.pure-menu-heading{text-transform:uppercase;color:#565d64}.pure-menu-link{color:#777}.pure-menu-children{background-color:#fff}.pure-menu-heading,.pure-menu-link{padding:.5em 1em}.pure-menu-disabled{opacity:.5}.pure-menu-disabled .pure-menu-link:hover{background-color:transparent;cursor:default}.pure-menu-active>.pure-menu-link,.pure-menu-link:focus,.pure-menu-link:hover{background-color:#eee}.pure-menu-selected>.pure-menu-link,.pure-menu-selected>.pure-menu-link:visited{color:#000}</style><style type=text/css media=screen>/*!Pure v3.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/pure-css/pure/blob/master/LICENSE*/.pure-g{display:flex;flex-flow:row wrap;align-content:flex-start}.pure-u{display:inline-block;vertical-align:top}.pure-u-1,.pure-u-1-1,.pure-u-1-12,.pure-u-1-2,.pure-u-1-24,.pure-u-1-3,.pure-u-1-4,.pure-u-1-5,.pure-u-1-6,.pure-u-1-8,.pure-u-10-24,.pure-u-11-12,.pure-u-11-24,.pure-u-12-24,.pure-u-13-24,.pure-u-14-24,.pure-u-15-24,.pure-u-16-24,.pure-u-17-24,.pure-u-18-24,.pure-u-19-24,.pure-u-2-24,.pure-u-2-3,.pure-u-2-5,.pure-u-20-24,.pure-u-21-24,.pure-u-22-24,.pure-u-23-24,.pure-u-24-24,.pure-u-3-24,.pure-u-3-4,.pure-u-3-5,.pure-u-3-8,.pure-u-4-24,.pure-u-4-5,.pure-u-5-12,.pure-u-5-24,.pure-u-5-5,.pure-u-5-6,.pure-u-5-8,.pure-u-6-24,.pure-u-7-12,.pure-u-7-24,.pure-u-7-8,.pure-u-8-24,.pure-u-9-24{display:inline-block;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-1-24{width:4.1667%}.pure-u-1-12,.pure-u-2-24{width:8.3333%}.pure-u-1-8,.pure-u-3-24{width:12.5%}.pure-u-1-6,.pure-u-4-24{width:16.6667%}.pure-u-1-5{width:20%}.pure-u-5-24{width:20.8333%}.pure-u-1-4,.pure-u-6-24{width:25%}.pure-u-7-24{width:29.1667%}.pure-u-1-3,.pure-u-8-24{width:33.3333%}.pure-u-3-8,.pure-u-9-24{width:37.5%}.pure-u-2-5{width:40%}.pure-u-10-24,.pure-u-5-12{width:41.6667%}.pure-u-11-24{width:45.8333%}.pure-u-1-2,.pure-u-12-24{width:50%}.pure-u-13-24{width:54.1667%}.pure-u-14-24,.pure-u-7-12{width:58.3333%}.pure-u-3-5{width:60%}.pure-u-15-24,.pure-u-5-8{width:62.5%}.pure-u-16-24,.pure-u-2-3{width:66.6667%}.pure-u-17-24{width:70.8333%}.pure-u-18-24,.pure-u-3-4{width:75%}.pure-u-19-24{width:79.1667%}.pure-u-4-5{width:80%}.pure-u-20-24,.pure-u-5-6{width:83.3333%}.pure-u-21-24,.pure-u-7-8{width:87.5%}.pure-u-11-12,.pure-u-22-24{width:91.6667%}.pure-u-23-24{width:95.8333%}.pure-u-1,.pure-u-1-1,.pure-u-24-24,.pure-u-5-5{width:100%}</style><style type=text/css media=screen>/*!Pure v3.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/pure-css/pure/blob/master/LICENSE*/.pure-table{border-collapse:collapse;border-spacing:0;empty-cells:show;border:1px solid #cbcbcb}.pure-table caption{color:#000;font:italic 85%/1 arial,sans-serif;padding:1em 0;text-align:center}.pure-table td,.pure-table th{border-left:1px solid #cbcbcb;border-width:0 0 0 1px;font-size:inherit;margin:0;overflow:visible;padding:.5em 1em}.pure-table thead{background-color:#e0e0e0;color:#000;text-align:left;vertical-align:bottom}.pure-table td{background-color:transparent}.pure-table-odd td{background-color:#f2f2f2}.pure-table-striped tr:nth-child(2n-1) td{background-color:#f2f2f2}.pure-table-bordered td{border-bottom:1px solid #cbcbcb}.pure-table-bordered tbody>tr:last-child>td{border-bottom-width:0}.pure-table-horizontal td,.pure-table-horizontal th{border-width:0 0 1px;border-bottom:1px solid #cbcbcb}.pure-table-horizontal tbody>tr:last-child>td{border-bottom-width:0}</style><style type=text/css media=screen>/*!Pure v1.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md*/@media screen and (min-width:35.5em){.pure-u-sm-1,.pure-u-sm-1-1,.pure-u-sm-1-12,.pure-u-sm-1-2,.pure-u-sm-1-24,.pure-u-sm-1-3,.pure-u-sm-1-4,.pure-u-sm-1-5,.pure-u-sm-1-6,.pure-u-sm-1-8,.pure-u-sm-10-24,.pure-u-sm-11-12,.pure-u-sm-11-24,.pure-u-sm-12-24,.pure-u-sm-13-24,.pure-u-sm-14-24,.pure-u-sm-15-24,.pure-u-sm-16-24,.pure-u-sm-17-24,.pure-u-sm-18-24,.pure-u-sm-19-24,.pure-u-sm-2-24,.pure-u-sm-2-3,.pure-u-sm-2-5,.pure-u-sm-20-24,.pure-u-sm-21-24,.pure-u-sm-22-24,.pure-u-sm-23-24,.pure-u-sm-24-24,.pure-u-sm-3-24,.pure-u-sm-3-4,.pure-u-sm-3-5,.pure-u-sm-3-8,.pure-u-sm-4-24,.pure-u-sm-4-5,.pure-u-sm-5-12,.pure-u-sm-5-24,.pure-u-sm-5-5,.pure-u-sm-5-6,.pure-u-sm-5-8,.pure-u-sm-6-24,.pure-u-sm-7-12,.pure-u-sm-7-24,.pure-u-sm-7-8,.pure-u-sm-8-24,.pure-u-sm-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-sm-1-24{width:4.1667%}.pure-u-sm-1-12,.pure-u-sm-2-24{width:8.3333%}.pure-u-sm-1-8,.pure-u-sm-3-24{width:12.5%}.pure-u-sm-1-6,.pure-u-sm-4-24{width:16.6667%}.pure-u-sm-1-5{width:20%}.pure-u-sm-5-24{width:20.8333%}.pure-u-sm-1-4,.pure-u-sm-6-24{width:25%}.pure-u-sm-7-24{width:29.1667%}.pure-u-sm-1-3,.pure-u-sm-8-24{width:33.3333%}.pure-u-sm-3-8,.pure-u-sm-9-24{width:37.5%}.pure-u-sm-2-5{width:40%}.pure-u-sm-10-24,.pure-u-sm-5-12{width:41.6667%}.pure-u-sm-11-24{width:45.8333%}.pure-u-sm-1-2,.pure-u-sm-12-24{width:50%}.pure-u-sm-13-24{width:54.1667%}.pure-u-sm-14-24,.pure-u-sm-7-12{width:58.3333%}.pure-u-sm-3-5{width:60%}.pure-u-sm-15-24,.pure-u-sm-5-8{width:62.5%}.pure-u-sm-16-24,.pure-u-sm-2-3{width:66.6667%}.pure-u-sm-17-24{width:70.8333%}.pure-u-sm-18-24,.pure-u-sm-3-4{width:75%}.pure-u-sm-19-24{width:79.1667%}.pure-u-sm-4-5{width:80%}.pure-u-sm-20-24,.pure-u-sm-5-6{width:83.3333%}.pure-u-sm-21-24,.pure-u-sm-7-8{width:87.5%}.pure-u-sm-11-12,.pure-u-sm-22-24{width:91.6667%}.pure-u-sm-23-24{width:95.8333%}.pure-u-sm-1,.pure-u-sm-1-1,.pure-u-sm-24-24,.pure-u-sm-5-5{width:100%}}@media screen and (min-width:48em){.pure-u-md-1,.pure-u-md-1-1,.pure-u-md-1-12,.pure-u-md-1-2,.pure-u-md-1-24,.pure-u-md-1-3,.pure-u-md-1-4,.pure-u-md-1-5,.pure-u-md-1-6,.pure-u-md-1-8,.pure-u-md-10-24,.pure-u-md-11-12,.pure-u-md-11-24,.pure-u-md-12-24,.pure-u-md-13-24,.pure-u-md-14-24,.pure-u-md-15-24,.pure-u-md-16-24,.pure-u-md-17-24,.pure-u-md-18-24,.pure-u-md-19-24,.pure-u-md-2-24,.pure-u-md-2-3,.pure-u-md-2-5,.pure-u-md-20-24,.pure-u-md-21-24,.pure-u-md-22-24,.pure-u-md-23-24,.pure-u-md-24-24,.pure-u-md-3-24,.pure-u-md-3-4,.pure-u-md-3-5,.pure-u-md-3-8,.pure-u-md-4-24,.pure-u-md-4-5,.pure-u-md-5-12,.pure-u-md-5-24,.pure-u-md-5-5,.pure-u-md-5-6,.pure-u-md-5-8,.pure-u-md-6-24,.pure-u-md-7-12,.pure-u-md-7-24,.pure-u-md-7-8,.pure-u-md-8-24,.pure-u-md-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-md-1-24{width:4.1667%}.pure-u-md-1-12,.pure-u-md-2-24{width:8.3333%}.pure-u-md-1-8,.pure-u-md-3-24{width:12.5%}.pure-u-md-1-6,.pure-u-md-4-24{width:16.6667%}.pure-u-md-1-5{width:20%}.pure-u-md-5-24{width:20.8333%}.pure-u-md-1-4,.pure-u-md-6-24{width:25%}.pure-u-md-7-24{width:29.1667%}.pure-u-md-1-3,.pure-u-md-8-24{width:33.3333%}.pure-u-md-3-8,.pure-u-md-9-24{width:37.5%}.pure-u-md-2-5{width:40%}.pure-u-md-10-24,.pure-u-md-5-12{width:41.6667%}.pure-u-md-11-24{width:45.8333%}.pure-u-md-1-2,.pure-u-md-12-24{width:50%}.pure-u-md-13-24{width:54.1667%}.pure-u-md-14-24,.pure-u-md-7-12{width:58.3333%}.pure-u-md-3-5{width:60%}.pure-u-md-15-24,.pure-u-md-5-8{width:62.5%}.pure-u-md-16-24,.pure-u-md-2-3{width:66.6667%}.pure-u-md-17-24{width:70.8333%}.pure-u-md-18-24,.pure-u-md-3-4{width:75%}.pure-u-md-19-24{width:79.1667%}.pure-u-md-4-5{width:80%}.pure-u-md-20-24,.pure-u-md-5-6{width:83.3333%}.pure-u-md-21-24,.pure-u-md-7-8{width:87.5%}.pure-u-md-11-12,.pure-u-md-22-24{width:91.6667%}.pure-u-md-23-24{width:95.8333%}.pure-u-md-1,.pure-u-md-1-1,.pure-u-md-24-24,.pure-u-md-5-5{width:100%}}@media screen and (min-width:64em){.pure-u-lg-1,.pure-u-lg-1-1,.pure-u-lg-1-12,.pure-u-lg-1-2,.pure-u-lg-1-24,.pure-u-lg-1-3,.pure-u-lg-1-4,.pure-u-lg-1-5,.pure-u-lg-1-6,.pure-u-lg-1-8,.pure-u-lg-10-24,.pure-u-lg-11-12,.pure-u-lg-11-24,.pure-u-lg-12-24,.pure-u-lg-13-24,.pure-u-lg-14-24,.pure-u-lg-15-24,.pure-u-lg-16-24,.pure-u-lg-17-24,.pure-u-lg-18-24,.pure-u-lg-19-24,.pure-u-lg-2-24,.pure-u-lg-2-3,.pure-u-lg-2-5,.pure-u-lg-20-24,.pure-u-lg-21-24,.pure-u-lg-22-24,.pure-u-lg-23-24,.pure-u-lg-24-24,.pure-u-lg-3-24,.pure-u-lg-3-4,.pure-u-lg-3-5,.pure-u-lg-3-8,.pure-u-lg-4-24,.pure-u-lg-4-5,.pure-u-lg-5-12,.pure-u-lg-5-24,.pure-u-lg-5-5,.pure-u-lg-5-6,.pure-u-lg-5-8,.pure-u-lg-6-24,.pure-u-lg-7-12,.pure-u-lg-7-24,.pure-u-lg-7-8,.pure-u-lg-8-24,.pure-u-lg-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-lg-1-24{width:4.1667%}.pure-u-lg-1-12,.pure-u-lg-2-24{width:8.3333%}.pure-u-lg-1-8,.pure-u-lg-3-24{width:12.5%}.pure-u-lg-1-6,.pure-u-lg-4-24{width:16.6667%}.pure-u-lg-1-5{width:20%}.pure-u-lg-5-24{width:20.8333%}.pure-u-lg-1-4,.pure-u-lg-6-24{width:25%}.pure-u-lg-7-24{width:29.1667%}.pure-u-lg-1-3,.pure-u-lg-8-24{width:33.3333%}.pure-u-lg-3-8,.pure-u-lg-9-24{width:37.5%}.pure-u-lg-2-5{width:40%}.pure-u-lg-10-24,.pure-u-lg-5-12{width:41.6667%}.pure-u-lg-11-24{width:45.8333%}.pure-u-lg-1-2,.pure-u-lg-12-24{width:50%}.pure-u-lg-13-24{width:54.1667%}.pure-u-lg-14-24,.pure-u-lg-7-12{width:58.3333%}.pure-u-lg-3-5{width:60%}.pure-u-lg-15-24,.pure-u-lg-5-8{width:62.5%}.pure-u-lg-16-24,.pure-u-lg-2-3{width:66.6667%}.pure-u-lg-17-24{width:70.8333%}.pure-u-lg-18-24,.pure-u-lg-3-4{width:75%}.pure-u-lg-19-24{width:79.1667%}.pure-u-lg-4-5{width:80%}.pure-u-lg-20-24,.pure-u-lg-5-6{width:83.3333%}.pure-u-lg-21-24,.pure-u-lg-7-8{width:87.5%}.pure-u-lg-11-12,.pure-u-lg-22-24{width:91.6667%}.pure-u-lg-23-24{width:95.8333%}.pure-u-lg-1,.pure-u-lg-1-1,.pure-u-lg-24-24,.pure-u-lg-5-5{width:100%}}@media screen and (min-width:80em){.pure-u-xl-1,.pure-u-xl-1-1,.pure-u-xl-1-12,.pure-u-xl-1-2,.pure-u-xl-1-24,.pure-u-xl-1-3,.pure-u-xl-1-4,.pure-u-xl-1-5,.pure-u-xl-1-6,.pure-u-xl-1-8,.pure-u-xl-10-24,.pure-u-xl-11-12,.pure-u-xl-11-24,.pure-u-xl-12-24,.pure-u-xl-13-24,.pure-u-xl-14-24,.pure-u-xl-15-24,.pure-u-xl-16-24,.pure-u-xl-17-24,.pure-u-xl-18-24,.pure-u-xl-19-24,.pure-u-xl-2-24,.pure-u-xl-2-3,.pure-u-xl-2-5,.pure-u-xl-20-24,.pure-u-xl-21-24,.pure-u-xl-22-24,.pure-u-xl-23-24,.pure-u-xl-24-24,.pure-u-xl-3-24,.pure-u-xl-3-4,.pure-u-xl-3-5,.pure-u-xl-3-8,.pure-u-xl-4-24,.pure-u-xl-4-5,.pure-u-xl-5-12,.pure-u-xl-5-24,.pure-u-xl-5-5,.pure-u-xl-5-6,.pure-u-xl-5-8,.pure-u-xl-6-24,.pure-u-xl-7-12,.pure-u-xl-7-24,.pure-u-xl-7-8,.pure-u-xl-8-24,.pure-u-xl-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-xl-1-24{width:4.1667%}.pure-u-xl-1-12,.pure-u-xl-2-24{width:8.3333%}.pure-u-xl-1-8,.pure-u-xl-3-24{width:12.5%}.pure-u-xl-1-6,.pure-u-xl-4-24{width:16.6667%}.pure-u-xl-1-5{width:20%}.pure-u-xl-5-24{width:20.8333%}.pure-u-xl-1-4,.pure-u-xl-6-24{width:25%}.pure-u-xl-7-24{width:29.1667%}.pure-u-xl-1-3,.pure-u-xl-8-24{width:33.3333%}.pure-u-xl-3-8,.pure-u-xl-9-24{width:37.5%}.pure-u-xl-2-5{width:40%}.pure-u-xl-10-24,.pure-u-xl-5-12{width:41.6667%}.pure-u-xl-11-24{width:45.8333%}.pure-u-xl-1-2,.pure-u-xl-12-24{width:50%}.pure-u-xl-13-24{width:54.1667%}.pure-u-xl-14-24,.pure-u-xl-7-12{width:58.3333%}.pure-u-xl-3-5{width:60%}.pure-u-xl-15-24,.pure-u-xl-5-8{width:62.5%}.pure-u-xl-16-24,.pure-u-xl-2-3{width:66.6667%}.pure-u-xl-17-24{width:70.8333%}.pure-u-xl-18-24,.pure-u-xl-3-4{width:75%}.pure-u-xl-19-24{width:79.1667%}.pure-u-xl-4-5{width:80%}.pure-u-xl-20-24,.pure-u-xl-5-6{width:83.3333%}.pure-u-xl-21-24,.pure-u-xl-7-8{width:87.5%}.pure-u-xl-11-12,.pure-u-xl-22-24{width:91.6667%}.pure-u-xl-23-24{width:95.8333%}.pure-u-xl-1,.pure-u-xl-1-1,.pure-u-xl-24-24,.pure-u-xl-5-5{width:100%}}</style><style type=text/css media=screen>:root{--color:#484848;--color-footnote:#575757;--color-footer-content:#bbb;--background-color:rgb(252, 252, 252);--background-color-code:rgb(240, 240, 240);--background-color-toggle-content:rgb(249, 249, 249);--link-color:#c05b4d;--link-color-hover:#a5473a;--list-link-color:#336699;--border-navbar-and-footer:#e3e3e3}</style><style type=text/css media=screen>html{min-height:100%;width:100%;position:relative}body{background-color:#fcfcfc;background-color:var(--background-color);color:#484848;color:var(--color)}a{text-decoration:none}kbd,pre,code,samp{background-color:#f0f0f0;background-color:var(--background-color-code)}.nav-menu{margin-top:5px;padding-bottom:5px;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#e3e3e3;border-bottom-color:var(--border-navbar-and-footer)}.pure-menu-heading{text-transform:none;font-size:large}.pure-menu-link:hover{background-color:unset}.header{text-align:left;color:#484848;color:var(--color);margin-bottom:.5em}.header ul li{height:auto}.header ul li a{font-weight:700;color:#484848;color:var(--color);font-family:source sans pro,helveticaneue,helvetica neue,Helvetica,Arial,sans-serif}.header{font-weight:700;color:#484848;color:var(--color);font-family:source sans pro,helveticaneue,helvetica neue,Helvetica,Arial,sans-serif}.site-title{color:#484848;color:var(--color);text-transform:none;font-weight:400;font-family:source sans pro,helveticaneue,helvetica neue,Helvetica,Arial,sans-serif}.pull-right{float:right}.posts-name{text-transform:capitalize;font-weight:700;padding-left:1em;margin-top:1em;font-family:source sans pro,helveticaneue,helvetica neue,Helvetica,Arial,sans-serif}.posts{font-family:verdana,arial,helvetica,sans-serif;list-style-type:none;padding-left:1em}.posts li p{margin-top:0}.posts li{margin-bottom:1em}.posts li>a{color:#369;color:var(--list-link-color);text-decoration:none}.post-list{font-size:large}.footnote{font-family:verdana,arial,helvetica,sans-serif;color:#575757;color:var(--color-footnote);font-size:.75em;margin-bottom:0}.footnote a{color:#575757;color:var(--color-footnote)}.footnote a:hover{text-decoration:underline;color:#369;color:var(--list-link-color)}.footer{position:absolute;z-index:2;height:auto;width:100%;bottom:0}.footer-content{border-top-width:1px;border-top-style:solid;border-top-color:#e3e3e3;border-top:1px solid var(--border-navbar-and-footer);font-size:80%;color:#bbb;color:var(--color-footer-content)}.footer-content a{color:#575757;color:var(--color-footnote)}.footer-content ul{height:auto;margin-top:0;margin-bottom:0;display:inline-block;padding-left:0}#TableOfContents>ul{margin:0;padding:0}#TableOfContents ul{list-style:none;counter-reset:item}#TableOfContents li{counter-increment:item}#TableOfContents li::before{content:counters(item,".")". "}#gototop-btn{display:inline-block}#foot-name{color:#484848;color:var(--color);text-transform:none}#foot-copyright{padding-left:1em;padding-bottom:.5em;margin:0}.post{font-family:proxima-nova,helvetica neue,Helvetica,Roboto,Arial,sans-serif;color:#484848;color:var(--color);letter-spacing:normal;padding-left:.5em}.post h1,h2,h3,h4,h5,h6{font-weight:700;letter-spacing:normal}.post-content{z-index:9;overflow:auto;padding:0;padding-bottom:3em;font-size:16px;line-height:1.4}.post-content img{max-width:100%;height:auto}.post-content pre{padding:.5em}.post a{color:#c05b4d;color:var(--link-color);text-decoration:none}.post a:hover{color:#a5473a;color:var(--link-color-hover);text-decoration:underline}.post h1{font-size:28px;counter-reset:h2}.post h2::before{content:counter(h2)". "}.post h2{font-size:25px;counter-increment:h2;counter-reset:h3}.post h3::before{content:counter(h2)"." counter(h3)". "}.post h3{font-size:23px;counter-increment:h3;counter-reset:h4}.post h4::before{content:counter(h2)"." counter(h3)"." counter(h4)". "}.post h4{font-size:21px;counter-increment:h4;counter-reset:h5}.post h5::before{content:counter(h2)"." counter(h3)"." counter(h4)"." counter(h5)". "}.post h5{font-size:19px;counter-increment:h5;counter-reset:h6}.post h6::before{content:counter(h2)"." counter(h3)"." counter(h4)"." counter(h5)"." counter(h6)". "}.post h6{font-size:18px;counter-increment:h6}.post-title{margin-top:0;margin-bottom:1em}.post-title h1{font-weight:700;font-size:39px;line-height:40px;margin-top:0;margin-bottom:0}@media screen and (max-width:768px){.desktop{display:none}.mobile{display:block}#toggle-btn{display:inline-block;float:right;padding:.5em 1em;text-decoration:none;color:#484848;color:var(--color);font-weight:700}#toggle-content li{clear:both;height:auto;background-color:#f9f9f9;background-color:var(--background-color-toggle-content)}#toggle-home{display:inline-block}}@media screen and (min-width:769px){.mobile{display:none}.desktop{display:block}}@media(prefers-color-scheme:dark){:root{filter:invert(1)hue-rotate(180deg)}}</style><link rel="shortcut icon" href=/img/favicon.ico type=image/x-icon></head><body><div class="header pure-g"><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div><div class="pure-u-11-12 pure-u-md-20-24 pure-u-lg-7-12"><div class="desktop pure-menu pure-menu-horizontal nav-menu"><a href=/ class="site-title pure-menu-heading">随记</a><ul class="pure-menu-list pull-right"><li class=pure-menu-item><a href=/categories/development/ class=pure-menu-link>Development</a></li><li class=pure-menu-item><a href=/categories/os/ class=pure-menu-link>OS</a></li><li class=pure-menu-item><a href=/categories/reading/ class=pure-menu-link>Reading</a></li><li class=pure-menu-item><a href=/about/ class=pure-menu-link>About</a></li></ul></div><div class="mobile pure-menu nav-menu"><a href=/ class="site-title pure-menu-heading" id=toggle-home>随记</a>
+<a href=# id=toggle-btn>&#9776;</a><ul class=pure-menu-list id=toggle-content style=display:none><li class=pure-menu-item><a href=/categories/development/ class=pure-menu-link>Development</a></li><li class=pure-menu-item><a href=/categories/os/ class=pure-menu-link>OS</a></li><li class=pure-menu-item><a href=/categories/reading/ class=pure-menu-link>Reading</a></li><li class=pure-menu-item><a href=/about class=pure-menu-link>About</a></li></ul></div></div><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div></div><div class=pure-g><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div><div class="pure-u-11-12 pure-u-md-20-24 pure-u-lg-7-12"><div class=post><div class=post-title><p class=footnote><time datetime="2025-08-27 22:00:00 +0800 CST">2025-08-27
+</time>|
+tags: [ <a href=/tags/web>Web</a> <a href=/tags/frontend>FrontEnd</a> ]
+categories: [ <a href=/categories/development>Development</a> ]</p><h1>现代前端开发之混沌</h1></div><div class=post-content><nav id=TableOfContents><ul><li><a href=#-前端工具链全景图2025>🗺️ 前端工具链全景图（2025）</a><ul><li><a href=#一整体架构分层>一、整体架构分层</a></li><li><a href=#二分类表格含功能依赖替代成熟度年份语言>二、分类表格（含：功能、依赖、替代、成熟度、年份、语言）</a></li><li><a href=#-总结>✅ 总结</a></li></ul></li></ul></nav><p>向 LLM 请教了下前端开发方面的流行词，如有错误，与我无关😀</p><p>提示词：</p><blockquote><p>画张图描述以下工具的依赖、替代关系，功能范围， 成熟度， 诞生年份，实现语言：xxx, yyy</p></blockquote><pre class=mermaid>
+  flowchart TD
+    %% 语言与运行时
+    subgraph Language_Runtime [语言与运行时]
+        direction LR
+        NodeJS
+        Bun
+        Deno
+    end
+
+    %% 包管理器
+    subgraph Package_Managers [包管理器]
+        direction LR
+        NPM
+        Yarn
+    end
+
+    %% Monorepo 管理工具
+    subgraph Monorepo_Tools [Monorepo 工具]
+        direction LR
+        Lerna
+        NX
+        Rush
+        Turborepo
+        Yalc
+    end
+
+    %% 编译器与转译器
+    subgraph Compilers_Transpilers [编译器/转译器]
+        direction LR
+        SWC
+        Esbuild
+        OXC
+        Babel
+        TSC
+    end
+
+    %% 代码格式化与检查
+    subgraph Lint_Format [代码检查与格式化]
+        direction LR
+        ESLint
+        Prettier
+        Biome
+    end
+
+    %% 测试框架
+    subgraph Testing [测试框架]
+        direction LR
+        Jest
+        Vitest
+    end
+
+    %% 构建工具与打包器
+    subgraph Bundlers [构建工具与打包器]
+        direction LR
+        Webpack
+        Rspack
+        Turbopack
+        Parcel
+        Rollup
+        Rolldown
+        Vite
+    end
+
+    %% 开发工具
+    subgraph Development_Tools [开发工具]
+        direction LR
+        TSNode
+        TSX
+    end
+
+    %% 前端框架
+    subgraph UI_Frameworks [前端框架]
+        direction LR
+        React
+        Vue3
+        Angular
+        SolidJS
+        QwikJS
+        SvelteJS
+    end
+
+    %% 元框架
+    subgraph Meta_Frameworks [全栈元框架]
+        direction LR
+        NextJS
+        NuxtJS
+        Remix
+        AstroJS
+    end
+
+    %% UI 组件库
+    subgraph UI_Libraries [UI 组件库]
+        direction LR
+        ShadcnUI
+    end
+
+    %% 依赖关系
+    %% 包管理器依赖于运行时
+    Package_Managers --&gt; Language_Runtime
+    
+    %% Monorepo 工具依赖于包管理器
+    Monorepo_Tools --&gt; Package_Managers
+    
+    %% 编译器/转译器是基础工具
+    Compilers_Transpilers --&gt; Package_Managers
+    
+    %% 代码检查与格式化依赖于编译器
+    Lint_Format --&gt; Compilers_Transpilers
+    
+    %% 测试框架依赖于编译器和包管理器
+    Testing --&gt; Compilers_Transpilers
+    Testing --&gt; Package_Managers
+    
+    %% 构建工具依赖于编译器和包管理器
+    Bundlers --&gt; Compilers_Transpilers
+    Bundlers --&gt; Package_Managers
+    
+    %% 开发工具依赖于编译器和包管理器
+    Development_Tools --&gt; Compilers_Transpilers
+    Development_Tools --&gt; Package_Managers
+    
+    %% 前端框架依赖于构建工具和开发工具
+    UI_Frameworks --&gt; Bundlers
+    UI_Frameworks --&gt; Development_Tools
+    
+    %% 元框架依赖于前端框架和构建工具
+    Meta_Frameworks --&gt; UI_Frameworks
+    Meta_Frameworks --&gt; Bundlers
+    
+    %% UI 组件库依赖于前端框架
+    UI_Libraries --&gt; UI_Frameworks
+
+    %% 替代关系
+    %% 新一代工具替代旧工具
+    Yarn -.-&gt;|替代| NPM
+    SWC -.-&gt;|替代| Babel
+    Esbuild -.-&gt;|替代| TSC
+    Biome -.-&gt;|替代| ESLint
+    Biome -.-&gt;|替代| Prettier
+    Vitest -.-&gt;|替代| Jest
+    Vite -.-&gt;|替代| Webpack
+    Rspack -.-&gt;|替代| Webpack
+    Turbopack -.-&gt;|替代| Webpack
+    Rolldown -.-&gt;|替代| Rollup
+    Turborepo -.-&gt;|替代| Lerna
+</pre><hr><h2 id=-前端工具链全景图2025>🗺️ 前端工具链全景图（2025）</h2><h3 id=一整体架构分层>一、整体架构分层</h3><pre tabindex=0><code>┌──────────────────────┐
+│   应用框架 (Frameworks)  │←── shadcn/ui (UI 组件库)
+└──────────┬─────────────┘
+           │ 使用
+           ▼
+┌──────────────────────┐
+│   全栈/SSR 框架 (Meta-Frameworks) │
+└──────────┬─────────────┘
+           │ 构建于
+           ▼
+┌──────────────────────┐
+│   构建工具 (Bundlers / Builders)  │
+└──────────┬─────────────┘
+           │ 编译依赖
+           ▼
+┌──────────────────────┐
+│   编译器 (Compilers)       │
+└──────────┬─────────────┘
+           │ 依赖管理
+           ▼
+┌──────────────────────┐
+│   包管理器 (Package Managers)  │
+└──────────┬─────────────┘
+           │ 任务调度
+           ▼
+┌──────────────────────┐
+│   Monorepo 工具 (Task Orchestrators)│
+└──────────┬─────────────┘
+           │ 代码质量
+           ▼
+┌──────────────────────┐
+│   Lint/Format/Test 工具        │
+└──────────────────────┘
+</code></pre><hr><h3 id=二分类表格含功能依赖替代成熟度年份语言>二、分类表格（含：功能、依赖、替代、成熟度、年份、语言）</h3><blockquote><p>✅ <strong>成熟度</strong>：⭐（实验）→ ⭐⭐⭐⭐⭐（生产就绪）<br>🔁 <strong>替代关系</strong>：<code>→</code> 表示“可替代”或“现代替代品”</p></blockquote><hr><h4 id=1--构建工具bundlers--builders>1. 🧱 构建工具（Bundlers / Builders）</h4><table class='pure-table pure-table-striped'><thead><tr><th>工具</th><th>功能</th><th>依赖/被依赖</th><th>替代关系</th><th>成熟度</th><th>年份</th><th>语言</th></tr></thead><tbody><tr><td><strong>webpack</strong></td><td>模块打包器</td><td>被 React/Vue 使用</td><td>← Rollup, Parcel</td><td>⭐⭐⭐⭐⭐</td><td>2012</td><td>JS</td></tr><tr><td><strong>rollup</strong></td><td>库打包器</td><td>被 Vite 生产模式使用</td><td>→ webpack (for libs)</td><td>⭐⭐⭐⭐☆</td><td>2015</td><td>JS</td></tr><tr><td><strong>esbuild</strong></td><td>极速打包+编译</td><td>被 Vite/Rspack 使用</td><td>→ webpack (速度)</td><td>⭐⭐⭐⭐☆</td><td>2020</td><td>Go</td></tr><tr><td><strong>vite</strong></td><td>开发服务器 + 构建工具</td><td>依赖 esbuild/Rollup</td><td>→ webpack</td><td>⭐⭐⭐⭐⭐</td><td>2020</td><td>JS</td></tr><tr><td><strong>parcel</strong></td><td>零配置打包器</td><td>独立</td><td>→ webpack</td><td>⭐⭐⭐☆</td><td>2017</td><td>Rust (v2)</td></tr><tr><td><strong>rspack</strong></td><td>Rust 编写的 Webpack 替代</td><td>兼容 Webpack API</td><td>→ webpack</td><td>⭐⭐☆</td><td>2023</td><td>Rust</td></tr><tr><td><strong>rolldown</strong></td><td>Rust 实现的 Rollup</td><td>实验中</td><td>→ rollup</td><td>⭐</td><td>2024</td><td>Rust</td></tr><tr><td><strong>turbopack</strong></td><td>Next.js 官方极速打包器</td><td>用于 Next.js 13+</td><td>→ webpack</td><td>⭐⭐☆</td><td>2022</td><td>Rust</td></tr></tbody></table><hr><h4 id=2--编译器compilers>2. 🔨 编译器（Compilers）</h4><table class='pure-table pure-table-striped'><thead><tr><th>工具</th><th>功能</th><th>依赖/被依赖</th><th>替代关系</th><th>成熟度</th><th>年份</th><th>语言</th></tr></thead><tbody><tr><td><strong>tsc</strong></td><td>TypeScript 官方编译器</td><td>被所有 TS 项目使用</td><td>—</td><td>⭐⭐⭐⭐⭐</td><td>2012</td><td>TS</td></tr><tr><td><strong>swc</strong></td><td>Rust 编写的 TS/JS 编译器</td><td>被 Next.js/Vite 使用</td><td>→ tsc/babel</td><td>⭐⭐⭐⭐☆</td><td>2018</td><td>Rust</td></tr><tr><td><strong>oxc</strong></td><td>更快的 Rust 编译器（Oxidation）</td><td>实验中</td><td>→ swc/esbuild</td><td>⭐</td><td>2023</td><td>Rust</td></tr><tr><td><strong>tsx</strong></td><td>TS 运行器（类似 ts-node）</td><td>独立运行 TS</td><td>→ ts-node</td><td>⭐⭐☆</td><td>2022</td><td>TS</td></tr><tr><td><strong>ts-node</strong></td><td>在 Node 中运行 TS</td><td>被开发脚本使用</td><td>← tsx</td><td>⭐⭐⭐⭐</td><td>2016</td><td>TS</td></tr></tbody></table><hr><h4 id=3--包管理器package-managers>3. 📦 包管理器（Package Managers）</h4><table class='pure-table pure-table-striped'><thead><tr><th>工具</th><th>功能</th><th>依赖/被依赖</th><th>替代关系</th><th>成熟度</th><th>年份</th><th>语言</th></tr></thead><tbody><tr><td><strong>npm</strong></td><td>Node 官方包管理器</td><td>基础</td><td>—</td><td>⭐⭐⭐⭐⭐</td><td>2010</td><td>JS</td></tr><tr><td><strong>yarn</strong></td><td>快速、可靠的包管理器</td><td>独立</td><td>→ npm</td><td>⭐⭐⭐⭐☆</td><td>2016</td><td>JS</td></tr><tr><td><strong>pnpm</strong></td><td>高效磁盘使用（硬链接）</td><td>被 Turborepo/Nx 推荐</td><td>→ npm/yarn</td><td>⭐⭐⭐⭐☆</td><td>2016</td><td>JS</td></tr></tbody></table><hr><h4 id=4--monorepo-工具task-orchestrators>4. 🔄 Monorepo 工具（Task Orchestrators）</h4><table class='pure-table pure-table-striped'><thead><tr><th>工具</th><th>功能</th><th>依赖/被依赖</th><th>替代关系</th><th>成熟度</th><th>年份</th><th>语言</th></tr></thead><tbody><tr><td><strong>lerna</strong></td><td>早期 monorepo 工具</td><td>依赖 npm/yarn</td><td>← Turborepo/Nx</td><td>⭐⭐☆</td><td>2016</td><td>JS</td></tr><tr><td><strong>turborepo</strong></td><td>高速任务调度 + 缓存</td><td>依赖 pnpm/npm</td><td>→ lerna</td><td>⭐⭐⭐⭐☆</td><td>2021</td><td>JS</td></tr><tr><td><strong>nx</strong></td><td>企业级 monorepo 工具</td><td>独立</td><td>→ lerna</td><td>⭐⭐⭐⭐☆</td><td>2018</td><td>TS</td></tr><tr><td><strong>rush</strong></td><td>Microsoft 出品，超大项目</td><td>独立</td><td>→ lerna</td><td>⭐⭐⭐☆</td><td>2017</td><td>TS</td></tr><tr><td><strong>yalc</strong></td><td>本地包模拟发布</td><td>调试用</td><td>→ npm link</td><td>⭐⭐☆</td><td>2017</td><td>JS</td></tr></tbody></table><hr><h4 id=5--lint--format--test-工具>5. 🧼 Lint / Format / Test 工具</h4><table class='pure-table pure-table-striped'><thead><tr><th>工具</th><th>功能</th><th>依赖/被依赖</th><th>替代关系</th><th>成熟度</th><th>年份</th><th>语言</th></tr></thead><tbody><tr><td><strong>eslint</strong></td><td>JS/TS 代码检查</td><td>被所有项目使用</td><td>—</td><td>⭐⭐⭐⭐⭐</td><td>2013</td><td>JS</td></tr><tr><td><strong>prettier</strong></td><td>代码格式化</td><td>独立或与 ESLint 集成</td><td>—</td><td>⭐⭐⭐⭐☆</td><td>2016</td><td>JS</td></tr><tr><td><strong>biome</strong></td><td>Rust 编写的 Lint/Format 工具</td><td>实验中</td><td>→ ESLint + Prettier</td><td>⭐⭐☆</td><td>2023</td><td>Rust</td></tr><tr><td><strong>jest</strong></td><td>测试框架</td><td>被 React/Vue 使用</td><td>← Vitest</td><td>⭐⭐⭐⭐☆</td><td>2016</td><td>JS</td></tr><tr><td><strong>vitest</strong></td><td>Vite 生态测试工具</td><td>依赖 Vite</td><td>→ Jest</td><td>⭐⭐⭐☆</td><td>2021</td><td>TS</td></tr></tbody></table><hr><h4 id=6--前端框架frameworks>6. 🧩 前端框架（Frameworks）</h4><table class='pure-table pure-table-striped'><thead><tr><th>工具</th><th>功能</th><th>依赖/被依赖</th><th>替代关系</th><th>成熟度</th><th>年份</th><th>语言</th></tr></thead><tbody><tr><td><strong>react</strong></td><td>UI 库</td><td>被 Next.js 使用</td><td>—</td><td>⭐⭐⭐⭐⭐</td><td>2013</td><td>JS</td></tr><tr><td><strong>vue3</strong></td><td>渐进式框架</td><td>被 Nuxt 使用</td><td>← React</td><td>⭐⭐⭐⭐☆</td><td>2020</td><td>TS</td></tr><tr><td><strong>angular</strong></td><td>全功能框架</td><td>独立</td><td>← React</td><td>⭐⭐⭐☆</td><td>2016</td><td>TS</td></tr><tr><td><strong>svelte</strong></td><td>编译时框架</td><td>被 SvelteKit 使用</td><td>← React</td><td>⭐⭐⭐☆</td><td>2016</td><td>TS</td></tr><tr><td><strong>solidjs</strong></td><td>React-like 但更快</td><td>独立</td><td>→ React</td><td>⭐⭐☆</td><td>2019</td><td>TS</td></tr><tr><td><strong>qwikjs</strong></td><td>懒加载优先框架</td><td>独立</td><td>→ React</td><td>⭐⭐☆</td><td>2022</td><td>TS</td></tr><tr><td><strong>astrojs</strong></td><td>多框架静态站点生成器</td><td>独立</td><td>→ Next/Nuxt</td><td>⭐⭐⭐☆</td><td>2021</td><td>TS</td></tr></tbody></table><hr><h4 id=7--全栈ssr-框架meta-frameworks>7. 🏗️ 全栈/SSR 框架（Meta-Frameworks）</h4><table class='pure-table pure-table-striped'><thead><tr><th>工具</th><th>功能</th><th>依赖/被依赖</th><th>替代关系</th><th>成熟度</th><th>年份</th><th>语言</th></tr></thead><tbody><tr><td><strong>nextjs</strong></td><td>React SSR 框架</td><td>依赖 React</td><td>—</td><td>⭐⭐⭐⭐⭐</td><td>2016</td><td>TS</td></tr><tr><td><strong>nuxtjs</strong></td><td>Vue SSR 框架</td><td>依赖 Vue</td><td>← Next.js</td><td>⭐⭐⭐⭐</td><td>2016</td><td>TS</td></tr><tr><td><strong>remix</strong></td><td>React 全栈框架</td><td>依赖 React</td><td>← Next.js</td><td>⭐⭐⭐☆</td><td>2021</td><td>TS</td></tr><tr><td><strong>sveltekit</strong></td><td>Svelte 全栈框架</td><td>依赖 Svelte</td><td>← Next.js</td><td>⭐⭐⭐☆</td><td>2021</td><td>TS</td></tr></tbody></table><hr><h4 id=8--ui-组件库>8. 🎨 UI 组件库</h4><table class='pure-table pure-table-striped'><thead><tr><th>工具</th><th>功能</th><th>依赖/被依赖</th><th>替代关系</th><th>成熟度</th><th>年份</th><th>语言</th></tr></thead><tbody><tr><td><strong>shadcn/ui</strong></td><td>React + Tailwind 组件</td><td>依赖 React + Radix UI</td><td>← MUI/Ant Design</td><td>⭐⭐☆</td><td>2023</td><td>TS</td></tr></tbody></table><blockquote><p>🔗 注：<code>shadcn/ui</code> 不是 npm 包，是“复制粘贴”组件库。</p></blockquote><hr><h3 id=-总结>✅ 总结</h3><table class='pure-table pure-table-striped'><thead><tr><th>类别</th><th>推荐选择（2025）</th></tr></thead><tbody><tr><td><strong>构建工具</strong></td><td><code>vite</code>（开发），<code>rspack</code>（追求极致）</td></tr><tr><td><strong>编译器</strong></td><td><code>swc</code>（速度），<code>oxc</code>（未来）</td></tr><tr><td><strong>包管理器</strong></td><td><code>pnpm</code></td></tr><tr><td><strong>monorepo</strong></td><td><code>turborepo</code>（轻量），<code>nx</code>（企业）</td></tr><tr><td><strong>lint/format</strong></td><td><code>eslint + prettier</code>，逐步迁移到 <code>biome</code></td></tr><tr><td><strong>测试</strong></td><td><code>vitest</code>（Vite 项目），<code>jest</code>（旧项目）</td></tr><tr><td><strong>全栈框架</strong></td><td><code>nextjs</code>，<code>nuxtjs</code>，<code>sveltekit</code></td></tr><tr><td><strong>UI 组件</strong></td><td><code>shadcn/ui</code>（React + Tailwind）</td></tr></tbody></table><blockquote><p>🔥 <strong>趋势</strong>：Rust 正在重塑前端工具链（esbuild、swc、oxc、biome、rspack），追求极致性能。</p></blockquote></div></div></div><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div></div><script type=module>
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script><div class="footer pure-g"><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div><div class="pure-u-11-12 pure-u-md-20-24 pure-u-lg-7-12"><div class=footer-content><div class="pure-menu pure-menu-horizontal"><ul><li class=pure-menu-item id=foot-name>© Yubao Liu</li></ul><a href=# class="pure-menu-link pull-right" id=gototop-btn>↑↑</a></div></div></div><div class="pure-u-1-24 pure-u-md-2-24 pure-u-lg-5-24"></div></div><script type=text/javascript>go(),window.addEventListener("resize",go);function go(){var e=document.querySelector(".desktop");document.documentElement.clientWidth>768?e.style.display="":e.style.display="none"}</script><script type=text/javascript>var a=document.querySelector("#toggle-btn"),b=document.querySelector("#toggle-content");a.addEventListener("click",function(){""==b.style.display?(b.style.display="none",a.innerHTML="☰"):(b.style.display="",a.innerHTML="X")})</script></body></html>

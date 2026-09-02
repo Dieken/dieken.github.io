@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="80 36 564 564" width="564" height="564">
+  <defs>
+    <font-face font-family="Helvetica Neue" font-size="12" panose-1="2 0 8 3 0 0 0 9 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="975.0061" descent="-216.99524" font-weight="700">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue-Bold"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica Neue" font-size="16" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.8.1 
+    <dc:date>2019-01-04 07:08:33 +0000</dc:date>
+  </metadata>
+  <g id="Canvas_1" fill-opacity="1" stroke-dasharray="none" stroke="none" stroke-opacity="1" fill="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1: Layer 1">
+      <title>Layer 1</title>
+      <g id="Graphic_2">
+        <path d="M 561.12356 118.87644 C 670.959 228.7113 670.959 406.7887 561.12356 516.62356 C 451.2887 626.459 273.2113 626.459 163.37644 516.62356 C 53.541 406.7887 53.541 228.7113 163.37644 118.87644 C 273.2113 9.041 451.2887 9.041 561.12356 118.87644" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_3">
+        <text transform="translate(344 41.82596)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="12" font-weight="700" fill="black" x=".052" y="12">uint32</tspan>
+        </text>
+      </g>
+      <g id="Graphic_4">
+        <path d="M 545.1708 155.57922 C 646.6099 257.01783 646.6099 421.48217 545.1708 522.9208 C 443.7322 624.3599 279.26783 624.3599 177.82922 522.9208 C 76.39009 421.48217 76.39009 257.01783 177.82922 155.57922 C 279.26783 54.14009 443.7322 54.14009 545.1708 155.57922" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_5">
+        <text transform="translate(336 84.82596)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="12" font-weight="700" fill="black" x=".062" y="12">code point</tspan>
+        </text>
+      </g>
+      <g id="Graphic_6">
+        <ellipse cx="429.03333" cy="344.25" rx="171.533607426772" ry="193.750309593492" stroke="#ff40ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_11">
+        <ellipse cx="534" cy="339.25" rx="50.0000798950949" ry="23.3750373509568" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(499 330.026)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="1.072" y="15">surrogate</tspan>
+        </text>
+      </g>
+      <g id="Graphic_14">
+        <text transform="translate(495.5 212.02692)" fill="#ff40ff">
+          <tspan font-family="Helvetica Neue" font-size="12" font-weight="700" fill="#ff40ff" x="4.73" y="12">assigned</tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" font-weight="700" fill="#ff40ff" x=".062" y="27.348083">code point</tspan>
+        </text>
+      </g>
+      <g id="Graphic_17">
+        <ellipse cx="304.3537" cy="347" rx="166.000265251715" ry="196.500313987723" stroke="#0432ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Graphic_15">
+        <ellipse cx="364.25" cy="309.0625" rx="73.7501178452648" ry="134.687715217412" stroke="#ff2600" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Graphic_16">
+        <text transform="translate(338.5 179.52692)" fill="#ff2600">
+          <tspan font-family="Helvetica Neue" font-size="12" font-weight="700" fill="#ff2600" x="2.23" y="12">assigned</tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" font-weight="700" fill="#ff2600" x=".442" y="27.348083">character</tspan>
+        </text>
+      </g>
+      <g id="Graphic_12">
+        <ellipse cx="368.25" cy="477.875" rx="48.000076699291" ry="23.3750373509568" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(334.85 459.427)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="1.536" y="15">nonchar-</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="15.328" y="33.448">acter</tspan>
+        </text>
+      </g>
+      <g id="Graphic_13">
+        <ellipse cx="199" cy="350.5" rx="48.000076699291" ry="23.3750373509568" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(165.6 341.276)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="2.584" y="15">reserved</tspan>
+        </text>
+      </g>
+      <g id="Graphic_7">
+        <ellipse cx="366.5" cy="237.75" rx="48.000076699291" ry="23.3750373509568" stroke="#ff2600" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(333.1 228.526)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="6.584" y="15">graphic</tspan>
+        </text>
+      </g>
+      <g id="Graphic_8">
+        <ellipse cx="366.5" cy="290.625" rx="48.000076699291" ry="23.3750373509568" stroke="#ff2600" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(333.1 281.401)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="10.136" y="15">format</tspan>
+        </text>
+      </g>
+      <g id="Graphic_9">
+        <ellipse cx="366.5" cy="344.5" rx="48.000076699291" ry="23.3750373509568" stroke="#ff2600" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(333.1 335.276)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="8.656" y="15">control</tspan>
+        </text>
+      </g>
+      <g id="Graphic_10">
+        <ellipse cx="366.5" cy="396.375" rx="48.000076699291" ry="23.3750373509569" stroke="#ff2600" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(333.1 377.927)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="5.992" y="15">private-</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="20.656" y="33.448">use</tspan>
+        </text>
+      </g>
+      <g id="Graphic_18">
+        <text transform="translate(179 219.70096)" fill="#0432ff">
+          <tspan font-family="Helvetica Neue" font-size="12" font-weight="700" fill="#0432ff" x=".282" y="12">scalar value</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

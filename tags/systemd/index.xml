@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Systemd on 随记</title><link>/tags/systemd/</link><description>Recent content in Systemd on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 03 Jul 2021 00:00:00 +0800</lastBuildDate><atom:link href="/tags/systemd/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 systemd 管理普通用户的服务</title><link>/posts/manage-user-service-with-systemd/</link><pubDate>Sat, 03 Jul 2021 00:00:00 +0800</pubDate><guid>/posts/manage-user-service-with-systemd/</guid><description>&lt;p&gt;systemd 可以管理普通用户身份运行的服务，参考 &lt;a href="https://wiki.archlinux.org/title/Systemd/User#Writing_user_units"&gt;ArchLinux wiki&lt;/a&gt;，在 &lt;code&gt;~/.config/systemd/user/&lt;/code&gt; 目录下创建文件 foo.service：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;[Unit]
+Description=Foo Service
+ 
+[Service]
+WorkingDirectory=/home/xxx/foo
+ExecStart=java -jar quarkus-app/quarkus-run.jar
+ 
+Restart=always
+RestartSec=2
+ 
+[Install]
+WantedBy=default.target
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后记得以 root 身份执行 &lt;code&gt;loginctl enable-linger xxx&lt;/code&gt; 以使得 xxx 用户注销后，&lt;code&gt;systemd --user&lt;/code&gt; 进程以及它管理的服务并不会退出。&lt;/p&gt;</description></item></channel></rss>

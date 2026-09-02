@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scala on 随记</title><link>/tags/scala/</link><description>Recent content in Scala on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 01 Sep 2024 20:00:00 +0800</lastBuildDate><atom:link href="/tags/scala/index.xml" rel="self" type="application/rss+xml"/><item><title>Scala Cookie Book</title><link>/posts/scala-cookie-book/</link><pubDate>Sun, 01 Sep 2024 20:00:00 +0800</pubDate><guid>/posts/scala-cookie-book/</guid><description>&lt;pre tabindex="0"&gt;&lt;code&gt;# https://docs.racket-lang.org/scribble/getting-started.html
+
+#lang scribble/base
+
+@title{On the Cookie-Eating Habits of Mice}
+
+If you give a mouse a cookie, he&amp;#39;s going to ask for a glass of milk.
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="scala-书籍"&gt;Scala 书籍&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Tour of Scala: &lt;a href="https://docs.scala-lang.org/tour/tour-of-scala.html"&gt;https://docs.scala-lang.org/tour/tour-of-scala.html&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scala 3 Book: &lt;a href="https://docs.scala-lang.org/scala3/book/introduction.html"&gt;https://docs.scala-lang.org/scala3/book/introduction.html&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="安装-scala"&gt;安装 Scala&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://scala-lang.org/download/"&gt;https://scala-lang.org/download/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;配置镜像源：&lt;/p&gt;
+&lt;p&gt;. Coursier: &lt;a href="https://github.com/lqhuang/dotfiles/tree/master/coursier"&gt;https://github.com/lqhuang/dotfiles/tree/master/coursier&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;. Maven: &lt;a href="https://github.com/lqhuang/dotfiles/tree/master/mvn"&gt;https://github.com/lqhuang/dotfiles/tree/master/mvn&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;. SBT: &lt;a href="https://github.com/lqhuang/dotfiles/tree/master/sbt"&gt;https://github.com/lqhuang/dotfiles/tree/master/sbt&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="scala-生态"&gt;Scala 生态&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Typesafe&lt;/strong&gt;: &lt;a href="https://akka.io"&gt;https://akka.io&lt;/a&gt; / &lt;a href="https://pekko.apache.org"&gt;https://pekko.apache.org&lt;/a&gt; , akka / pekko, play&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Typelevel&lt;/strong&gt;: &lt;a href="https://typelevel.org/"&gt;https://typelevel.org/&lt;/a&gt; , cats, cats-effect, circe, http4s, blaze, doobie, &lt;a href="https://atnos-org.github.io/eff/"&gt;eff&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;ZIO&lt;/strong&gt;: &lt;a href="https://zio.dev"&gt;https://zio.dev&lt;/a&gt; , zio&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lihaoyi: &lt;a href="https://github.com/com-lihaoyi"&gt;https://github.com/com-lihaoyi&lt;/a&gt; , os-lib, upickle, cask, mainargs&lt;/p&gt;</description></item><item><title>Scala 学习笔记</title><link>/posts/learning-scala/</link><pubDate>Fri, 18 Nov 2022 23:39:38 +0800</pubDate><guid>/posts/learning-scala/</guid><description>&lt;p&gt;&lt;a href="https://docs.scala-lang.org"&gt;https://docs.scala-lang.org&lt;/a&gt; 网站上文档的学习笔记。&lt;/p&gt;
+&lt;h2 id="getting-started"&gt;Getting Started&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;使用 &lt;a href="https://get-coursier.io/docs/cli-overview"&gt;Coursier&lt;/a&gt;安装 amm, sbt, sbtn, scala, scala-cli, scalac, scalafmt。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建项目：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sbt new scala/scala3.g8 &lt;span style="color:#60a0b0;font-style:italic"&gt;# Scala 3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sbt new scala/hello-world.g8 &lt;span style="color:#60a0b0;font-style:italic"&gt;# Scala 2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Scala 3 例子：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-scala" data-lang="scala"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#555;font-weight:bold"&gt;@main&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#007020;font-weight:bold"&gt;def&lt;/span&gt; &lt;span style="color:#0e84b5;font-weight:bold"&gt;HelloWorld&lt;/span&gt;&lt;span style="color:#666"&gt;(&lt;/span&gt;args&lt;span style="color:#007020;font-weight:bold"&gt;:&lt;/span&gt; &lt;span style="color:#902000"&gt;String*&lt;/span&gt;&lt;span style="color:#666"&gt;)&lt;/span&gt;&lt;span style="color:#007020;font-weight:bold"&gt;:&lt;/span&gt; &lt;span style="color:#902000"&gt;Unit&lt;/span&gt; &lt;span style="color:#666"&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; println&lt;span style="color:#666"&gt;(&lt;/span&gt;&lt;span style="color:#4070a0"&gt;&amp;#34;Hello world!&amp;#34;&lt;/span&gt;&lt;span style="color:#666"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Scala 2 例子：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-scala" data-lang="scala"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#007020;font-weight:bold"&gt;object&lt;/span&gt; &lt;span style="color:#0e84b5;font-weight:bold"&gt;Main&lt;/span&gt; &lt;span style="color:#666"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#007020;font-weight:bold"&gt;def&lt;/span&gt; main&lt;span style="color:#666"&gt;(&lt;/span&gt;args&lt;span style="color:#007020;font-weight:bold"&gt;:&lt;/span&gt; &lt;span style="color:#902000"&gt;Array&lt;/span&gt;&lt;span style="color:#666"&gt;[&lt;/span&gt;&lt;span style="color:#902000"&gt;String&lt;/span&gt;&lt;span style="color:#666"&gt;])&lt;/span&gt;&lt;span style="color:#007020;font-weight:bold"&gt;:&lt;/span&gt; &lt;span style="color:#902000"&gt;Unit&lt;/span&gt; &lt;span style="color:#666"&gt;=&lt;/span&gt; &lt;span style="color:#666"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; println&lt;span style="color:#666"&gt;(&lt;/span&gt;&lt;span style="color:#4070a0"&gt;&amp;#34;Hello world!&amp;#34;&lt;/span&gt;&lt;span style="color:#666"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#666"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#666"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-scala" data-lang="scala"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#60a0b0;font-style:italic"&gt;// 在 Scala 3 里不再推荐这种写法
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#60a0b0;font-style:italic"&gt;// https://www.scala-lang.org/api/current/scala/App.html
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#60a0b0;font-style:italic"&gt;&lt;/span&gt;&lt;span style="color:#007020;font-weight:bold"&gt;object&lt;/span&gt; &lt;span style="color:#0e84b5;font-weight:bold"&gt;Main&lt;/span&gt; &lt;span style="color:#007020;font-weight:bold"&gt;extends&lt;/span&gt; &lt;span style="color:#0e84b5;font-weight:bold"&gt;App&lt;/span&gt; &lt;span style="color:#666"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; println&lt;span style="color:#666"&gt;(&lt;/span&gt;&lt;span style="color:#4070a0"&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;&lt;span style="color:#666"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#666"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start="3"&gt;
+&lt;li&gt;
+&lt;p&gt;输入 &lt;code&gt;sbt&lt;/code&gt; 命令进入 SBT console，输入 &lt;code&gt;~run&lt;/code&gt; 以在文件发生变动时重新运行 main。按回车键中断 &lt;code&gt;run&lt;/code&gt; 命令，输入 &lt;code&gt;exit&lt;/code&gt; 或者 &lt;kbd&gt;Ctrl-D&lt;/kbd&gt; 退出 sbt。&lt;/p&gt;</description></item></channel></rss>
