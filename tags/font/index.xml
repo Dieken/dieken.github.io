@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Font on 随记</title><link>/tags/font/</link><description>Recent content in Font on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 15 Jul 2025 22:00:00 +0800</lastBuildDate><atom:link href="/tags/font/index.xml" rel="self" type="application/rss+xml"/><item><title>支持大字符集的中文字体</title><link>/posts/free-chinese-unicode-fonts/</link><pubDate>Tue, 15 Jul 2025 22:00:00 +0800</pubDate><guid>/posts/free-chinese-unicode-fonts/</guid><description>&lt;p&gt;除了 Mi Sans，其它字体的覆盖汉字数量只是预估。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;黑体推荐阿里巴巴普惠体 3.0、Mi Sans + Mi Sans L3、Vivo Sans 和遍黑(Plangothic，支持 Unicode 17.0)，都可以商用；&lt;/li&gt;
+&lt;li&gt;宋体有天珩全字库、超集宋体，开心宋体，楷体只有天珩，注意这些都不能商用（2025 更新：&lt;a href="https://github.com/takushun-wu/WenJinMincho/blob/main/INTRODUCE.md"&gt;文津宋体&lt;/a&gt;覆盖 Unicode 17.0，可以商用）；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;SuperHan 和全宋体(FSung) 似乎与字云(Jigmo) 共用了日本汉字字形，与中国大陆的字形习惯有一些字不一致，因此不推荐。典迹汉字(Monu Hani)可以用来显示单字，不适合用来排版大段文本。&lt;/p&gt;</description></item></channel></rss>

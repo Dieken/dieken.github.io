@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jail on 随记</title><link>/tags/jail/</link><description>Recent content in Jail on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 20 Nov 2025 10:00:00 +0800</lastBuildDate><atom:link href="/tags/jail/index.xml" rel="self" type="application/rss+xml"/><item><title>FreeBSD 容器与虚拟化</title><link>/posts/freebsd-jail-and-virtualization/</link><pubDate>Thu, 20 Nov 2025 10:00:00 +0800</pubDate><guid>/posts/freebsd-jail-and-virtualization/</guid><description>&lt;h2 id="jails"&gt;Jails&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://bastille.readthedocs.io/en/latest/"&gt;Bastille&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.bsdstore.ru/"&gt;CBSD&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/DtxdF/AppJail#getting-started"&gt;AppJail&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://podman.io/"&gt;Podman&lt;/a&gt;, &lt;a href="https://github.com/containerd/nerdctl"&gt;Nerdctl&lt;/a&gt;, &lt;a href="https://www.docker.com/"&gt;Docker&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;参考：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.freebsd.org/en/books/handbook/jails/#jail-managers-and-containers"&gt;https://docs.freebsd.org/en/books/handbook/jails/#jail-managers-and-containers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://appjail.readthedocs.io/en/latest/compare/"&gt;https://appjail.readthedocs.io/en/latest/compare/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="virtualization"&gt;Virtualization&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/churchers/vm-bhyve"&gt;vm-bhyve&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.bsdstore.ru/"&gt;CBSD&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;参考：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.freebsd.org/en/books/handbook/virtualization/#virtualization-tools-utilities"&gt;https://docs.freebsd.org/en/books/handbook/virtualization/#virtualization-tools-utilities&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

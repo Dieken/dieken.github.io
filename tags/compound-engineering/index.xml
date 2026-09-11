@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Compound-Engineering on 随记</title><link>/tags/compound-engineering/</link><description>Recent content in Compound-Engineering on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 17 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="/tags/compound-engineering/index.xml" rel="self" type="application/rss+xml"/><item><title>Compound Engineering 插件:30 个 skill 的用途、顺序与依赖关系</title><link>/posts/compound-engineering-skills-guide/</link><pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate><guid>/posts/compound-engineering-skills-guide/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;对象:&lt;a href="https://github.com/EveryInc/compound-engineering-plugin"&gt;&lt;code&gt;EveryInc/compound-engineering-plugin&lt;/code&gt;&lt;/a&gt;
+版本:ships 30 skills / 0 standalone agents,专家 review、research 逻辑都内嵌在各 skill 的本地 prompt 资产里。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id="一句话哲学"&gt;一句话哲学&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;每一次工程工作,都应该让下一次更容易,而不是更难。80% 在规划和评审,20% 在执行。&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

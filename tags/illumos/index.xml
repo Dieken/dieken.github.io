@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Illumos on 随记</title><link>/tags/illumos/</link><description>Recent content in Illumos on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 23 Jul 2023 10:00:00 +0800</lastBuildDate><atom:link href="/tags/illumos/index.xml" rel="self" type="application/rss+xml"/><item><title>著名 Linux 发行版、BSD 分支首次发布时间线</title><link>/posts/timeline-for-first-releases-of-famous-linux-bsd-illumos/</link><pubDate>Sun, 23 Jul 2023 10:00:00 +0800</pubDate><guid>/posts/timeline-for-first-releases-of-famous-linux-bsd-illumos/</guid><description>&lt;pre tabindex="0"&gt;&lt;code&gt;1993.4.19 NetBSD
+1993.7.17 Slackware(still alive and well maintained!)
+1993.9.15 Debian(still alive and well maintained!)
+1993.11.1 FreeBSD
+1994.3.29 S.u.S.E. Linux(originally based on Slackware)
+1995.5.13 Redhat Linux
+1996.7 OpenBSD
+1998.7.23 Mandrake Linux(based on Redhat Linux 5.1)
+2000.2.22 RHEL
+2000.8.31 SUSE Linux Enterprise
+2002.3.11 Arch Linux(inspired by CRUX)
+2002.3.31 Gentoo Linux
+2002.12 CRUX
+2003.6.3 NixOS
+2004.10.20 Ubuntu
+2005.4 Mandrake renamed to Mandriva
+2005.8 Alpine Linux
+2005.10 openSUSE
+2008 Void Linux
+2011.6.1 Mageia
+2011.8.28 Last release of Mandriva
+2012.4.2 OmniOS
+2013.11.22 OpenMandriva
+2021.5.30 Chimera Linux(not famous yet but very interesting)
+&lt;/code&gt;&lt;/pre&gt;</description></item></channel></rss>
