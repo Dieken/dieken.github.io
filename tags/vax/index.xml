@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VAX on 随记</title><link>/tags/vax/</link><description>Recent content in VAX on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 12 Jan 2020 10:40:15 +0800</lastBuildDate><atom:link href="/tags/vax/index.xml" rel="self" type="application/rss+xml"/><item><title>在 SIMH 模拟器上试玩 OpenVMS</title><link>/posts/play-openvms-on-simh/</link><pubDate>Sun, 12 Jan 2020 10:40:15 +0800</pubDate><guid>/posts/play-openvms-on-simh/</guid><description>&lt;h2 id="准备工作"&gt;准备工作&lt;/h2&gt;
+&lt;p&gt;OpenVMS 官方的 &lt;a href="https://training.vmssoftware.com/hobbyist/"&gt;Hobbyist&lt;/a&gt; 计划提供了免费的 Windows 版 Alpha 模拟器以及最新版 OpenVMS，本文在 macOS 下使用 SIMH 带的 VAX 模拟器运行 OpenVMS 7.1。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 &lt;a href="http://vaxhaven.com/CD_Image_Archive"&gt;http://vaxhaven.com/CD_Image_Archive&lt;/a&gt; 下载 「&lt;a href="http://vaxhaven.com/cd-image/AG-QSBWB-BE.iso.zip"&gt;OpenVMS VAX Operating System V7.1 (Binaries)&lt;/a&gt;」 并解压缩&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;brew install simh&lt;/code&gt; 安装 SIMH，这个模拟器套件带了很多古老机器的模拟器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;SIMH 模拟器里按 &lt;code&gt;Ctrl-E&lt;/code&gt; 中断模拟器。&lt;/p&gt;</description></item></channel></rss>
