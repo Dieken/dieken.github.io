@@ -1,0 +1,97 @@
+/*    */ package com.atlassian.crowd.directory;
+/*    */ 
+/*    */ import com.atlassian.crowd.model.user.User;
+/*    */ import com.atlassian.crowd.password.factory.PasswordEncoderFactory;
+/*    */ import com.atlassian.crowd.search.ldap.LDAPQueryTranslater;
+/*    */ import com.atlassian.crowd.util.InstanceFactory;
+/*    */ import com.atlassian.event.api.EventPublisher;
+/*    */ import javax.naming.directory.Attributes;
+/*    */ import org.apache.commons.lang3.StringUtils;
+/*    */ import org.slf4j.Logger;
+/*    */ import org.slf4j.LoggerFactory;
+/*    */ import org.springframework.ldap.core.ContextSource;
+/*    */ import org.springframework.ldap.core.LdapTemplate;
+/*    */ import org.springframework.ldap.core.support.LdapContextSource;
+/*    */ 
+/*    */ public class ApacheDS15 extends ApacheDS {
+/* 17 */   private static final Logger logger = LoggerFactory.getLogger(ApacheDS15.class);
+/*    */ 
+/*    */   
+/*    */   public ApacheDS15(LDAPQueryTranslater ldapQueryTranslater, EventPublisher eventPublisher, InstanceFactory instanceFactory, PasswordEncoderFactory passwordEncoderFactory) {
+/* 21 */     super(ldapQueryTranslater, eventPublisher, instanceFactory, passwordEncoderFactory);
+/*    */   }
+/*    */   
+/*    */   public static String getStaticDirectoryType() {
+/* 25 */     return "Apache Directory Server 1.5.x";
+/*    */   }
+/*    */ 
+/*    */   
+/*    */   public String getDescriptiveName() {
+/* 30 */     return getStaticDirectoryType();
+/*    */   }
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */   
+/*    */   protected String getInitialGroupMemberDN() {
+/* 42 */     return this.ldapPropertiesMapper.getUsername();
+/*    */   }
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */   
+/*    */   protected void getNewUserDirectorySpecificAttributes(User user, Attributes attributes) {
+/* 54 */     if (StringUtils.isBlank(user.getLastName())) {
+/* 55 */       addDefaultSnToUserAttributes(attributes, " ");
+/*    */     }
+/*    */ 
+/*    */     
+/* 59 */     if (StringUtils.isBlank(user.getEmailAddress())) {
+/* 60 */       addDefaultValueToUserAttributesForAttribute(this.ldapPropertiesMapper.getUserEmailAttribute(), attributes, " ");
+/*    */     }
+/*    */   }
+/*    */ 
+/*    */   
+/*    */   protected LdapTemplate createChangeListenerTemplate() {
+/* 66 */     LdapContextSource contextSource = new LdapContextSource();
+/*    */     
+/* 68 */     contextSource.setUrl(this.ldapPropertiesMapper.getConnectionURL());
+/* 69 */     contextSource.setUserDn(this.ldapPropertiesMapper.getUsername());
+/* 70 */     contextSource.setPassword(this.ldapPropertiesMapper.getPassword());
+/*    */ 
+/*    */     
+/* 73 */     contextSource.setBaseEnvironmentProperties(getBaseEnvironmentProperties());
+/*    */ 
+/*    */     
+/* 76 */     contextSource.setPooled(true);
+/*    */ 
+/*    */ 
+/*    */     
+/* 80 */     contextSource.setDirObjectFactory(null);
+/*    */ 
+/*    */     
+/*    */     try {
+/* 84 */       contextSource.afterPropertiesSet();
+/* 85 */     } catch (Exception e) {
+/* 86 */       logger.error(e.getMessage(), e);
+/*    */     } 
+/*    */     
+/* 89 */     return new LdapTemplate((ContextSource)contextSource);
+/*    */   }
+/*    */ }
+
+
+/* Location:              /Users/liuyb/tmp/atlassian-crowd-4.1.0/a/crowd-ldap-4.1.0.jar!/com/atlassian/crowd/directory/ApacheDS15.class
+ * Java compiler version: 8 (52.0)
+ * JD-Core Version:       1.1.3
+ */

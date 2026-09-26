@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VIM on 随记</title><link>/tags/vim/</link><description>Recent content in VIM on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 21 Mar 2026 22:00:00 +0800</lastBuildDate><atom:link href="/tags/vim/index.xml" rel="self" type="application/rss+xml"/><item><title>Awesome Editor Plugins</title><link>/posts/awesome-editor-plugins/</link><pubDate>Sat, 21 Mar 2026 22:00:00 +0800</pubDate><guid>/posts/awesome-editor-plugins/</guid><description>&lt;p&gt;在&lt;a href="/wiki/10%E8%AE%A1%E7%AE%97%E6%9C%BA/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BC%96%E7%A8%8B.html#id9"&gt;选择编程器&lt;/a&gt;和 &lt;a href="/posts/awesome-tui-apps/#text-editor"&gt;Awesome TUI apps&lt;/a&gt; 中列举了一些文本编辑器，这里列一些有意思的插件。&lt;/p&gt;
+&lt;h2 id="neovim"&gt;Neovim&lt;/h2&gt;
+&lt;h3 id="plugin-manager"&gt;Plugin Manager&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/folke/lazy.nvim"&gt;https://github.com/folke/lazy.nvim&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/junegunn/vim-plug"&gt;https://github.com/junegunn/vim-plug&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="markdown"&gt;Markdown&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/MeanderingProgrammer/render-markdown.nvim"&gt;https://github.com/MeanderingProgrammer/render-markdown.nvim&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/OXY2DEV/markview.nvim"&gt;https://github.com/OXY2DEV/markview.nvim&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="十全大补包"&gt;十全大补包&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/NvChad/NvChad"&gt;https://github.com/NvChad/NvChad&lt;/a&gt; 28k stars&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/LazyVim/LazyVim"&gt;https://github.com/LazyVim/LazyVim&lt;/a&gt; 25.5k stars&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/AstroNvim/AstroNvim"&gt;https://github.com/AstroNvim/AstroNvim&lt;/a&gt; 14.2k stars&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/nvim-mini/mini.nvim"&gt;https://github.com/nvim-mini/mini.nvim&lt;/a&gt; 8.9k stars&lt;/li&gt;
+&lt;/ol&gt;</description></item></channel></rss>

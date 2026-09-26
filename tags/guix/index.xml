@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Guix on 随记</title><link>/tags/guix/</link><description>Recent content in Guix on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 29 Jan 2023 22:00:00 +0800</lastBuildDate><atom:link href="/tags/guix/index.xml" rel="self" type="application/rss+xml"/><item><title>BSD、Linux 软件库的一点分析</title><link>/posts/analyze-bsd-linux-software-repositories/</link><pubDate>Sun, 29 Jan 2023 22:00:00 +0800</pubDate><guid>/posts/analyze-bsd-linux-software-repositories/</guid><description>&lt;p&gt;参考：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://archiveprogram.github.com/assets/img/archive-repos.txt"&gt;https://archiveprogram.github.com/assets/img/archive-repos.txt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ghe.clickhouse.tech"&gt;https://ghe.clickhouse.tech&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://gitmostwanted.com"&gt;https://gitmostwanted.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/sindresorhus/awesome"&gt;https://github.com/sindresorhus/awesome&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://repology.org"&gt;https://repology.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://softwareheritage.org"&gt;https://softwareheritage.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.tuhs.org"&gt;https://www.tuhs.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mirrorz.org"&gt;https://mirrorz.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;LXR：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://lxr.linux.no"&gt;http://lxr.linux.no&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://elixir.bootlin.com/linux/latest/source"&gt;https://elixir.bootlin.com/linux/latest/source&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lxr.missinglinkelectronics.com"&gt;https://lxr.missinglinkelectronics.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://archiveos.org"&gt;https://archiveos.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;根据 &lt;a href="https://repology.org/repositories/graphs"&gt;https://repology.org/repositories/graphs&lt;/a&gt; 分析活跃的软件仓库有NixPkgs, AUR, Debian, FreeBSD Ports, DPorts, Fedora, Gentoo, Guix, pkgsrc, openSUSE, Alpine, LFS/BLFS。&lt;/p&gt;
+&lt;p&gt;先说结论，Slackware、Debian、Ubuntu、Redhat、SuSE 直接在软件仓库里附带了源码包，其中 Slackware、Debian、Ubuntu、Redhat 历史留存完好。Slackware 虽然很值得敬仰，但基本是个人作品不适合做服务器用途，Redhat 商业化味道很重，版本比较乱，历经多次变更，尤其现在 CentOS 不再让白嫖了，实在没必要再去贴冷屁股，SuSE 断代的她爹都不认识了， &lt;strong&gt;所以剩下的只有值得信赖的 Debian 和 Ubuntu 了&lt;/strong&gt;，2022 年依然可以使用 2005 年发布的Debian Sarge(3.1) 和 2004 年发布的 Ubuntu 4.04(Warty Warthog)。&lt;/p&gt;</description></item><item><title>几个使用类似 BSD ports 软件包管理的 Linux 发行版</title><link>/posts/linux-distributions-using-ports/</link><pubDate>Sun, 29 Jan 2023 21:00:00 +0800</pubDate><guid>/posts/linux-distributions-using-ports/</guid><description>&lt;p&gt;四大 BSD 不约而同的选择了 ports 这种形式管理第三方软件包：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在一个集中的版本控制系统里维护第三方源码包的构建脚本，包括下载源码、编译、打包、安装，这个目录树被称为 ports 或者 ports collection 或者 ports tree 或者 ports repository&lt;/li&gt;
+&lt;li&gt;用户直接从 ports 里构建软件包并安装，也可能操作系统维护者提供编译好的二进制软件包&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在 ports 系统里，源代码一般从各个软件包的官网下载，也可能操作系统维护者为了便利以及避免下载链接失效而自行缓存一份源码包。&lt;/p&gt;</description></item></channel></rss>
