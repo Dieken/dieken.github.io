@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rust on 随记</title><link>/tags/rust/</link><description>Recent content in Rust on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 23 Jan 2020 23:43:30 +0800</lastBuildDate><atom:link href="/tags/rust/index.xml" rel="self" type="application/rss+xml"/><item><title>《The Rust Programming Language》笔记</title><link>/posts/the-rust-programming-language/</link><pubDate>Thu, 23 Jan 2020 23:43:30 +0800</pubDate><guid>/posts/the-rust-programming-language/</guid><description>&lt;h2 id="1-getting-started"&gt;1. Getting Started&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;使用 &lt;code&gt;rustup&lt;/code&gt; 安装，默认安装在 &lt;code&gt;$HOME/.cargo&lt;/code&gt; 和 &lt;code&gt;$HOME/.rustup&lt;/code&gt; 下&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rustup update&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rustup self uninstall&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;cargo 常用命令
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;cargo new PROJECT&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cargo build [--release]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cargo run&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="2-programming-a-guessing-game"&gt;2. Programming a Guessing Game&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;Cargo.toml&lt;/code&gt; 里依赖部分的版本号 &amp;ldquo;MAJOR.MINOR.PATCH&amp;rdquo; 实际是 &amp;ldquo;^MAJOR.MINOR.PATCH&amp;rdquo; 的简写，表示允许语义版本的升级&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cargo update&lt;/code&gt; 默认只升级 PATCH 部分&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cargo doc --open&lt;/code&gt; 查看文档&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="3-common-programming-concepts"&gt;3. Common Programming Concepts&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;不可变变量：&lt;code&gt;let VAR: TYPE = VALUE;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;可变变量：&lt;code&gt;let mut VAR: TYPE = VALUE;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;常量：&lt;code&gt;const FOO_BAR: TYPE = VALUE;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Shadowing: 同一作用域里，同名变量可以重复声明，之前声明的变量被遮蔽。&lt;/li&gt;
+&lt;li&gt;Scalar types:
+&lt;ol&gt;
+&lt;li&gt;Integer types: i8, u8, i16, u16, i32, u32, i64, u64, i128, u128, isize, usize，后两者长度跟机器相关，一般用于集合、数组的索引和长度。Debug 模式下溢出回绕会panic，Release模式下溢出回绕不报错。使用标准库里类型 Wrapping 显示表明期望溢出回绕行为。&lt;/li&gt;
+&lt;li&gt;Integer literals: 98_222, 0xff, 0o77, 0b1111_0000, b&amp;rsquo;A&amp;rsquo;，除了 byte literal，其它字面量都支持类型后缀，比如 57u8 表示一个 u8 类型的值 57。&lt;strong&gt;整型字面量默认类型为 i32&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;Floating-point types: f32, f64，&lt;strong&gt;默认为 f64&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;Boolean type: bool, true, false。布尔类型长度为一字节。&lt;/li&gt;
+&lt;li&gt;Character type: char，四个字节，表示一个 Unicode Scalar Value, 范围为 [U+0000, U+D7FF] 和 [U+E000, U+10FFFF]。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Compound Types
+&lt;ol&gt;
+&lt;li&gt;Tuple: (x, y, z)，类型声明 (t1, t2, t3)&lt;/li&gt;
+&lt;li&gt;Array: [x, y, z]，类型声明 [t; size]。 使用语法 [x; n] 创建 n 个 x 值的数组。数据访问会检查是否越界。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Functions: &lt;code&gt;fn foo(x:t1, y:t2) -&amp;gt; t3 { ... }&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Control flow:
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;if condition { ... } else if condition { ... } else { ... }&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;loop { .... break VALUE; ... }&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;while condition { ... }&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;for VAR in ITER { ... }&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="4-understanding-ownership"&gt;4. Understanding Ownership&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Ownership rules：没有实现 Copy trait 的类型，变量赋值时是 move 语义，owner 超出作用域时自动调用 drop()&lt;/p&gt;</description></item></channel></rss>

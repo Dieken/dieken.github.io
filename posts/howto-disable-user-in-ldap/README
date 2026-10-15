@@ -1,0 +1,7 @@
+# Make Crowd-4.1.0 support userAccountControl attribute type
+
+1. Decompile atlassian-crowd-4.1.0/crowd-webapp/WEB-INF/lib/crowd-ldap-4.1.0.jar with Java Decompiler(http://java-decompiler.github.io/)
+2. Replace `com/atlassian/crowd/directory/ApacheDS15.java` with `ApacheDS15.java`
+3. Run `javac -cp 'crowd-webapp/WEB-INF/lib/*' com/atlassian/crowd/directory/ApacheDS15.java`
+4. Run `jar -uf crowd-webapp/WEB-INF/lib/crowd-ldap-4.1.0.jar com/atlassian/crowd/directory/ApacheDS15.class`
+

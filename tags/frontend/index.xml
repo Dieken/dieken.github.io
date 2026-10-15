@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FrontEnd on 随记</title><link>/tags/frontend/</link><description>Recent content in FrontEnd on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 27 Aug 2025 22:00:00 +0800</lastBuildDate><atom:link href="/tags/frontend/index.xml" rel="self" type="application/rss+xml"/><item><title>现代前端开发之混沌</title><link>/posts/chaos-of-modern-frontend-development/</link><pubDate>Wed, 27 Aug 2025 22:00:00 +0800</pubDate><guid>/posts/chaos-of-modern-frontend-development/</guid><description>&lt;p&gt;向 LLM 请教了下前端开发方面的流行词，如有错误，与我无关😀&lt;/p&gt;
+&lt;p&gt;提示词：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;画张图描述以下工具的依赖、替代关系，功能范围， 成熟度， 诞生年份，实现语言：xxx, yyy&lt;/p&gt;</description></item></channel></rss>

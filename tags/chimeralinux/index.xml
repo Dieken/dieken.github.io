@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChimeraLinux on 随记</title><link>/tags/chimeralinux/</link><description>Recent content in ChimeraLinux on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 29 Jan 2023 21:00:00 +0800</lastBuildDate><atom:link href="/tags/chimeralinux/index.xml" rel="self" type="application/rss+xml"/><item><title>几个使用类似 BSD ports 软件包管理的 Linux 发行版</title><link>/posts/linux-distributions-using-ports/</link><pubDate>Sun, 29 Jan 2023 21:00:00 +0800</pubDate><guid>/posts/linux-distributions-using-ports/</guid><description>&lt;p&gt;四大 BSD 不约而同的选择了 ports 这种形式管理第三方软件包：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在一个集中的版本控制系统里维护第三方源码包的构建脚本，包括下载源码、编译、打包、安装，这个目录树被称为 ports 或者 ports collection 或者 ports tree 或者 ports repository&lt;/li&gt;
+&lt;li&gt;用户直接从 ports 里构建软件包并安装，也可能操作系统维护者提供编译好的二进制软件包&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在 ports 系统里，源代码一般从各个软件包的官网下载，也可能操作系统维护者为了便利以及避免下载链接失效而自行缓存一份源码包。&lt;/p&gt;</description></item></channel></rss>

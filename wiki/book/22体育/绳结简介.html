@@ -1,0 +1,482 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>绳结简介 - 乐果百科</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="欢迎来到「乐果百科」，乐果一家的知识笔记！">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">乐果百科</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="绳结简介"><a class="header" href="#绳结简介">绳结简介</a></h1>
+<h2 id="基础结"><a class="header" href="#基础结">基础结</a></h2>
+<ol>
+<li><a href="https://www.animatedknots.com/overhand-knot">Overhand knot</a>：单结，反手结，交腕结。最简单的单股止索结，难解开。
+<ol>
+<li><a href="https://www.animatedknots.com/figure-8-knot">Figure-eight knot</a>：八字结，较易解开的止索结。</li>
+<li><a href="https://www.animatedknots.com/slip-knot">Slip knot</a>：活结，活动端折弯的单结。</li>
+<li><a href="https://www.animatedknots.com/noose-knot">Noose knot</a>：套索，最简单的滑结(running knot)，固定端折弯的单结。</li>
+</ol>
+</li>
+<li><a href="https://www.animatedknots.com/half-knot">Half knot</a>：半结，最简单的捆绑结，平结的第一步（其实拓扑上就是单结)。
+<ol>
+<li><a href="https://www.animatedknots.com/square-knot">Square knot</a>：平结(方结)，最常用的捆绑结。</li>
+</ol>
+</li>
+<li><a href="https://www.animatedknots.com/half-hitch-knot">Half hitch</a>: 半结，最简单的拴结(其实拓扑上就是单结）。</li>
+<li><a href="https://www.animatedknots.com/sheet-bend-knot">Sheet bend</a>：单编结，最常用的连接结，可以连接不同粗细的绳子。</li>
+</ol>
+<p>绳结的考量点：</p>
+<ol>
+<li>用途：
+<ol>
+<li>捆绑(binding) ：<a href="https://en.wikipedia.org/wiki/Boa_knot">Boa knot</a>, <a href="https://www.animatedknots.com/millers-knot">Miller's knot</a>, <a href="https://www.animatedknots.com/square-knot">Reef knot</a></li>
+<li>连接(bend) ：<a href="https://en.wikipedia.org/wiki/Simple_Simon_under">Simple Simon double bend</a>, Simple Simon symmetric bend,  <strong><a href="https://www.animatedknots.com/zeppelin-bend-knot">Zeppelin bend</a></strong>,  <a href="https://www.animatedknots.com/alpine-butterfly-bend-knot">Butterfly bend</a>，<strong><a href="https://www.animatedknots.com/double-fishermans-bend-knot">Double/Triple fisherman's knot</a></strong></li>
+<li>拴系(hitch) ：<strong><a href="https://www.animatedknots.com/round-turn-two-half-hitches-knot">Round turn and two half-hitches</a></strong>，<a href="https://www.animatedknots.com/boom-hitch-knot">Boom Hitch</a>, <a href="https://www.animatedknots.com/buntline-hitch-knot">EStar hitch</a>, <strong><a href="https://www.animatedknots.com/midshipmans-hitch-knot">Midshipman's hitch</a></strong>, <a href="https://www.animatedknots.com/tumble-hitch-knot">Tumble hitch</a>, <a href="https://www.animatedknots.com/siberian-hitch-knot">Siberian hitch</a></li>
+<li>抓结(friction hitch) ：<strong><a href="https://www.animatedknots.com/prusik-knot">Prusik hitch</a></strong></li>
+<li>防脱(stopper) ： <a href="https://www.animatedknots.com/estar-stopper-knot">EStar stopper knot</a>, <strong><a href="https://www.animatedknots.com/stevedore-stopper-knot">Double figure-eight knot(Stevedore knot)</a></strong>, <strong><a href="https://www.animatedknots.com/double-overhand-stopper-knot">Double overhand knot</a></strong></li>
+<li>绳环(loop) ：<strong><a href="https://www.animatedknots.com/alpine-butterfly-loop-knot">Butterfly loop</a></strong>,  <a href="https://www.animatedknots.com/double-alpine-butterfly-loop-knot">Double butterfly loop</a>, <strong><a href="https://www.animatedknots.com/figure-8-follow-through-loop-knot">Figure-eight loop</a></strong>/<a href="https://en.wikipedia.org/wiki/Figure-of-nine_loop">Figure-nine loop</a>, <strong><a href="https://www.animatedknots.com/figure-8-double-loop-knot">Double figure-eight loop</a></strong>, <a href="https://en.wikipedia.org/wiki/Zeppelin_loop">Zeppelin loop</a></li>
+<li>滑结(running knot) ： <a href="https://www.animatedknots.com/running-bowline-knot">Running bowline</a></li>
+<li>盘绳(coil)：<a href="https://www.animatedknots.com/coil-unattached-rope-knot">Butterfly coil</a>, <a href="https://www.animatedknots.com/chain-sinnet-knot">Chain Sinnet</a></li>
+</ol>
+</li>
+<li>安全：是否易打滑、翻转，能承受多大负荷，适用多粗多细、什么材料的绳子，是否适用光滑、弹性的绳子，是否易磨损绳子，结的大小(影响卡塞），结构是否对称（影响受力均匀）。</li>
+<li>易用：步骤是不是够少，是不是易错，是不是容易解开，能不能单手操作，能否在受力时打结、解开、调整，易于检查是否正确。</li>
+</ol>
+<p>绳子种类：</p>
+<ol>
+<li>天然纤维绳
+<ol>
+<li>棉绳</li>
+<li>麻绳</li>
+<li>棕绳</li>
+<li>丝绳</li>
+</ol>
+</li>
+<li>合成纤维绳
+<ol>
+<li>聚丙烯绳，Polypropylene，丙纶，聚丙烯纤维，能浮水，低强度，不耐磨。</li>
+<li><strong>尼龙绳</strong>，Nylon，绵纶，耐纶，聚酰胺纤维，高弹性，可用作动力绳和静力绳（需特殊工艺降低弹性）。</li>
+<li><strong>涤纶绳</strong>，Polyester，聚酯纤维，低弹性，常用作静力绳。</li>
+<li>芳纶绳，Aramid，如凯夫拉(Kevlar)，芳酰胺纤维，高强度但很脆，耐高温。</li>
+<li>聚乙烯绳，Polyethylene，如迪尼玛(Dyneema)，能浮水，高强度，不耐磨，不耐高温。</li>
+</ol>
+</li>
+</ol>
+<p>注意事项：</p>
+<ol>
+<li>不要将 Reef knot 用于连接两条绳子！！！</li>
+<li>不要单独使用 Clove hitch！！！</li>
+<li>不要使用不安全的标准 Bowline，最好避开 Bowline 家族，变种太多，难以检查，很多不安全。</li>
+<li>止索结要缠绕在主绳上，不能只打在绳头自身。</li>
+<li>相比单重版本的绳结，为了安全，倾向使用双重甚至三重版本。</li>
+<li>滑结一般不要用在人身上，以免过于勒紧而发生危险——Noose 和 Poacher's knot 都很危险。</li>
+</ol>
+<h2 id="stopper-knot止索结"><a class="header" href="#stopper-knot止索结">Stopper knot：止索结</a></h2>
+<p>防止绳子从孔隙中脱落。</p>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Overhand_knot">Overhand knot</a>: 单结，反手结，交腕结，难解开。
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Double_overhand_knot">Double overhand knot</a>：<strong>双反手结</strong>，不易松动，难解开。</li>
+<li><a href="https://en.wikipedia.org/wiki/Double_fisherman%27s_knot">Double fisherman's knot</a>，也可用于止索结。</li>
+<li><a href="https://en.wikipedia.org/wiki/Strangle_knot">Strangle knot</a>，扼结，也可用于止索结。</li>
+</ol>
+</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Figure-eight_knot">Figure-eight knot</a>: 八字结，比反手结更大、易解，但易松开。</del>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Double_figure-eight">Double figure-eight knot,  Stevedore knot</a>：<strong>双八字结，码头工人结/装卸工结</strong>。更大，易解。</li>
+</ol>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Ashley%27s_stopper_knot">Ashley's stopper knot,  Oysterman's stopper knot</a>: <strong>阿什利止索结，牡蛎渔夫止索结</strong>，不易松动，比双反手结和双八字结大。</li>
+<li><a href="https://www.animatedknots.com/estar-stopper-knot">EStar stopper knot</a>，由 Evans Starzinger 描述，源自 <a href="https://www.animatedknots.com/buntline-hitch-knot">EStar hitch</a>，更适合光滑的绳索。重负载后难解开。</li>
+<li><a href="https://en.wikipedia.org/wiki/Monkey%27s_fist">Monkey's fist</a>：猴拳结</li>
+</ol>
+<h2 id="binding-knot捆绑结"><a class="header" href="#binding-knot捆绑结">Binding knot：捆绑结</a></h2>
+<p>用一根绳子捆绑物体。有的 binding knot 也可用作 hitch knot。</p>
+<ol>
+<li>Friction knots: 靠绳子的摩擦力固定，摩擦力由小到大：
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Miller%27s_knot">Miller's knot,  bag knot</a>：<strong>磨坊主结，米勒结</strong>，常用来绑袋子口，易绑也易解。</li>
+<li><a href="https://en.wikipedia.org/wiki/Strangle_knot">Strangle knot</a>:  扼结，简单，常用来绑袋子口和缚扎鞭子末端。没 constrictor knot 可靠。</li>
+<li><a href="https://en.wikipedia.org/wiki/Constrictor_knot">Constrictor knot</a>：紧缚结，可能难解开。</li>
+<li><a href="https://en.wikipedia.org/wiki/Boa_knot">Boa knot</a>：<strong>蟒蛇结</strong>，Strangle knot(扼结）和Double constrictor knot(双重紧缚结）的结合，更适合捆绑物体末端。可能更难解开。</li>
+</ol>
+</li>
+<li>Knotted-ends knots: 靠绳子末端打结来固定
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Reef_knot">Reef/Square knot</a>: <strong>平结、方结</strong>，由两个半结组成。狭义的方结指没有滑结的版本，而平结指一头是滑结的版本。<strong>因拉扯自由端时容易翻转散开，因此千万不要用作连接结</strong>！！！
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Surgeon%27s_knot">Surgeon's knot</a>：外科结，适合细绳，打第一个结时多绕几圈的平结改良版</li>
+<li><a href="https://en.wikipedia.org/wiki/Shoelace_knot">Shoelace knot(bow knot)</a>：鞋带结，领结，两头都有滑结的平结</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Thief_knot">Thief knot</a>：贼结</del></li>
+<li><del><a href="https://en.wikipedia.org/wiki/Granny_knot">Granny knot</a>：奶奶结</del></li>
+<li><del><a href="https://en.wikipedia.org/wiki/Grief_knot">Grief knot(what knot)</a>：悲伤结（莫名其妙结）</del></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="lashing-knot绑扎结"><a class="header" href="#lashing-knot绑扎结">Lashing knot：绑扎结</a></h2>
+<p>用一根绳子将多根物体固定在一起。</p>
+<h2 id="bend-knot连接结"><a class="header" href="#bend-knot连接结">Bend (knot)：连接结</a></h2>
+<p>也叫 joining knot，连接两条绳子。</p>
+<ol>
+<li>适用不同粗细绳子
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Sheet_bend">Sheet bend</a>，<a href="https://en.wikipedia.org/wiki/Sheet_bend#Double_sheet_bend">Double sheet bend</a>： 单编结，<strong>双编结</strong>，织工结(weaver's knot, weaver's hitch)，易用，注意单编结在光滑或受力不均时可能滑脱。
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Simple_Simon_under">Simple Simon under bend</a>：西蒙下接结，适用于不同粗细绳子和光滑的合成绳索，优于 sheet bend，但未成为主流标准。注意 simple Simon over bend 不安全。</li>
+<li><strong>Simple Simon double bend</strong></li>
+<li><strong>Simple Simon symmetric bend</strong>：有点像 Reever knot</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>适用相同粗细绳子
+<ol>
+<li>两个反手结互锁的结构
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Zeppelin_bend">Zeppelin bend</a>: <strong>齐柏林结</strong>，飞艇结，非常易解，比猎人结更好。</li>
+<li><a href="https://en.wikipedia.org/wiki/Butterfly_bend">Butterfly bend</a>：<strong>蝴蝶连接结</strong>，易解，但易错。</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Hunter%27s_bend">Hunter's bend</a>:  猎人结，很像 Zeppelin bend，多一步缠绕，受力后难解</del>。</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Ashley&#x27;s_bend">Ashley's bend</a>:  阿什利结，打法复杂，受力后很难解。</del></li>
+</ol>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Fisherman%27s_knot">Fisherman's knot</a>：渔夫结，渔人结，易绑，难解。
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Double_fisherman%27s_knot">Double fisherman's knot (grapevine knot)</a>：<strong>双渔夫结</strong>，葡萄藤结，极难解，攀岩行业标准。</li>
+<li><a href="https://en.wikipedia.org/wiki/Triple_fisherman%27s_knot">Triple fisherman's knot</a>：<strong>三重渔夫结</strong>，极高安全性。</li>
+</ol>
+</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Water_knot">Water knot:</a> 水结，扁带结，专用于扁平织带，不可用于圆绳，受力后难解。易滑动，不太安全。</del></li>
+<li><del><a href="https://en.wikipedia.org/wiki/Reever_Knot">Reever Knot</a>：由登山家设计，旨在提供与双渔人结同等的可靠性，但承重后更容易解开。测试报告显示它表现良好，但不如双渔人结或齐柏林结那样普及。</del></li>
+<li><del><a href="https://en.wikipedia.org/wiki/Flemish_bend">Flemish bend, figure-eight bend, double figure-eight bend</a>：双重八字结，安全，但体积大，打结麻烦，受力后难解开。</del></li>
+<li><a href="https://en.wikipedia.org/wiki/Carrick_bend">Carrick bend</a>：卡里克结，金钱结，特别适合非常粗重的绳索，易解，但易错。</li>
+<li><a href="https://en.wikipedia.org/wiki/Offset_overhand_bend">Offset overhand bend, thumb bend</a>：偏置反手结，拇指结。非常容易系，但可能比较难解。因其体积小和偏置的特性，不容易被岩缝卡住，容易绕边缘移动，所以在沿绳速降方面很受欢迎。在高负载下可能翻转而不安全。注意不要用 offset figure-eight bend，它在低负载下就会翻转而不安全。</li>
+<li><a href="https://en.wikipedia.org/wiki/Blood_knot">Blood knot</a>：血结，常用于钓鱼时连接单丝尼龙线，很难解。</li>
+</ol>
+</li>
+</ol>
+<h2 id="hitch-knot拴系结"><a class="header" href="#hitch-knot拴系结">Hitch (knot)：拴系结</a></h2>
+<p>拴在柱子、缆绳、环上来固定。</p>
+<ol>
+<li><del><a href="https://en.wikipedia.org/wiki/Clove_hitch">Clove hitch</a>： 丁香结、双套结，由两个 <a href="https://en.wikipedia.org/wiki/Single_hitch">single hitches</a> 叠加组成，易滑动，易松动，常用来组成其它绳结。</del><strong>！！！不要单独使用！！！</strong>。 相关的绳结类型：
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Constrictor_knot">Constrictor knot</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Miller%27s_knot">Miller's knot</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Strangle_knot">Strangle knot</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Ground-line_hitch">Ground-line hitch</a></li>
+</ol>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Round_turn_and_two_half-hitches">Round turn and two half-hitches</a>：<strong>旋圆双半结，双绕双半结</strong>，简单可靠。</li>
+<li><a href="https://en.wikipedia.org/wiki/Buntline_hitch">Buntline hitch</a>：收帆索结（将帆底部的收帆索固定到帆桁上），无法在受力状态下打结，稳固但难解，因此常用<strong>收帆索滑结</strong>(slipped buntline hitch)。系领带的 <a href="https://en.wikipedia.org/wiki/Four-in-hand_knot">Four-in-hand knot</a> 其实就是 buntline hitch。
+<ol>
+<li><strong><a href="https://www.animatedknots.com/buntline-hitch-knot">EStar hitch</a></strong>：改进 buntline hitch，更适合光滑的绳索。</li>
+<li><a href="https://www.animatedknots.com/gnat-hitch-knot">Gnat hitch</a>：蚊结，简单可靠，比 buntline hitch 易结也易解，适合轻负载，必须维持拉力，一旦松弛即松脱。</li>
+</ol>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Boom_hitch">Boom hitch</a>：<strong>吊杆结</strong>，即使在光滑的钢管上也很难滑动。比 Buntline hitch 易解。</li>
+<li><a href="https://en.wikipedia.org/wiki/Taut-line_hitch">Taut-line hitch</a>：<strong>紧绳结</strong>，营钉结，适合帐篷拉线，不适合长期固定。有三种变体，其中 见习船员结(<a href="https://www.animatedknots.com/midshipmans-hitch-knot">Midshipman's hitch</a>) 是最安全的，但在重力下更难调节。</li>
+<li><a href="https://en.wikipedia.org/wiki/Timber_hitch">Timber hitch</a>：曳木结，专为拖曳设计，松开负载则绳结散开。</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Cow_hitch">Cow hitch</a>：牛结，除非对绳索的两个固定部分施加相等的张力，否则可能会失效。易滑动。</del>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Bale_sling_hitch">Bale sling hitch</a>：包索吊结，把 cow hitch 的两个自由端相连，也即用绳环系到杆状物。易滑动。</li>
+</ol>
+</li>
+<li>临时拴系，一拉即解快速释放，注意强度不高，可能不稳定。
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Tumble_hitch">Tumble hitch</a>：<strong>翻转结</strong>，更好的强盗结，最安全的快速释放绳结。</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Highwayman%27s_hitch">Highwayman's hitch</a>：强盗结（因为逃跑时要快速解开马的缰绳），容易翻转滑脱。</del></li>
+<li><a href="https://en.wikipedia.org/wiki/Siberian_hitch">Siberian hitch</a>：西伯利亚结，方便戴着手套也能系。</li>
+<li><a href="https://en.wikipedia.org/wiki/Halter_hitch">Halter hitch</a>：缰绳结，用来把动物系在柱子或环上。其实是个套索，为了避免动物拉开，可以把套索的自由端穿过套索的弯。没有 <a href="https://en.wikipedia.org/wiki/Siberian_hitch">Siberian hitch</a> 牢固。</li>
+<li><del><a href="https://www.animatedknots.com/mooring-hitch-knot">Mooring hitch</a>：系泊结。注意不适用于长期停泊。</del></li>
+</ol>
+</li>
+</ol>
+<h3 id="friction-hitch-knot摩擦结抓结"><a class="header" href="#friction-hitch-knot摩擦结抓结">Friction hitch (knot)：摩擦结、抓结</a></h3>
+<p>也叫 slide &amp; grip hitch，系在另一根绳上用来助力上升、下降。</p>
+<ol>
+<li>可双向受力
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Prusik">Prusik</a>：<strong>普鲁士结</strong>。</li>
+</ol>
+</li>
+<li>只可单向受力
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Klemheist_knot">Klemheist knot,  Machard knot, French prusik</a>: 克莱姆海斯特结，马沙尔结，法式普鲁士结。</li>
+<li><a href="https://en.wikipedia.org/wiki/Distel_hitch">Distel hitch</a>：迪斯泰尔结。</li>
+<li><a href="https://en.wikipedia.org/wiki/Bachmann_knot">Bachmann knot</a>： 巴赫曼结。</li>
+</ol>
+</li>
+</ol>
+<h2 id="loop-knot环结"><a class="header" href="#loop-knot环结">Loop knot：环结</a></h2>
+<p>形成固定大小的圈套。</p>
+<ol>
+<li>在绳子中间结环
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Butterfly_loop">Butterfly loop</a>： <strong>蝴蝶结</strong>，lineman's loop, butterfly knot, alpine butterfly knot, lineman's rider，在绳子中间结一个环。可能打错成 false butterfly 而容易发生滑动。双环独立受力。
+<ol>
+<li><a href="https://www.animatedknots.com/double-alpine-butterfly-loop-knot">Double Butterfly Loop</a>：<strong>双环蝴蝶结</strong>。</li>
+</ol>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Figure-eight_loop">Figure-eight loop, Figure-eight follow-through, Flemish loop</a>：八字环结，难解开
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Figure-of-nine_loop">Figure-nine loop</a>：<strong>九字环结</strong>，比八字环结使用的绳索更多且更为笨重，但它在某种程度上强度更高，也更不容易卡住。</li>
+<li><a href="https://en.wikipedia.org/wiki/Double_figure-eight_loop">Double figure-eight loop</a>：形成双环。</li>
+</ol>
+</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Farmer%27s_loop">Farmer's loop</a>：农夫结</del></li>
+<li><del><a href="https://en.wikipedia.org/wiki/Bowline_on_a_bight">Bowline on a bight</a>:  绳耳上之称人结，形成双环，当仅对一个绳环施加负载时，绳结可能会滑脱。易滑动。</del>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Karash_double_loop">Karash double loop</a>：卡拉什双环。</li>
+</ol>
+</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Spanish_bowline">Spanish bowline</a>：西班牙布林结，形成双环。双环共享受力，只适合一同受力，可能滑动失衡。</del>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Fireman%27s_chair_knot">Fireman's chair knot</a>：消防员椅结，在收紧前可调节。现代已很少使用。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>在绳子末端结环
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Zeppelin_loop">Zeppelin loop， zeppelin eye knot</a>：<strong>齐柏林环</strong>，能用于蹦极绳上，易解开。</li>
+<li><a href="https://en.wikipedia.org/wiki/Angler%27s_loop">Angler's loop,   perfection loop</a>：<strong>钓鱼者结</strong>，<strong>完美环结</strong>，能用于蹦极绳上，很难解开。
+<ol>
+<li><a href="https://www.animatedknots.com/double-dragon-loop">Double dragon loop</a>，双龙环，跟 Double angler's loop 很相似。适合高模量和光滑的绳索，如迪尼玛绳，相比bowline 更不易松动。即使在承受重负荷后，也能相当容易地解开。</li>
+</ol>
+</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Trident_loop">Trident loop</a>：强度介于 bowline 和 figure-eight loop 之间。</del></li>
+<li><del><a href="https://en.wikipedia.org/wiki/Bowline">Bowline</a>：布林结，称人结，单套结，广泛使用，被誉为「绳结之王」，与 sheet bend 和 clove hitch 一起都是最基本的绳结（但单独用都不安全！）。Bow line 指系在船头拉住方帆边缘以让帆兜住风的绳子，也指在船头拉住岸边泊位的绳子。Bowline 易结易解，简单可靠，但在不受载荷（或承受周期性载荷）时容易松动，受到侧向拉力时会滑动，以及在某些情况下绳结的环部会发生翻转形成致命的活结。Bowline <a href="https://en.wikipedia.org/wiki/Lapp_knot#/media/File:Bowline_knot_family.png">其实</a>是在绳子折弯处的 sheet bend。</del>
+<ol>
+<li><del><a href="https://en.wikipedia.org/wiki/Cowboy_bowline">Cowboy bowline, left-hand bowline</a>，布林结的稍微安全版本，但也有同样的问题，不建议用于性命攸关的场合。</del></li>
+<li><a href="https://en.wikipedia.org/wiki/Double_bowline">Double bowline，round turn bowline</a>, 双布林结。与八字结相比，双布林结的优点是在坠落受力后更容易解开，因此被那些多次在先锋攀登中坠落之后难以解开八字结的运动攀岩者所使用。双布林结的缺点是安全性不如八字结，打结所需时间更长，且检查起来也没那么容易。</li>
+<li><a href="https://en.wikipedia.org/wiki/Water_bowline">Water bowline</a>：适合潮湿环境。</li>
+<li><del><a href="https://en.wikipedia.org/wiki/Yosemite_bowline">Yosemite bowline</a>：存在系错以及在固定前就发生翻转的风险。</del></li>
+<li><a href="https://en.wikipedia.org/wiki/Portuguese_bowline">Portuguese bowline</a>: 葡萄牙式布林结，形成可调节大小的双环。</li>
+<li><a href="https://en.wikipedia.org/wiki/Triple_bowline">Triple bowling</a>：形成三环。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="running-knot滑结"><a class="header" href="#running-knot滑结">Running knot：滑结</a></h2>
+<p>活结(slip knot)和套索(noose)都基于带滑段的反手结（a slipped overhand knot)，拉动工作端(自由端)打开活结，拉动固定端打开套索。</p>
+<ol>
+<li><del><a href="https://en.wikipedia.org/wiki/Noose">Noose</a>：套索，最简单，但不可靠。套住物体后继续拉主绳时，圈无限缩小，直至勒紧或切断。</del>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Hangman%27s_knot">Hangman's knot</a>：绞索</li>
+</ol>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Running_bowline">Running bowline</a>：<strong>滑布林结</strong>，通用首选，很可靠，易解开。套住物体后继续拉主绳时，圈收紧到一定程度后自锁，不再缩小 → 安全！</li>
+<li><a href="https://www.animatedknots.com/poachers-knot">Poacher's knot</a>：偷猎者结，极可靠，很难解开。套住物体后继续拉主绳时，圈持续缩小，缓慢勒紧。
+<ol>
+<li>Scaffold knot： 三圈版 Poacher，更难解开。</li>
+</ol>
+</li>
+<li><a href="https://www.animatedknots.com/honda-knot">Honda knot</a></li>
+</ol>
+<h2 id="coil绳卷"><a class="header" href="#coil绳卷">Coil：绳卷</a></h2>
+<p>收纳绳索便于存放。</p>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Coiling#Butterfly_coil">Butterfly coil</a>：蝴蝶绳卷，也适用于短小的线，如耳机线。</li>
+<li><a href="https://en.wikipedia.org/wiki/Coiling#Mountaineer&#x27;s_coil">Mountaineer's coil</a>：登山者盘绳卷，比蝴蝶结卷更容易产生扭曲和缠绕。</li>
+<li><a href="https://en.wikipedia.org/wiki/Chain_sinnet">Chain Sinnet</a>: 链式绳卷，方便收纳、洗涤。</li>
+</ol>
+<h2 id="参考"><a class="header" href="#参考">参考</a></h2>
+<ol>
+<li>https://www.animatedknots.com/  ⭐️⭐️⭐️⭐️⭐️</li>
+<li>https://en.wikipedia.org/wiki/List_of_knots</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../22体育/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../22体育/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

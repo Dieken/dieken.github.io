@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IRC on 随记</title><link>/tags/irc/</link><description>Recent content in IRC on 随记</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 04 Mar 2026 22:00:00 +0800</lastBuildDate><atom:link href="/tags/irc/index.xml" rel="self" type="application/rss+xml"/><item><title>IRC daemons</title><link>/posts/irc-daemons/</link><pubDate>Wed, 04 Mar 2026 22:00:00 +0800</pubDate><guid>/posts/irc-daemons/</guid><description>&lt;h2 id="主要的-irc-daemons"&gt;主要的 IRC daemons&lt;/h2&gt;
+&lt;p&gt;推荐使用：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.inspircd.org/"&gt;InspIRCd&lt;/a&gt;: 使用 C++ 从零编写，功能丰富，被 Freenode 使用；&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.unrealircd.org/"&gt;UnrealIRCd&lt;/a&gt;: 源自 ircd-irc2，功能丰富，使用最广泛，支持 &lt;a href="https://ircv3.net/specs/extensions/chathistory"&gt;chathistory&lt;/a&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://solanum.chat/"&gt;Solanum&lt;/a&gt;: 源自 Charybdis，被 Libera Chat 使用，功能比较少；&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ergo.chat/"&gt;Ergo&lt;/a&gt;: 功能丰富，内置 IRC services，使用 Go 编写，最丰富的 IRCv3 协议支持，支持 &lt;a href="https://ircv3.net/specs/extensions/chathistory"&gt;chathistory&lt;/a&gt;，&lt;strong&gt;注意截止 2026-02 还不支持 server federation，只能单机&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ngircd.barton.de/"&gt;ngIRCd&lt;/a&gt;: 功能极简，适合小范围或测试使用；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不推荐使用：&lt;/p&gt;</description></item></channel></rss>
